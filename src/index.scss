@@ -1,5 +1,14 @@
 $olive: #80aa40;
 
 body {
+  display: flex;
   color: $olive;
+  line-height: 30px;
+
+  img, span {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    margin-right: 10px;
+  }
 }
