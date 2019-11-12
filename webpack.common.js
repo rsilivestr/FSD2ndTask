@@ -3,13 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    compress: true,
-    port: 8081,
-  },
   entry: {
     app: './src/index.js',
   },
@@ -29,6 +22,7 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
+        include: path.resolve(__dirname, 'src'),
         use: [
           // Creates `style` nodes from JS strings
             'style-loader',
@@ -53,28 +47,18 @@ module.exports = {
       },
       {
         test: /\.pug$/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           'pug-loader',
         ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           'file-loader',
         ],
       },
     ],
-  },
-  optimization: {
-    runtimeChunk: 'single',
-    // splitChunks: {
-    //   cacheGroups: {
-    //     vendor: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       name: 'vendors',
-    //       chunks: 'all',
-    //     },
-    //   },
-    // },
   },
 };
