@@ -14,7 +14,7 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -64,5 +64,17 @@ module.exports = {
         ],
       },
     ],
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendors',
+    //       chunks: 'all',
+    //     },
+    //   },
+    // },
   },
 };
