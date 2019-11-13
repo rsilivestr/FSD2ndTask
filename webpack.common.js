@@ -22,7 +22,7 @@ module.exports = {
       ignoreOrder: false,
     }),
     new CopyWebpackPlugin([
-      {from:'src/images',to:'images'} 
+      {from:'src/assets/images',to:'assets/images'}
     ]),
   ],
   module: {
