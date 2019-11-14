@@ -1,3 +1,5 @@
+- const pages = [{ title: 'Colors', url: 'pages/colors.html' }]
+
 html(lang="en")
   head
     meta(charset="UTF-8")
@@ -5,7 +7,8 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title TODO
     link(rel="stylesheet", href="app.css")
-  body
-    include pages/index/header/header.pug
-    include pages/index/main/main.pug
-    include pages/index/footer/footer.pug
+  body.router
+    nav.router__nav
+      each page in pages
+        a.router__navlink(href=page.url)=page.title
+    iframe.router__current-page(src="pages/colors.html", frameborder="1")

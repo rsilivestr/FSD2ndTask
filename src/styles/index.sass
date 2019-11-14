@@ -1,7 +1,5 @@
 @use 'palette'
-@use '../pages/index/header/header'
-@use '../pages/index/main/main.sass'
-@use '../pages/index/footer/footer.sass'
+@use 'Pages/colors/colors'
 
 html
   box-sizing: border-box
@@ -18,6 +16,21 @@ html
 html, body
   min-height: 100vh
 
-body
+.router
   display: flex
   flex-direction: column
+  margin: 5px
+
+.router__nav
+  display: flex
+  justify-content: center
+
+.router__navlink
+  padding: 5px
+    
+  &:hover
+    background-color: #0001
+
+.router__current-page
+  flex: auto
+  border: 2px solid red

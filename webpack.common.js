@@ -17,6 +17,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.pug'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/colors/colors.pug',
+      filename: 'pages/colors.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       ignoreOrder: false,
@@ -102,4 +106,11 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, 'src/assets/'),
+      Pages: path.resolve(__dirname, 'src/pages/'),
+      Styles: path.resolve(__dirname, 'src/styles/'),
+    }
+  }
 };
