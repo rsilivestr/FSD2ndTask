@@ -1,4 +1,5 @@
 @use 'Styles/palette'
+@use 'Styles/typo'
 
 .main-header
   padding: 30px
@@ -6,6 +7,7 @@
 .main-content--page_colors
   padding-top: 37px
   display: flex
+  color: palette.$dark100
 
 .color-list__item
   display: flex
@@ -40,14 +42,19 @@
   background-color: palette.$green
 
 .color-list__caption
-  line-height: 29px
+  @extend .ff-quicksand
+  line-height: 1.5
+  
+.color-list__color-title
+  font-weight: 700
 
 .color-list__color-hex
   text-transform: uppercase
   font-size: 19px
+  font-weight: 400
 
 .typo-list
-  width: 420px
+  width: 475px
   margin-left: auto
 
 .typo-list tr
@@ -59,7 +66,16 @@
   padding-right: 30px
   text-align: right
   color: palette.$dark25
+  font-weight: 300
+  @extend .ff-montserrat
+
+.typo-list__desc
+  @extend .ff-quicksand
 
 .typo-list__desc
   h1,h2,h3
-    font-weight: bold
+    font-weight: 700
+
+.typo-list__desc p
+  color: palette.$dark75
+  @extend .ff-montserrat

@@ -21,6 +21,10 @@ module.exports = {
       template: './src/pages/colors/colors.pug',
       filename: 'pages/colors.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/cards/cards.pug',
+      filename: 'pages/cards.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       ignoreOrder: false,
@@ -28,9 +32,9 @@ module.exports = {
     new CopyWebpackPlugin([
       {from:'src/assets/images',to:'assets/images'}
     ]),
-    new CopyWebpackPlugin([
-      {from:'src/assets/fonts',to:'assets/fonts'}
-    ]),
+    // new CopyWebpackPlugin([
+    //   {from:'src/assets/fonts',to:'assets/fonts'}
+    // ]),
   ],
   module: {
     rules: [
