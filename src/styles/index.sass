@@ -1,16 +1,18 @@
 @use 'palette'
+@use 'typo'
 @use 'Pages/colors/colors'
 
 html
   box-sizing: border-box
   font-family: Arial, Helvetica, sans-serif
+  line-height: 1
 
 *, *:before, *:after
   box-sizing: inherit
   margin: 0
   padding: 0
-  line-height: 1
   font-size: 100%
+  line-height: inherit
   font: inherit
 
 html, body
@@ -19,7 +21,6 @@ html, body
 .router
   display: flex
   flex-direction: column
-  margin: 5px
 
 .router__nav
   display: flex
@@ -34,3 +35,13 @@ html, body
 .router__current-page
   flex: auto
   border: 2px solid red
+
+.container
+  margin-left: auto
+  margin-right: auto
+
+.container--width_m
+  max-width: 1140px
+
+.container--width_l
+  max-width: 1440px

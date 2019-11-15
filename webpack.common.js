@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: [ './src', './src/styles/index.sass', ]
+    app: [ './src', 'Styles/index.sass', ]
   },
   output: {
     filename: '[name].js',
@@ -28,6 +28,9 @@ module.exports = {
     new CopyWebpackPlugin([
       {from:'src/assets/images',to:'assets/images'}
     ]),
+    new CopyWebpackPlugin([
+      {from:'src/assets/fonts',to:'assets/fonts'}
+    ]),
   ],
   module: {
     rules: [
@@ -45,6 +48,7 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         include: path.resolve(__dirname, 'src'),
         use: [
+          'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
           },
@@ -65,6 +69,12 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/i,
+        use: [
+          'style-loader', 'css-loader'
+        ],
+      },
+      {
         test: /\.pug$/,
         include: path.resolve(__dirname, 'src'),
         use: [
@@ -74,9 +84,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         include: path.resolve(__dirname, 'src'),
-        use: [
-          'file-loader',
-        ],
+        use: ['file-loader',],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
