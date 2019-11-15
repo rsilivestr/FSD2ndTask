@@ -11,6 +11,7 @@ html(lang="en")
     header.main-header.container.container--width_l
       include ../includes/logo.pug
     main.main-content.main-content--page_cards.container.container--width_m
-      +form('test-class', 'Titulum')
-        input(type="text")
-        input(type="text")
+      //- +form('form form-login', 'Найдём номера под ваши пожелания')
+      //-   input(type="text")
+      //-   input(type="text")
+      include ../components/login/FormLogin.pug

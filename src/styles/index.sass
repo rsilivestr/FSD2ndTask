@@ -1,11 +1,15 @@
+// common
 @use 'palette'
 @use 'typo'
+// pages
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
+// components
+@use 'Pages/components/login/FormLogin'
 
 html
   box-sizing: border-box
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Montserrat, sans-serif
   line-height: 1
 
 *, *:before, *:after
@@ -15,6 +19,7 @@ html
   font-size: 100%
   line-height: inherit
   font: inherit
+  outline: none
 
 html, body
   min-height: 100vh
