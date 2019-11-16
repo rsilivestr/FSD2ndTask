@@ -1,17 +1,21 @@
-include ../includes/form.pug
+//- include ../includes/form.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
-  body.page.page--cards
+  body.page.page--layout_cards
     header.main-header.container.container--width_l
       include ../includes/logo.pug
     main.main-content.main-content--page_cards.container.container--width_m
-      //- +form('form form-login', 'Найдём номера под ваши пожелания')
-      //-   input(type="text")
-      //-   input(type="text")
+
+      include ../components/search-room/FormSearchRoom.pug
+
+      include ../components/registration/FormRegistration.pug
+
+      include ../components/booking/FormBooking.pug
+
       include ../components/login/FormLogin.pug

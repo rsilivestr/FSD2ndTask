@@ -5,12 +5,12 @@
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
 // components
-@use 'Pages/components/login/FormLogin'
 
 html
   box-sizing: border-box
   font-family: Montserrat, sans-serif
   line-height: 1
+  color: blue
 
 *, *:before, *:after
   box-sizing: inherit
@@ -18,7 +18,8 @@ html
   padding: 0
   font-size: 100%
   line-height: inherit
-  font: inherit
+  font-family: inherit
+  color: inherit
   outline: none
 
 html, body
@@ -51,3 +52,6 @@ html, body
 
 .container--width_l
   max-width: 1440px
+
+.mb10
+  margin-bottom: 10px

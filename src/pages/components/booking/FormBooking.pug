@@ -1,0 +1,31 @@
+form.form.form--type_booking
+  h1.form__title.form__title--form_booking №888
+    span.form__book-type ЛЮКС
+    span.form__book-price 9&nbsp;990₽
+  .form__input-group.form__row
+    .form__input-box.form__input-box--width_half
+      label.form__input-box-label Прибытие
+      input(type="date" placeholder="ДД.ММ.ГГГГ").form__input.form__input--type_date
+    .form__input-box.form__input-box--width_half
+      label.form__input-box-label Выезд
+      input(type="date" placeholder="ДД.ММ.ГГГГ").form__input.form__input--type_date
+  .form__input-group
+    .form__input-box.form__input-box--width_full
+      label.form__input-box-label Гости
+      input(type="number" placeholder="Сколько гостей").form__input.form__input--type_number-of-guests
+  table.booking-info
+    tr
+      td.booking-info__service 9 990₽ х 4 суток
+      td.booking-info__price 39 960₽
+    tr
+      td.booking-info__service Сбор за услуги: скидка 2 179₽
+      td.booking-info__price 0₽
+    tr
+      td.booking-info__service Сбор за дополнительные услуги
+      td.booking-info__price 300₽
+  .booking-info__total
+    span.booking-info__service Итого
+    span.booking-info__line
+    span.booking-info__price 38 081₽
+  input(type="button", value="Забронировать").form__btn.form__btn--role_main
+  

@@ -1,10 +1,10 @@
 form.form.form--type_login
   h1.form__title Войти
   .form__input-group
-    input.form__input.form__input--width_full.mb10(type="email" placeholder="Email")
-    input.form__input.form__input--width_full(type="password" placeholder="Пароль")
-  input.form__btn.form__btn--role_main(type="submit" value="Войти")
+    input(type="email" placeholder="Email").form__input.mb10
+    input(type="password" placeholder="Пароль").form__input
+  input(type="submit" value="Войти").form__btn.form__btn--role_main
   .form__prompt
     span.form__prompt-text Нет аккаунта на Toxin?
     .form__btn-wrapper
-      input.form__btn.form__btn--role_secondary(type="submit" value="Создать")
+      a(href="#").form__btn.form__btn--role_secondary Создать
