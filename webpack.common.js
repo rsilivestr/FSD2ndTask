@@ -6,7 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: [ './src', 'Styles/index.sass', ]
+    // app: [ './src', 'Styles/index.sass', ]
+    app: [ 
+      './src',
+      // 'Styles/fonts.css',
+      'Assets/fonts/fonts.css',
+      'Styles/index.sass',
+    ]
   },
   output: {
     filename: '[name].js',
@@ -30,11 +36,10 @@ module.exports = {
       ignoreOrder: false,
     }),
     new CopyWebpackPlugin([
-      {from:'src/assets/images',to:'assets/images'}
+      {
+        from:'src/assets/images',to:'assets/images'
+      },
     ]),
-    // new CopyWebpackPlugin([
-    //   {from:'src/assets/fonts',to:'assets/fonts'}
-    // ]),
   ],
   module: {
     rules: [
@@ -52,13 +57,12 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         include: path.resolve(__dirname, 'src'),
         use: [
-          'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
-            options: { importLoaders: 1 }
+            // options: { importLoaders: 1 }
           },
           {
             loader: 'postcss-loader',
@@ -74,15 +78,12 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-          'style-loader', 'css-loader'
+        use: [          
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader'
         ],
-      },
-      { 
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-        use: [
-          'url-loader?limit=100000'
-        ]
       },
       {
         test: /\.pug$/,
@@ -92,36 +93,54 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        include: path.resolve(__dirname, 'src'),
-        use: ['file-loader',],
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        include: path.resolve(__dirname, 'src/images'),
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        include: path.resolve(__dirname, 'src/assets/fonts/'),
         use: [
-          'file-loader?name=images/[name].[ext]',
           {
-            loader: 'image-webpack-loader',
+            loader: 'file-loader',
             options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-            }
+              name: '[path][name].[ext]',
+              outputPath: 'assets/fonts',
+              context: path.resolve(__dirname, './src/assets/fonts'),
+            },
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        include: path.resolve(__dirname, 'src/assets/images'),
+        use: [
+          {
+            loader: 'file-loader',
+          }
+        ],
+      },
+      // {
+      //   test: /\.(gif|png|jpe?g|svg)$/i,
+      //   include: path.resolve(__dirname, 'src/images'),
+      //   use: [
+      //     'file-loader?name=images/[name].[ext]',
+      //     {
+      //       loader: 'image-webpack-loader',
+      //       options: {
+      //         mozjpeg: {
+      //           progressive: true,
+      //           quality: 65
+      //         },
+      //         optipng: {
+      //           enabled: false,
+      //         },
+      //         pngquant: {
+      //           quality: [0.65, 0.90],
+      //           speed: 4
+      //         },
+      //         gifsicle: {
+      //           interlaced: false,
+      //         },
+      //       }
+      //     },
+      //   ],
+      // },
     ],
   },
   resolve: {
