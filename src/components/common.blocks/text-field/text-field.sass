@@ -1,11 +1,11 @@
-@use 'Styles/typo'
-@use 'Styles/palette'
+@use 'Styles/forward'
 
 .text-field
   width: 100%
   max-width: 320px
-  font-family: typo.$mainFont
-  color: palette.$dark100
+  font-family: forward.$mainFont
+  color: forward.$dark100
+  margin-bottom: 23px
 
 .text-field__label,
 .text-field__mod
@@ -13,20 +13,33 @@
 
 .text-field__label
   display: block
-  margin-bottom: 5px
-  font-size: 12px
+  margin-bottom: 6px
+  font-size: 1.2rem
   font-weight: 700
 
 .text-field__mod
   float: right
   font-weight: 400
-  color: palette.$dark50
+  color: forward.$dark50
 
 .text-field__input
   width: 100%
   font-size: 1.4rem
+  font-weight: 300
   line-height: 1.8rem
   height: 44px
   padding: 0 15px
-  border: 1px solid palette.$dark25
+  border: 1px solid forward.$dark25
   border-radius: 4px
+
+  &::placeholder
+    font-weight: 400
+    font-size: 1.3rem
+    color: forward.$dark50
+
+  &:hover,
+  &:active
+    border-color: forward.$dark50
+
+    &::placeholder
+      color: forward.$dark75

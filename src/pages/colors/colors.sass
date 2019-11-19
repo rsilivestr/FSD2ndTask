@@ -1,5 +1,4 @@
-@use 'Styles/palette'
-@use 'Styles/typo'
+@use 'Styles/forward'
 
 .main-header
   padding: 30px
@@ -7,7 +6,7 @@
 .main-content--page_colors
   padding-top: 37px
   display: flex
-  color: palette.$dark100
+  color: forward.$dark100
 
 .color-list__item
   display: flex
@@ -21,25 +20,25 @@
   margin-right: 40px
   
 .color-list__preview-box--bg_dark100
-  background-color: palette.$dark100
+  background-color: forward.$dark100
 
 .color-list__preview-box--bg_dark75
-  background-color: palette.$dark75
+  background-color: forward.$dark75
 
 .color-list__preview-box--bg_dark50
-  background-color: palette.$dark50
+  background-color: forward.$dark50
 
 .color-list__preview-box--bg_dark25
-  background-color: palette.$dark25
+  background-color: forward.$dark25
 
 .color-list__preview-box--bg_dark5
-  background-color: palette.$dark05
+  background-color: forward.$dark05
 
 .color-list__preview-box--bg_purple
-  background-color: palette.$purple
+  background-color: forward.$purple
 
 .color-list__preview-box--bg_green
-  background-color: palette.$green
+  background-color: forward.$green
 
 .color-list__caption
   @extend .ff-quicksand
@@ -65,7 +64,7 @@
   width: 67px
   padding-right: 30px
   text-align: right
-  color: palette.$dark25
+  color: forward.$dark25
   @extend .ff-montserrat
 
   h1,h2,h3
@@ -79,5 +78,5 @@
     font-weight: 700
 
 .typo-list__desc p
-  color: palette.$dark75
+  color: forward.$dark75
   @extend .ff-montserrat
