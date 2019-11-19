@@ -4,12 +4,14 @@
 // pages
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
+@use 'Pages/form-elements/form-elements'
 // components
 
 html
   box-sizing: border-box
   font-family: Montserrat, sans-serif
   line-height: 1
+  font-size: 10px
 
 *, *:before, *:after
   box-sizing: inherit
@@ -31,12 +33,13 @@ html, body
 .router__nav
   display: flex
   justify-content: center
+  font-size: 1.6rem
 
 .router__navlink
-  padding: 5px
+  padding: 10px
     
   &:hover
-    background-color: #0001
+    background-color: #eee
 
 .router__current-page
   flex: auto

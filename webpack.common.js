@@ -92,9 +92,7 @@ module.exports = {
       {
         test: /\.pug$/,
         include: path.resolve(__dirname, 'src'),
-        use: [
-          'pug-loader',
-        ],
+        use: [ 'pug-loader', ],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -152,6 +150,7 @@ module.exports = {
       Assets: path.resolve(__dirname, 'src/assets/'),
       Pages: path.resolve(__dirname, 'src/pages/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
+      CommonBlocks: path.resolve(__dirname, 'src/components/common.blocks/'),
     }
   }
 };

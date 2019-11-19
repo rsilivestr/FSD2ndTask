@@ -1,0 +1,32 @@
+@use 'Styles/typo'
+@use 'Styles/palette'
+
+.text-field
+  width: 100%
+  max-width: 320px
+  font-family: typo.$mainFont
+  color: palette.$dark100
+
+.text-field__label,
+.text-field__mod
+  text-transform: uppercase
+
+.text-field__label
+  display: block
+  margin-bottom: 5px
+  font-size: 12px
+  font-weight: 700
+
+.text-field__mod
+  float: right
+  font-weight: 400
+  color: palette.$dark50
+
+.text-field__input
+  width: 100%
+  font-size: 1.4rem
+  line-height: 1.8rem
+  height: 44px
+  padding: 0 15px
+  border: 1px solid palette.$dark25
+  border-radius: 4px
