@@ -28,6 +28,10 @@ module.exports = {
       filename: 'pages/colors.html'
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/form-elements/form-elements.pug',
+      filename: 'pages/form-elements.html'
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/cards/cards.pug',
       filename: 'pages/cards.html'
     }),
