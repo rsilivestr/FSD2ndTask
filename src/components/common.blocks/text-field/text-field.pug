@@ -1,6 +1,6 @@
 mixin textField(mod, subtype, label, placeholder, sublabel)
-  div(class=mod ? `text-field text-field--${mod} mb20` : 'text-field mb20')
+  div.text-field(class=mod ? `text-field--${mod}` : '')
     if(label)
       label().text-field__label= label
         span.text-field__mod= sublabel
-    input(type='text', placeholder=placeholder value=value).text-field__input
+    input(type='text', placeholder=placeholder class=`text-field__${subtype}`)

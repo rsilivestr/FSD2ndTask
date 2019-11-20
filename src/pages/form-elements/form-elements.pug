@@ -12,7 +12,10 @@ html(lang="ru")
     include ../../components/common.blocks/header/header
     main.main-content.main-content--page_form-elements.container.container--width_m
       //- textfield(mod, subtype, label, placeholder, sublabel)
-      +textField('', '', 'text field', 'Email', 'default')
-      +textField('', '', 'text field', 'This is pretty awesome', 'hover / focus')
-      +textField('', 'text-field-dropdown', 'dropdown', 'Сколько гостей', 'default')
-      +textField('', '', 'masked text field', '', 'default')
+      +textField('size_l', 'input', 'text field', 'Email', 'default')
+      +textField('size_l', 'input', 'text field', 'This is pretty awesome', 'hover / focus')
+      +textField('size_l', 'dropdown', 'dropdown', 'Сколько гостей', 'default')
+      +textField('size_l', 'masked', 'masked text field', '', 'default')
+      .input-group.input-group--layout_row
+        +textField('size_s', 'date-dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')
+        +textField('size_s', 'date-dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')
