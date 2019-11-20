@@ -1,3 +1,7 @@
+include __input/--text
+include __input/--masked
+include __input/--dropdown
+
 mixin inputBox(label, labelFor, size='l')
   .input-box.mb20(class='input-box--size_' + size)
     if label

@@ -1,5 +1,4 @@
 include ../../components/common.blocks/input-box/input-box
-include ../../components/common.blocks/input-box/__text-field/input-box__text-field
 
 
 <!DOCTYPE html>
@@ -14,7 +13,10 @@ html(lang="ru")
     main.main-content.main-content--page_form-elements.container.container--width_m
 
       +inputBox('text field', 'my-input-box')
-        +inputBoxTextField('Email', 'my-input-box')
+        +textField('Email', 'my-input-box')
 
       +inputBox('text field', 'my-input-box-2')
-        +inputBoxTextField('This is pretty awesome', 'my-input-box-2')
+        +textField('This is pretty awesome', 'my-input-box-2')
+
+      +inputBox('dropdown')
+        .input-box__dropdown
