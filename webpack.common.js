@@ -1,21 +1,19 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path'),
+      { CleanWebpackPlugin } = require('clean-webpack-plugin'),
+      HtmlWebpackPlugin = require('html-webpack-plugin'),
+      MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+      CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    // app: [ './src', 'Styles/index.sass', ]
     app: [ 
       './src',
-      // 'Styles/fonts.css',
       'Assets/fonts/fonts.css',
       'Styles/index.sass',
     ]
   },
   output: {
-    filename: '[name].js',
+    filename: 'scripts/[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -36,14 +34,12 @@ module.exports = {
       filename: 'pages/cards.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'styles/[name].css',
       ignoreOrder: false,
     }),
-    new CopyWebpackPlugin([
-      {
+    new CopyWebpackPlugin([{
         from:'src/assets/images',to:'assets/images'
-      },
-    ]),
+    }]),
   ],
   module: {
     rules: [
@@ -82,10 +78,9 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        include: path.resolve(__dirname, 'src'),
         use: [          
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ],
       },
