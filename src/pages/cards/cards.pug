@@ -1,5 +1,3 @@
-//- include ../includes/form.pug
-
 <!DOCTYPE html>
 html(lang="ru")
   head
@@ -8,14 +6,9 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
   body.page.page--layout_cards
-    header.main-header.container.container--width_l
-      include ../includes/logo.pug
+    include ../../components/common.blocks/header/header
     main.main-content.main-content--page_cards.container.container--width_m
-
       include ../components/search-room/FormSearchRoom.pug
-
       include ../components/registration/FormRegistration.pug
-
       include ../components/booking/FormBooking.pug
-
       include ../components/login/FormLogin.pug

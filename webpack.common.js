@@ -34,7 +34,7 @@ module.exports = {
       filename: 'pages/cards.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
+      filename: '[name].css',
       ignoreOrder: false,
     }),
     new CopyWebpackPlugin([{
