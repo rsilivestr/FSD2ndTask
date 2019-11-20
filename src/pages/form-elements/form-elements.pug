@@ -13,18 +13,8 @@ html(lang="ru")
     //-   include ../includes/logo.pug
     include ../../components/common.blocks/header/header
     main.main-content.main-content--page_form-elements.container.container--width_m
-      +textField('default', 'text field', '', '', 'Email')
-      +textField('hover / focus', 'text field', 'focused', '', '', 'This is pretty awesome')
-      +textField('default', 'dropdown', '', 'dropdown', 'Сколько гостей', '')
-      +textField('default', 'masked text field', '', 'masked', '', '')
-
-
-      //- .text-field
-      //-   label(for='dropdown-input').text-field__label dropdown
-      //-     span.text-field__mod default
-
-
-      //- .text-field
-      //-   label(for='masked-input').text-field__label masked text field
-      //-     span.text-field__mod default
-      //-   input(type='text', name='masked-input' id='masked-input').text-field__input
+      //- textfield(mod, subtype, label, placeholder, sublabel)
+      +textField('', '', 'text field', 'Email', 'default')
+      +textField('', '', 'text field', 'This is pretty awesome', 'hover / focus')
+      +textField('', 'text-field-dropdown', 'dropdown', 'Сколько гостей', 'default')
+      +textField('', '', 'masked text field', '', 'default')

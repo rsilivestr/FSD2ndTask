@@ -1,5 +1,5 @@
-mixin textField(name, label, mod, subtype, placeholder, value)
+mixin textField(mod, subtype, label, placeholder, sublabel)
   div(class=mod ? `text-field text-field--${mod} mb20` : 'text-field mb20')
     label().text-field__label= label
-      span.text-field__mod= name
-    input(type='text', name=name, placeholder=placeholder value=value).text-field__input
+      span.text-field__mod= sublabel
+    input(type='text', placeholder=placeholder value=value).text-field__input
