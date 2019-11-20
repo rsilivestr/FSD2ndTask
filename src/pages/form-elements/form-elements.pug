@@ -1,4 +1,5 @@
-include ../../components/common.blocks/text-field/text-field
+include ../../components/common.blocks/input-box/input-box
+include ../../components/common.blocks/input-box/__text-field/input-box__text-field
 
 
 <!DOCTYPE html>
@@ -11,11 +12,9 @@ html(lang="ru")
   body.page.page--layout_form-elements
     include ../../components/common.blocks/header/header
     main.main-content.main-content--page_form-elements.container.container--width_m
-      //- textfield(mod, subtype, label, placeholder, sublabel)
-      +textField('size_l', 'input', 'text field', 'Email', 'default')
-      +textField('size_l', 'input', 'text field', 'This is pretty awesome', 'hover / focus')
-      +textField('size_l', 'dropdown', 'dropdown', 'Сколько гостей', 'default')
-      +textField('size_l', 'masked', 'masked text field', '', 'default')
-      .input-group.input-group--layout_row
-        +textField('size_s', 'dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')
-        +textField('size_s', 'dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')
+
+      +inputBox('text field', 'my-input-box')
+        +inputBoxTextField('Email', 'my-input-box')
+
+      +inputBox('text field', 'my-input-box-2')
+        +inputBoxTextField('This is pretty awesome', 'my-input-box-2')

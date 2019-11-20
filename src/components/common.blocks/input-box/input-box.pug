@@ -1,0 +1,5 @@
+mixin inputBox(label, labelFor, size='l')
+  .input-box.mb20(class='input-box--size_' + size)
+    if label
+      label(for=labelFor).input-box__label= label
+    block

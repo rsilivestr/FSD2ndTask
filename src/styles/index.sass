@@ -4,8 +4,10 @@
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
 @use 'Pages/form-elements/form-elements'
-@use 'CommonBlocks/header/header'
 // components
+@use 'CommonBlocks/header/header'
+@use 'CommonBlocks/input-box/input-box'
+@use 'CommonBlocks/input-box/__text-field/input-box__text-field'
 
 html
   box-sizing: border-box
@@ -22,6 +24,9 @@ html
   font-family: inherit
   color: inherit
   outline: none
+
+.mb20
+  margin-bottom: 20px
 
 html, body
   min-height: 100vh

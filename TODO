@@ -1,6 +1,13 @@
-src structure
-BEM structure
+bemify structure
+
+learn Markdown
 
 build Form Elements page
 redo Colors & Fonts page
 redo Cards page
+
+Elements (pug mixins + sass)
+  - input-box
+  - input-box__text-field
+  - input-box__text-field--masked
+  - input-box__dropdown

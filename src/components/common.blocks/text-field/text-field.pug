@@ -1,6 +1,0 @@
-mixin textField(mod, subtype, label, placeholder, sublabel)
-  div.text-field(class=mod ? `text-field--${mod}` : '')
-    if(label)
-      label().text-field__label= label
-        span.text-field__mod= sublabel
-    input(type='text', placeholder=placeholder class=`text-field__${subtype}`)
