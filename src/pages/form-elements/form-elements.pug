@@ -2,28 +2,20 @@ include ../../components/common.blocks/text-field/text-field
 
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
   body.page.page--layout_form-elements
-    header.main-header.container.container--width_l
-      include ../includes/logo.pug
+    include ../../components/common.blocks/header/header
     main.main-content.main-content--page_form-elements.container.container--width_m
-      +textField('default', 'text field', '', '', 'Email')
-      +textField('hover / focus', 'text field', 'focused', '', '', 'This is pretty awesome')
-      +textField('default', 'dropdown', '', 'dropdown', 'Сколько гостей', '')
-      +textField('default', 'masked text field', '', 'masked', '', '')
-
-
-      //- .text-field
-      //-   label(for='dropdown-input').text-field__label dropdown
-      //-     span.text-field__mod default
-
-
-      //- .text-field
-      //-   label(for='masked-input').text-field__label masked text field
-      //-     span.text-field__mod default
-      //-   input(type='text', name='masked-input' id='masked-input').text-field__input
+      //- textfield(mod, subtype, label, placeholder, sublabel)
+      +textField('size_l', 'input', 'text field', 'Email', 'default')
+      +textField('size_l', 'input', 'text field', 'This is pretty awesome', 'hover / focus')
+      +textField('size_l', 'dropdown', 'dropdown', 'Сколько гостей', 'default')
+      +textField('size_l', 'masked', 'masked text field', '', 'default')
+      .input-group.input-group--layout_row
+        +textField('size_s', 'dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')
+        +textField('size_s', 'dropdown', 'date dropdown', 'ДД.ММ.ГГГГ')

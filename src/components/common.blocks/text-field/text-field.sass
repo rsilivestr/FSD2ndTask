@@ -2,10 +2,18 @@
 
 .text-field
   width: 100%
-  max-width: 320px
   font-family: forward.$mainFont
   color: forward.$dark100
   margin-bottom: 23px
+
+.text-field--size_l
+  max-width: 320px
+
+.text-field--size_m
+  max-width: 266px
+
+.text-field--size_s
+  max-width: 150px
 
 .text-field__label,
 .text-field__mod
@@ -22,24 +30,33 @@
   font-weight: 400
   color: forward.$dark50
 
-.text-field__input
+.text-field__input,
+.text-field__dropdown,
+.text-field__masked
+  display: block
   width: 100%
+  padding: 0 15px
   font-size: 1.4rem
   font-weight: 300
   line-height: 1.8rem
   height: 44px
-  padding: 0 15px
   border: 1px solid forward.$dark25
   border-radius: 4px
-
-  &::placeholder
-    font-weight: 400
-    font-size: 1.3rem
-    color: forward.$dark50
 
   &:hover,
   &:active
     border-color: forward.$dark50
 
+.text-field__input
+  &::placeholder
+    color: forward.$dark25
+  &:hover,
+  &:active
     &::placeholder
-      color: forward.$dark75
+      color: forward.$dark50
+
+.input-group--layout_row
+  max-width: 320px
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
