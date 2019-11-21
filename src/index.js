@@ -1,3 +1,5 @@
+import 'CommonBlocks/input-box/__input/--dropdown.js';
+
 const routerNav = document.querySelector('.router__nav'),
       routerIframe = document.querySelector('.router__current-page');
 if(routerNav) {
@@ -9,3 +11,11 @@ if(routerNav) {
     }
   });
 }
+
+// document.body.addEventListener('click', toggleDropdown);
+
+// function toggleDropdown(e) {
+//   if(e.target.classList.contains('input-box__input--dropdown')) {
+//     console.log(e.target);
+//   }
+// }

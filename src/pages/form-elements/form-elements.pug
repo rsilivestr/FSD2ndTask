@@ -1,4 +1,5 @@
 include ../../components/common.blocks/input-box/input-box
+include ../../components/common.blocks/input-box/__input/--dropdown
 
 
 <!DOCTYPE html>
@@ -19,4 +20,9 @@ html(lang="ru")
         +textField('This is pretty awesome', 'my-input-box-2')
 
       +inputBox('dropdown')
-        input(type='text' readonly placeholder='Сколько гостей').input-box__input.input-box__input--dropdown
+        +inputDrop('Сколько народу')
+          +dropOption('люди')
+          +dropOption('азари')
+          +dropOption('кроганы')
+          +dropOption('кварианцы')
+          

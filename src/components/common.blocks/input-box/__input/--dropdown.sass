@@ -1,12 +1,71 @@
 @use 'Styles/forward'
 
+.input-box__dropdown-box
+  position: relative
+
+  *::selection
+    background: transparent
+
+  &:after
+    @extend .material-icons
+    @extend .centered-flex
+    content: '\e5cf'
+    position: absolute
+    right: 0
+    top: 0
+    width: 44px
+    height: 44px
+    color: forward.$dark50
+    transition: all .1s
+    z-index: -1
+
 .input-box__input--dropdown
   cursor: pointer
+  background: transparent
 
-  &::after
-    font-family: 'Material Icons'
-    content: 'e5cf'
+.input-box__dropdown-contents
+  display: none
+  width: 100%
+  font-size: 1.4rem
+  font-weight: 400
+  color: forward.$dark50
+  border: 1px solid forward.$dark50
+  border-top: none
+  border-radius: 0 0 4px 4px
+  cursor: default
 
+.input-box__dropdown-box--is-open
+  .input-box__input--dropdown
+    border-radius: 4px 4px 0 0
 
-.input-box__input--dropdown--is-open
-  border-radius: 4px 4px 0 0
+  .input-box__dropdown-contents
+    display: block
+
+  &:after
+    transform: rotate(-180deg)
+    transition: all .1s
+
+$optionHeight: 30px
+
+.input-box__dropdown-option
+  display: flex
+  flex-flow: row nowrap
+  // align-items: center
+  padding: 10px 15px
+
+.input-box__dropdown-option-name
+  flex: auto
+  line-height: $optionHeight
+
+.input-box__dropdown-option-value
+  width: 30px
+  text-align: center
+  line-height: $optionHeight
+
+.drop-control
+  @extend .centered-flex
+  height: $optionHeight
+  width: $optionHeight
+  border: 1px solid forward.$dark25
+  border-radius: 50%
+  cursor: pointer
