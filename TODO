@@ -1,13 +1,24 @@
 bemify structure
 
 learn Markdown
+  ? add component readmes
 
 build Form Elements page
+  - add 'static' styles
 redo Colors & Fonts page
 redo Cards page
 
 Elements (pug mixins + sass)
-  - input-box
-  - input-box__text-field
+  + input-box
+    - form__input-box mixins for outer geometry
+  + input-box__text-field
+    - add input type choices (email, password) to pug template
   - input-box__text-field--masked
-  - input-box__dropdown
+    - add library
+  + input-box__dropdown
+    - fix styles
+      + focused state
+      - perfect pixel
+    - fix js
+      - placeholder -> value
+      ? save data in JSON to local storage

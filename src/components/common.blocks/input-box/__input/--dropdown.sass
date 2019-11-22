@@ -35,8 +35,13 @@
   cursor: default
 
 .input-box__dropdown-box--is-open
+  // 'stay focused' style
   .input-box__input--dropdown
+    border-color: forward.$dark50
     border-radius: 4px 4px 0 0
+
+    &::placeholder
+      color: forward.$dark75
 
   .input-box__dropdown-contents
     display: block

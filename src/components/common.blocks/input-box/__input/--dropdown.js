@@ -76,10 +76,11 @@ function updateValues(elArr, valArr, sum) {
     // update options values
     valArr.push(parseInt(elem.innerText));
     // display sum of options array
-    sum.placeholder = valArr.reduce((a,b) => a + b);
+    sum.value = valArr.reduce((a,b) => a + b);
     // change placeholder to default if sum is 0
-    if(sum.placeholder == 0) {
-      sum.placeholder = sum.dataset.placeholder;
+    if(sum.value == 0) {
+      // sum.value = sum.dataset.placeholder;
+      sum.value = '';
     }
   });
 }
