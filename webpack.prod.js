@@ -13,6 +13,17 @@ module.exports = merge(common, {
       }), 
       new OptimizeCSSAssetsPlugin(),
     ],
+    splitChunks: {      
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              return `vendors/${module.identifier().split('/').reduceRight(item => item).split('.')[0]}`;
+            },
+          chunks: 'all',
+        },
+      },
+    },
   },
   mode: 'production',
   devtool: 'source-map',
