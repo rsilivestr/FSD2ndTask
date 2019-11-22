@@ -20,5 +20,9 @@ Elements (pug mixins + sass)
       + focused state
       - perfect pixel
     - fix js
+      + dropdown closes if click-hold mouse button and move around
+        inside .input-box__dropdown-contents; precisely when mousedown
+        and mouseup targets are different __dropdown-option
+        CHANGED EVENT TO MOUSEDOWN
       - placeholder -> value
       ? save data in JSON to local storage

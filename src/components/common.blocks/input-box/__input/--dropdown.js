@@ -1,5 +1,5 @@
 // listen to body clicks
-document.body.addEventListener('click', handleDropdown);
+document.body.addEventListener('mousedown', handleDropdown);
 
 function handleDropdown(e) {
   const inputDropdowns = document.querySelectorAll('.input-box__dropdown-box');
