@@ -1,3 +1,5 @@
+import IMask from 'imask';
+
 import 'CommonBlocks/input-box/__input/--dropdown.js';
 
 const routerNav = document.querySelector('.router__nav'),
@@ -19,3 +21,11 @@ if(routerNav) {
 //     console.log(e.target);
 //   }
 // }
+const dateMask = IMask(
+  document.querySelector('.date-mask'),
+  {
+    mask: Date,
+    min: new Date(1990, 0, 1),
+    max: new Date(2020, 0, 1),
+    lazy: false
+  });
