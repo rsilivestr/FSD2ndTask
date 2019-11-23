@@ -22,9 +22,10 @@ if(routerNav) {
 //   }
 // }
 const dateMask = IMask(
-  document.querySelector('.date-mask'),
+  document.querySelector('.input-box__input--masked-date'),
   {
     mask: Date,
+    
     min: new Date(1990, 0, 1),
     max: new Date(2030, 0, 1),
     lazy: false

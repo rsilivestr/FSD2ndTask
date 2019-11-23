@@ -1,5 +1,5 @@
 include ../../components/common.blocks/input-box/input-box
-include ../../components/common.blocks/input-box/__input/--dropdown
+//- include ../../components/common.blocks/input-box/__input/--dropdown
 
 
 <!DOCTYPE html>
@@ -26,4 +26,5 @@ html(lang="ru")
           +dropOption('кроганы')
           +dropOption('кварианцы')
           
-      input(type="text", name="").date-mask
+      +inputBox('masked text', 'my-input-box-3')
+        +maskedDate('my-input-box-3')
