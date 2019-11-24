@@ -21,12 +21,38 @@ if(routerNav) {
 //     console.log(e.target);
 //   }
 // }
-const dateMask = IMask(
-  document.querySelector('.input-box__input--masked-date'),
-  {
-    mask: Date,
-    
-    min: new Date(1990, 0, 1),
-    max: new Date(2030, 0, 1),
-    lazy: false
-  });
+const UIdateMaskFields = document.querySelectorAll('.input-box__input--masked-date');
+UIdateMaskFields.forEach(dateMask => {
+  IMask(
+    dateMask,
+    {
+      mask: Date,
+      overwrite: true,
+      autofix: true,
+      blocks: {
+        d: {
+          mask: IMask.MaskedRange, 
+          placeholderChar: 'Д', 
+          from: 1, 
+          to: 31, 
+          maxLength: 2
+        },
+        m: {
+          mask: IMask.MaskedRange, 
+          placeholderChar: 'М', 
+          from: 1, 
+          to: 12, 
+          maxLength: 2
+        },
+        Y: {
+          mask: IMask.MaskedRange, 
+          placeholderChar: 'Г', 
+          from: 1900, 
+          to: 2999, 
+          maxLength: 4
+        }
+      },
+      lazy: false
+    }
+  );
+});

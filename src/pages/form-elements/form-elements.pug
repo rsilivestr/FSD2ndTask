@@ -1,6 +1,4 @@
 include ../../components/common.blocks/input-box/input-box
-//- include ../../components/common.blocks/input-box/__input/--dropdown
-
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -28,3 +26,11 @@ html(lang="ru")
           
       +inputBox('masked text', 'my-input-box-3')
         +maskedDate('my-input-box-3')
+
+      +inputBox('togure')
+        +inputToggle('получать спецпредложения', 'tog-id')
+
+      +inputBox('radioh')
+        +radioGroup
+          +radioItem('gender', 'men', 'Men', 'men-radio')
+          +radioItem('gender', 'women', 'Women', 'women-radio')

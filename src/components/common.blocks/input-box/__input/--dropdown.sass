@@ -50,17 +50,21 @@
     transform: rotate(-180deg)
     transition: all .1s
 
-$optionHeight: 30px
+$optionHeight: 28px
 
 .input-box__dropdown-option
   display: flex
   flex-flow: row nowrap
   // align-items: center
-  padding: 10px 15px
+  padding: 5px 15px
 
 .input-box__dropdown-option-name
   flex: auto
   line-height: $optionHeight
+  color: forward.$dark100
+  font-weight: 700
+  text-transform: uppercase
+  font-size: 1rem
 
 .input-box__dropdown-option-value
   width: 30px

@@ -1,0 +1,51 @@
+@use 'Styles/forward'
+
+$radioSize: 20px
+$radioInnerSize: $radioSize * .6
+$radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
+
+.input-box__toggle-group
+  display: flex
+
+.input-box__input--toggle,
+.input-box__toggle-slider
+  height: $radioSize
+  width: $radioSize * 2
+
+.input-box__input--toggle
+  cursor: pointer
+  margin-right: 10px
+  opacity: 0
+  z-index: 20
+
+  &:checked + .input-box__toggle-slider
+    border-color: forward.$purple
+
+  &:checked + .input-box__toggle-slider::after
+    left: $radioSize + $radioInnerOffset
+    background: linear-gradient(forward.$purple, forward.$blueGradient)
+    transition: left .1s
+
+.input-box__toggle-slider
+  display: block
+  border-radius: $radioSize / 2
+  position: absolute
+  z-index: 10
+  border: 1px solid forward.$dark25
+
+  &:after
+    content: ""
+    position: absolute
+    height: $radioInnerSize
+    width: $radioInnerSize
+    left: $radioInnerOffset
+    top: $radioInnerOffset
+    border-radius: 50%
+    background-color: forward.$dark25
+    transition: left .1s
+
+.input-box__toggle-label 
+  font-size: 1.4rem
+  line-height: $radioSize
+  color: forward.$dark50
+  font-family: 'Montserrat', sans-serif

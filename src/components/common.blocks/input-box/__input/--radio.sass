@@ -1,0 +1,56 @@
+@use 'Styles/forward'
+
+$radioSize: 20px
+$radioInnerSize: $radioSize * .6
+$radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
+
+.input-box__radio-group
+  display: flex
+
+.input-box__radio-item + .input-box__radio-item
+  margin-left: $radioSize
+  
+.input-box__radio-item
+  display: flex
+
+.input-box__radio-btn,
+.input-box__radio-mark
+  height: $radioSize
+  width: $radioSize
+
+.input-box__radio-btn
+  margin-right: $radioSize / 2
+  cursor: pointer
+  opacity: 0
+  z-index: 20
+
+  &:checked + .input-box__radio-mark
+    border-color: forward.$purple
+
+  &:checked + .input-box__radio-mark::after
+    display: block
+
+.input-box__radio-mark
+  display: block
+  border-radius: $radioSize
+  position: absolute
+  z-index: 10
+  border: 1px solid forward.$dark25
+
+  &:after
+    content: ""
+    position: absolute
+    height: $radioInnerSize
+    width: $radioInnerSize
+    left: $radioInnerOffset
+    top: $radioInnerOffset
+    border-radius: 50%
+    background: linear-gradient(forward.$purple, forward.$blueGradient)
+    display: none
+
+.input-box__radio-label
+  line-height: $radioSize
+  color: forward.$dark50
+  font-family: 'Montserrat', sans-serif
+  font-size: 1.4rem
+  cursor: pointer
