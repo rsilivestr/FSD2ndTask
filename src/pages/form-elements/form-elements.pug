@@ -34,3 +34,25 @@ html(lang="ru")
         +radioGroup
           +radioItem('gender', 'men', 'Men', 'men-radio')
           +radioItem('gender', 'women', 'Women', 'women-radio')
+
+      +inputBox
+        +checkboxGroup('Expandable checkbox list')
+          +checkbox('Завтрак')
+          +checkbox('Письменный стол')
+          +checkbox('Стул для кормления')
+          +checkbox('Кроватка')
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')
+
+      +inputBox
+        +checkboxGroup('Expandable checkbox list', true)
+          +checkbox('Завтрак')
+          +checkbox('Письменный стол', true)
+          +checkbox('Стул для кормления', true)
+          +checkbox('Кроватка', true)
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')

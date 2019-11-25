@@ -1,0 +1,11 @@
+mixin checkboxGroup(title, isExpanded=false)
+  fieldset(class = (isExpanded == true) ? 'input-box__checkbox-group--expanded' : '').input-box__checkbox-group
+    legend.input-box__checkbox-group-title= title
+    .input-box__checkbox-group-content
+      block
+
+mixin checkbox(label, isChecked=false)
+  label.input-box__checkbox-label-container
+    input(type='checkbox', checked = (isChecked == true) ? true : false).input-box__input--checkbox
+    span.input-box__stylish-checkbox
+    span.input-box__checkbox-label= label
