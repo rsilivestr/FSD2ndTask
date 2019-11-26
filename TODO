@@ -9,12 +9,13 @@ redo Colors & Fonts page
 redo Cards page
 
 Elements (pug mixins + sass)
+  - add mix .control-label (checkbox, toggle, radio)
   + input-box
     - form__input-box mixins for outer geometry
   + input-box__text-field
     - add input type choices (email, password) to pug template
-  - input-box__text-field--masked
-    - add library
+  + input-box__text-field--masked
+    + add library
   + input-box__dropdown
     - fix styles
       + focused state
@@ -24,5 +25,5 @@ Elements (pug mixins + sass)
         inside .input-box__dropdown-contents; precisely when mousedown
         and mouseup targets are different __dropdown-option
         CHANGED EVENT TO MOUSEDOWN
-      - placeholder -> value
+      + placeholder -> value
       ? save data in JSON to local storage

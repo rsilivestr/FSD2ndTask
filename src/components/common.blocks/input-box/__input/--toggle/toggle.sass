@@ -9,6 +9,18 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
   height: $radioSize
   width: $radioSize * 2
 
+.input-box__toggle-item
+  position: relative
+  display: flex
+
+  margin-top: $radioSize / 2
+  
+  font-family: 'Montserrat', sans-serif
+  font-size: 1.4rem
+  line-height: $radioSize
+  color: forward.$dark50
+  cursor: pointer
+
 .input-box__input--toggle
   margin-right: 10px
   opacity: 0
@@ -38,12 +50,3 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
     border-radius: 50%
     background-color: forward.$dark25
     transition: left .1s
-
-.input-box__toggle-label
-  position: relative
-  display: flex
-  font-size: 1.4rem
-  line-height: $radioSize
-  color: forward.$dark50
-  font-family: 'Montserrat', sans-serif
-  cursor: pointer
