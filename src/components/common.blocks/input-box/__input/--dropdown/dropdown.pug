@@ -1,8 +1,11 @@
-mixin inputDrop(placeholder)
+mixin inputDrop(placeholder, hasButtons=false)
   .input-box__dropdown-box
     input(type='text' readonly placeholder=placeholder data-placeholder=placeholder).input-box__input.input-box__input--dropdown
     .input-box__dropdown-contents
       block
+      if(hasButtons)  
+        input(type='button' value='очистить').input-box__dropdown-clear.text-btn
+        input(type='button' value='применить').input-box__dropdown-apply.text-btn
 
 mixin dropOption(name)
   .input-box__dropdown-option
