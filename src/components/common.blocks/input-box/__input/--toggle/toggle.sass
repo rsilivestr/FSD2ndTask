@@ -1,23 +1,19 @@
 @use 'Styles/forward'
 
-$radioSize: 20px
-$radioInnerSize: $radioSize * .6
-$radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
-
 .input-box__input--toggle,
 .input-box__toggle-slider
-  height: $radioSize
-  width: $radioSize * 2
+  height: forward.$controlSize
+  width: forward.$controlSize * 2
 
 .input-box__toggle-item
   position: relative
   display: flex
 
-  margin-top: $radioSize / 2
+  margin-top: forward.$controlSize / 2
   
   font-family: 'Montserrat', sans-serif
   font-size: 1.4rem
-  line-height: $radioSize
+  line-height: forward.$controlSize
   color: forward.$dark50
   cursor: pointer
 
@@ -30,23 +26,23 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
     border-color: forward.$purple
 
   &:checked + .input-box__toggle-slider::after
-    left: $radioSize + $radioInnerOffset
+    left: forward.$controlSize + forward.$controlInnerOffset
     background: linear-gradient(forward.$purple, forward.$blueGradient)
     transition: left .1s
 
 .input-box__toggle-slider
   position: absolute
   border: 1px solid forward.$dark25
-  border-radius: $radioSize / 2
+  border-radius: forward.$controlSize / 2
   z-index: 10
 
   &:after
     content: ""
     position: absolute
-    height: $radioInnerSize
-    width: $radioInnerSize
-    left: $radioInnerOffset
-    top: $radioInnerOffset
+    height: forward.$controlInnerSize
+    width: forward.$controlInnerSize
+    left: forward.$controlInnerOffset
+    top: forward.$controlInnerOffset
     border-radius: 50%
     background-color: forward.$dark25
     transition: left .1s

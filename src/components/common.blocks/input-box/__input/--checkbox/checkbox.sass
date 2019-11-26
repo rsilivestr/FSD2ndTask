@@ -1,7 +1,5 @@
 @use 'Styles/forward'
 
-$boxSize: 20px
-
 .input-box__checkbox-group
   border: none
   font-family: 'Montserrat', sans-serif
@@ -47,19 +45,19 @@ $boxSize: 20px
   position: relative
   display: flex
   margin-top: 10px
-  line-height: $boxSize
+  line-height: forward.$controlSize
   font-size: 1.4rem
   color: forward.$dark50
 
 .input-box__input--checkbox,
 .input-box__stylish-checkbox
-  width: $boxSize
-  min-width: $boxSize
-  height: $boxSize
+  width: forward.$controlSize
+  min-width: forward.$controlSize
+  height: forward.$controlSize
 
 .input-box__input--checkbox
   position: relative
-  margin-right: $boxSize / 2
+  margin-right: forward.$controlSize / 2
   opacity: 0
   z-index: 20
   cursor: pointer
