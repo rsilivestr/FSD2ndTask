@@ -1,5 +1,6 @@
-mixin inputToggle(label, id)
+mixin inputToggle(label)
   .input-box__toggle-group
-    input(type="checkbox", id=id).input-box__input--toggle
-    span.input-box__toggle-slider
-    label(for=id).input-box__toggle-label= label
+    label.input-box__toggle-label
+      input(type="checkbox").input-box__input--toggle
+      span.input-box__toggle-slider
+      = label

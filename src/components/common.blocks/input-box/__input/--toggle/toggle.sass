@@ -13,7 +13,6 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
   width: $radioSize * 2
 
 .input-box__input--toggle
-  cursor: pointer
   margin-right: 10px
   opacity: 0
   z-index: 20
@@ -27,11 +26,10 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
     transition: left .1s
 
 .input-box__toggle-slider
-  display: block
-  border-radius: $radioSize / 2
   position: absolute
-  z-index: 10
   border: 1px solid forward.$dark25
+  border-radius: $radioSize / 2
+  z-index: 10
 
   &:after
     content: ""
@@ -44,8 +42,11 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
     background-color: forward.$dark25
     transition: left .1s
 
-.input-box__toggle-label 
+.input-box__toggle-label
+  position: relative
+  display: flex
   font-size: 1.4rem
   line-height: $radioSize
   color: forward.$dark50
   font-family: 'Montserrat', sans-serif
+  cursor: pointer

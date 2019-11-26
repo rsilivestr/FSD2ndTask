@@ -2,6 +2,8 @@
 @use '__input/__input'
 
 .input-box
+  display: flex
+  flex-direction: column
   width: 100%
   font-family: forward.$mainFont
   color: forward.$dark100
@@ -11,6 +13,9 @@
 
 .input-box--size_m
   max-width: 266px
+
+.input-box--size_s
+  max-width: 240px
 
 .input-box__label
   text-transform: uppercase

@@ -7,52 +7,117 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
+
   body.page.page--layout_form-elements
+
     include ../../components/common.blocks/header/header
+
     main.main-content.main-content--page_form-elements.container.container--width_m
 
-      +inputBox('text field', 'my-input-box')
-        +textField('Email', 'my-input-box')
+      .form-elements__flex-row
 
-      +inputBox('text field', 'my-input-box-2')
-        +textField('This is pretty awesome', 'my-input-box-2')
+        .form-elements__flex-column
 
-      +inputBox('dropdown')
-        +inputDrop('Сколько народу')
-          +dropOption('люди')
-          +dropOption('азари')
-          +dropOption('кроганы')
-          +dropOption('кварианцы')
+          +inputBox('text field', 'my-input-box')
+            +textField('Email', 'my-input-box')
+
+          +inputBox('text field', 'my-input-box-2')
+            +textField('This is pretty awesome', 'my-input-box-2')
+
+          +inputBox('dropdown')
+            +inputDrop('Сколько народу')
+              +dropOption('люди')
+              +dropOption('азари')
+              +dropOption('кроганы')
+              +dropOption('кварианцы')
+              
+          +inputBox('masked text', 'my-input-box-3')
+            +maskedDate('my-input-box-3')
+
+          //- double date dropdown
+
+          //- filter date dropdown
+
+          //- subscription text field
+
+        .form-elements__flex-column
+
+          //- checkbox buttons
+          +inputBox('checkbox buttons', '', 's')
+            +checkbox('Можно курить')
+            +checkbox('Можно с питомцами', true)
+            +checkbox("Можно пригласить гостей (до 10 человек)", true)
+
+          //- radio buttons
+          +inputBox('radioh')
+            +radioGroup
+              +radioItem('gender', 'men', 'Men', 'men-radio')
+              +radioItem('gender', 'women', 'Women', 'women-radio')
+
+          //- toggle
+          +inputBox('togure')
+            +inputToggle('получать спецпредложения', 'tog-id')
+
+          //- like button
+
+          //- rate button
+
+        .form-elements__flex-column
+
+          //- range slider
+          //- buttons
+          //- pagination
+
+      .form-elements__flex-row
+        .form-elements__flex-column
+
+          //- dropdown
+
+          //- dropdown expanded
+
+          //- expandable checkbox list
+          +inputBox
+            +checkboxGroup('Expandable checkbox list')
+              +checkbox('Завтрак')
+              +checkbox('Письменный стол')
+              +checkbox('Стул для кормления')
+              +checkbox('Кроватка')
+              +checkbox('Телевизор')
+              +checkbox('Шампунь')
+              +checkbox('Телевизор')
+              +checkbox('Шампунь')
+
+          //- expanded expandable checkbox list
+          +inputBox
+            +checkboxGroup('Expandable checkbox list', true)
+              +checkbox('Завтрак')
+              +checkbox('Письменный стол', true)
+              +checkbox('Стул для кормления', true)
+              +checkbox('Кроватка', true)
+              +checkbox('Телевизор')
+              +checkbox('Шампунь')
+              +checkbox('Телевизор')
+              +checkbox('Шампунь')
+
+        .form-elements__flex-column
+          //- wide dropdown with button ПРИМЕНИТЬ
           
-      +inputBox('masked text', 'my-input-box-3')
-        +maskedDate('my-input-box-3')
+          //- rich checkbox buttons
+          
+        .form-elements__flex-column
+          //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
 
-      +inputBox('togure')
-        +inputToggle('получать спецпредложения', 'tog-id')
+          //- bullet list
 
-      +inputBox('radioh')
-        +radioGroup
-          +radioItem('gender', 'men', 'Men', 'men-radio')
-          +radioItem('gender', 'women', 'Women', 'women-radio')
 
-      +inputBox
-        +checkboxGroup('Expandable checkbox list')
-          +checkbox('Завтрак')
-          +checkbox('Письменный стол')
-          +checkbox('Стул для кормления')
-          +checkbox('Кроватка')
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
 
-      +inputBox
-        +checkboxGroup('Expandable checkbox list', true)
-          +checkbox('Завтрак')
-          +checkbox('Письменный стол', true)
-          +checkbox('Стул для кормления', true)
-          +checkbox('Кроватка', true)
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
+      .form-elements__flex-row
+
+        .form-elements__flex-column
+        //- комфорт
+
+        //- удобство
+
+        .form-elements__flex-column
+
+          //- comment (wide)
