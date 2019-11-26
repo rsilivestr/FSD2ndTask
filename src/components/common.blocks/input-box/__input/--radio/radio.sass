@@ -12,6 +12,11 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
   
 .input-box__radio-item
   display: flex
+  line-height: $radioSize
+  color: forward.$dark50
+  font-family: 'Montserrat', sans-serif
+  font-size: 1.4rem
+  cursor: pointer
 
 .input-box__radio-btn,
 .input-box__radio-mark
@@ -47,10 +52,3 @@ $radioInnerOffset: ($radioSize - $radioInnerSize - 2px) / 2
     border-radius: 50%
     background: linear-gradient(forward.$purple, forward.$blueGradient)
     display: none
-
-.input-box__radio-label
-  line-height: $radioSize
-  color: forward.$dark50
-  font-family: 'Montserrat', sans-serif
-  font-size: 1.4rem
-  cursor: pointer
