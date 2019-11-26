@@ -1,9 +1,10 @@
-mixin radioGroup
+mixin radioGroup(name)
+  - var name = name
   .input-box__radio-group
     block
 
-mixin radioItem(name, value, label, id)
+mixin radioItem(value, label, isChecked=false)
   label.input-box__radio-item
-    input(type="radio" name=name value=value id=id).input-box__radio-btn
+    input(type="radio" name=`${name}` value=value checked = (isChecked == true) ? true : false).input-box__radio-btn
     span.input-box__radio-mark
     = label

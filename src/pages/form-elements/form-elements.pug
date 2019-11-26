@@ -50,9 +50,9 @@ html(lang="ru")
 
           //- radio buttons
           +inputBox('radioh')
-            +radioGroup
-              +radioItem('gender', 'men', 'Men', 'men-radio')
-              +radioItem('gender', 'women', 'Women', 'women-radio')
+            +radioGroup('gender')
+              +radioItem('men', 'Men', true)
+              +radioItem('women', 'Women')
 
           //- toggle
           +inputBox('togure')
