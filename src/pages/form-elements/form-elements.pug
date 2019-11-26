@@ -18,11 +18,11 @@ html(lang="ru")
 
         .form-elements__flex-column
 
-          +inputBox('text field', 'my-input-box')
-            +textField('Email', 'my-input-box')
+          +inputBox('text field')
+            +textField('Email')
 
-          +inputBox('text field', 'my-input-box-2')
-            +textField('This is pretty awesome', 'my-input-box-2')
+          +inputBox('text field')
+            +textField('This is pretty awesome')
 
           +inputBox('dropdown')
             +inputDrop('Сколько народу')
@@ -31,8 +31,8 @@ html(lang="ru")
               +dropOption('кроганы')
               +dropOption('кварианцы')
               
-          +inputBox('masked text', 'my-input-box-3')
-            +maskedDate('my-input-box-3')
+          +inputBox('masked text')
+            +maskedDate
 
           //- double date dropdown
 
@@ -43,7 +43,7 @@ html(lang="ru")
         .form-elements__flex-column
 
           //- checkbox buttons
-          +inputBox('checkbox buttons', '', 's')
+          +inputBox('checkbox buttons', 's')
             +checkbox('Можно курить')
             +checkbox('Можно с питомцами', true)
             +checkbox("Можно пригласить гостей (до 10 человек)", true)
@@ -61,7 +61,7 @@ html(lang="ru")
 
           //- like button
           +inputBox('like', 'm', 'row')
-            +likeBtn(3)
+            +likeBtn(2)
             +likeBtn(12, true)
 
           //- rate button
