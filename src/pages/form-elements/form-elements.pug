@@ -57,9 +57,12 @@ html(lang="ru")
           //- toggle
           +inputBox('togure')
             +inputToggle('получать спецпредложения')
-            +inputToggle('получать спецпредложения')
+            +inputToggle('получать спецпредложения', true)
 
           //- like button
+          +inputBox('like', 'm', 'row')
+            +likeBtn(3)
+            +likeBtn(12, true)
 
           //- rate button
 

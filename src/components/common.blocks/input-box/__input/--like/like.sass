@@ -1,0 +1,50 @@
+@use 'Styles/forward'
+
+.input-box__input--like
+  position: relative
+  display: flex
+  flex-direction: row
+
+.input-box__input--like + .input-box__input--like
+  margin-left: forward.$controlSize / 2
+
+.input-box__like-checkbox,
+.input-box__like-stylish
+  width: forward.$controlSize * 2
+  height: forward.$controlSize
+
+.input-box__like-checkbox
+  position: relative
+  opacity: 0
+  z-index: 20
+  cursor: pointer
+
+  &:checked + .input-box__like-stylish
+    color: forward.$purple
+    border-color: forward.$purple
+
+    &:before
+      content: '\e87d'
+      color: forward.$purple
+
+.input-box__like-stylish
+  position: absolute
+  display: flex
+  border: 1px solid forward.$dark25
+  border-radius: forward.$controlSize / 2
+  z-index: 10
+
+  &:before
+    @extend .material-icons
+    content: '\e87e'
+    color: forward.$dark50
+    font-size: 1rem
+    line-height: forward.$controlSize
+    text-align: center
+    flex: 1
+
+.input-box__like-counter
+  flex: 1
+  color: forward.$dark50
+  line-height: forward.$controlSize
+  font-size: 1rem
