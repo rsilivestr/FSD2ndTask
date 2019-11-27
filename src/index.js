@@ -1,8 +1,6 @@
 import IMask from 'imask';
 
-import 'CommonBlocks/input-box/__input/--dropdown/dropdown.js';
-import 'CommonBlocks/input-box/__input/--checkbox/checkbox.js';
-import 'CommonBlocks/input-box/__input/--like/like.js';
+import 'CommonBlocks/input-box/__input/__input.js';
 
 const routerNav = document.querySelector('.router__nav'),
       routerIframe = document.querySelector('.router__current-page');

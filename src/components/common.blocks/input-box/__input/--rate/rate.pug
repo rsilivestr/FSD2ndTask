@@ -1,0 +1,7 @@
+mixin starRating(score)
+  .input-box__rate-box
+    each val in [5, 4, 3, 2, 1]
+      if (val==score)
+        .rate-box__star.rate-box__star--active
+      else
+        .rate-box__star
