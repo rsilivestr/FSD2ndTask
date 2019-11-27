@@ -39,6 +39,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "imask": "^5.2.1"
+    "imask": "^5.2.1",
+    "nouislider": "^14.0.3"
   }
 }

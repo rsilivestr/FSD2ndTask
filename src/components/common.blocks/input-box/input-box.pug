@@ -6,6 +6,7 @@ include __input/--radio/radio
 include __input/--checkbox/checkbox
 include __input/--like/like
 include __input/--rate/rate
+include __input/--range/range
 
 mixin inputBox(label, size='l', layout='column')
   .input-box.mb20(class='input-box--size_' + size, class=(layout == 'row') ? 'input-box--layout_row' : '')
