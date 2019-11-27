@@ -1,2 +1,4 @@
-mixin textField(placeholder, inputId)
-  input(type="text" placeholder=placeholder id=inputId).input-box__input.input-box__input--text-field
+mixin textField(placeholder, type='text', icon)
+  input(type=`${type}` placeholder=placeholder class=`input-box__input--${type}`).input-box__input
+  if(icon=="subscribe")
+    .input-box__icon-subscribe

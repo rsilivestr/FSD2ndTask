@@ -3,8 +3,7 @@ bemify structure
 learn Markdown
   ? add component readmes
 
-build Form Elements page
-  - add 'static' styles
+make Form Elements page
 redo Colors & Fonts page
 redo Cards page
 
@@ -13,12 +12,14 @@ Elements (pug mixins + sass)
   + input-box
     - form__input-box mixins for outer geometry
   + input-box__text-field
-    - add input type choices (email, password) to pug template
+    + add input type choices (email, password) to pug template
   + input-box__text-field--masked
     + add library
   + input-box__dropdown
     - fix styles
       + focused state
+      - buttons
+      - types
       - perfect pixel
     - fix js
       + dropdown closes if click-hold mouse button and move around

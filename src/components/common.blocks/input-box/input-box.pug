@@ -9,5 +9,5 @@ include __input/--like/like
 mixin inputBox(label, size='l', layout='column')
   .input-box.mb20(class='input-box--size_' + size, class=(layout == 'row') ? 'input-box--layout_row' : '')
     if label
-      label.input-box__label= label
+      h3.input-box__title= label
     block

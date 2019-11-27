@@ -1,3 +1,20 @@
 @use 'Styles/forward'
 
+// .input-box__input--text
 
+// .input-box__input--email
+
+// .input-box__input--password
+
+.input-box__icon-subscribe
+  position: absolute
+  right: 0
+  bottom: 0
+  height: 44px
+  width: 44px
+  @extend .centered-flex
+  
+  &:after
+    @extend .material-icons
+    content: '\e5c8'
+    color: forward.$purple
