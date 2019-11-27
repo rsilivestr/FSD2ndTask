@@ -1,6 +1,6 @@
 mixin inputDrop(placeholder, hasButtons=false)
   .input-box__dropdown-box
-    input(type='text' readonly placeholder=placeholder data-placeholder=placeholder).input-box__input.input-box__input--dropdown
+    input(type='text' readonly placeholder=placeholder).input-box__input.input-box__input--dropdown
     .input-box__dropdown-contents
       block
       if(hasButtons)  
@@ -13,3 +13,11 @@ mixin dropOption(name)
     a.input-box__dropdown-option-subtract.drop-control -
     span.input-box__dropdown-option-value 0
     a.input-box__dropdown-option-add.drop-control +
+
+mixin dateDrop
+  .input-box__dropdown-box
+    input(type='text' readonly placeholder='ДД.ММ.ГГГГ').input-box__input.input-box__input--dropdown.input-box__input--date-dropdown
+
+mixin filterDateDrop
+  .input-box__dropdown-box    
+    input(type='text' readonly placeholder='19 авг - 23 авг').input-box__input.input-box__input--dropdown.input-box__input--filter-date-dropdown

@@ -35,12 +35,20 @@ html(lang="ru")
             +maskedDate
 
           //- double date dropdown
+          .form__flex-row
+            +inputBox('Date dropdown', 'xs')
+              +dateDrop
+
+            +inputBox('Date dropdown', 'xs')
+              +dateDrop
 
           //- filter date dropdown
+          +inputBox('filter date dropdown', 'm')
+            +filterDateDrop
 
           //- subscription text field
           +inputBox('subscribe', 'm')
-            +textField('Подписаться', 'email', 'subscribe')
+            +textField('Подписаться', 'Email', 'subscribe')
 
 
         .form-elements__flex-column
@@ -54,13 +62,13 @@ html(lang="ru")
           //- radio buttons
           +inputBox('radioh')
             +radioGroup('gender')
-              +radioItem('men', 'Men', true)
-              +radioItem('women', 'Women')
+              +radioItem('man', 'Мужчина', true)
+              +radioItem('woman', 'Женщина')
 
           //- toggle
           +inputBox('togure')
-            +inputToggle('получать спецпредложения')
-            +inputToggle('получать спецпредложения', true)
+            +inputToggle('Получать спецпредложения')
+            +inputToggle('Получать спецпредложения', true)
 
           //- like button
           +inputBox('like', 'm', 'row')
@@ -69,10 +77,13 @@ html(lang="ru")
 
           //- rate button
 
+
         .form-elements__flex-column
 
           //- range slider
+          
           //- buttons
+
           //- pagination
 
       .form-elements__flex-row
