@@ -1,0 +1,75 @@
+@use 'Styles/forward'
+
+.button
+  position: relative
+  width: 100%
+  font-family: 'Montserrat' sans-serif
+  text-transform: uppercase
+  font-size: 1.2rem
+  font-weight: 700
+  border: none
+  cursor: pointer
+  
+  &:disabled
+    cursor: not-allowed
+
+.button--style_gradient,
+.button--style_arrowed
+  background: forward.$mainGradient
+  color: #fff
+  height: 44px
+  border-radius: 22px
+  
+  &:disabled
+    background: forward.$lightGradient
+
+.button--style_arrowed::after
+  @extend .centered-flex
+  position: absolute
+  height: 44px
+  width: 44px
+  top: 0
+  right: 0
+  @extend .material-icons
+  content: '\e5c8'
+  color: #fff
+
+.button--style_bordered
+  position: relative
+  background: #fff
+  background-clip: padding-box
+  height: 44px
+  border: 2px solid transparent
+  border-radius: 22px
+  color: forward.$purple
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: -1
+    margin: -2px
+    border-radius: inherit
+    background: forward.$mainGradient
+
+  &:disabled::before
+    background: forward.$lightGradient
+
+.button--style_text
+  background: transparent
+  color: forward.$purple
+
+  &:disabled
+    color: forward.$dark50
+
+.button--size_s
+  max-width: 99px
+
+.button--size_m
+  max-width: 266px
+
+.button--size_l
+  max-width: 320px

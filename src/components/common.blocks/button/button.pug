@@ -1,0 +1,2 @@
+mixin button(title='click me', style='gradient', size='s', isDisabled)
+  button(class=`button button--style_${style} button--size_${size}` disabled=isDisabled?true:false)= title
