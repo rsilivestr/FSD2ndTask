@@ -44,11 +44,13 @@
 .input-box__checkbox-item
   position: relative
   display: flex
-  margin-top: 10px
   line-height: forward.$controlSize
   font-size: 1.4rem
   color: forward.$dark50
   cursor: pointer
+
+  &:not(:first-of-type)
+    margin-top: 10px
 
 .input-box__input--checkbox,
 .input-box__stylish-checkbox

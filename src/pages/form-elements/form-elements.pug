@@ -1,5 +1,6 @@
 include ../../components/common.blocks/input-box/input-box
 include ../../components/common.blocks/button/button
+include ../../components/common.blocks/pagination/pagination
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -103,6 +104,8 @@ html(lang="ru")
             +button('перейти к оплате','arrowed','l',false)
 
           //- pagination
+          +inputBox('pagination')
+            +pagination
 
       .form-elements__flex-row
         .form-elements__flex-column
