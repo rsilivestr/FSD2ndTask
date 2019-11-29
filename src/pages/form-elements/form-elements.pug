@@ -9,17 +9,12 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Form Elements
-
   body.page.page--layout_form-elements
-
     include ../../components/common.blocks/header/header
-
     main.main-content.main-content--page_form-elements.container.container--width_m
 
-      .form-elements__flex-row
-
-        .form-elements__flex-column
-
+      .form-elements__grid
+        .form-elements__grid-item
           +inputBox('text field')
             +textField('Email')
 
@@ -37,7 +32,6 @@ html(lang="ru")
             +maskedDate
 
           //- double date dropdown
-          .form__flex-row
             +inputBox('Date dropdown', 'xs')
               +dateDrop
 
@@ -53,8 +47,7 @@ html(lang="ru")
             +textField('Email', 'email', 'subscribe')
 
 
-        .form-elements__flex-column
-
+        .form-elements__grid-item
           //- checkbox buttons
           +inputBox('checkbox buttons', 's')
             +checkbox('Можно курить')
@@ -83,8 +76,7 @@ html(lang="ru")
               +starRating(4)
               +starRating(5)
 
-        .form-elements__flex-column
-
+        .form-elements__grid-item
           //- range slider
           +inputBox('range slider', 'm')
             +rangeSlider
@@ -107,9 +99,7 @@ html(lang="ru")
           +inputBox('pagination')
             +pagination
 
-      .form-elements__flex-row
-        .form-elements__flex-column
-
+        .form-elements__grid-item
           //- dropdown
 
           //- dropdown expanded
@@ -138,25 +128,25 @@ html(lang="ru")
               +checkbox('Телевизор')
               +checkbox('Шампунь')
 
-        .form-elements__flex-column
+        .form-elements__grid-item
           //- wide dropdown with button ПРИМЕНИТЬ
           
           //- rich checkbox buttons
           
-        .form-elements__flex-column
+        .form-elements__grid-item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
 
           //- bullet list
 
 
 
-      .form-elements__flex-row
+      
 
-        .form-elements__flex-column
+        .form-elements__grid-item
         //- комфорт
 
         //- удобство
 
-        .form-elements__flex-column
+        .form-elements__grid-item.form-elements__grid-item--wide
 
           //- comment (wide)
