@@ -8,8 +8,11 @@ include __input/--like/like
 include __input/--rate/rate
 include __input/--range/range
 
-mixin inputBox(label, size='l', layout='column')
-  .input-box.mb20(class='input-box--size_' + size, class=(layout == 'row') ? 'input-box--layout_row' : '')
+mixin inputBox(label, size='l', layout='column', extraClass)
+  .input-box(
+    class='input-box--size_' + size,
+    class=extraClass,
+    class=(layout == 'row') ? 'input-box--layout_row' : '')
     if label
       h3.input-box__title= label
     block

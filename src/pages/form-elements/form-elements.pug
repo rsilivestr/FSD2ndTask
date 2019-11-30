@@ -18,81 +18,103 @@ html(lang="ru")
           +inputBox('text field')
             +textField('Email')
 
+          .mb22
+
           +inputBox('text field')
-            +textField('This is pretty awesome')
+            +textField('This is pretty awesome', 'text', false, 'uikit_always-focused')
+
+          .mb21
 
           +inputBox('dropdown')
-            +inputDrop('Сколько народу', true)
+            +inputDrop('Сколько гостей', true)
               +dropOption('люди')
               +dropOption('азари')
               +dropOption('кроганы')
               +dropOption('кварианцы')
+ 
+          .mb23
               
-          +inputBox('masked text')
+          +inputBox('masked text field')
             +maskedDate
 
+          .mb39
+
           //- double date dropdown
+          .form__flex-row
             +inputBox('Date dropdown', 'xs')
               +dateDrop
 
             +inputBox('Date dropdown', 'xs')
               +dateDrop
+          .mb38
 
           //- filter date dropdown
           +inputBox('filter date dropdown', 'm')
             +filterDateDrop
+          .mb39
 
           //- subscription text field
-          +inputBox('subscribe', 'm')
+          +inputBox('subscribtion text field', 'm')
             +textField('Email', 'email', 'subscribe')
 
 
         .form-elements__grid-item
           //- checkbox buttons
           +inputBox('checkbox buttons', 's')
+            .mb15
             +checkbox('Можно курить')
             +checkbox('Можно с питомцами', true)
             +checkbox("Можно пригласить гостей (до 10 человек)", true)
+          .mb36
 
           //- radio buttons
-          +inputBox('radioh')
+          +inputBox('radio buttons')
+            .mb14
             +radioGroup('gender')
               +radioItem('man', 'Мужчина', true)
               +radioItem('woman', 'Женщина')
+          .mb39
 
           //- toggle
-          +inputBox('togure')
-            +inputToggle('Получать спецпредложения')
+          +inputBox('toggle')
+            .mb14
             +inputToggle('Получать спецпредложения', true)
+            .mb14
+            +inputToggle('Получать спецпредложения')
+          .mb42
 
           //- like button
-          +inputBox('like', 'm', 'row')
+          +inputBox('like button', 'm')
+            .mb14
             +likeBtn(2)
             +likeBtn(12, true)
+          .mb36
 
           //- rate button
           +inputBox('rate button')
-            .form__flex-row
-              +starRating(4)
-              +starRating(5)
+            .mb14
+            +starRating(4)
+            +starRating(5)
 
         .form-elements__grid-item
           //- range slider
           +inputBox('range slider', 'm')
+            .mb22
             +rangeSlider
+          .mb42
 
           //- buttons
           +inputBox('buttons')
-            .form__flex-row.mb20
-              +button('click me','gradient','s',false)
-              +button('click me','gradient','s',true)
-            .form__flex-row.mb20
-              +button('click me','bordered','s',false)
-              +button('click me','bordered','s',true)
-            .form__flex-row.mb20
-              +button('click me','text','s',false)
-              +button('click me','text','s',true)
-
+            .mb13
+            +button('click me','gradient','s',false)
+            +button('click me','gradient','s',true)
+            .mb15
+            +button('click me','bordered','s',false)
+            +button('click me','bordered','s',true)
+            .mb15
+            +button('click me','text','s',false)
+            +button('click me','text','s',true)
+            .mb15
             +button('перейти к оплате','arrowed','l',false)
 
           //- pagination

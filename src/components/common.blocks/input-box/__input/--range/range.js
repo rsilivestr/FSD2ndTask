@@ -16,7 +16,7 @@ if(UIrange) {
   });
   
   UIrange.noUiSlider.on('update', () => {
-    const rangeValues = UIrange.noUiSlider.get().map(x => parseInt(x));
+    const rangeValues = UIrange.noUiSlider.get().map(x => x.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ').replace('.00', ''));
     UIrangeLabel.innerText = `${rangeValues[0]}₽ - ${rangeValues[1]}₽`;
   });
 }

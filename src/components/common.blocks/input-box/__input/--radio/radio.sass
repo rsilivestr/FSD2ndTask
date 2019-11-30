@@ -28,6 +28,9 @@
   &:checked + .input-box__radio-mark
     border-color: forward.$purple
 
+  &:checked ~ .input-box__radio-label
+    color: forward.$dark75
+
   &:checked + .input-box__radio-mark::after
     display: block
 

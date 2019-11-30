@@ -1,14 +1,12 @@
 @use 'Styles/forward'
 
-// star e838
-// star_border e83a
-// star_half e839
-// stars e8d0
-
 .input-box__rate-box
-  display: flex
+  display: inline-flex
   flex-flow: row-reverse nowrap
   justify-content: flex-end
+
+.input-box__rate-box + .input-box__rate-box
+  margin-left: 20px
 
 .rate-box__star
   cursor: pointer
@@ -16,7 +14,9 @@
   &:after
     @extend .material-icons
     content: '\e83a'
-    color: forward.$purple
+    color: transparent
+    background: forward.$mainGradient
+    background-clip: text
 
   &:hover::after,
   &:hover ~ .rate-box__star::after

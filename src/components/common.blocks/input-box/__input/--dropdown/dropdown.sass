@@ -22,6 +22,11 @@
 .input-box__input--dropdown
   cursor: pointer
   background: transparent
+  color: forward.$dark75
+  border-color: forward.$dark25
+  
+  &::placeholder
+    color: forward.$dark75
 
 .input-box__dropdown-contents
   display: none
@@ -39,9 +44,6 @@
   .input-box__input--dropdown
     border-color: forward.$dark50
     border-radius: 4px 4px 0 0
-
-    &::placeholder
-      color: forward.$dark75
 
   .input-box__dropdown-contents
     display: block

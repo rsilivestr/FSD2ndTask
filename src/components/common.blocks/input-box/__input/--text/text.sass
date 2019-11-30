@@ -1,6 +1,11 @@
 @use 'Styles/forward'
 
-// .input-box__input--text
+.input-box__input--text,
+.input-box__input--email
+  border-color: forward.$dark25
+
+  &::placeholder
+    color: forward.$dark25
 
 // .input-box__input--email
 
@@ -17,4 +22,12 @@
   &:after
     @extend .material-icons
     content: '\e5c8'
-    color: forward.$purple
+    color: transparent
+    background: forward.$mainGradient
+    background-clip: text
+
+.input-box__input--uikit_always-focused
+  border-color: forward.$dark50
+
+  &::placeholder
+    color: forward.$dark75

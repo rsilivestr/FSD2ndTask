@@ -1,4 +1,8 @@
-mixin textField(placeholder, type='text', icon)
-  input(type=`${type}` placeholder=placeholder class=`input-box__input--${type}`).input-box__input
+mixin textField(placeholder, type='text', icon, uikit)
+  input(
+    type=type
+    placeholder=placeholder 
+    class=`input-box__input input-box__input--${type} input-box__input--${uikit}`
+  )
   if(icon=="subscribe")
     .input-box__icon-subscribe
