@@ -2,10 +2,7 @@
 @use '__input/__input'
 
 .input-box
-  // display: flex
-  // flex-direction: column
   position: relative
-  width: 100%
   font-family: forward.$mainFont
   color: forward.$dark100
 
@@ -31,8 +28,10 @@
 .input-box--size_xs
   max-width: 150px
 
+.input-box--size_auto
+  max-width: auto
+
 .input-box__title
-  width: 100%
   margin-bottom: 4px
   font-size: 1.2rem
   line-height: 1.5rem

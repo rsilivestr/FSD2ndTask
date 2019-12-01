@@ -99,26 +99,28 @@ html(lang="ru")
         .form-elements__grid-item
           //- range slider
           +inputBox('range slider', 'm')
-            .mb22
+            .mb23
             +rangeSlider
-          .mb42
+          .mb44
 
           //- buttons
           +inputBox('buttons')
-            .mb13
+            .mb15
             +button('click me','gradient','s',false)
             +button('click me','gradient','s',true)
-            .mb15
+            .mb30
             +button('click me','bordered','s',false)
             +button('click me','bordered','s',true)
-            .mb15
-            +button('click me','text','s',false)
-            +button('click me','text','s',true)
-            .mb15
+            .mb30
+            +button('click me','text','auto',false)
+            +button('click me','text','auto',true)
+            .mb28
             +button('перейти к оплате','arrowed','l',false)
 
+          .mb40
           //- pagination
-          +inputBox('pagination')
+          +inputBox('pagination', 's')
+            .mb17
             +pagination
 
         .form-elements__grid-item
