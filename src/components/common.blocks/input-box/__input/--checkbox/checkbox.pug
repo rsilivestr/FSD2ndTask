@@ -8,4 +8,4 @@ mixin checkbox(label, isChecked=false)
   label.input-box__checkbox-item
     input(type='checkbox', checked = (isChecked == true) ? true : false).input-box__input--checkbox
     span.input-box__stylish-checkbox
-    = label
+    span.input-box__checkbox-label= label

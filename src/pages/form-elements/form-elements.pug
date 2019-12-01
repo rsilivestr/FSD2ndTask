@@ -61,34 +61,34 @@ html(lang="ru")
         .form-elements__grid-item
           //- checkbox buttons
           +inputBox('checkbox buttons', 's')
-            .mb15
+            .mb16
             +checkbox('Можно курить')
             +checkbox('Можно с питомцами', true)
             +checkbox("Можно пригласить гостей (до 10 человек)", true)
-          .mb36
+          .mb41
 
           //- radio buttons
           +inputBox('radio buttons')
-            .mb14
+            .mb16
             +radioGroup('gender')
               +radioItem('man', 'Мужчина', true)
               +radioItem('woman', 'Женщина')
-          .mb39
+          .mb41
 
           //- toggle
           +inputBox('toggle')
-            .mb14
+            .mb16
             +inputToggle('Получать спецпредложения', true)
             .mb14
             +inputToggle('Получать спецпредложения')
-          .mb42
+          .mb44
 
           //- like button
           +inputBox('like button', 'm')
-            .mb14
+            .mb16
             +likeBtn(2)
             +likeBtn(12, true)
-          .mb36
+          .mb40
 
           //- rate button
           +inputBox('rate button')

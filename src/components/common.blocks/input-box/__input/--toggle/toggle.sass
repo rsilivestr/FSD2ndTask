@@ -9,9 +9,6 @@
   position: relative
   display: flex
   font-family: 'Montserrat', sans-serif
-  font-size: 1.4rem
-  line-height: forward.$controlSize
-  color: forward.$dark75
   cursor: pointer
 
 .input-box__input--toggle
@@ -27,6 +24,9 @@
     left: forward.$controlSize + forward.$controlInnerOffset
     background: forward.$mainGradient
     transition: left .1s
+
+  &:checked ~ .input-box__toggle-label
+    color: forward.$dark75
 
 .input-box__toggle-slider
   position: absolute
@@ -44,3 +44,8 @@
     border-radius: 50%
     background-color: forward.$dark25
     transition: left .1s
+
+.input-box__toggle-label
+  font-size: 1.4rem
+  line-height: 1.8rem
+  color: forward.$dark50

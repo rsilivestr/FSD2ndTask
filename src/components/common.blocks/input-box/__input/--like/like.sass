@@ -30,21 +30,21 @@
 .input-box__like-stylish
   position: absolute
   display: flex
+  font-size: 1rem
+  color: forward.$dark25
   border: 1px solid forward.$dark25
   border-radius: forward.$controlSize / 2
   z-index: 10
 
+
   &:before
     @extend .material-icons
+    padding: 0 5px 0 4px
     content: '\e87e'
-    color: forward.$dark50
+    line-height: 1.8rem
     font-size: 1rem
-    line-height: forward.$controlSize
-    text-align: center
-    flex: 1
 
 .input-box__like-counter
-  flex: 1
-  color: forward.$dark50
-  line-height: forward.$controlSize
-  font-size: 1rem
+  min-width: 10px
+  text-align: center
+  line-height: 1.6rem
