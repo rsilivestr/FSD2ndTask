@@ -5,6 +5,21 @@
   flex-flow: row-reverse nowrap
   justify-content: flex-end
 
+  &:hover
+    .rate-box__star
+      &:after
+        content: '\e83a'
+        background: forward.$lightGradient
+        background-clip: text
+
+      &:hover::after
+        content: '\e838'
+    
+    .rate-box__star--active::after,
+    .rate-box__star--active ~ .rate-box__star::after
+      background: forward.$mainGradient
+      background-clip: text
+
 .input-box__rate-box + .input-box__rate-box
   margin-left: 20px
 
@@ -18,7 +33,6 @@
     background: forward.$mainGradient
     background-clip: text
 
-  &:hover::after,
   &:hover ~ .rate-box__star::after
       content: '\e838'
 

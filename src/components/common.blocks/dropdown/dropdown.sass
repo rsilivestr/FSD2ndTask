@@ -21,7 +21,8 @@
 
 .dropdown--is-open,
 .dropdown--force-open
-  // 'stay focused' style
+  box-shadow: 0 10px 20px forward.$dark05
+
   .dropdown__display
     border-color: forward.$dark50
     border-radius: 4px 4px 0 0
@@ -42,6 +43,7 @@
 .dropdown__contents
   display: none
   width: 100%
+  // height: 0px
   font-size: 1.4rem
   font-weight: 400
   color: forward.$dark50
@@ -49,19 +51,20 @@
   border-top: none
   border-radius: 0 0 4px 4px
   cursor: default
+  overflow: hidden
+  // transition: height 1s
 
-.dropdown__contents--visible
-  display: block
-
+.dropdown__contents--visible,
 .dropdown__contents--force-visible
   display: block
+  // height: 100%
+  // transition: all 1s
 
 $optionHeight: 28px
 
 .dropdown__option
   display: flex
   flex-flow: row nowrap
-  // align-items: center
   padding: 5px 15px
 
 .dropdown__option-name
@@ -78,12 +81,16 @@ $optionHeight: 28px
   line-height: $optionHeight
 
 .dropdown__option-control
-  @extend .centered-flex
   height: $optionHeight
   width: $optionHeight
+  background: #fff
   border: 1px solid forward.$dark25
   border-radius: 50%
   cursor: pointer
+
+.dropdown__option-control--disabled
+  opacity: .5
+  cursor: not-allowed
 
 .dropdown__btn-apply,
 .dropdown__btn-clear

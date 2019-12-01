@@ -35,10 +35,10 @@ function toggleDropdown(e) {
       // functions to handle Maths
       
       // count details (bedrooms, beds)
-      // countDetails
+      // setDetails(e.target)
       
       // count guests (with apply, clear buttons)
-      // countGuests
+      // setGuests
       
 
 

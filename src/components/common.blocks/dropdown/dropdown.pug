@@ -7,9 +7,9 @@ mixin inputDrop(placeholder, forceOpen)
 mixin dropOption(name, min=0, max)
   .dropdown__option
     span.dropdown__option-name= name
-    a.dropdown__option-control.dropdown__option-control--subtract -
+    button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
     span.dropdown__option-value= min
-    a.dropdown__option-control.dropdown__option-control--add +
+    button.dropdown__option-control.dropdown__option-control--add +
 
 mixin dateDrop
   .input-box__dropdown-box
