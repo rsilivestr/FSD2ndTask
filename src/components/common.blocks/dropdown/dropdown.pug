@@ -5,9 +5,16 @@ mixin inputDrop(type, placeholder, forceOpen)
     input(type='text' readonly placeholder=placeholder).dropdown__display.input-box__input
     .dropdown__contents(class=forceOpen ?'dropdown__contents--force-visible' : '')
       block
+      if(type=='single')
+        +dropButtons
 
-mixin dropOption(name, min=0, max)
-  .dropdown__option
+mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max)
+  .dropdown__option(
+    data-min= min,
+    data-max= max,
+    data-single = nameSingle,
+    data-few = nameFew,
+    data-many = nameMany)
     span.dropdown__option-name= name
     button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
     span.dropdown__option-value= min
@@ -22,5 +29,5 @@ mixin filterDateDrop
     input(type='text' readonly placeholder='19 авг - 23 авг').input-box__input.input-box__input--dropdown.input-box__input--filter-date-dropdown
 
 mixin dropButtons
-  input(type='button' value='очистить').input-box__dropdown-clear.button.button--style_text
-  input(type='button' value='применить').input-box__dropdown-apply.button.button--style_text
+  input(type='button' value='очистить').dropdown__btn--clear.button.button--style_text
+  input(type='button' value='применить').dropdown__btn--apply.button.button--style_text

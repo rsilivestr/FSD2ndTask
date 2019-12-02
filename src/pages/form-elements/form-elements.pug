@@ -127,17 +127,17 @@ html(lang="ru")
         .form-elements__grid-item
           //- dropdown
           +inputBox('dropdown', 'm')
-            +inputDrop('details')
-              +dropOption('спальни')
-              +dropOption('кровати')
+            +inputDrop('discrete')
+              +dropOption('спальни', 1)
+              +dropOption('кровати', 1)
               +dropOption('ванные комнаты')
           .mb21
           //- dropdown expanded
           +inputBox('dropdown', 'm')
-            +inputDrop('distinct', '', true)
-              +dropOption('спальни')
-              +dropOption('кровати')
-              +dropOption('ванные комнаты')
+            +inputDrop('discrete', '', true)
+              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 33)
+              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6)
+              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 9)
           .mb40
           //- expandable checkbox list
           +inputBox
