@@ -43,7 +43,6 @@
 .dropdown__contents
   display: none
   width: 100%
-  // height: 0px
   font-size: 1.4rem
   font-weight: 400
   color: forward.$dark50
@@ -52,6 +51,7 @@
   border-radius: 0 0 4px 4px
   cursor: default
   overflow: hidden
+  // height: 0px
   // transition: height 1s
 
 .dropdown__contents--visible,
@@ -60,30 +60,37 @@
   // height: 100%
   // transition: all 1s
 
-$optionHeight: 28px
+$optionHeight: 30px
 
 .dropdown__option
   display: flex
   flex-flow: row nowrap
-  padding: 5px 15px
+  padding: 0 6px 7px 14px
+  font-size: 1.18rem
+  line-height: 28px
+  font-weight: 700
+  color: forward.$dark100
+
+  &:first-child
+    padding-top: 6px
 
 .dropdown__option-name
   flex: auto
-  line-height: $optionHeight
-  color: forward.$dark100
-  font-weight: 700
   text-transform: uppercase
-  font-size: 1rem
+  vertical-align: 0px
 
 .dropdown__option-value
-  width: 30px
+  width: 32px
   text-align: center
-  line-height: $optionHeight
+  line-height: 28px
 
 .dropdown__option-control
   height: $optionHeight
   width: $optionHeight
   background: #fff
+  line-height: 30px
+  color: forward.$dark50
+  font-size: 1.8rem
   border: 1px solid forward.$dark25
   border-radius: 50%
   cursor: pointer

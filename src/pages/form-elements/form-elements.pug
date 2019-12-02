@@ -54,7 +54,7 @@ html(lang="ru")
             +filterDateDrop
           .mb42
 
-          //- subscription text field
+          //- subscribtion text field
           +inputBox('subscribtion text field', 'm')
             +textField('Email', 'email', 'subscribe')
 
@@ -126,20 +126,18 @@ html(lang="ru")
 
         .form-elements__grid-item
           //- dropdown
-          +inputBox('dropdown')
-            +inputDrop('')
-              +dropOption('люди')
-              +dropOption('азари')
-              +dropOption('кроганы')
-              +dropOption('кварианцы')
-          .mb20
+          +inputBox('dropdown', 'm')
+            +inputDrop('details')
+              +dropOption('спальни')
+              +dropOption('кровати')
+              +dropOption('ванные комнаты')
+          .mb21
           //- dropdown expanded
-          +inputBox('dropdown')
-            +inputDrop('', true)
-              +dropOption('люди')
-              +dropOption('азари')
-              +dropOption('кроганы')
-              +dropOption('кварианцы')
+          +inputBox('dropdown', 'm')
+            +inputDrop('distinct', '', true)
+              +dropOption('спальни')
+              +dropOption('кровати')
+              +dropOption('ванные комнаты')
           .mb40
           //- expandable checkbox list
           +inputBox

@@ -1,5 +1,7 @@
-mixin inputDrop(placeholder, forceOpen)
-  .dropdown(class=forceOpen ?'dropdown--force-open' : '')
+mixin inputDrop(type, placeholder, forceOpen)
+  .dropdown(
+    class='dropdown--type_'+type,
+    class=forceOpen ? 'dropdown--force-open' : '')
     input(type='text' readonly placeholder=placeholder).dropdown__display.input-box__input
     .dropdown__contents(class=forceOpen ?'dropdown__contents--force-visible' : '')
       block
