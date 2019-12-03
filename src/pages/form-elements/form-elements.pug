@@ -165,13 +165,11 @@ html(lang="ru")
               +checkbox('Шампунь')
 
         .form-elements__grid-item
-          //- temp
-          //- +inputBox('dropdown')
-          //-   +inputDrop('', true)
-          //-     +dropOption('люди')
-          //-     +dropOption('азари')
-          //-     +dropOption('кроганы')
-          //-     +dropOption('кварианцы')
+          +inputBox('dropdown')
+            +inputDrop('single', 'Количество гостей', true)
+              +dropOption('взрослые')
+              +dropOption('дети')
+              +dropOption('младенцы')
 
 
 

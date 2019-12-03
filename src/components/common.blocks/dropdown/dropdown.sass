@@ -43,6 +43,7 @@
 .dropdown__contents
   display: none
   width: 100%
+  padding: 6px 6px 7px 15px
   font-size: 1.4rem
   font-weight: 400
   color: forward.$dark50
@@ -65,14 +66,13 @@ $optionHeight: 30px
 .dropdown__option
   display: flex
   flex-flow: row nowrap
-  padding: 0 6px 7px 14px
   font-size: 1.18rem
   line-height: 28px
   font-weight: 700
   color: forward.$dark100
 
-  &:first-child
-    padding-top: 6px
+  &:not(:last-of-type)
+    margin-bottom: 6px
 
 .dropdown__option-name
   flex: auto
@@ -99,9 +99,14 @@ $optionHeight: 30px
   opacity: .5
   cursor: not-allowed
 
-.dropdown__btn-apply,
-.dropdown__btn-clear
-  margin: 10px 15px
+.dropdown__btn--clear,
+.dropdown__btn--apply
+  margin-top: 20px
 
-.dropdown__btn-apply
+.dropdown__btn--clear
+  color: forward.$dark50
+
+
+
+.dropdown__btn--apply
   float: right
