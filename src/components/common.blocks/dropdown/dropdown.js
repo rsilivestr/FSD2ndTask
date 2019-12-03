@@ -1,183 +1,161 @@
-const wrapClass = 'dropdown',
-      displayClass = 'dropdown__display',
-      openClass = 'dropdown--is-open',
-      contentsClass = 'dropdown__contents',
-      contentsVisibleClass = 'dropdown__contents--visible',
-      optionClass = 'dropdown__option',
-      optValClass = 'dropdown__option-value',
-      optTitleClass = 'dropdown__option-name',
-      controlClass = 'dropdown__option-control',
-      addBtnClass = 'dropdown__option-control--add',
-      subtractBtnClass = 'dropdown__option-control--subtract',
-      disabledBtnClass = 'dropdown__option-control--disabled',
-      discreteOutClass = 'dropdown--type_discrete',
-      singleOutClass = 'dropdown--type_single',
-      btnClass = 'button',
-      applyBtnClass = 'dropdown__btn--apply',
-      clearBtnClass = 'dropdown__btn--clear',
-      UIdrops = document.querySelectorAll('.' + wrapClass);
+// class names
+const cname = {
+  dropdown: 'dropdown',
+  multi: 'dropdown--type_multi',
+  single: 'dropdown--type_single',
+  display: 'dropdown__display',
+  open: 'dropdown--is-open',
+  contents: 'dropdown__contents',
+  visible: 'dropdown__contents--visible',
+  option: 'dropdown__option',
+  optionValue: 'dropdown__option-value',
+  optionName: 'dropdown__option-name',
+  control: 'dropdown__option-control',
+  controlAdd: 'dropdown__option-control--add',
+  controlSub: 'dropdown__option-control--subtract',
+  controlDisabled: 'dropdown__option-control--disabled',
+  btn: 'button',
+  btnApply: 'dropdown__btn--apply',
+  btnClear: 'dropdown__btn--clear',
+  btnDisabled: 'hidden',
+};
 
+// class selector strings
+const csel = {};
+for (const key in cname) {
+  if (cname.hasOwnProperty(key)) {
+    const value = cname[key];
+    csel[key] = '.' + value;
+  }
+}
+
+const UIdrops = document.querySelectorAll(csel.dropdown),
+  UIsingle = document.querySelectorAll(csel.single),
+  UImulti = document.querySelectorAll(csel.multi),
+  UIoptions = document.querySelectorAll(csel.option);
+
+// initialize dropdowns' states
+updateOptionControls();
+updateDisplay();
+
+// listen to clicks
 document.body.addEventListener('mousedown', toggleDropdown);
 
+// function to handle any dropdown click interactions
 function toggleDropdown(e) {
-  // if dropdown display is clicked
-  if(e.target.classList.contains(displayClass)) {
+  // when dropdown display is clicked
+  if(e.target.classList.contains(cname.display)) {
     const UIcurrent = e.target.parentElement;
-    const UIconts = e.target.nextElementSibling;
     // close all dropdowns other than targeted
     UIdrops.forEach(drop => {
       if(drop !== UIcurrent) {
-        drop.classList.remove(openClass);
-        drop.querySelector('.' + contentsClass).classList.remove(contentsVisibleClass);
+        drop.classList.remove(cname.open);
+        drop.querySelector(csel.contents).classList.remove(cname.visible);
       }
     });
     // toggle clicked dropdown
-    UIcurrent.classList.toggle(openClass);
-    UIconts.classList.toggle(contentsVisibleClass);
+    UIcurrent.classList.toggle(cname.open);
+    // show contents
+    e.target.nextElementSibling.classList.toggle(cname.visible);
   // when dropdown-content is clicked
-  } else if (e.target.closest('.' + contentsClass)) {
-
-
+  } else if (e.target.closest(csel.contents)) {
     // when control (add / subtract) is clicked
-    if(e.target.classList.contains(controlClass)) {
+    if(e.target.classList.contains(cname.control)) {
       updateOption(e.target);
-      if (e.target.closest('.' + discreteOutClass)) {
-    
-
-        
-
-
-
-
-        // count details (bedrooms, beds)
-        discreteUpdateDisplay(e.target);
-
-
-
-
-
-
-
-
-
-      } else if (e.target.closest('.' + singleOutClass)) {
-    
-        
-        // count guests (with apply, clear buttons)
-        countSingle(e.target);
-
-
+      if (e.target.closest(csel.multi)) {
+        updateDisplay(e.target.closest(csel.multi));
       }
-
-
-    } else if (e.target.classList.contains('.' + btnClass)) {
-      console.log('drop btn');
-
-
+    } else if (e.target.classList.contains(cname.btnApply)) {
+      // if apply button clicked
+      updateSingleValDisplay(e.target.closest(csel.dropdown));
+    } else if (e.target.classList.contains(cname.btnClear)) {
+      // if clear button clicked
+      e.target.closest(csel.dropdown).querySelectorAll(csel.optionValue).forEach( opt => opt.innerText = 0);
+      updateDisplay(e.target.closest(csel.dropdown));
     }
   } else {
     // close any and all dropdowns if none targeted
     UIdrops.forEach(drop => {
-      drop.classList.remove(openClass);
-      drop.querySelector('.' + contentsClass).classList.remove(contentsVisibleClass);
+      drop.classList.remove(cname.open);
+      drop.querySelector(csel.contents).classList.remove(cname.visible);
     });
   }
 }
 
+// update option value on control click
 function updateOption(btn) {
-  // get option, its min, max and current values, button action
   const opt = btn.parentElement,
-        minValue = opt.dataset.min ? opt.dataset.min: 0,
-        maxValue = opt.dataset.max ? opt.dataset.max : 99,
-        action = btn.classList.contains(addBtnClass) ? 'add' : 'subtract',
-        // UIvalue = btn.nextElementSibling ? btn.nextElementSibling : btn.previousElementSibling;
-        UIvalue = opt.querySelector('.' + optValClass);
-  let currentValue = UIvalue.innerText,
-
-
-        isDisplaySingle = btn.closest('.' + wrapClass).classList.contains(singleOutClass);
-
-
-  if (action == 'subtract' && parseInt(currentValue) > parseInt(minValue)) {
+    min = opt.dataset.min ? opt.dataset.min: 0,
+    max = opt.dataset.max ? opt.dataset.max : 99,
+    action = btn.classList.contains(cname.controlAdd) ? 'add' : 'subtract',
+    UIvalue = opt.querySelector(csel.optionValue);
+  let currentValue = UIvalue.innerText;
+  if (action == 'subtract' && parseInt(currentValue) > parseInt(min)) {
     currentValue--;
     UIvalue.innerText = currentValue;
-    updateValues(opt)
-  } else if (action == 'add' && parseInt(currentValue) < parseInt(maxValue)) {
+    updateOptionControls(opt)
+  } else if (action == 'add' && parseInt(currentValue) < parseInt(max)) {
     currentValue++
     UIvalue.innerText = currentValue;
-    updateValues(opt)
-  }
-  if (!isDisplaySingle) {
-    // console.log('discrete');
-    // const value = 
-  } else {
-    // console.log('single');
+    updateOptionControls(opt)
   }
 }
 
-// enable & disable controls on min / max value
-// function updateValue(opt, min, max, cur) {
-//   const UIsubtract = opt.querySelector('.' + subtractBtnClass),
-//         UIadd = opt.querySelector('.' + addBtnClass)
-//   if(cur == min) {
-//     UIsubtract.classList.add(disabledBtnClass);
-//   } else {
-//     UIsubtract.classList.remove(disabledBtnClass);
-//   }
-//   if(cur == max) {
-//     UIadd.classList.add(disabledBtnClass);
-//   } else {
-//     UIadd.classList.remove(disabledBtnClass);
-//   }
-// }
-
-function updateValues(opt = null) {
+// choose how to update controls state
+function updateOptionControls(opt = null) {
   if (opt) {
-    // update single option
-    updateSingleOption(opt);
+    // update single option if invoked with parameter
+    updateSingleOptionControls(opt);
   } else {
-    // update values in all dropdowns
-    const UIdrops = document.querySelectorAll('.' + discreteOutClass);
-    UIdrops.forEach(drop => {
-      const UIopts = drop.querySelectorAll('.' + optionClass);
-      UIopts.foreach(opt => updateSingleOption(opt));
-    });
+    // update values in all dropdowns, e.g. on load
+    UIoptions.forEach(opt => updateSingleOptionControls(opt));
   }
 }
 
-function updateSingleOption(opt) {
-  // check dropdown type here
-  const UIsub = opt.querySelector('.' + subtractBtnClass),
-        UIadd = opt.querySelector('.' + addBtnClass),
-        UIvalue = opt.querySelector('.' + optValClass),
-        cur = parseInt(UIvalue.innerText),
-        min = opt.dataset.min ? parseInt(opt.dataset.min) : 0,
-        max = opt.dataset.max ? parseInt(opt.dataset.max) : 99;
+// enable or disable option controls "+" & "-"
+function updateSingleOptionControls(opt) {
+  const UIsub = opt.querySelector(csel.controlSub),
+    UIadd = opt.querySelector(csel.controlAdd),
+    UIvalue = opt.querySelector(csel.optionValue),
+    cur = parseInt(UIvalue.innerText),
+    min = opt.dataset.min ? parseInt(opt.dataset.min) : 0,
+    max = opt.dataset.max ? parseInt(opt.dataset.max) : 99;
   if(cur == min) {
-    UIsub.classList.add(disabledBtnClass);
+    UIsub.classList.add(cname.controlDisabled);
   } else {
-    UIsub.classList.remove(disabledBtnClass);
+    UIsub.classList.remove(cname.controlDisabled);
   }
   if(cur == max) {
-    UIadd.classList.add(disabledBtnClass);
+    UIadd.classList.add(cname.controlDisabled);
   } else {
-    UIadd.classList.remove(disabledBtnClass);
+    UIadd.classList.remove(cname.controlDisabled);
   }
 }
 
+// select funtcion to update display
+function updateDisplay(drop) {
+  if (drop) {
+    if (drop.classList.contains(cname.multi)) {
+      updateMultiValDisplay(drop);
+    } else if (drop.classList.contains(cname.single)) {
+      updateSingleValDisplay(drop);
+    }
+  } else {
+    UImulti.forEach(drop => updateMultiValDisplay(drop));
+    UIsingle.forEach(drop => updateSingleValDisplay(drop));
+  }
+}
 
-
-
-function discreteUpdateDisplay(el) {
-  const UIdrop = el.closest('.' + wrapClass),
-  UIdisplay = UIdrop.querySelector('.' + displayClass),
-  UIoptions = UIdrop.querySelectorAll('.' + optionClass);
-  let string = '';
-  UIoptions.forEach((opt, index) => {
-  
-    let value = opt.querySelector('.' + optValClass).innerText;
+// update display with separated option values
+function updateMultiValDisplay(drop) {
+  let out = '';
+  drop.querySelectorAll(csel.option).forEach((opt, index) => {
+    const value = opt.querySelector(csel.optionValue).innerText;
     let name;
-    if (value % 10 == '1' && value != 11) {
+    // set valid word case
+    if (value % 10 == 1 && value != 11) {
+      // cases of 111 and further are not addressed
+      // later try: value.slice(-2) != '11'
       name = opt.dataset.single;
     } else if ((value % 10 < 5 && value < 5) || (value % 10 < 5 && value > 21)) {
       name = opt.dataset.few;
@@ -185,113 +163,35 @@ function discreteUpdateDisplay(el) {
       name = opt.dataset.many;
     }
     if (index < 1) {
-      string += `${value} ${name}, `;
+      out += `${value} ${name}, `;
     } else if (index < 2) {
-      string += `${value} ${name}...`;
+      out += `${value} ${name}...`;
     }
   });
-  UIdisplay.value = string.toLowerCase();
+  drop.querySelector(csel.display).value = out.toLowerCase();
 }
 
-
-
-
-
-// function countSingle(opt) {
-//   console.log('countSingle');
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // handle subtraction / addition of values
-// function changeDropdown(el) {
-//   // define drop contents
-//   const UIconts = el.closest('.' + contentsClass);
-//   // define main OUTPUT (.input-box__input--dropdown)
-//   const UIdisplay = UIconts.previousElementSibling;
-//   // defune array of option elements
-//   const opts = [];
-//   // populate array
-//   UIconts.querySelectorAll('.' + optionClass).forEach(opt => {
-//     opts.push(opt);
-//   });
-//   // define array of option values
-//   const optionValues = [];
-//   // populate array with option values
-//   // separate function for array and sum?
-//   const optionValueElements = UIconts.querySelectorAll('.' + optValClass);
-//   // handle addition
-//   if(el.classList.contains(addBtnClass)) {
-//     const currentOption = el.closest('.' + optionClass);
-//     // which option was targeted??? splice to optionValues array
-//     opts.forEach(opt => {
-//       if(opt == currentOption) {
-//         const currentVal = el.previousElementSibling;
-//         currentVal.innerText = parseInt(currentVal.innerText) + 1;
-//         updateValues(optionValueElements, optionValues, UIdisplay);
-//       }
-//     });
-//   } else if(el.classList.contains(subtractBtnClass)) {
-//     // const currentOption = el.closest('.input-box__dropdown-option');
-//     // which option was targeted??? splice to optionValues array
-//     // opts.forEach(opt => {
-//     //   if(opt == currentOption) {
-//       const currentVal = el.nextElementSibling;
-//       // subtract only if greater than 0
-//       if(parseInt(currentVal.innerText) > 0) {
-//         currentVal.innerText = parseInt(currentVal.innerText) - 1;
-//         updateValues(optionValueElements, optionValues, UIdisplay);
-//       }
-//     //   }
-//     // });
-//   }
-// }
-
-// function updateValues(elArr, valArr, sum) {
-//   elArr.forEach(elem => {
-//     // update options values
-//     valArr.push(parseInt(elem.innerText));
-//     // display sum of options array
-//     sum.value = valArr.reduce((a,b) => a + b);
-//     // change placeholder to default if sum is 0
-//     if(sum.value == 0) {
-//       // sum.value = sum.dataset.placeholder;
-//       sum.value = '';
-//     }
-//   });
-// }
-
-// check if sum is not greater then room capacity
-
-// disable - when 0 and + when full .drop-controll--disabled
+// update display with single value of options sum
+function updateSingleValDisplay(drop) {
+  let guestCount = 0, guestCase;
+  // count option values sum
+  drop.querySelectorAll(csel.option).forEach(opt => {
+    guestCount += parseInt(opt.querySelector(csel.optionValue).innerText);
+  });
+  // set valid word case
+  if (guestCount % 10 == 1 && guestCount != 11) {
+    // 111
+    guestCase = 'гость';
+  } else if ((guestCount % 10 < 5 && guestCount < 5) || (guestCount % 10 < 5 && guestCount > 21)) {
+    guestCase = 'гостя';
+  } else {
+    guestCase = 'гостей';
+  }
+  drop.querySelector(csel.display).value = `${guestCount} ${guestCase}`;
+  if (guestCount > 0) {
+    drop.querySelector(csel.btnClear).classList.remove(cname.btnDisabled);
+  } else {
+    drop.querySelector(csel.btnClear).classList.add(cname.btnDisabled);
+    drop.querySelector(csel.display).value = '';
+  }
+}

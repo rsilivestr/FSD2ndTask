@@ -127,17 +127,17 @@ html(lang="ru")
         .form-elements__grid-item
           //- dropdown
           +inputBox('dropdown', 'm')
-            +inputDrop('discrete')
-              +dropOption('спальни', 1)
-              +dropOption('кровати', 1)
-              +dropOption('ванные комнаты')
+            +inputDrop('multi', '')
+              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
+              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
           .mb21
           //- dropdown expanded
           +inputBox('dropdown', 'm')
-            +inputDrop('discrete', '', true)
-              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 33)
-              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6)
-              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 9)
+            +inputDrop('multi', '', true)
+              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
+              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
           .mb40
           //- expandable checkbox list
           +inputBox
@@ -165,31 +165,30 @@ html(lang="ru")
               +checkbox('Шампунь')
 
         .form-elements__grid-item
+          //- wide dropdown with button ПРИМЕНИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Количество гостей', true)
-              +dropOption('взрослые')
-              +dropOption('дети')
-              +dropOption('младенцы')
+              +dropOption('взрослые', '', '', '', 0, 10)
+              +dropOption('дети', '', '', '', 0, 10)
+              +dropOption('младенцы', '', '', '', 0, 10)
 
-
-
-          //- wide dropdown with button ПРИМЕНИТЬ
           //- rich checkbox buttons
           
         .form-elements__grid-item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
+          +inputBox('dropdown')
+            +inputDrop('single', 'Количество гостей', true)
+              +dropOption('взрослые', '', '', '', 0, 10, 2)
+              +dropOption('дети', '', '', '', 0, 10, 1)
+              +dropOption('младенцы', '', '', '', 0, 10)
 
           //- bullet list
 
 
-
-      
-
         .form-elements__grid-item
-        //- комфорт
+          //- комфорт
 
-        //- удобство
+          //- удобство
 
         .form-elements__grid-item.form-elements__grid-item--wide
-
           //- comment (wide)
