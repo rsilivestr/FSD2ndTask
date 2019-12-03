@@ -8,7 +8,7 @@ mixin inputDrop(type, placeholder, forceOpen)
       if(type=='single')
         +dropButtons
 
-mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max, cur)
+mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max, val)
   .dropdown__option(
     data-min= min,
     data-max= max,
@@ -17,7 +17,7 @@ mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max, cur)
     data-many = nameMany)
     span.dropdown__option-name= name
     button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
-    span.dropdown__option-value= cur ? cur : min
+    span.dropdown__option-value= val ? val : min
     button.dropdown__option-control.dropdown__option-control--add +
 
 mixin dateDrop
