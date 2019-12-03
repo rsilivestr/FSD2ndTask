@@ -1,7 +1,6 @@
-document.body.addEventListener('click', toggleChecklist);
+document.body.addEventListener('click', toggleCheckBoxList);
 
-function toggleChecklist(e) {
-  // if we got expandable checkbox list title
+function toggleCheckBoxList(e) {
   if(e.target.classList.contains('input-box__checkbox-group-title')) {
     e.target.parentElement.classList.toggle('input-box__checkbox-group--expanded');
   }

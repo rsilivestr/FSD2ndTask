@@ -139,6 +139,24 @@ html(lang="ru")
               +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
               +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
           .mb40
+
+        .form-elements__grid-item
+          //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
+          +inputBox('dropdown')
+            +inputDrop('single', 'Количество гостей', true)
+              +dropOption('взрослые', '', '', '', 0, 10, 2)
+              +dropOption('дети', '', '', '', 0, 10, 1)
+              +dropOption('младенцы', '', '', '', 0, 10)
+
+        .form-elements__grid-item
+          //- wide dropdown with button ПРИМЕНИТЬ
+          +inputBox('dropdown')
+            +inputDrop('single', 'Количество гостей', true)
+              +dropOption('взрослые', '', '', '', 0, 10)
+              +dropOption('дети', '', '', '', 0, 10)
+              +dropOption('младенцы', '', '', '', 0, 10)
+
+        .form-elements__grid-item
           //- expandable checkbox list
           +inputBox
             +checkboxGroup('Expandable checkbox list')
@@ -165,23 +183,12 @@ html(lang="ru")
               +checkbox('Шампунь')
 
         .form-elements__grid-item
-          //- wide dropdown with button ПРИМЕНИТЬ
-          +inputBox('dropdown')
-            +inputDrop('single', 'Количество гостей', true)
-              +dropOption('взрослые', '', '', '', 0, 10)
-              +dropOption('дети', '', '', '', 0, 10)
-              +dropOption('младенцы', '', '', '', 0, 10)
-
           //- rich checkbox buttons
-          
+          +inputBox('rich checkbox buttons', 'm')
+            +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
+            +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
+            
         .form-elements__grid-item
-          //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
-          +inputBox('dropdown')
-            +inputDrop('single', 'Количество гостей', true)
-              +dropOption('взрослые', '', '', '', 0, 10, 2)
-              +dropOption('дети', '', '', '', 0, 10, 1)
-              +dropOption('младенцы', '', '', '', 0, 10)
-
           //- bullet list
 
 
