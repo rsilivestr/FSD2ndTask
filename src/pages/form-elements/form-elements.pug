@@ -2,6 +2,7 @@ include ../../components/common.blocks/input-box/input-box
 include ../../components/common.blocks/button/button
 include ../../components/common.blocks/pagination/pagination
 include ../../components/common.blocks/dropdown/dropdown
+include ../../components/common.blocks/emoji-item/emoji-item
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -190,12 +191,20 @@ html(lang="ru")
             
         .form-elements__grid-item
           //- bullet list
+          h3 bullet list
+          ul.bullet-list
+            li.bullet-list__item нельзя с питомцами
+            li.bullet-list__item без вечеринок и мероприятий
+            li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
+            
 
 
         .form-elements__grid-item
           //- комфорт
+          +emojiItem('insert_emoticon', 'комфорт', 'шумопоглощающие стены')
 
           //- удобство
+          +emojiItem('location_city', 'удобство', 'окно в каждой из спален')
 
         .form-elements__grid-item.form-elements__grid-item--wide
           //- comment (wide)

@@ -1,0 +1,28 @@
+@use 'Styles/forward'
+
+.emoji-item
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  max-width: 280px
+  padding: 1.5rem 0
+  border-bottom: 1px solid forward.$dark25
+
+.emoji-item__icon
+  font-size: 48px
+  color: transparent
+  background: forward.$mainGradient
+  background-clip: text
+
+.emiji-item__text
+  margin-left: .8rem
+  font-size: 1.4rem
+
+  *:first-letter
+    text-transform: capitalize
+
+.emoji-item__heading
+  color: forward.$dark75
+
+.emoji-item__description
+  color: forward.$dark50
