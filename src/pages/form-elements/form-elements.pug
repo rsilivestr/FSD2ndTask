@@ -2,7 +2,8 @@ include ../../components/common.blocks/input-box/input-box
 include ../../components/common.blocks/button/button
 include ../../components/common.blocks/pagination/pagination
 include ../../components/common.blocks/dropdown/dropdown
-include ../../components/common.blocks/emoji-item/emoji-item
+include ../../components/common.blocks/image-title/image-title
+include ../../components/common.blocks/user-comment/user-comment
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -196,15 +197,18 @@ html(lang="ru")
             li.bullet-list__item нельзя с питомцами
             li.bullet-list__item без вечеринок и мероприятий
             li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
-            
-
 
         .form-elements__grid-item
           //- комфорт
-          +emojiItem('insert_emoticon', 'комфорт', 'шумопоглощающие стены')
-
+          +imageTitle('emoji', 'insert_emoticon', 'комфорт', 'шумопоглощающие стены')
           //- удобство
-          +emojiItem('location_city', 'удобство', 'окно в каждой из спален')
+          +imageTitle('emoji', 'location_city', 'удобство', 'окно в каждой из спален')
 
         .form-elements__grid-item.form-elements__grid-item--wide
           //- comment (wide)
+          .user-comment
+            +imageTitle('comment', 'uid1111', 'Мурад Сарафанов', '5 дней назад')
+            .user-comment__body
+              .user-comment__like-counter
+                +likeBtn(12, true, 'user-comment__like-counter')
+              .user-comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

@@ -1,0 +1,9 @@
+mixin imageTitle(type, src, heading, description)
+  .image-title(class = 'image-title--' + type)
+    if type=="emoji"
+      .image-title__image.image-title__image--emoji.material-icons= src
+    else if type=="comment"
+      img.image-title__image.image-title__image--user-avatar(src='/assets/images/' + src + '.jpg')
+    .image-title__text
+      h4.image-title__heading= heading
+      p.image-title__description= description

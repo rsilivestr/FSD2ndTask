@@ -1,5 +1,5 @@
-mixin likeBtn(value, isChecked)
-  .input-box__input--like
+mixin likeBtn(value, isChecked, extraClass)
+  .input-box__input--like(class= extraClass)
     input(name="like" type="checkbox" checked = (isChecked == true) ? true : false).input-box__like-checkbox
     .input-box__like-stylish
       span.input-box__like-counter= value
