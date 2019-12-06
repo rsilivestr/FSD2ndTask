@@ -17,6 +17,9 @@ html(lang="ru")
     main.main-content.main-content--page_form-elements.container.container--width_m
 
       .form-elements__grid
+
+        //- a 1 --------------------------------------//
+      
         .form-elements__grid-item
           +inputBox('text field')
             +textField('Email')
@@ -29,11 +32,10 @@ html(lang="ru")
           .mb21
 
           +inputBox('dropdown')
-            +inputDrop('Сколько гостей')
-              +dropOption('люди')
-              +dropOption('азари')
-              +dropOption('кроганы')
-              +dropOption('кварианцы')
+            +inputDrop('single', 'Количество гостей')
+              +dropOption('взрослые', '', '', '', 0, 10)
+              +dropOption('дети', '', '', '', 0, 10)
+              +dropOption('младенцы', '', '', '', 0, 10)
  
           .mb23
               
@@ -59,7 +61,9 @@ html(lang="ru")
           //- subscribtion text field
           +inputBox('subscribtion text field', 'm')
             +textField('Email', 'email', 'subscribe')
+          .mb101
 
+        //- a 2 --------------------------------------//
 
         .form-elements__grid-item
           //- checkbox buttons
@@ -98,6 +102,8 @@ html(lang="ru")
             .mb14
             +starRating(4)
             +starRating(5)
+        
+        //- a 3 --------------------------------------//
 
         .form-elements__grid-item
           //- range slider
@@ -114,10 +120,10 @@ html(lang="ru")
             .mb30
             +button('click me','bordered','s',false)
             +button('click me','bordered','s',true)
-            .mb30
+            .mb31
             +button('click me','text','auto',false)
             +button('click me','text','auto',true)
-            .mb28
+            .mb30
             +button('перейти к оплате','arrowed','l',false)
 
           .mb40
@@ -126,41 +132,51 @@ html(lang="ru")
             .mb17
             +pagination
 
+        //- b 1 --------------------------------------//
+
         .form-elements__grid-item
-          //- dropdown
-          +inputBox('dropdown', 'm')
-            +inputDrop('multi', '')
-              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
-              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
-          .mb21
-          //- dropdown expanded
-          +inputBox('dropdown', 'm')
-            +inputDrop('multi', '', true)
-              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
-              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
+          .ml-1
+            //- dropdown
+            +inputBox('dropdown', 'm')
+              +inputDrop('multi', '')
+                +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+                +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
+                +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
+            .mb21
+            //- dropdown expanded
+            +inputBox('dropdown', 'm')
+              +inputDrop('multi', '', true)
+                +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+                +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
+                +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
+                
           .mb40
+
+        //- b 2 --------------------------------------//
 
         .form-elements__grid-item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
-            +inputDrop('single', 'Количество гостей', true)
-              +dropOption('взрослые', '', '', '', 0, 10, 2)
-              +dropOption('дети', '', '', '', 0, 10, 1)
-              +dropOption('младенцы', '', '', '', 0, 10)
-
-        .form-elements__grid-item
-          //- wide dropdown with button ПРИМЕНИТЬ
-          +inputBox('dropdown')
-            +inputDrop('single', 'Количество гостей', true)
+            +inputDrop('single', 'Сколько гостей', true)
               +dropOption('взрослые', '', '', '', 0, 10)
               +dropOption('дети', '', '', '', 0, 10)
               +dropOption('младенцы', '', '', '', 0, 10)
 
+        //- b 3 --------------------------------------//
+        
+        .form-elements__grid-item
+          //- wide dropdown with button ПРИМЕНИТЬ
+          +inputBox('dropdown')
+            +inputDrop('single', 'Сколько гостей', true)
+              +dropOption('взрослые', '', '', '', 0, 10, 2)
+              +dropOption('дети', '', '', '', 0, 10, 1)
+              +dropOption('младенцы', '', '', '', 0, 10)
+
+        //- c 1 --------------------------------------//
+
         .form-elements__grid-item
           //- expandable checkbox list
-          +inputBox
+          +inputBox('', 'm')
             +checkboxGroup('Expandable checkbox list')
               +checkbox('Завтрак')
               +checkbox('Письменный стол')
@@ -172,8 +188,9 @@ html(lang="ru")
               +checkbox('Шампунь')
 
           .mb20
+
           //- expanded expandable checkbox list
-          +inputBox
+          +inputBox('', 'm')
             +checkboxGroup('Expandable checkbox list', true)
               +checkbox('Завтрак')
               +checkbox('Письменный стол', true)
@@ -184,19 +201,35 @@ html(lang="ru")
               +checkbox('Телевизор')
               +checkbox('Шампунь')
 
+          .mb20
+
+        //- c 2 --------------------------------------//
+
         .form-elements__grid-item
+
+          .mb15
+
           //- rich checkbox buttons
           +inputBox('rich checkbox buttons', 'm')
+            .mb15
             +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
             +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
-            
+
+        //- c 3 --------------------------------------//
+
         .form-elements__grid-item
+
+          .mb15
+
           //- bullet list
           h3 bullet list
+          .mb13
           ul.bullet-list
             li.bullet-list__item нельзя с питомцами
             li.bullet-list__item без вечеринок и мероприятий
             li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
+
+        //- d 1 --------------------------------------//
 
         .form-elements__grid-item
           //- комфорт
@@ -204,11 +237,11 @@ html(lang="ru")
           //- удобство
           +imageTitle('emoji', 'location_city', 'удобство', 'окно в каждой из спален')
 
+          .mb50
+
+        //- e 1 --------------------------------------//
+
         .form-elements__grid-item.form-elements__grid-item--wide
           //- comment (wide)
-          .user-comment
-            +imageTitle('comment', 'uid1111', 'Мурад Сарафанов', '5 дней назад')
-            .user-comment__body
-              .user-comment__like-counter
-                +likeBtn(12, true, 'user-comment__like-counter')
-              .user-comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+                
+          +userComment('Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')

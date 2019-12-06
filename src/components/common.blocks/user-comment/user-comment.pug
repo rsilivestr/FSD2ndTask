@@ -1,0 +1,11 @@
+include ../image-title/image-title
+include ../input-box/__input/--like/like
+
+mixin userComment(text)
+  .user-comment
+    +imageTitle('comment', 'uid1111', 'Мурад Сарафанов', '5 дней назад')
+    .user-comment__body
+      .user-comment__like-counter
+        +likeBtn(12, true, 'user-comment__like-counter')
+      .user-comment__text
+        pre= text

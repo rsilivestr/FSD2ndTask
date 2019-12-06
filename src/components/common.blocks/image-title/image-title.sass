@@ -5,11 +5,13 @@
   flex-flow: row nowrap
   align-items: center
   max-width: 280px
-  padding: 1.5rem 0
-  line-height: 2.4rem
   
   &--emoji
-    border-bottom: 1px solid forward.$dark25
+    padding: 20px 0
+    border-bottom: 1px solid forward.$dark10
+  
+  &--comment
+    padding: 10px 0
 
 .image-title__image--user-avatar
   width: 48px
@@ -17,7 +19,7 @@
   border-radius: 50%
   overflow: hidden
   border: 2px solid #ffffff
-  box-shadow: 0 10px 20px forward.$dark10
+  box-shadow: 0 10px 20px forward.$dark05
 
 .image-title__image--emoji
   font-size: 48px
@@ -26,7 +28,7 @@
   background-clip: text
 
 .image-title__text
-  margin-left: .8rem
+  margin-left: 10px
   font-size: 1.4rem
 
   *:first-letter
@@ -34,6 +36,8 @@
 
 .image-title__heading
   color: forward.$dark75
+  line-height: 2.4rem
 
 .image-title__description
-  color: forward.$dark50
+  color: forward.$dark75
+  line-height: 2.4rem
