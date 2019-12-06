@@ -1,0 +1,23 @@
+include ../../../button/button
+include ../../../dropdown/dropdown
+include ../../../input-box/input-box
+
+mixin formSearchRoom
+  form.form.form--type_search-room
+    
+    h2.form__title Найдём номера под ваши пожелания
+
+    .form__flex-row
+      +inputBox('прибытие', 'xs')
+        +dateDrop
+
+      +inputBox('выезд', 'xs')
+        +dateDrop
+
+    +inputBox('гости', 'l')
+      +inputDrop('single', 'Сколько гостей')
+        +dropOption('взрослые', '', '', '', 0, 10)
+        +dropOption('дети', '', '', '', 0, 10)
+        +dropOption('младенцы', '', '', '', 0, 10)
+    
+    +button('подобрать номер', 'arrowed', 'l', false).form__btn

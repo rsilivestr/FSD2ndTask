@@ -12,6 +12,7 @@
 @use 'CommonBlocks/dropdown/dropdown'
 @use 'CommonBlocks/image-title/image-title'
 @use 'CommonBlocks/user-comment/user-comment'
+@use 'CommonBlocks/form/form'
 
 html
   box-sizing: border-box
@@ -52,14 +53,17 @@ html, body
 //   // border: 2px solid red
 //   border: 2px solid transparent
 
-.container
+.container,
+.main-content
   margin-left: auto
   margin-right: auto
 
-.container--width_m
+.container--width_m,
+.main-content--width_m
   max-width: 1158px
 
-.container--width_l
+.container--width_l,
+.main-content--width_l
   max-width: 1440px
 
 .hidden
