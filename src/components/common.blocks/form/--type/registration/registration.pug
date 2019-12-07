@@ -1,0 +1,31 @@
+include ../../../button/button
+include ../../../dropdown/dropdown
+include ../../../input-box/input-box
+include ../../__prompt/prompt
+
+mixin formRegistration
+  form.form.form--type_registration
+    
+    h2.form__title Регистрация аккаунта
+
+    +textField('Имя')
+    +textField('Фамилия')
+
+    +radioGroup('gender')
+      +radioItem('man', 'Мужчина', true)
+      +radioItem('woman', 'Женщина')
+
+    +inputBox('дата рождения')
+      +maskedDate
+
+    +inputBox('данные для входа в сервис')
+      +textField('Email', 'email')
+      +textField('Пароль', 'password')
+      +inputToggle('Получать спецпредложения')
+    
+    +button('перейти к оплате','arrowed','l',false)
+
+    +formPrompt('Уже есть аккаунт на Toxin?')
+      +button('войти', 'bordered', 's')
+
+
