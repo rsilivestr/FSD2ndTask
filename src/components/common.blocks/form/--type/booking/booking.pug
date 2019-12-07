@@ -4,4 +4,40 @@ include ../../../input-box/input-box
 
 mixin formBooking
   form.form.form--type_booking
+    h2.form__title
+      span.form__title-room.form__title-room--lux 888
+      span.form__title-price 9 900₽
     
+    .form__flex-row
+      +inputBox('прибытие', 'xs')
+        +dateDrop
+      +inputBox('выезд', 'xs')
+        +dateDrop
+
+    +inputBox('гости', 'l')
+      +inputDrop('single', 'Сколько гостей')
+        +dropOption('взрослые', '', '', '', 0, 10)
+        +dropOption('дети', '', '', '', 0, 10)
+        +dropOption('младенцы', '', '', '', 0, 10)
+
+    //- Bill info here ------------------------
+    //- Table
+    table.form__bill.bill-info
+      tbody
+        tr.bill-info__row.bill-info__initial
+          td.bill-info__title 9&nbsp;990₽ x 4 суток
+          td.bill-info__sum 39&nbsp;960₽
+        tr.bill-info__row.bill-info__discount
+          td.bill-info__title.bill-info__title--has-hint Сбор за услуги: скидка 2&nbsp;179₽
+          td.bill-info__sum 0₽
+        tr.bill-info__row.bill-info__extra
+          td.bill-info__title.bill-info__title--has-hint Сбор за дополнительные услуги
+          td.bill-info__sum 300₽
+          //- td(colspan='2')
+          //-   span Итого
+          //-   span 38&nbsp;081₽
+    .bill-info__row.bill-info__total
+      span.bill-info__title.bill-info__total-title Итого
+      span.bill-info__sum.bill-info__total-sum 38&nbsp;081₽
+    
+    +button('забронировать','arrowed','l',false).form__btn

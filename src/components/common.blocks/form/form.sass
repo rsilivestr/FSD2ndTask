@@ -14,9 +14,89 @@
   box-shadow: 0 0 20px forward.$dark10
 
   &__title
-  
-    &::first-letter
-      text-transform: capitalize
+    display: flex
+
+    &-room
+      flex: auto
+
+      &::before
+        content: '№ '
+        font-size: 1.4rem
+
+      &--lux::after
+        content: ' люкс'
+        font-size: 1.4rem
+        color: transparent
+        background: forward.$mainGradient
+        background-clip: text
+
+    // end -room
+
+    &-price
+      color: forward.$dark50
+      font-size: 1.4rem
+
+      &::after
+        content: ' в сутки'
+        font-size: 1.2rem
+        font-weight: 400
+
+  // end __title
 
   &__btn
     margin-top: 30px
+
+// end .form
+
+.bill-info
+  position: relative
+  width: 100%
+  line-height: 2.4rem
+  font-size: 1.4rem
+  color: forward.$dark75
+
+  &__row
+
+  &__title,
+  &__sum
+    padding-top: 10px
+
+  &__title
+
+    &--has-hint::before
+      content: 'i'
+      display: inline-flex
+      float: right
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 20px
+      margin-top: 2px
+      color: forward.$dark25
+      border: 1px solid forward.$dark25
+      border-radius: 50%
+
+  &__sum
+    min-width: 75px
+    text-align: right
+
+  &__total
+    display: flex
+    flex-flow: row nowrap
+    width: 100%
+    color: forward.$dark100
+    font-size: 1.9rem
+    font-weight: 700
+
+    &-title
+      order: 1
+
+    &-sum
+      order: 3
+
+    &:after
+      content: ''
+      flex: auto
+      order: 2
+      margin: 3px 5px
+      border-bottom: 1px dotted forward.$dark25
