@@ -7,14 +7,14 @@ mixin formSearchRoom
     
     h1.form__title Найдём номера под ваши пожелания
 
-    .form__flex-row
-      +inputBox('прибытие', 'xs').form__dropdown
+    .form__row.mb20
+      +inputBox('прибытие', 'xs')
         +dateDrop
-      +inputBox('выезд', 'xs').form__dropdown
+      +inputBox('выезд', 'xs')
         +dateDrop
 
     +inputBox('гости', 'l')
-      +inputDrop('single', 'Сколько гостей').form__dropdown
+      +inputDrop('single', 'Сколько гостей').mb10
         +dropOption('взрослые', '', '', '', 0, 10)
         +dropOption('дети', '', '', '', 0, 10)
         +dropOption('младенцы', '', '', '', 0, 10)

@@ -21,11 +21,11 @@ mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max, val)
     button.dropdown__option-control.dropdown__option-control--add +
 
 mixin dateDrop
-  .input-box__dropdown-box
+  .input-box__dropdown-box&attributes(attributes)
     input(type='text' readonly placeholder='ДД.ММ.ГГГГ').dropdown__display.input-box__input.input-box__input--dropdown.input-box__input--date-dropdown
 
 mixin filterDateDrop
-  .input-box__dropdown-box    
+  .input-box__dropdown-box&attributes(attributes)
     input(type='text' readonly placeholder='19 авг - 23 авг').input-box__input.input-box__input--dropdown.input-box__input--filter-date-dropdown
 
 mixin dropButtons

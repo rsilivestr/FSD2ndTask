@@ -11,7 +11,7 @@ mixin inputBox(label, size='l', layout='column', extraClass)
   .input-box(
     class='input-box--size_' + size,
     class=extraClass,
-    class=(layout == 'row') ? 'input-box--layout_row' : '')
+    class=(layout == 'row') ? 'input-box--layout_row' : '')&attributes(attributes)
     if label
       h3.input-box__title= label
     block
