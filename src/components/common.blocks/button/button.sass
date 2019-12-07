@@ -39,23 +39,31 @@
 
 .button--style_bordered
   position: relative
-  background: #fff
-  background-clip: padding-box
+  // background: #fff
+  // background-clip: padding-box
   height: 44px
   border: 2px solid transparent
   border-radius: 22px
   color: forward.$purple
 
+  &__title,
   &:after
-    content: ''
     position: absolute
     top: 0
     right: 0
     bottom: 0
     left: 0
+    border-radius: inherit
+
+  &__title
+    @extend .centered-flex
+    background: #fff
+    z-index: 20
+
+  &:after
+    content: ''
     z-index: 10
     margin: -2px
-    border-radius: inherit
     background: forward.$mainGradient
 
   &:disabled::after
