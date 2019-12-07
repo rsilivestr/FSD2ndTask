@@ -15,6 +15,8 @@
 
   &__title
     display: flex
+    align-items: flex-end
+    margin-bottom: 20px
 
     &-room
       flex: auto
@@ -35,6 +37,7 @@
     &-price
       color: forward.$dark50
       font-size: 1.4rem
+      line-height: 1.8rem
 
       &::after
         content: ' в сутки'
@@ -43,8 +46,15 @@
 
   // end __title
 
-  &__btn
-    margin-top: 30px
+  // &__flex-row
+  //   margin-bottom: 20px
+  &__dropdown
+    margin-bottom: 20px
+
+  &__btn--main
+    margin-top: 20px
+
+
 
 // end .form
 
@@ -59,7 +69,7 @@
 
   &__title,
   &__sum
-    padding-top: 10px
+    padding-bottom: 10px
 
   &__title
 

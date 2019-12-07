@@ -1,5 +1,6 @@
 import 'CommonBlocks/input-box/__input/__input.js';
 import 'CommonBlocks/dropdown/dropdown.js';
+import 'CommonBlocks/form/form.js';
 
 // const routerNav = document.querySelector('.router__nav'),
 //       routerIframe = document.querySelector('.router__current-page');

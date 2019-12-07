@@ -4,7 +4,7 @@ include ../../../input-box/input-box
 
 mixin formBooking
   form.form.form--type_booking
-    h2.form__title
+    h1.form__title
       span.form__title-room.form__title-room--lux 888
       span.form__title-price 9 900₽
     
@@ -40,4 +40,4 @@ mixin formBooking
       span.bill-info__title.bill-info__total-title Итого
       span.bill-info__sum.bill-info__total-sum 38&nbsp;081₽
     
-    +button('забронировать','arrowed','l',false).form__btn
+    +button('забронировать','arrowed','l',false).form__btn--main

@@ -6,7 +6,7 @@
   *::selection
     background: transparent
 
-  &:after
+  &::after
     @extend .material-icons
     @extend .centered-flex
     content: '\e5cf'
@@ -17,93 +17,104 @@
     height: 44px
     color: forward.$dark50
     transition: all .1s
-    z-index: -1
+    z-index: 10
 
-.dropdown--is-open,
-.dropdown--force-open
-  box-shadow: 0 10px 20px forward.$dark05
+  &--is-open,
+  &--force-open
+    box-shadow: 0 10px 20px forward.$dark05
 
-  .dropdown__display
-    border-color: forward.$dark50
-    border-radius: 4px 4px 0 0
+    .dropdown__display
+      border-color: forward.$dark50
+      border-radius: 4px 4px 0 0
 
-  &:after
-    transform: rotate(-180deg)
-    transition: all .1s
+    &::after
+      transform: rotate(-180deg)
+      transition: all .1s
 
-.dropdown__display
-  cursor: pointer
-  background: transparent
-  color: forward.$dark75
-  border-color: forward.$dark25
-  
-  &::placeholder
+  // end --is-open
+  // end --force-open
+
+  &__display
+    position: relative
+    cursor: pointer
+    background: transparent
     color: forward.$dark75
+    border-color: forward.$dark25
+    z-index: 20
+    
+    &::placeholder
+      color: forward.$dark75
 
-.dropdown__contents
-  display: none
-  width: 100%
-  padding: 6px 6px 7px 14px
-  font-size: 1.4rem
-  font-weight: 400
-  color: forward.$dark50
-  border: 1px solid forward.$dark50
-  border-top: none
-  border-radius: 0 0 4px 4px
-  cursor: default
-  overflow: hidden
-  // height: 0px
-  // transition: height 1s
+  // end __display
 
-.dropdown__contents--visible,
-.dropdown__contents--force-visible
-  display: block
-  // height: 100%
-  // transition: all 1s
+  &__contents
+    display: none
+    width: 100%
+    padding: 6px 6px 7px 14px
+    font-size: 1.4rem
+    font-weight: 400
+    color: forward.$dark50
+    border: 1px solid forward.$dark50
+    border-top: none
+    border-radius: 0 0 4px 4px
+    cursor: default
+    overflow: hidden
+    // height: 0px
+    // transition: height 1s
 
-$optionHeight: 30px
+    &--visible,
+    &--force-visible
+      display: block
+      // height: 100%
+      // transition: all 1s
 
-.dropdown__option
-  display: flex
-  flex-flow: row nowrap
-  font-size: 1.18rem
-  line-height: 28px
-  font-weight: 700
-  color: forward.$dark100
+  // end __contents
 
-  &:not(:last-of-type)
-    margin-bottom: 7px
+  $optionHeight: 30px
 
-.dropdown__option-name
-  flex: auto
-  text-transform: uppercase
-  vertical-align: 0px
+  &__option
+    display: flex
+    flex-flow: row nowrap
+    font-size: 1.18rem
+    line-height: 28px
+    font-weight: 700
+    color: forward.$dark100
 
-.dropdown__option-value
-  width: 32px
-  text-align: center
-  line-height: 28px
+    &:not(:last-of-type)
+      margin-bottom: 7px
 
-.dropdown__option-control
-  height: $optionHeight
-  width: $optionHeight
-  background: #fff
-  line-height: 30px
-  color: forward.$dark50
-  font-size: 1.8rem
-  border: 1px solid forward.$dark25
-  border-radius: 50%
-  cursor: pointer
+    &-name
+      flex: auto
+      text-transform: uppercase
+      vertical-align: 0px
 
-.dropdown__option-control--disabled
-  opacity: .5
-  cursor: not-allowed
+    &-value
+      width: 32px
+      text-align: center
+      line-height: 28px
 
-.dropdown__btn
-  margin: 20px 0 5px
+    &-control
+      height: $optionHeight
+      width: $optionHeight
+      background: #fff
+      line-height: 30px
+      color: forward.$dark50
+      font-size: 1.8rem
+      border: 1px solid forward.$dark25
+      border-radius: 50%
+      cursor: pointer
 
-.dropdown__btn--clear
-  color: forward.$dark50
+      &--disabled
+        opacity: .5
+        cursor: not-allowed
 
-.dropdown__btn--apply
-  float: right
+  // end __option
+
+  &__btn
+    margin: 20px 0 5px
+
+    &--clear
+      color: forward.$dark50
+
+    &--apply
+      float: right
