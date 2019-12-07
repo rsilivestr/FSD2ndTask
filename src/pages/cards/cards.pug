@@ -10,7 +10,10 @@ html(lang="ru")
   body.page.page--layout_cards
     include ../../components/common.blocks/header/header
     main.main-content.main-content--page_cards.main-content--width_m
-
-      +formSearchRoom
-
-      +formRegistration
+      .main-content__column
+        +formSearchRoom
+        +formRegistration
+      .main-content__column
+        +formBooking
+        +formLogin
+      .main-content__column
