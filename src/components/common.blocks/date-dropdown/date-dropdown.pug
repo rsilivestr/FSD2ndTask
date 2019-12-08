@@ -1,8 +1,8 @@
 mixin dateDrop
   //- .input-box__dropdown-box&attributes(attributes)
   .date-dropdown.date-dropdown--single&attributes(attributes)
-    input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input
+    input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.datepicker--single
 
 mixin filterDateDrop
   .date-dropdown.date-dropdown--range&attributes(attributes)
-    input(type='text' readonly placeholder='19 авг - 23 авг').date-dropdown__display.input-box__input
+    input(type='text' readonly placeholder='19 авг - 23 авг').date-dropdown__display.input-box__input.datepicker--range
