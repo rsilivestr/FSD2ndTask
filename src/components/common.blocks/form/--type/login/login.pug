@@ -6,7 +6,7 @@ include ../../__prompt/prompt
 mixin formLogin
   form.form.form--type_login
     h1.form__title Войти
-    +textField('Email', 'email')
+    +textField('Email', 'email').mb10
     +textField('Пароль', 'password')
     +button('войти', 'arrowed', 'l').form__btn--main
     +formPrompt('Нет аккаунта на токсин?')

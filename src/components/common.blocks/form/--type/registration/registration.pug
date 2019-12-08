@@ -8,19 +8,19 @@ mixin formRegistration
     
     h1.form__title Регистрация аккаунта
 
-    +textField('Имя')
-    +textField('Фамилия')
+    +textField('Имя').mb10
+    +textField('Фамилия').mb10
 
-    +radioGroup('gender')
+    +radioGroup('gender').mb20
       +radioItem('man', 'Мужчина', true)
       +radioItem('woman', 'Женщина')
 
-    +inputBox('дата рождения')
+    +inputBox('дата рождения').mb20
       +maskedDate
 
     +inputBox('данные для входа в сервис')
-      +textField('Email', 'email')
-      +textField('Пароль', 'password')
+      +textField('Email', 'email').mb10
+      +textField('Пароль', 'password').mb10
       +inputToggle('Получать спецпредложения')
     
     +button('перейти к оплате','arrowed','l',false).form__btn--main
