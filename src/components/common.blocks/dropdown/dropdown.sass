@@ -1,6 +1,7 @@
 @use 'Styles/forward'
 
-.dropdown
+.dropdown,
+.date-dropdown
   position: relative
 
   *::selection
@@ -46,6 +47,10 @@
       color: forward.$dark75
 
   // end __display
+
+// end .dropdown, .date-dropdown common styles
+
+.dropdown
 
   &__contents
     display: none
