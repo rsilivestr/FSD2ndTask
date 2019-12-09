@@ -2,7 +2,8 @@ const path = require('path'),
       { CleanWebpackPlugin } = require('clean-webpack-plugin'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-      CopyWebpackPlugin = require('copy-webpack-plugin');
+      CopyWebpackPlugin = require('copy-webpack-plugin'),
+      webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -18,6 +19,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      datepicker: 'air-datepicker',
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.pug'
     }),
