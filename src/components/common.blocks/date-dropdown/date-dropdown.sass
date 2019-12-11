@@ -44,7 +44,7 @@
       border: none
 
     &.-focus-,
-    &.-focus-.-in-range-
+    &.-focus-.-in-range-::after
       background: forward.$mainGradient50
 
     &.-current-,
@@ -64,7 +64,7 @@
     &.-selected-
       background: forward.$mainGradient
 
-      &:hover
+      &.-focus-
         background: forward.$mainGradient
 
   // end --cell
@@ -73,6 +73,7 @@
     padding: 15px 20px 20px
 
 .-in-range-:not(.-current-),
+.datepicker--cell.-in-range-.-focus-,
 .-in-range-.-current-::after,
 .-range-from-::after,
 .-range-to-::after
@@ -92,8 +93,8 @@
 .datepicker--cell
   &.-current-,
   &.-selected-,
-  // &.-focus-:not(.-in-range-),
-  &.-focus-
+  &.-focus-:not(.-in-range-),
+  &.-focus-.-in-range-::after
     border-radius: 50%
 
 .-range-from-::after

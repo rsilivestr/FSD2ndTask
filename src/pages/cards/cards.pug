@@ -1,4 +1,5 @@
 include ../../components/common.blocks/form/form
+include ../../components/common.blocks/room-card/room-card
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -18,3 +19,5 @@ html(lang="ru")
         +formLogin
       .main-content__column
         .datepicker--static
+        +roomCard('room1.png', 5, 888, '9 990₽', 145)
+        +roomCard('room2.png', 4, 840, '9 900₽', 65)

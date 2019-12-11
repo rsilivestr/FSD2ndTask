@@ -1,0 +1,37 @@
+@use 'Styles/forward'
+
+.room-card
+  background: #ffffff
+  width: 100%
+  max-width: 266px
+  border-radius: 4px
+  overflow: auto
+
+  &__photo
+    width: 100%
+    height: auto
+    border-radius: 4px 4px 0 0
+    overflow: hidden
+
+  &__info
+    margin: 20px
+
+  &__title
+    border-bottom: 1px solid forward.$dark25
+    padding-bottom: 10px
+    margin-bottom: 10px
+    font-family: 'Quicksand', 'Open Sans', sans-serif
+
+  &__rating
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__review-counter
+    font-size: 1.4rem
+    font-weight: 700
+    color: forward.$dark50
+
+    &::after
+      content: ' Отзывов'
+      font-weight: 400
