@@ -6,7 +6,7 @@ mixin headerUIKit
     +logoUIKit
 
 mixin header(username)
-  .main-header
+  header.main-header&attributes(attributes)
 
     a(href="#some-url").main-header__logo
       +logoToxin
@@ -24,4 +24,4 @@ mixin header(username)
       +button('register').main-header__btn
     else
       .main-header__user-panel
-        a(href="#")= username
+        a(href="#some-url-or-subnav").main-header__user-menu= username

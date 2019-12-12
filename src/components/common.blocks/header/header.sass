@@ -7,7 +7,6 @@
   &__logo
     margin: 30px
 
-
 .main-header
   display: flex
   flex-flow: row nowrap
@@ -15,17 +14,20 @@
   height: 70px
   padding-left: 20px
   padding-right: 20px
+  background: #ffffff
+  font-size: 1.4rem
 
   &__logo
-
+    
   &__nav
     margin-left: auto
+    padding: 0 20px
+    text-align: center
 
   &__navlink
     display: inline-block
     padding: 5px
     margin: 0 10px
-    font-size: 1.4rem
     text-transform: capitalize
     text-decoration: none
     color: forward.$dark50
@@ -40,15 +42,30 @@
       vertical-align: middle
 
   &__user-panel
+    padding-left: 30px
+    border-left: 1px solid forward.$dark25
+
+  &__user-menu
+    display: inline-block
+    text-decoration: none
+    padding: 8px 0
+    color: forward.$dark50
+
 
   &__btn
+    min-width: 100px
     max-height: 34px
 
 @media screen and (min-width: 1200px)
   .main-header
+    // move this to '.full-width-container' mix ???
     padding-left: calc( 50vw - 580px )
     padding-right: calc( 50vw - 580px )
 
 @media screen and (min-width: 960px)
+  // do something ??? PROFIT
+
+@media screen and (min-width: 720px)
   // show menu
-  // and MAKE MEDIA QUERIES MIXIN
+
+  // MAKE MEDIA QUERIES MIXIN
