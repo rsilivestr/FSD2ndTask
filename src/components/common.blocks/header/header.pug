@@ -8,15 +8,16 @@ mixin headerUIKit
 mixin header(username)
   .main-header
 
-    +logoToxin
+    a(href="#some-url").main-header__logo
+      +logoToxin
   
     nav.main-header__nav
-      a(href="").main-header__navlink.main-header__navlink--current home
-      a(href="").main-header__navlink about us
-      a(href="").main-header__navlink.main-header__navlink--has-subnav services
-      a(href="").main-header__navlink careers
-      a(href="").main-header__navlink news
-      a(href="").main-header__navlink documentation
+      a(href="#some-url").main-header__navlink.main-header__navlink--current home
+      a(href="#some-url").main-header__navlink about us
+      a(href="#some-url").main-header__navlink.main-header__navlink--has-subnav services
+      a(href="#some-url").main-header__navlink careers
+      a(href="#some-url").main-header__navlink news
+      a(href="#some-url").main-header__navlink documentation
 
     if (!username)
       +button('login', 'bordered').main-header__btn

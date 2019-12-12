@@ -1,3 +1,4 @@
+@use 'Styles/forward'
 @use '../logo/logo'
 
 .uikit-header
@@ -5,3 +6,49 @@
 
   &__logo
     margin: 30px
+
+
+.main-header
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  height: 70px
+  padding-left: 20px
+  padding-right: 20px
+
+  &__logo
+
+  &__nav
+    margin-left: auto
+
+  &__navlink
+    display: inline-block
+    padding: 5px
+    margin: 0 10px
+    font-size: 1.4rem
+    text-transform: capitalize
+    text-decoration: none
+    color: forward.$dark50
+
+    &--current
+      font-weight: 700
+      color: forward.$dark75
+
+    &--has-subnav::after
+      @extend .material-icons
+      content: '\e5cf'
+      vertical-align: middle
+
+  &__user-panel
+
+  &__btn
+    max-height: 34px
+
+@media screen and (min-width: 1200px)
+  .main-header
+    padding-left: calc( 50vw - 580px )
+    padding-right: calc( 50vw - 580px )
+
+@media screen and (min-width: 960px)
+  // show menu
+  // and MAKE MEDIA QUERIES MIXIN

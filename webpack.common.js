@@ -39,6 +39,10 @@ module.exports = {
       template: './src/pages/cards/cards.pug',
       filename: 'pages/cards.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/headers-footers/headers-footers.pug',
+      filename: 'pages/headers-footers.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       ignoreOrder: false,
