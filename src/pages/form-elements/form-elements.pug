@@ -1,3 +1,4 @@
+include ../../components/common.blocks/header/header
 include ../../components/common.blocks/input-box/input-box
 include ../../components/common.blocks/button/button
 include ../../components/common.blocks/pagination/pagination
@@ -14,7 +15,7 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Form Elements
   body.page.page--layout_form-elements
-    include ../../components/common.blocks/header/header
+    +headerUIKit
     main.main-content.main-content--page_form-elements.container.container--width_m
 
       .form-elements__grid

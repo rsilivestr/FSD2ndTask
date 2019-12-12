@@ -1,2 +1,26 @@
-header.uikit-header.container.container--width_l
-  include ../logo/logo
+include ../logo/logo
+include ../button/button
+
+mixin headerUIKit
+  header.uikit-header.container.container--width_l
+    +logoUIKit
+
+mixin header(username)
+  .main-header
+
+    +logoToxin
+  
+    nav.main-header__nav
+      a(href="").main-header__navlink.main-header__navlink--current home
+      a(href="").main-header__navlink about us
+      a(href="").main-header__navlink.main-header__navlink--has-subnav services
+      a(href="").main-header__navlink careers
+      a(href="").main-header__navlink news
+      a(href="").main-header__navlink documentation
+
+    if (!username)
+      +button('login', 'bordered').main-header__btn
+      +button('register').main-header__btn
+    else
+      .main-header__user-panel
+        a(href="#")= username

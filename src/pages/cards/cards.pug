@@ -1,3 +1,4 @@
+include ../../components/common.blocks/header/header
 include ../../components/common.blocks/form/form
 include ../../components/common.blocks/room-card/room-card
 
@@ -9,7 +10,7 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Cards
   body.page.page--layout_cards
-    include ../../components/common.blocks/header/header
+    +headerUIKit
     main.main-content.main-content--page_cards.main-content--width_m
       .main-content__column
         +formSearchRoom
