@@ -1,5 +1,5 @@
 // common
-@use 'forward'
+@use 'forward' as fw
 // pages
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
@@ -8,6 +8,7 @@
 // components
 @use 'CommonBlocks/header/header'
 @use 'CommonBlocks/footer/footer'
+@use 'CommonBlocks/logo/logo'
 @use 'CommonBlocks/input-box/input-box'
 @use 'CommonBlocks/button/button'
 @use 'CommonBlocks/pagination/pagination'
@@ -69,6 +70,16 @@ html, body
 .container--width_l,
 .main-content--width_l
   max-width: 1440px
+
+// @include forward.media('>phone', '<desktop')
+.full-width-container
+  padding-left: 20px
+  padding-right: 20px
+
+@include fw.media('>=desktop')
+  .full-width-container
+    padding-left: calc( 50vw - 580px )
+    padding-right: calc( 50vw - 580px )
 
 .hidden
   display: none

@@ -1,2 +1,51 @@
+include ../logo/logo
+include ../input-box/input-box
+
 mixin footer
-  footer.main-footer
+  footer.main-footer.full-width-container
+    .main-footer__nav-section
+      .main-footer__col
+        +logoToxin.main-footer__logo
+        p.main-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+
+      +footCol('navigation')
+        ul.main-footer__nav-list
+          +footLink('About Us')
+          +footLink('Support')
+          +footLink('News')
+          +footLink('Products')
+
+      +footCol('about us')
+        ul.main-footer__nav-list
+          +footLink('Who we are')
+          +footLink('Our team')
+          +footLink('Careers')
+          +footLink('Investors')
+
+      +footCol('support')
+        ul.main-footer__nav-list
+          +footLink('Documentation')
+          +footLink('Community')
+          +footLink('Get in touch')
+      
+      +footCol('subscribe to our newsletter')
+        p.main-footer__text Receive our latest news and promotions in your inbox!
+        +inputBox('', 'm')
+          +textField('Your email address', 'email', 'subscribe').main-footer__subscribe
+
+    //- end __nav-section
+
+    .main-footer__copy-section  
+      p.main-footer__copy Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
+
+
+//--- sub mixins ---//
+
+mixin footCol(title)
+  .main-footer__col
+    h2.main-footer__col-title= title
+    block
+
+mixin footLink(title)
+  li.main-footer__nav-list-item
+    a(href="#some-url").main-footer__navlink= title

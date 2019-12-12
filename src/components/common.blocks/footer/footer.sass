@@ -1,0 +1,45 @@
+@use 'Styles/forward' as fw
+
+.main-footer
+  background: #ffffff
+  color: fw.$dark50
+
+  &__nav-section
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    padding: 100px 0
+
+  &__col
+    max-width: 260px
+
+    &-title
+      margin-bottom: 20px
+      color: fw.$dark100
+      font-size: 1.2rem
+      text-transform: uppercase
+
+  &__logo
+    margin-bottom: 20px
+
+  &__nav-list
+    list-style-type: none
+
+    &-item
+      margin-bottom: 20px
+
+  &__navlink
+    text-decoration: none
+    display: inline-block
+    font-size: 1.4rem
+
+  &__subscribe
+    margin-top: 20px
+
+  // end footer__nav-section subelements
+
+  &__copy-section
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    padding: 10px 0

@@ -2,7 +2,8 @@ mixin textField(placeholder, type='text', icon, uikit)
   input(
     type=type
     placeholder=placeholder 
-    class=`input-box__input input-box__input--${type} input-box__input--${uikit}`
+    class='input-box__input input-box__input--' + type
+    class=uikit ? 'input-box__input--' + uikit : ''
   )&attributes(attributes)
-  if(icon=="subscribe")
+  if(icon=='subscribe')
     .input-box__icon-subscribe

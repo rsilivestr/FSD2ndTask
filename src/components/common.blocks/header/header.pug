@@ -6,11 +6,10 @@ mixin headerUIKit
     +logoUIKit
 
 mixin header(username)
-  header.main-header&attributes(attributes)
+  header.main-header.full-width-container&attributes(attributes)
 
-    a(href="#some-url").main-header__logo
-      +logoToxin
-  
+    +logoToxin.main-header__logo
+
     nav.main-header__nav
       a(href="#some-url").main-header__navlink.main-header__navlink--current home
       a(href="#some-url").main-header__navlink about us
