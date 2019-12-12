@@ -2,8 +2,8 @@ include ../logo/logo
 include ../input-box/input-box
 
 mixin footer
-  footer.main-footer.full-width-container
-    .main-footer__nav-section
+  footer.main-footer
+    .main-footer__nav-section.full-width-container
       .main-footer__col
         +logoToxin.main-footer__logo
         p.main-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
@@ -35,8 +35,15 @@ mixin footer
 
     //- end __nav-section
 
-    .main-footer__copy-section  
+    .main-footer__copy-section.full-width-container
       p.main-footer__copy Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
+      .main-footer__social
+        a(href="#some-url").main-footer__social-link
+          i.main-footer__social-icon.icon-twitter
+        a(href="#some-url").main-footer__social-link
+          i.main-footer__social-icon.icon-facebook-squared
+        a(href="#some-url").main-footer__social-link
+          i.main-footer__social-icon.icon-instagram
 
 
 //--- sub mixins ---//

@@ -8,7 +8,9 @@
     display: flex
     flex-flow: row nowrap
     justify-content: space-between
-    padding: 100px 0
+    padding-top: 100px
+    padding-bottom: 100px
+    border-bottom: 1px solid fw.$dark10
 
   &__col
     max-width: 260px
@@ -42,4 +44,17 @@
     display: flex
     flex-flow: row nowrap
     align-items: center
-    padding: 10px 0
+    height: 70px
+
+  &__social
+    margin-left: auto
+
+  &__social-link
+    display: inline-block
+
+  &__social-icon
+    font-size: 2.4rem
+    margin-left: 10px
+    color: transparent
+    background: fw.$mainGradient
+    background-clip: text

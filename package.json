@@ -40,10 +40,10 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "imask": "^5.2.1",
     "jquery": "^3.4.1",
     "js-datepicker": "^5.2.1",
-    "air-datepicker": "^2.2.3",
     "nouislider": "^14.0.3"
   }
 }
