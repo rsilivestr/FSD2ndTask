@@ -13,8 +13,8 @@
   &:disabled
     cursor: not-allowed
 
-  + .button
-    margin-left: 20px
+  // + .button
+  //   margin-left: 20px
 
 .button--style_gradient,
 .button--style_arrowed
@@ -70,13 +70,13 @@
     background: forward.$mainGradient50
 
 .button--style_text
-  background: transparent
-  color: forward.$purple
+  @extend .text-gradient
   padding: 0 1px
   line-height: 1.5rem
 
   &:disabled
     color: forward.$dark50
+    background: transparent
 
 .button--size_auto
   width: auto

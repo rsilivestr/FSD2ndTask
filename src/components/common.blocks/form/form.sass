@@ -1,4 +1,4 @@
-@use './Styles/forward'
+@use 'Styles/forward' as fw
 @use './--type/booking/booking'
 @use './--type/login/login'
 @use './--type/registration/registration'
@@ -11,7 +11,7 @@
   padding: 40px 30px 30px 30px
   background: #ffffff
   border-radius: 3px
-  box-shadow: 0 0 20px forward.$dark10
+  box-shadow: 0 0 20px fw.$dark10
 
   &__title
     display: flex
@@ -28,14 +28,12 @@
       &--lux::after
         content: ' люкс'
         font-size: 1.4rem
-        color: transparent
-        background: forward.$mainGradient
-        background-clip: text
+        @extend .text-gradient
 
     // end -room
 
     &-price
-      color: forward.$dark50
+      color: fw.$dark50
       font-size: 1.4rem
       line-height: 1.8rem
 
@@ -62,7 +60,7 @@
   width: 100%
   line-height: 2.4rem
   font-size: 1.4rem
-  color: forward.$dark75
+  color: fw.$dark75
   margin-bottom: 16px
 
   &__title,
@@ -80,8 +78,8 @@
       width: 20px
       height: 20px
       margin-top: 2px
-      color: forward.$dark25
-      border: 1px solid forward.$dark25
+      color: fw.$dark25
+      border: 1px solid fw.$dark25
       border-radius: 50%
 
   &__sum
@@ -92,7 +90,7 @@
     display: flex
     flex-flow: row nowrap
     width: 100%
-    color: forward.$dark100
+    color: fw.$dark100
     font-size: 1.9rem
     font-weight: 700
 
@@ -107,4 +105,4 @@
       flex: auto
       order: 2
       margin: 3px 5px
-      border-bottom: 1px dotted forward.$dark25
+      border-bottom: 1px dotted fw.$dark25

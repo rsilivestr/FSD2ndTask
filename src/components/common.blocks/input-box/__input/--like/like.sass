@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 
 .input-box__input--like
   position: relative
@@ -6,12 +6,12 @@
   flex-direction: row
 
 .input-box__input--like + .input-box__input--like
-  margin-left: forward.$controlSize / 2
+  margin-left: fw.$controlSize / 2
 
 .input-box__like-checkbox,
 .input-box__like-stylish
-  width: forward.$controlSize * 2
-  height: forward.$controlSize
+  width: fw.$controlSize * 2
+  height: fw.$controlSize
 
 .input-box__like-checkbox
   position: relative
@@ -20,20 +20,20 @@
   cursor: pointer
 
   &:checked + .input-box__like-stylish
-    color: forward.$purple
-    border-color: forward.$purple
+    color: fw.$purple
+    border-color: fw.$purple
 
     &:before
       content: '\e87d'
-      color: forward.$purple
+      @extend .text-gradient
 
 .input-box__like-stylish
   position: absolute
   display: flex
   font-size: 1rem
-  color: forward.$dark25
-  border: 1px solid forward.$dark25
-  border-radius: forward.$controlSize / 2
+  color: fw.$dark25
+  border: 1px solid fw.$dark25
+  border-radius: fw.$controlSize / 2
   z-index: 10
 
 

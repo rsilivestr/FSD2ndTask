@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 
 .input-box__rate-box
   display: inline-flex
@@ -9,7 +9,7 @@
     .rate-box__star
       &:after
         content: '\e83a'
-        background: forward.$mainGradient50
+        background: fw.$mainGradient50
         background-clip: text
 
       &:hover::after
@@ -17,7 +17,7 @@
     
     .rate-box__star--active::after,
     .rate-box__star--active ~ .rate-box__star::after
-      background: forward.$mainGradient
+      background: fw.$mainGradient
       background-clip: text
 
 .input-box__rate-box + .input-box__rate-box
@@ -29,9 +29,7 @@
   &:after
     @extend .material-icons
     content: '\e83a'
-    color: transparent
-    background: forward.$mainGradient
-    background-clip: text
+    @extend .text-gradient
 
   &:hover ~ .rate-box__star::after
       content: '\e838'

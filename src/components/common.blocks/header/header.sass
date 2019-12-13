@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 @use '../logo/logo'
 
 .uikit-header
@@ -16,38 +16,48 @@
   font-size: 1.4rem
 
   &__logo
+    max-width: 40px
+    overflow: hidden
+
+    @include fw.media('>=m')
+      max-width: 100%
     
   &__nav
     margin-left: auto
-    padding: 0 20px
+    padding: 0 30px
     text-align: center
 
   &__navlink
     display: inline-block
     padding: 5px
-    margin: 0 10px
     text-transform: capitalize
     text-decoration: none
-    color: forward.$dark50
+    color: fw.$dark50
+
+    + .main-header__navlink
+      margin-left: 20px
 
     &--current
       font-weight: 700
-      color: forward.$dark75
+      color: fw.$dark75
 
     &--has-subnav::after
       @extend .material-icons
       content: '\e5cf'
       vertical-align: middle
 
+    &:hover
+      @extend .text-gradient
+
   &__user-panel
     padding-left: 30px
-    border-left: 1px solid forward.$dark25
+    border-left: 1px solid fw.$dark25
 
   &__user-menu
     display: inline-block
     text-decoration: none
     padding: 8px 0
-    color: forward.$dark50
+    color: fw.$dark50
 
   &__btn
     min-width: 100px

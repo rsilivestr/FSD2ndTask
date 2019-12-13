@@ -23,9 +23,7 @@
   &:after
     @extend .material-icons
     content: '\e5c8'
-    color: transparent
-    background: forward.$mainGradient
-    background-clip: text
+    @extend .text-gradient
 
 .input-box__input--uikit_always-focused
   border-color: forward.$dark50

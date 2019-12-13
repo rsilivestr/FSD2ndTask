@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 @import '~air-datepicker/dist/css/datepicker'
 // @import '~js-datepicker/dist/datepicker.min.css'
 // @import '~js-datepicker/src/datepicker.scss'
@@ -13,7 +13,7 @@
     border: none
 
     &-title
-      color: forward.$dark100
+      color: fw.$dark100
       font-weight: 700
       font-size: 1.9rem
 
@@ -26,14 +26,14 @@
 
   &__arrow,
   &--day-name
+    // --day-name does not work with just @extend
     color: transparent
-    background: forward.$mainGradient
-    background-clip: text
+    @extend .text-gradient
 
   &--cell
     min-width: 40px
     min-height: 40px
-    color: forward.$dark50
+    color: fw.$dark50
     border-radius: 0
     z-index: 20
 
@@ -45,7 +45,7 @@
 
     &.-focus-,
     &.-focus-.-in-range-::after
-      background: forward.$mainGradient50
+      background: fw.$mainGradient50
 
     &.-current-,
     &.-selected-
@@ -53,19 +53,19 @@
       font-weight: 700
     
     &.-current-
-      background: forward.$secondaryGradient
+      background: fw.$secondaryGradient
 
       &.-selected-
-        background: forward.$secondaryGradient
+        background: fw.$secondaryGradient
 
       &.-in-range-
         color: #ffffff
 
     &.-selected-
-      background: forward.$mainGradient
+      background: fw.$mainGradient
 
       &.-focus-
-        background: forward.$mainGradient
+        background: fw.$mainGradient
 
   // end --cell
 
@@ -77,7 +77,7 @@
 .-in-range-.-current-::after,
 .-range-from-::after,
 .-range-to-::after
-  background: forward.$mainGradient25
+  background: fw.$mainGradient25
 
 .-in-range-::after,
 .-range-from-::after,

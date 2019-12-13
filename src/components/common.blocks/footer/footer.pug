@@ -49,7 +49,7 @@ mixin footer
 //--- sub mixins ---//
 
 mixin footCol(title)
-  .main-footer__col
+  .main-footer__col&attributes(attributes)
     h2.main-footer__col-title= title
     block
 

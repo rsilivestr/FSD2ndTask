@@ -53,11 +53,6 @@ html, body
   &:hover
     background-color: #eee
 
-// .router__current-page
-//   flex: auto
-//   // border: 2px solid red
-//   border: 2px solid transparent
-
 .container,
 .main-content
   margin-left: auto
@@ -76,8 +71,7 @@ html, body
   padding-left: 20px
   padding-right: 20px
 
-@include fw.media('>=desktop')
-  .full-width-container
+  @include fw.media('>=l')
     padding-left: calc( 50vw - 580px )
     padding-right: calc( 50vw - 580px )
 

@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 
 @import '~nouislider/distribute/nouislider.min.css'
 
@@ -15,13 +15,13 @@
     width: 100%
     height: 100%
     top: -6.2px
-    border: 1px solid forward.$dark25
+    border: 1px solid fw.$dark25
     border-radius: 3px
     z-index: -1
 
 .noUi-handle,
 .noUi-connect
-  background: forward.$secondaryGradient
+  background: fw.$secondaryGradient
 
 .noUi-target
   background: transparent
@@ -47,4 +47,4 @@
   right: 0
   font-size: 1.2rem
   text-transform: uppercase
-  color: forward.$dark50
+  color: fw.$dark50
