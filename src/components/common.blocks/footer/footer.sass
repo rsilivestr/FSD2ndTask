@@ -6,14 +6,36 @@
 
   &__nav-section
     display: flex
-    flex-flow: row nowrap
-    justify-content: space-between
-    padding-top: 100px
-    padding-bottom: 100px
+    flex-flow: row wrap
+    justify-content: space-around
+    // justify-content: center
+    padding-top: 50px
+    padding-bottom: 50px
     border-bottom: 1px solid fw.$dark10
 
+    @include fw.media('>=m')
+      padding-top: 100px
+      padding-bottom: 100px
+      justify-content: space-between
+
   &__col
-    max-width: 260px
+    display: flex
+    flex-flow: column nowrap
+
+    @include fw.media('<footcols')
+      flex: 100%
+
+    @include fw.media('<m')
+      + .main-footer__col
+        margin-top: 40px
+
+      &:first-of-type,
+      &:last-of-type
+        flex: 100%
+        align-items: center
+
+    @include fw.media('>=m')
+      max-width: 260px
 
     &-title
       margin-bottom: 20px
@@ -23,6 +45,11 @@
 
   &__logo
     margin-bottom: 20px
+
+  &__text
+    @include fw.media('<m')
+      max-width: 560px
+      text-align: center
 
   &__nav-list
     list-style-type: none
@@ -45,12 +72,20 @@
 
   &__copy-section
     display: flex
-    flex-flow: row nowrap
+    flex-flow: column nowrap
     align-items: center
-    height: 70px
+    min-height: 70px
+    padding: 40px 20px
+
+    @include fw.media('>=m')
+      flex-flow: row nowrap
+      padding: 0 20px
 
   &__social
-    margin-left: auto
+    margin: 20px 0 0 0
+
+    @include fw.media('>=m')
+      margin: 0 0 0 auto
 
   &__social-link
     display: inline-block

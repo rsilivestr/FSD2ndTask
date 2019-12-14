@@ -75,6 +75,11 @@ html, body
     padding-left: calc( 50vw - 580px )
     padding-right: calc( 50vw - 580px )
 
+  &--shrink_medium
+    @include fw.media('<=m')
+      padding-left: calc( 50vw - 280px )
+      padding-right: calc( 50vw - 280px )
+
   &--creative
     @include fw.media('>=creative')
       padding-left: calc( 50vw - 280px )
