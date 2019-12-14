@@ -2,7 +2,7 @@ include ../logo/logo
 include ../input-box/input-box
 
 mixin footer
-  footer.main-footer
+  footer.main-footer&attributes(attributes)
     .main-footer__nav-section.full-width-container
       .main-footer__col
         +logoToxin.main-footer__logo
@@ -37,14 +37,7 @@ mixin footer
 
     .main-footer__copy-section.full-width-container
       p.main-footer__copy Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
-      .main-footer__social
-        a(href="#some-url").main-footer__social-link
-          i.main-footer__social-icon.icon-twitter
-        a(href="#some-url").main-footer__social-link
-          i.main-footer__social-icon.icon-facebook-squared
-        a(href="#some-url").main-footer__social-link
-          i.main-footer__social-icon.icon-instagram
-
+      +footsocial
 
 //--- sub mixins ---//
 
@@ -56,3 +49,20 @@ mixin footCol(title)
 mixin footLink(title)
   li.main-footer__nav-list-item
     a(href="#some-url").main-footer__navlink= title
+
+mixin footsocial
+  .main-footer__social
+    a(href="#some-url").main-footer__social-link
+      i.main-footer__social-icon.icon-twitter
+    a(href="#some-url").main-footer__social-link
+      i.main-footer__social-icon.icon-facebook-squared
+    a(href="#some-url").main-footer__social-link
+      i.main-footer__social-icon.icon-instagram
+
+
+//--- Footer Creative ---//
+mixin footerCreative
+  footer.main-footer.main-footer--creative.full-width-container--creative&attributes(attributes)
+    +logoToxin.main-footer__logo
+    p.main-footer__text.mb25 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    +footsocial

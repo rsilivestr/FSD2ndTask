@@ -6,28 +6,32 @@
   font-family: fw.$mainFont
   color: fw.$dark100
 
-.input-box--layout_row
-  flex-direction: row
-  flex-wrap: wrap
+  &--layout_row
+    flex-direction: row
+    flex-wrap: wrap
 
-.input-box--size_l
-  max-width: 320px
+  &--size
+  
+    &_l
+      max-width: 320px
 
-.input-box--size_m
-  max-width: 266px
+    &_m
+      max-width: 266px
 
-.input-box--size_s
-  max-width: 240px
+    &_s
+      max-width: 240px
 
-.input-box--size_xs
-  max-width: 150px
+    &_xs
+      max-width: 150px
 
-.input-box--size_auto
-  max-width: auto
+    &_auto
+      max-width: auto
 
-.input-box__title
-  margin-bottom: 4px
-  font-size: 1.2rem
-  line-height: 1.5rem
-  font-weight: 700
-  text-transform: uppercase
+  // end --size
+
+  &__title
+    margin-bottom: 4px
+    font-size: 1.2rem
+    line-height: 1.5rem
+    font-weight: 700
+    text-transform: uppercase

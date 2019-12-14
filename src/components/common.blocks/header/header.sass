@@ -49,6 +49,8 @@
     &:hover
       @extend .text-gradient
 
+  // end __navlink
+
   &__user-panel
     padding-left: 30px
     border-left: 1px solid fw.$dark25
@@ -62,3 +64,9 @@
   &__btn
     min-width: 100px
     max-height: 34px
+
+    + .main-header__btn
+      margin-left: 20px
+
+    // &:first-of-type
+    //   margin-right: 20px

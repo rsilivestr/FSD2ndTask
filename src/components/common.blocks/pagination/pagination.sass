@@ -5,36 +5,34 @@
   flex-flow: row wrap
   font-size: 1.2rem
 
-.pagination__control,
-.pagination__page,
-.pagination__gap
-  @extend .centered-flex
-  height: 40px
-  width: 40px
-  border-radius: 20px
+  &__control,
+  &__page,
+  &__gap
+    @extend .centered-flex
+    height: 40px
+    width: 40px
+    border-radius: 20px
 
-.pagination__control,
-.pagination__page
-  cursor: pointer
+  &__control
+    background: fw.$secondaryGradient
+    color: #fff
+    cursor: pointer
 
-.pagination__control
-  background: fw.$secondaryGradient
-  color: #fff
+    &--hidden
+      display: none
 
-.pagination__control--hidden
-  display: none
+  &__page
+    color: fw.$dark50
+    cursor: pointer
 
-.pagination__page
-  color: fw.$dark50
+    &--active
+      background: fw.$mainGradient
+      font-weight: 700
+      color: #fff
 
-.pagination__page--active
-  background: fw.$mainGradient
-  font-weight: 700
-  color: #fff
-
-.pagination-tooltip
-  width: 100%
-  margin-top: 13px
-  font-size: 1.4rem
-  color: fw.$dark75
-  text-align: center
+  &__tooltip
+    width: 100%
+    margin-top: 13px
+    font-size: 1.4rem
+    color: fw.$dark75
+    text-align: center

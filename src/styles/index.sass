@@ -75,5 +75,10 @@ html, body
     padding-left: calc( 50vw - 580px )
     padding-right: calc( 50vw - 580px )
 
+  &--creative
+    @include fw.media('>=creative')
+      padding-left: calc( 50vw - 280px )
+      padding-right: calc( 50vw - 280px )
+
 .hidden
   display: none
