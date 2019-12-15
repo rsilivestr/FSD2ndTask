@@ -1,7 +1,9 @@
 const footColTitleClass = 'main-footer__col-title--expandable';
 
 document.body.addEventListener('click', e => {
+  // if footer column nav title is clicked
   if (e.target.classList.contains(footColTitleClass)) {
+    // expand nav-list & rotate expand_more icon
     e.target.classList.toggle('main-footer__col-title--expanded');
     e.target.nextElementSibling.classList.toggle('main-footer__nav-list--expanded');
   }

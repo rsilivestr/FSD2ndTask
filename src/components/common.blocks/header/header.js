@@ -1,16 +1,15 @@
 const UIheader = document.querySelector('.main-header'),
+  UInav = UIheader ? UIheader.querySelector('.main-header__nav') : null,
   UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
   UIregBtn = document.querySelectorAll('.main-header__btn')[1];
 
 
 // check if page has header
 if (UIheader) {
-  
-  // TODO check if user is logged in
-  // then return
-
   resizeHeader(true);
   window.addEventListener('resize', resizeHeader);
+
+  UIheader.addEventListener('click', toggleNav);
 }
 
 // determine initial view
@@ -49,5 +48,17 @@ function resizeHeader(firstLoad=false) {
     // change buttons content to text
     UIloginBtn.innerHTML = 'login';
     UIregBtn.innerHTML = 'register';
+  }
+
+  // reset main-header__nav--expanded class on width > "tablet"
+  if (window.innerWidth >= 768) {
+    UInav.classList.remove('main-header__nav--expanded');
+  }
+}
+
+// toggle mobile menu
+function toggleNav(e) {
+  if (e.target.closest('.main-header__menu-btn')) {
+    UInav.classList.toggle('main-header__nav--expanded');
   }
 }
