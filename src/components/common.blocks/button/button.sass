@@ -1,7 +1,6 @@
 @use 'Styles/forward' as fw
 
 .button
-  @extend .centered-flex
   position: relative
   width: 100%
   font-family: 'Montserrat' sans-serif
@@ -19,6 +18,9 @@
 
     &_gradient,
     &_arrowed
+      display: inline-flex
+      justify-content: center
+      align-items: center
       background: fw.$mainGradient
       color: #fff
       height: 44px
@@ -28,7 +30,7 @@
         background: fw.$mainGradient50
 
     &_gradient
-      padding: 0 20px
+      padding: 0 18px
 
     &_arrowed::after
       @extend .centered-flex
@@ -52,7 +54,7 @@
 
     &_bordered
       height: 44px
-      padding: 0 10px
+      padding: 0 9px
 
       background: linear-gradient(#fff, #fff), fw.$mainGradient
       background-repeat: no-repeat
