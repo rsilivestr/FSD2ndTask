@@ -3,7 +3,6 @@ const UIheader = document.querySelector('.main-header'),
   UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
   UIregBtn = document.querySelectorAll('.main-header__btn')[1];
 
-
 // check if page has header
 if (UIheader) {
   resizeHeader(true);

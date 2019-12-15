@@ -27,4 +27,25 @@ mixin header(username)
         +button('register').main-header__btn
     else
       .main-header__user-panel
-        a(href="#some-url-or-subnav").main-header__user-menu= username
+        a(href="#some-url-or-menu").main-header__user-menu= username
+
+//- submixins - for customization
+mixin mainHeader
+  header.main-header.full-width-container&attributes(attributes)
+    block
+
+mixin headerNav
+  nav.main-header__nav
+    block
+
+mixin navlink(name, current)
+  a(href="some-url", class = current ? 'main-header__navlink--current' : '').main-header__navlink= name
+
+mixin headerButtons(login='login', register='register')
+  .main-header__user-buttons
+    +button(login, 'bordered').main-header__btn
+    +button(register).main-header__btn
+
+mixin headerUser()
+  .main-header__user-panel
+    a(href="#some-url-or-menu").main-header__user-menu= username
