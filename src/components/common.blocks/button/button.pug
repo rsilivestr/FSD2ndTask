@@ -1,3 +1,3 @@
 mixin button(title='click me', style='gradient', size='s', isDisabled)
-  button(class=`button button--style_${style} button--size_${size}` disabled=isDisabled?true:false)&attributes(attributes)
-    span(class='button--style_' + style + '__title')= title
+  button(class=`button button--style_${style} button--size_${size}` disabled=isDisabled?true:false)&attributes(attributes)= title
+  //-   span(class='button--style_' + style + '__title')= title

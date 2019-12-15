@@ -1,10 +1,16 @@
-const UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
-  UIloginBtnInner = UIloginBtn ? UIloginBtn.querySelector('span') : null;
-  UIregBtn = document.querySelectorAll('.main-header__btn')[1],
-  UIregBtnInner = UIregBtn ? UIregBtn.querySelector('span') : null;;
+const UIheader = document.querySelector('.main-header'),
+  UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
+  UIregBtn = document.querySelectorAll('.main-header__btn')[1];
 
-resizeHeader(true);
-window.onresize = resizeHeader;
+// check if page has header
+if (UIheader) {
+  
+  // TODO check if user is logged in
+  // then return
+
+  resizeHeader(true);
+  window.onresize = resizeHeader;
+}
 // determine initial view
 let isDesktop = (window.outerWidth > 920) ? true : false;
 function resizeHeader(firstLoad=false) {
@@ -16,12 +22,14 @@ function resizeHeader(firstLoad=false) {
     // change buttons style
     UIloginBtn.classList.remove('button--style_bordered');
     UIloginBtn.classList.add('button--style_text');
+    UIloginBtn.classList.add('main-header__btn--iconic');
     UIregBtn.classList.remove('button--style_gradient');
     UIregBtn.classList.add('button--style_text');
+    UIregBtn.classList.add('main-header__btn--iconic');
 
     // change buttons content to icons
-    UIloginBtnInner.innerHTML = '<i class="material-icons">input</i>'
-    UIregBtnInner.innerHTML = '<i class="material-icons">person_add</i>'
+    UIloginBtn.innerHTML = '<i class="material-icons">input</i>'
+    UIregBtn.innerHTML = '<i class="material-icons">person_add</i>'
 
   } else if ((window.outerWidth >= 920 && !isDesktop) || (window.outerWidth >= 920 && firstLoad)) {
     // toggle view
@@ -30,11 +38,13 @@ function resizeHeader(firstLoad=false) {
     // change buttons style
     UIloginBtn.classList.add('button--style_bordered');
     UIloginBtn.classList.remove('button--style_text');
+    UIloginBtn.classList.remove('main-header__btn--iconic');
     UIregBtn.classList.add('button--style_gradient');
     UIregBtn.classList.remove('button--style_text');
+    UIregBtn.classList.remove('main-header__btn--iconic');
 
     // change buttons content to text
-    UIloginBtnInner.innerHTML = 'login'
-    UIregBtnInner.innerHTML = 'register'
+    UIloginBtn.innerHTML = 'login'
+    UIregBtn.innerHTML = 'register'
   }
 }

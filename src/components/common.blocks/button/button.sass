@@ -1,4 +1,4 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as fw
 
 .button
   position: relative
@@ -13,79 +13,125 @@
   &:disabled
     cursor: not-allowed
 
-  // + .button
-  //   margin-left: 20px
+  &--style
 
-.button--style_gradient,
-.button--style_arrowed
-  background: forward.$mainGradient
-  color: #fff
-  height: 44px
-  border-radius: 22px
+    &_gradient,
+    &_arrowed
+      background: fw.$mainGradient
+      color: #fff
+      height: 44px
+      border-radius: 22px
+
+      &:disabled
+        background: fw.$mainGradient50
+
+    &_arrowed::after
+      @extend .centered-flex
+      position: absolute
+      height: 44px
+      width: 44px
+      top: 0
+      right: 0
+      @extend .material-icons
+      content: '\e5c8'
+      color: #fff
+
+    &_text
+      @extend .text-gradient
+      padding: 0 1px
+      line-height: 1.5rem
+
+      &:disabled
+        color: fw.$dark50
+        background: transparent
+
+    &_bordered
+      height: 44px
+
+      background: linear-gradient(#fff, #fff), fw.$mainGradient
+      background-repeat: no-repeat
+      background-origin: padding-box, border-box
+
+      border: 10px solid transparent
+      border-radius: 22px
+
+      color: fw.$purple
+
+      &::before
+        content: ""
+        position: absolute
+        top: -8px
+        bottom: -8px
+        left: -8px
+        right: -8px
+        border: 8px solid #fff
+        border-radius: 20px
+
+      &:disabled
+        opacity: 0.5
+
+
+// .button--style_gradient,
+// .button--style_arrowed
+//   background: fw.$mainGradient
+//   color: #fff
+//   height: 44px
+//   border-radius: 22px
   
-  &:disabled
-    background: forward.$mainGradient50
+//   &:disabled
+//     background: fw.$mainGradient50
 
-.button--style_arrowed::after
-  @extend .centered-flex
-  position: absolute
-  height: 44px
-  width: 44px
-  top: 0
-  right: 0
-  @extend .material-icons
-  content: '\e5c8'
-  color: #fff
+// .button--style_bordered
+//   position: relative
+//   height: 44px
+//   border: 2px solid transparent
+//   border-radius: 22px
+//   color: fw.$purple
 
-.button--style_bordered
-  position: relative
-  // background: #fff
-  // background-clip: padding-box
-  height: 44px
-  border: 2px solid transparent
-  border-radius: 22px
-  color: forward.$purple
+//   &__title,
+//   &:after
+//     position: absolute
+//     top: 0
+//     right: 0
+//     bottom: 0
+//     left: 0
+//     border-radius: inherit
 
-  &__title,
-  &:after
-    position: absolute
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    border-radius: inherit
+//   &__title
+//     @extend .centered-flex
+//     background: #fff
+//     z-index: 20
 
-  &__title
-    @extend .centered-flex
-    background: #fff
-    z-index: 20
+//   &:after
+//     content: ''
+//     z-index: 10
+//     margin: -2px
+//     background: fw.$mainGradient
 
-  &:after
-    content: ''
-    z-index: 10
-    margin: -2px
-    background: forward.$mainGradient
+//   &:disabled::after
+//     background: fw.$mainGradient50
 
-  &:disabled::after
-    background: forward.$mainGradient50
 
-.button--style_text
-  @extend .text-gradient
-  padding: 0 1px
-  line-height: 1.5rem
 
-  &:disabled
-    color: forward.$dark50
-    background: transparent
+// .button--style_text
+//   @extend .text-gradient
+//   padding: 0 1px
+//   line-height: 1.5rem
 
-.button--size_auto
-  width: auto
+//   &:disabled
+//     color: fw.$dark50
+//     background: transparent
 
-.button--size_s
-  max-width: 99px
+.button--size
 
-.button--size_m
-  max-width: 266px
+  &_auto
+    width: auto
 
-.button--size_l
-  max-width: 320px
+  &_s
+    max-width: 99px
+
+  &_m
+    max-width: 266px
+
+  &_l
+    max-width: 320px

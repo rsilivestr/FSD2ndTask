@@ -21,21 +21,28 @@
 
     @include fw.media('>=m')
       max-width: 100%
-    
+
   &__nav
+    display: none
     margin-left: auto
-    padding: 0 30px
     text-align: center
+
+    @include fw.media('>=tablet')
+      display: block
+      padding: 0 30px
+
+    @include fw.media('>=topnav')
+      margin-right: 0
 
   &__navlink
     display: inline-block
-    padding: 5px
+    padding: 0 5px
     text-transform: capitalize
     text-decoration: none
     color: fw.$dark50
 
-    + .main-header__navlink
-      margin-left: 20px
+    // + .main-header__navlink
+    //   margin-left: 20px
 
     &--current
       font-weight: 700
@@ -52,6 +59,7 @@
   // end __navlink
 
   &__user-panel
+    display: flex
     padding-left: 30px
     border-left: 1px solid fw.$dark25
     
@@ -60,7 +68,7 @@
       // border: none
       
   &__user-menu
-    display: inline-block
+    display: inline-flex
     width: 30px
     white-space: nowrap
     overflow: hidden
@@ -69,10 +77,11 @@
 
     &::before
       @extend .material-icons
-      @extend .text-gradient
       content: '\e853'
       font-size: 30px
 
+    &:hover::before
+      @extend .text-gradient
 
     @include fw.media('>=topnav')
       width: auto
@@ -85,28 +94,24 @@
 
   &__user-buttons
     display: flex
-    // width: 30px
-    // white-space: nowrap
-    // overflow: hidden
-
-    // &::before
-    //   @extend .material-icons
-    //   @extend .text-gradient
-    //   content: '\e890'
-    //   font-size: 30px
-
-    @include fw.media('<m')
-      // display: none
         
   &__btn
     // min-width: 50px
     max-height: 34px
+
+    &--iconic
+      color: fw.$dark50
+      background: transparent
+
+      &:hover
+        @extend .text-gradient
 
     + .main-header__btn
       margin-left: 20px
 
     @include fw.media('>=topnav')
       min-width: 100px
+
 
     // &:first-of-type
     //   margin-right: 20px
