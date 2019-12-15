@@ -25,13 +25,18 @@
     @include fw.media('<footcols')
       flex: 100%
 
-    @include fw.media('<m')
-      + .main-footer__col
+    + .main-footer__col
+      margin-top: 20px
+
+      @include fw.media('>=footcols')
         margin-top: 40px
 
-      &:first-of-type,
-      &:last-of-type
-        flex: 100%
+      @include fw.media('>=m')
+        margin-top: 0
+
+    &:first-of-type,
+    &:last-of-type
+      @include fw.media('<m')
         align-items: center
 
     @include fw.media('>=m')
@@ -42,7 +47,30 @@
       color: fw.$dark100
       font-size: 1.2rem
       text-transform: uppercase
+      text-align: center
+      line-height: 26px
+      cursor: pointer
 
+      &--expandable
+
+        &::after
+          @extend .material-icons
+          content: '\e5cf'
+          vertical-align: top
+          // compensate for width grow to stay centered
+          margin-right: -12px
+          transition: all .1s
+
+        @include fw.media('>=footcols')
+          text-align: left
+
+          &::after
+            display: none
+
+      &--expanded::after
+        transform: rotate(-180deg)
+        transition: all .1s
+      
   &__logo
     margin-bottom: 20px
 
@@ -52,10 +80,22 @@
       text-align: center
 
   &__nav-list
+    display: none
     list-style-type: none
+    text-align: center
+
+    
+    @include fw.media('>=footcols')
+      display: block
+      text-align: left
 
     &-item
       margin-bottom: 20px
+    
+    &--expanded
+      display: block
+
+  // end __nav-list
 
   &__navlink
     text-decoration: none
@@ -80,6 +120,14 @@
     @include fw.media('>=m')
       flex-flow: row nowrap
       padding: 0 20px
+
+  &__copy-text
+    text-align: center
+    width: 220px
+
+    @include fw.media('>=m')
+      text-align: left
+      width: auto
 
   &__social
     margin: 20px 0 0 0

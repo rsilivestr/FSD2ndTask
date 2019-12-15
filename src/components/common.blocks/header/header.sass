@@ -22,27 +22,36 @@
     @include fw.media('>=m')
       max-width: 100%
 
+  &__menu-btn
+    margin: 0 20px 0 auto
+    // margin: 0 auto
+    color: fw.$dark50
+
+    &:hover
+      @extend .text-gradient
+
+    @include fw.media('>=tablet')
+      display: none
+
   &__nav
     display: none
     margin-left: auto
     text-align: center
 
     @include fw.media('>=tablet')
-      display: block
+      display: flex
+      width: 100%
+      max-width: 600px
+      justify-content: space-between
       padding: 0 30px
-
-    @include fw.media('>=topnav')
-      margin-right: 0
 
   &__navlink
     display: inline-block
+    line-height: 24px
     padding: 0 5px
     text-transform: capitalize
     text-decoration: none
     color: fw.$dark50
-
-    // + .main-header__navlink
-    //   margin-left: 20px
 
     &--current
       font-weight: 700
@@ -60,16 +69,14 @@
 
   &__user-panel
     display: flex
-    padding-left: 30px
-    border-left: 1px solid fw.$dark25
     
-    @include fw.media('<topnav')
-      // padding-right: 10px
-      // border: none
+    @include fw.media('>=tablet')
+      padding-left: 30px
+      border-left: 1px solid fw.$dark25
       
   &__user-menu
     display: inline-flex
-    width: 30px
+    width: 24px
     white-space: nowrap
     overflow: hidden
     text-decoration: none
@@ -78,7 +85,7 @@
     &::before
       @extend .material-icons
       content: '\e853'
-      font-size: 30px
+      font-size: 24px
 
     &:hover::before
       @extend .text-gradient
@@ -111,7 +118,6 @@
 
     @include fw.media('>=topnav')
       min-width: 100px
-
 
     // &:first-of-type
     //   margin-right: 20px

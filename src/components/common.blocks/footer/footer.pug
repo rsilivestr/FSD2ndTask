@@ -8,21 +8,21 @@ mixin footer
         +logoToxin.main-footer__logo
         p.main-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 
-      +footCol('navigation')
+      +footCol('navigation').main-footer__col-title--expandable
         ul.main-footer__nav-list
           +footLink('About Us')
           +footLink('Support')
           +footLink('News')
           +footLink('Products')
 
-      +footCol('about us')
+      +footCol('about us').main-footer__col-title--expandable
         ul.main-footer__nav-list
           +footLink('Who we are')
           +footLink('Our team')
           +footLink('Careers')
           +footLink('Investors')
 
-      +footCol('support')
+      +footCol('support').main-footer__col-title--expandable
         ul.main-footer__nav-list
           +footLink('Documentation')
           +footLink('Community')
@@ -36,14 +36,14 @@ mixin footer
     //- end __nav-section
 
     .main-footer__copy-section.full-width-container
-      p.main-footer__copy Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
+      p.main-footer__copy-text Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
       +footsocial
 
 //--- sub mixins ---//
 
 mixin footCol(title)
-  .main-footer__col&attributes(attributes)
-    h2.main-footer__col-title= title
+  .main-footer__col
+    h2.main-footer__col-title&attributes(attributes)= title
     block
 
 mixin footLink(title)

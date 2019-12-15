@@ -2,6 +2,7 @@ const UIheader = document.querySelector('.main-header'),
   UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
   UIregBtn = document.querySelectorAll('.main-header__btn')[1];
 
+
 // check if page has header
 if (UIheader) {
   
@@ -9,13 +10,15 @@ if (UIheader) {
   // then return
 
   resizeHeader(true);
-  window.onresize = resizeHeader;
+  window.addEventListener('resize', resizeHeader);
 }
+
 // determine initial view
-let isDesktop = (window.outerWidth > 920) ? true : false;
+let isDesktop = (window.innerWidth > 920) ? true : false;
+
 function resizeHeader(firstLoad=false) {
   // if view were changed on resize
-  if ((window.outerWidth < 920 && isDesktop) || (window.outerWidth < 920 && firstLoad)) {
+  if ((window.innerWidth < 920 && isDesktop) || (window.innerWidth < 920 && firstLoad)) {
     // toggle view
     isDesktop = !isDesktop;
 
@@ -31,7 +34,7 @@ function resizeHeader(firstLoad=false) {
     UIloginBtn.innerHTML = '<i class="material-icons">input</i>'
     UIregBtn.innerHTML = '<i class="material-icons">person_add</i>'
 
-  } else if ((window.outerWidth >= 920 && !isDesktop) || (window.outerWidth >= 920 && firstLoad)) {
+  } else if ((window.innerWidth >= 920 && !isDesktop) || (window.innerWidth >= 920 && firstLoad)) {
     // toggle view
     isDesktop = !isDesktop;
 
@@ -44,7 +47,7 @@ function resizeHeader(firstLoad=false) {
     UIregBtn.classList.remove('main-header__btn--iconic');
 
     // change buttons content to text
-    UIloginBtn.innerHTML = 'login'
-    UIregBtn.innerHTML = 'register'
+    UIloginBtn.innerHTML = 'login';
+    UIregBtn.innerHTML = 'register';
   }
 }
