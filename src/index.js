@@ -1,3 +1,4 @@
+import 'CommonBlocks/header/header.js';
 import 'CommonBlocks/input-box/__input/__input.js';
 import 'CommonBlocks/dropdown/dropdown.js';
 import 'CommonBlocks/date-dropdown/date-dropdown.js';

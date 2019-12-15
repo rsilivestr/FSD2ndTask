@@ -19,8 +19,9 @@ mixin header(username)
       a(href="#some-url").main-header__navlink documentation
 
     if (!username)
-      +button('login', 'bordered').main-header__btn
-      +button('register').main-header__btn
+      .main-header__user-buttons
+        +button('login', 'bordered').main-header__btn
+        +button('register').main-header__btn
     else
       .main-header__user-panel
         a(href="#some-url-or-subnav").main-header__user-menu= username

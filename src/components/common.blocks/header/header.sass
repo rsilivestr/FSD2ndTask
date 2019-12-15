@@ -54,19 +54,59 @@
   &__user-panel
     padding-left: 30px
     border-left: 1px solid fw.$dark25
-
+    
+    @include fw.media('<topnav')
+      // padding-right: 10px
+      // border: none
+      
   &__user-menu
     display: inline-block
+    width: 30px
+    white-space: nowrap
+    overflow: hidden
     text-decoration: none
-    padding: 8px 0
     color: fw.$dark50
 
+    &::before
+      @extend .material-icons
+      @extend .text-gradient
+      content: '\e853'
+      font-size: 30px
+
+
+    @include fw.media('>=topnav')
+      width: auto
+      padding: 8px 0
+
+      &::before
+        display: none
+
+  // end __user-menu
+
+  &__user-buttons
+    display: flex
+    // width: 30px
+    // white-space: nowrap
+    // overflow: hidden
+
+    // &::before
+    //   @extend .material-icons
+    //   @extend .text-gradient
+    //   content: '\e890'
+    //   font-size: 30px
+
+    @include fw.media('<m')
+      // display: none
+        
   &__btn
-    min-width: 100px
+    // min-width: 50px
     max-height: 34px
 
     + .main-header__btn
       margin-left: 20px
+
+    @include fw.media('>=topnav')
+      min-width: 100px
 
     // &:first-of-type
     //   margin-right: 20px
