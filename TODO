@@ -2,18 +2,18 @@ learn Markdown
   - add component readmes
 
 perfect 
+  - Colors & Fonts
   ~ Form Elements
   - Cards
-
-redo
-  - Colors & Fonts
+  - Headers & Footers
 
 dropdown
   ? save data in JSON to local storage
 
 Need sass mixin / variables for media queries
 
-Current page - Headers & Footers
+Current page - Landing
 
 FIX
-  - button + button margin
+  - chrome menu buttons on hover color
+  - footer to bottom

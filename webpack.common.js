@@ -43,6 +43,10 @@ module.exports = {
       template: './src/pages/headers-footers/headers-footers.pug',
       filename: 'pages/headers-footers.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/landing/landing.pug',
+      filename: 'pages/landing.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       ignoreOrder: false,
