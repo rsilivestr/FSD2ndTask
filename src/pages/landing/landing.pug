@@ -10,7 +10,16 @@ html(lang="en")
     title Landing Page
   body.page.page--layout_landing
 
-    +header
+    +mainHeader.mb40
+      +logoToxin.main-header__logo
+      +navBtn
+      +headerNav
+        +navlink('о нас')
+        +navlink('услуги').main-header__navlink--has-subnav
+        +navlink('вакансии')
+        +navlink('новости')
+        +navlink('соглашения').main-header__navlink--has-subnav
+      +headerButtons('войти', 'зарегистрироваться')
 
     main.main-content.full-width-container
 

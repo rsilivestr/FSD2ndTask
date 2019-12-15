@@ -45,8 +45,8 @@ function resizeHeader(firstLoad=false) {
     UIregBtn.classList.remove('main-header__btn--iconic');
 
     // change buttons content to text
-    UIloginBtn.innerHTML = 'login';
-    UIregBtn.innerHTML = 'register';
+    UIloginBtn.innerHTML = UIloginBtn.dataset.name;
+    UIregBtn.innerHTML = UIregBtn.dataset.name;
   }
 
   // reset main-header__nav--expanded class on width > "tablet"

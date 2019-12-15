@@ -12,7 +12,20 @@ html(lang="en")
 
     +headerUIKit
 
-    +header.mb40
+    //- +header.mb40
+
+    //- modular header
+    +mainHeader.mb40
+      +logoToxin.main-header__logo
+      +navBtn
+      +headerNav
+        +navlink('home', true)
+        +navlink('about us')
+        +navlink('services').main-header__navlink--has-subnav
+        +navlink('careers')
+        +navlink('news')
+        +navlink('documentation')
+      +headerButtons
 
     +header('Cosmin Negoita').mb40
 

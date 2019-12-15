@@ -57,16 +57,14 @@
       z-index: 20
 
     @include fw.media('>=tablet')
-      display: flex
-      width: 100%
-      max-width: 600px
-      justify-content: space-between
-      padding: 0 30px
+      display: block
+      padding: 0 20px
 
   &__navlink
     display: inline-block
     line-height: 24px
-    padding: 0 5px
+    // padding: 0 5px
+    margin: 0 10px
     text-transform: capitalize
     text-decoration: none
     color: fw.$dark50
@@ -135,7 +133,7 @@
       margin-left: 20px
 
     @include fw.media('>=topnav')
-      min-width: 100px
+      // min-width: 100px
 
     // &:first-of-type
     //   margin-right: 20px

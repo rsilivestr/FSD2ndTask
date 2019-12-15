@@ -1,6 +1,7 @@
 @use 'Styles/forward' as fw
 
 .button
+  @extend .centered-flex
   position: relative
   width: 100%
   font-family: 'Montserrat' sans-serif
@@ -8,6 +9,7 @@
   font-size: 1.2rem
   font-weight: 700
   border: none
+  text-decoration: none
   cursor: pointer
   
   &:disabled
@@ -24,6 +26,9 @@
 
       &:disabled
         background: fw.$mainGradient50
+
+    &_gradient
+      padding: 0 20px
 
     &_arrowed::after
       @extend .centered-flex
@@ -47,6 +52,7 @@
 
     &_bordered
       height: 44px
+      padding: 0 10px
 
       background: linear-gradient(#fff, #fff), fw.$mainGradient
       background-repeat: no-repeat
@@ -70,68 +76,14 @@
       &:disabled
         opacity: 0.5
 
+  // end --style
 
-// .button--style_gradient,
-// .button--style_arrowed
-//   background: fw.$mainGradient
-//   color: #fff
-//   height: 44px
-//   border-radius: 22px
-  
-//   &:disabled
-//     background: fw.$mainGradient50
-
-// .button--style_bordered
-//   position: relative
-//   height: 44px
-//   border: 2px solid transparent
-//   border-radius: 22px
-//   color: fw.$purple
-
-//   &__title,
-//   &:after
-//     position: absolute
-//     top: 0
-//     right: 0
-//     bottom: 0
-//     left: 0
-//     border-radius: inherit
-
-//   &__title
-//     @extend .centered-flex
-//     background: #fff
-//     z-index: 20
-
-//   &:after
-//     content: ''
-//     z-index: 10
-//     margin: -2px
-//     background: fw.$mainGradient
-
-//   &:disabled::after
-//     background: fw.$mainGradient50
-
-
-
-// .button--style_text
-//   @extend .text-gradient
-//   padding: 0 1px
-//   line-height: 1.5rem
-
-//   &:disabled
-//     color: fw.$dark50
-//     background: transparent
-
-.button--size
-
-  &_auto
-    width: auto
-
-  &_s
-    max-width: 99px
-
-  &_m
-    max-width: 266px
-
-  &_l
-    max-width: 320px
+  &--size
+    &_auto
+      width: auto
+    &_s
+      max-width: 99px
+    &_m
+      max-width: 266px
+    &_l
+      max-width: 320px
