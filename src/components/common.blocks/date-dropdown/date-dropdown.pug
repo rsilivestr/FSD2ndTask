@@ -6,3 +6,12 @@ mixin dateDrop
 mixin filterDateDrop
   .date-dropdown.date-dropdown--range&attributes(attributes)
     input(type='text' readonly placeholder='19 авг - 23 авг').date-dropdown__display.input-box__input.datepicker--range
+
+mixin datepickerDouble
+  .datepicker-double&attributes(attributes)
+    +inputBox('прибытие', 'xs')
+      .date-dropdown
+        input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.date-dropdown__start
+    +inputBox('выезд', 'xs')
+      .date-dropdown
+        input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.date-dropdown__end

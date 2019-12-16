@@ -54,3 +54,26 @@ const dpStatic = $(UIdatepickerStatic).datepicker({
 }).data('datepicker');
 
 if(dpStatic) dpStatic.selectDate([monday, friday]);
+
+
+
+const UIdoublePickers = document.querySelectorAll('.datepicker-double');
+
+if (UIdoublePickers) {
+  UIdoublePickers.forEach(picker => {
+  const UIdatepickerStart = picker.querySelector('.date-dropdown__start'),
+    UIdatepickerEnd = picker.querySelector('.date-dropdown__end');
+  
+  $(UIdatepickerStart).datepicker({
+    prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
+    nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
+    navTitles: {
+      days: 'MM yyyy',
+      months: 'yyyy',
+      years: 'yyyy1 - yyyy2'
+    },
+    multipleDates: 2,
+    range: true,
+  })
+});
+}
