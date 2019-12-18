@@ -1,66 +1,6 @@
 //---- air datepicker ----//
 import datepicker from 'air-datepicker'
 
-const today = new Date(),
-monday = new Date(),
-friday = new Date();
-
-monday.setDate(today.getDate() + (7 + 1 - today.getDay()) % 7);
-friday.setDate(monday.getDate() + (7 + 5 - monday.getDay()) % 7);
-
-// const UIdatepickerSingle = document.querySelectorAll('.datepicker--single'),
-//   UIdatepickerRange = document.querySelectorAll('.datepicker--range'),
-//   UIdatepickerStatic = document.querySelectorAll('.datepicker--static'),
-const UImountPointForReallyStaticAirDatepickerOnCardsPage = document.querySelectorAll('.mount-point-for-really-static-air-datepicker-on-cards-page');
-
-// $(UIdatepickerSingle).datepicker({
-//   prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
-//   nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
-//   navTitles: {
-//     days: 'MM yyyy',
-//     months: 'yyyy',
-//     years: 'yyyy1 - yyyy2'
-//   },
-//   minDate: today,
-//   position: 'bottom center',
-//   autoClose: true,
-// });
-
-// $(UIdatepickerRange).datepicker({
-//   prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
-//   nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
-//   navTitles: {
-//     days: 'MM yyyy',
-//     months: 'yyyy',
-//     years: 'yyyy1 - yyyy2'
-//   },
-//   minDate: today,
-//   multipleDates: 2,
-//   range: true,
-//   dateFormat: 'dd M',
-//   multipleDatesSeparator: ' — ',
-//   position: 'bottom center',
-//   autoClose: true,
-// });
-
-// const dpStatic = $(UIdatepickerStatic).datepicker({
-//   prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
-//   nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
-//   navTitles: {
-//     days: 'MM yyyy',
-//     months: 'yyyy',
-//     years: 'yyyy1 - yyyy2'
-//   },
-//   multipleDates: 2,
-//   range: true,
-// }).data('datepicker');
-
-// if(dpStatic) dpStatic.selectDate([monday, friday]);
-
-
-
-
-
 const UIdoublePickers = document.querySelectorAll('.datepicker-double');
 
 if (UIdoublePickers) {
@@ -114,22 +54,30 @@ if (UIdoublePickers) {
         // open current picker
         UIdatepickerCalendar.classList.add('form__datepicker--visible');
       } else if (e.target.classList.contains('datepicker__clear-btn')) {
+        // prevent form submit
+        e.preventDefault();
         // clear calendar
         pickerObject.clear();
         // clear input fields
         UIdatepickerStart.value = '';
         UIdatepickerEnd.value = '';
       } else if (e.target.classList.contains('datepicker__apply-btn')) {
+        // prevent form submit
+        e.preventDefault();
         // get selected dates
         const dates = pickerObject.selectedDates;
         // formant and append dates if set
         if(dates[0]) {
           const startDateString = dates[0].toLocaleDateString('ru-RU');
           UIdatepickerStart.value = startDateString;
+        } else {
+          UIdatepickerStart.value = '';
         }
         if(dates[1]) {
           const endDateString = dates[1].toLocaleDateString('ru-RU');
           UIdatepickerEnd.value = endDateString;
+        } else {
+          UIdatepickerEnd.value = '';
         }
         // close calendar
         if(dates[0] && dates[1]) {
@@ -160,21 +108,39 @@ if (UIdoublePickers) {
   });
 }
 
+// uikit static datepicker
+const UImountPointForReallyStaticAirDatepickerOnCardsPage = document.querySelector('.mount-point-for-really-static-air-datepicker-on-cards-page');
 
-const reallyStaticAirDatepickerOnCardsPage = $(UImountPointForReallyStaticAirDatepickerOnCardsPage).datepicker({
-  prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
-  nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
-  navTitles: {
-    days: 'MM yyyy',
-    months: 'yyyy',
-    years: 'yyyy1 - yyyy2'
-  },
-  multipleDates: 2,
-  range: true,
-  // this classes apply to the '.datepicker' container which is inside '.datepicker-static' container
-  classes: 'really-static-air-datepicker-on-cards-page',
-}).data('datepicker');
+const today = new Date(),
+  monday = new Date(),
+  friday = new Date();
 
-if(UImountPointForReallyStaticAirDatepickerOnCardsPage) {
+monday.setDate(today.getDate() + (7 + 1 - today.getDay()) % 7);
+friday.setDate(monday.getDate() + (7 + 5 - monday.getDay()) % 7);
+
+if (UImountPointForReallyStaticAirDatepickerOnCardsPage) {
+  // preset dates
+  const today = new Date(),
+    monday = new Date(),
+    friday = new Date();
+  
+  monday.setDate(today.getDate() + (7 + 1 - today.getDay()) % 7);
+  friday.setDate(monday.getDate() + (7 + 5 - monday.getDay()) % 7);
+
+  const reallyStaticAirDatepickerOnCardsPage = $(UImountPointForReallyStaticAirDatepickerOnCardsPage).datepicker({
+    prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
+    nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
+    navTitles: {
+      days: 'MM yyyy',
+      months: 'yyyy',
+      years: 'yyyy1 - yyyy2'
+    },
+    multipleDates: 2,
+    range: true,
+    // this classes apply to the '.datepicker' container which is inside '.datepicker-static' container
+    classes: 'really-static-air-datepicker-on-cards-page',
+  }).data('datepicker');
+  
+  // set date
   reallyStaticAirDatepickerOnCardsPage.selectDate([monday, friday]);
 }
