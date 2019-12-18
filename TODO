@@ -20,3 +20,5 @@ FIX
   - add shadow to dp
   ? close dropdown on apply
   - absolute dropdown position
+  - check if dates array exists before apply
+  ? handle multiple datepickers

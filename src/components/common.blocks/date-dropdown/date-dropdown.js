@@ -104,9 +104,14 @@ if (UIdoublePickers) {
     applyBtn.innerText = 'применить';
     buttonsPanel.appendChild(applyBtn);
 
-    document.body.addEventListener('click', e => {
+    picker.addEventListener('click', e => {
       // if UIdatepickerStart or UIdatepickerEnd is targeted
       if (e.target.classList.contains('date-dropdown__display')) {
+        // close other pickers
+        document.querySelectorAll('.form__datepicker--visible').forEach(openPicker => {
+          openPicker.classList.remove('form__datepicker--visible');
+        });
+        // open current picker
         UIdatepickerCalendar.classList.add('form__datepicker--visible');
       } else if (e.target.classList.contains('datepicker__clear-btn')) {
         // clear calendar
@@ -117,15 +122,28 @@ if (UIdoublePickers) {
       } else if (e.target.classList.contains('datepicker__apply-btn')) {
         // get selected dates
         const dates = pickerObject.selectedDates;
-        // formant and append dates
-        const startDateString = dates[0].toLocaleDateString('ru-RU');
-        UIdatepickerStart.value = startDateString;
-        const endDateString = dates[1].toLocaleDateString('ru-RU');
-        UIdatepickerEnd.value = endDateString;
+        // formant and append dates if set
+        if(dates[0]) {
+          const startDateString = dates[0].toLocaleDateString('ru-RU');
+          UIdatepickerStart.value = startDateString;
+        }
+        if(dates[1]) {
+          const endDateString = dates[1].toLocaleDateString('ru-RU');
+          UIdatepickerEnd.value = endDateString;
+        }
         // close calendar
-        UIdatepickerCalendar.classList.remove('form__datepicker--visible');
-      } else if (
+        if(dates[0] && dates[1]) {
+          UIdatepickerCalendar.classList.remove('form__datepicker--visible');
+        }
+      }
+    });
+
+    // close if clicked outside
+    document.body.addEventListener('click', e => {
+      if (
         // could not capture all insides with closest so here we go
+        !e.target.closest('.date-dropdown') &&
+        !e.target.closest('.datepicker') &&
         !e.target.classList.contains('datepicker--nav') &&
         !e.target.classList.contains('datepicker--nav-title') &&
         !e.target.classList.contains('datepicker--nav-action') &&

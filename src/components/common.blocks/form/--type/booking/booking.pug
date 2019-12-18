@@ -9,11 +9,14 @@ mixin formBooking
       span.form__title-room.form__title-room--lux 888
       span.form__title-price 9 900₽
     
-    .form__row.mb20
+    //- .form__row.mb20
       +inputBox('прибытие', 'xs')
         +dateDrop
       +inputBox('выезд', 'xs')
         +dateDrop
+
+    +datepickerDouble.form__datepicker-double
+
 
     +inputBox('гости', 'l')
       +inputDrop('single', 'Сколько гостей').mb20
