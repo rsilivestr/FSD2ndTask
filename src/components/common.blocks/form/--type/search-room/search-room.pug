@@ -7,13 +7,13 @@ mixin formSearchRoom
     
     h1.form__title Найдём номера под ваши пожелания
 
-    .form__row.mb20
+    //- .form__row.mb20
       +inputBox('прибытие', 'xs')
         +dateDrop
       +inputBox('выезд', 'xs')
         +dateDrop
 
-    +datepickerDouble
+    +datepickerDouble.form__datepicker-double
 
     +inputBox('гости', 'l')
       +inputDrop('single', 'Сколько гостей').mb10

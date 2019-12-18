@@ -3,10 +3,47 @@
 // @import '~js-datepicker/dist/datepicker.min.css'
 // @import '~js-datepicker/src/datepicker.scss'
 
+.mount-point-for-really-static-air-datepicker-on-cards-page
+
+.really-static-air-datepicker-on-cards-page
+
+.form__datepicker-double
+  .datepicker-inline
+    // display: none
+    position: absolute
+    top: 100%
+    margin-top: 5px
+
+    &-visible
+      display: block
+
+.form__datepicker
+  display: none
+
+  &--visible
+    display: block
+
 .datepicker
-  min-width: 100%
-  width: 320px
-  max-width: 320px
+  width: 100%
+  // compensate for box-sizing
+  margin: -1px
+  // max-width: 320px
+
+  &-inline
+    // position: relative
+
+    // position: absolute
+    // top: 100%
+    // margin: -1px
+    width: 100%
+    background: #fff
+    z-index: 30
+    // margin-top: 5px
+    width: 100%
+    max-width: 320px
+
+  &--content
+    padding: 15px 20px 20px
 
   &--nav
     padding: 20px 20px 15px
@@ -31,8 +68,8 @@
     @extend .text-gradient
 
   &--cell
-    min-width: 40px
-    min-height: 40px
+    // min-width: 40px
+    height: 39px
     color: fw.$dark50
     border-radius: 0
     z-index: 20
@@ -40,41 +77,76 @@
     &-day
       font-size: 1.2rem
 
+    // focus
     &.-focus-
       border: none
-
-    &.-focus-,
-    &.-focus-.-in-range-::after
       background: fw.$mainGradient50
 
-    &.-current-,
+    // selected
+      // range from
+        // focus
+      // range to
+        // focus
+    
     &.-selected-
       color: #ffffff
       font-weight: 700
-    
-    &.-current-
-      background: fw.$secondaryGradient
-
-      &.-selected-
-        background: fw.$secondaryGradient
-
-      &.-in-range-
-        color: #ffffff
-
-    &.-selected-
       background: fw.$mainGradient
 
+    // in range
+      // after
+      // focus
+        // after
+    &.-in-range-
+      background: fw.$mainGradient25
+      &.-focus-
+        background: fw.$mainGradient25
+
+    // current
+      // after
+      // selected
+        // after
+        // range from
+          // after
+          // focus
+            // after
+        // range to
+          // after
+          // focus
+            // after  
+      // in range
+        // after
+        // focus
+          // after
+    &.-current-
+      color: #ffffff
+      font-weight: 700
+      background: fw.$secondaryGradient
+      &.-selected-
+        background: fw.$secondaryGradient
+        &.-focus-
+          background: fw.$secondaryGradient
+      &.-in-range-
+        color: #ffffff
+        &::after
+          background: fw.$mainGradient25
+        &.-focus-
+          background: fw.$secondaryGradient
+          &::after
+            background: fw.$mainGradient25
+            border-radius: 0
+      &.-focus-
+        color: #ffffff
+
+    &.-focus-.-in-range-::after
+      background: fw.$mainGradient50
+
+    &.-selected-
       &.-focus-
         background: fw.$mainGradient
 
   // end --cell
 
-  &--content
-    padding: 15px 20px 20px
-
-.-in-range-:not(.-current-),
-.datepicker--cell.-in-range-.-focus-,
-.-in-range-.-current-::after,
 .-range-from-::after,
 .-range-to-::after
   background: fw.$mainGradient25
@@ -89,22 +161,19 @@
   height: 100%
   z-index: 10
 
+
 // border radiuses
 .datepicker--cell
   &.-current-,
   &.-selected-,
   &.-focus-:not(.-in-range-),
   &.-focus-.-in-range-::after
-    border-radius: 50%
+    border-radius: 20px
 
-.-range-from-::after
-  border-radius: 50% 0 0 50%
-
-.-range-to-::after
-  border-radius: 0 50% 50% 0
-
-.-in-range-:nth-of-type(7n)
-  border-radius: 0 50% 50% 0
-
+.-range-from-::after,
 .-in-range-:nth-of-type(7n + 1)
-  border-radius: 50% 0 0 50%
+  border-radius: 20px 0 0 20px
+
+.-range-to-::after,
+.-in-range-:nth-of-type(7n)
+  border-radius: 0 20px 20px 0
