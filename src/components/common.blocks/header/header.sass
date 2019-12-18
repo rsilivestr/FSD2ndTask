@@ -28,7 +28,8 @@
     color: fw.$dark50
     background: transparent
 
-    &:hover
+    // just ':hover' works in firefox but chromium needs exact text element
+    &:hover i
       @extend .text-gradient
 
     @include fw.media('>=tablet')
@@ -126,14 +127,10 @@
       color: fw.$dark50
       background: transparent
 
-      &:hover
+      &:hover i
         @extend .text-gradient
 
     + .main-header__btn
       margin-left: 20px
 
     @include fw.media('>=topnav')
-      // min-width: 100px
-
-    // &:first-of-type
-    //   margin-right: 20px

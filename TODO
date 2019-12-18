@@ -1,5 +1,6 @@
 learn Markdown
   - add component readmes
+    + dropdown
 
 perfect 
   - Colors & Fonts
@@ -10,15 +11,12 @@ perfect
 dropdown
   ? save data in JSON to local storage
 
-Need sass mixin / variables for media queries
-
 Current page - Landing
 
 FIX
   - chrome menu buttons on hover color
-  + footer to bottom
   - add shadow to dp
   ? close dropdown on apply
-  - absolute dropdown position
-  - check if dates array exists before apply
-  ? handle multiple datepickers
+  - add negative margin to icons in mobile menu links with subnav
+
+pub on github pages

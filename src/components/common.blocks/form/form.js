@@ -1,5 +1,5 @@
 document.body.addEventListener('click', e => {
-  if(e.target.closest('form')) {
+  if (e.target.matches('button')) {
     e.preventDefault();
   }
 });
