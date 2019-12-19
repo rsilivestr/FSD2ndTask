@@ -3,26 +3,85 @@
 .content-wrapper
   display: flex
   flex-flow: row nowrap
+  margin-top: 100px
   width: 100%
   max-width: 1200px
   padding-left: 20px
   padding-right: 20px
 
+  @include fw.media('>=topnav')
+    margin-top: 30px
+
   @include fw.media('>=l')
-    margin: 0 auto
+    margin-left: auto
+    margin-right: auto
 
 .search-filter-page
 
   &__header
-    margin-bottom: 30px
     box-shadow: 0 10px 20px fw.$dark05
 
-  &__filter
-    width: 266px
-    margin-right: 60px
+  &__filters
+    width: 307px
+    padding: 40px 20px
+    background: #ffffff
+    z-index: 40
+    // hide on mobile
+    position: fixed
+    top: 70px
+    left: -307px
+    bottom: 0
+    // border on mobile
+    border-right: 1px solid fw.$dark50
+    transition: left .25s
+
+    &--expanded
+      left: 0
+    
+    @include fw.media('>=topnav')
+      position: relative
+      top: 0
+      left: 0
+      border: 0
+
+  &__expand-filters
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    // position: fixed
+    position: absolute
+    top: 40vh
+    // left: 306px
+    left: 307px
+    height: 70px
+    // width: 70px
+    width: 35px
+    padding: 10px
+    border: 1px solid fw.$dark50
+    border-left: 0
+    border-radius: 0 50px 50px 0
+    background: #fff
+    cursor: pointer
+    transition: left .25s
+
+    i
+      transition: all .25s .25s
+
+    &--expanded i
+      transform: rotate(180deg)
+      transition: all .25s .25s
+
+    @include fw.media('>=topnav')
+      display: none
 
   &__content
     flex: auto
+    
+    @include fw.media('>=topnav')
+      margin-left: 30px
+
+    @include fw.media('>=l')
+      margin-left: 60px
 
   &__title
     margin-bottom: 20px
@@ -33,9 +92,19 @@
     justify-content: space-between
 
   &__room-card
-    max-width: 270px
+    max-width: 100%
     margin-bottom: 20px
-    box-shadow: 0 10px 20px fw.$dark05
+    box-shadow: 0 5px 10px fw.$dark05
+    
+    @include fw.media('>=creative')
+      max-width: calc(50% - 10px)
+    
+    @include fw.media('>=topnav')
+      max-width: calc(50% - 10px)
+
+    @include fw.media('>=l')
+      max-width: 270px
+      box-shadow: 0 10px 20px fw.$dark05
   
   &__footer
     margin-top: 70px

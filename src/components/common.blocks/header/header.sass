@@ -8,20 +8,24 @@
     margin: 30px
 
 .main-header
-  position: relative
+  // position: relative
+  position: fixed
+  width: 100%
   display: flex
   flex-flow: row nowrap
   align-items: center
   height: 70px
   background: #ffffff
   font-size: 1.4rem
+  z-index: 50
 
   &__logo
     max-width: 40px
     overflow: hidden
 
-    @include fw.media('>=m')
-      max-width: 100%
+  @include fw.media('>=topnav')
+    position: relative
+    max-width: 100%
 
   &__menu-btn
     margin: 0 20px 0 auto

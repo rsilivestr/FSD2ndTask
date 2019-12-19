@@ -4,6 +4,7 @@ import 'CommonBlocks/input-box/__input/__input.js';
 import 'CommonBlocks/dropdown/dropdown.js';
 import 'CommonBlocks/date-dropdown/date-dropdown.js';
 import 'CommonBlocks/form/form.js';
+import 'Pages/search-room-filter/search-room-filter.js';
 
 // const routerNav = document.querySelector('.router__nav'),
 //       routerIframe = document.querySelector('.router__current-page');

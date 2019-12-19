@@ -10,7 +10,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Landing Page
+    title Search room
   body.page.page--layout_search-filter.search-filter-page
 
     +mainHeader.search-filter-page__header
@@ -24,9 +24,9 @@ html(lang="en")
         +navlink('соглашения').main-header__navlink--has-subnav
       +headerButtons('войти', 'зарегистрироваться')
 
-    .content-wrapper
+    .content-wrapper.has-fixed-header
 
-      aside.search-filter-page__filter
+      aside.search-filter-page__filters
         +inputBox('даты пребывания в отеле')
           +filterDateDrop
         +inputBox('гости')
@@ -36,7 +36,7 @@ html(lang="en")
             +dropOption('младенцы', '', '', '', 0, 10)
         +inputBox('Диапазон цены')
           +rangeSlider
-        +inputBox('checkbox buttons')
+        +inputBox('опции')
           +checkbox('можно курить')
           +checkbox('можно с питомцами')
           +checkbox('можно пригласить гостей (до 10 человек)')
@@ -52,11 +52,12 @@ html(lang="en")
           +checkbox('Шампунь')
           +checkbox('Телевизор')
           +checkbox('Шампунь')
+        button.search-filter-page__expand-filters
+          i.material-icons arrow_forward
 
       main.search-filter-page__content
         h1.search-filter-page__title Номера, которые мы для вас подобрали
         .search-filter-page__rooms
-          //- +roomCard(roomPhoto='room1.png', roomRating=5, roomNumber, dailyCost, reviewCount=0)
           +roomCard('room1.jpg', 5, 888, 9990, 145).search-filter-page__room-card
           +roomCard('room2.jpg', 4, 840, 9900, 65).search-filter-page__room-card
           +roomCard('room3.jpg', 3, 980, 8500, 35).search-filter-page__room-card
