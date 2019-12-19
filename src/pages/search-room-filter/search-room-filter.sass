@@ -11,15 +11,32 @@
   @include fw.media('>=l')
     margin: 0 auto
 
+.search-filter-page
 
-.search-filter-page__filter
-  width: 266px
-  margin-right: 60px
+  &__header
+    margin-bottom: 30px
+    box-shadow: 0 10px 20px fw.$dark05
 
-.search-filter-page__content
-  flex: auto
+  &__filter
+    width: 266px
+    margin-right: 60px
 
-.search-filter-page__rooms
-  display: flex
-  flex-flow: row wrap
-  justify-content: space-between
+  &__content
+    flex: auto
+
+  &__title
+    margin-bottom: 20px
+
+  &__rooms
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+
+  &__room-card
+    max-width: 270px
+    margin-bottom: 20px
+    box-shadow: 0 10px 20px fw.$dark05
+  
+  &__footer
+    margin-top: 70px
+    border-top: 1px solid fw.$dark10

@@ -2,6 +2,7 @@ include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 include ~CommonBlocks/room-card/room-card
+include ~CommonBlocks/pagination/pagination
 
 <!DOCTYPE html>
 html(lang="en")
@@ -12,7 +13,7 @@ html(lang="en")
     title Landing Page
   body.page.page--layout_search-filter.search-filter-page
 
-    +mainHeader
+    +mainHeader.search-filter-page__header
       +logoToxin.main-header__logo
       +navBtn
       +headerNav
@@ -56,15 +57,19 @@ html(lang="en")
         h1.search-filter-page__title Номера, которые мы для вас подобрали
         .search-filter-page__rooms
           //- +roomCard(roomPhoto='room1.png', roomRating=5, roomNumber, dailyCost, reviewCount=0)
-          +roomCard('room1.jpg', 5, 888, 9990, 145)
-          +roomCard('room2.jpg', 4, 840, 9900, 65)
-          +roomCard('room3.jpg', 3, 980, 8500, 35)
-          +roomCard('room4.jpg', 5, 856, 7300, 19)
-          +roomCard('room5.jpg', 4, 740, 6000, 44)
-          +roomCard('room6.jpg', 3, 982, 5800, 56)
-          +roomCard('room7.jpg', 5, 678, 5500, 45)
-          +roomCard('room8.jpg', 4, 450, 5300, 39)
-          +roomCard('room9.jpg', 3, 350, 5000, 77)
-          +roomCard('room10.jpg', 5, 666, 5000, 25)
-          +roomCard('room11.jpg', 3, 444, 5000, 15)
-          +roomCard('room12.jpg', 3, 352, 5000, 55)
+          +roomCard('room1.jpg', 5, 888, 9990, 145).search-filter-page__room-card
+          +roomCard('room2.jpg', 4, 840, 9900, 65).search-filter-page__room-card
+          +roomCard('room3.jpg', 3, 980, 8500, 35).search-filter-page__room-card
+          +roomCard('room4.jpg', 5, 856, 7300, 19).search-filter-page__room-card
+          +roomCard('room5.jpg', 4, 740, 6000, 44).search-filter-page__room-card
+          +roomCard('room6.jpg', 3, 982, 5800, 56).search-filter-page__room-card
+          +roomCard('room7.jpg', 5, 678, 5500, 45).search-filter-page__room-card
+          +roomCard('room8.jpg', 4, 450, 5300, 39).search-filter-page__room-card
+          +roomCard('room9.jpg', 3, 350, 5000, 77).search-filter-page__room-card
+          +roomCard('room10.jpg', 5, 666, 5000, 25).search-filter-page__room-card
+          +roomCard('room11.jpg', 3, 444, 5000, 15).search-filter-page__room-card
+          +roomCard('room12.jpg', 3, 352, 5000, 55).search-filter-page__room-card
+        +pagination
+
+    //- end .content-wrapper
+    +footer.search-filter-page__footer

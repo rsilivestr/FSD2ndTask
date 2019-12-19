@@ -18,9 +18,10 @@ FIX
   - add shadow to dp
   ? close dropdown on apply
   - add negative margin to icons in mobile menu links with subnav
+  - check header shadows
   - shadow to room card
   - fixed rating
-  - card lux
-  - add room photos
+  - room-card lux
+  - room-card dots
 
 pub on github pages
