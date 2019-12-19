@@ -1,0 +1,28 @@
+include ~CommonBlocks/header/header
+include ~CommonBlocks/footer/footer
+include ~CommonBlocks/form/form
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Landing Page
+  body.page.page--layout_search-filter.search-filter-page
+
+    +mainHeader
+      +logoToxin.main-header__logo
+      +navBtn
+      +headerNav
+        +navlink('о нас')
+        +navlink('услуги').main-header__navlink--has-subnav
+        +navlink('вакансии')
+        +navlink('новости')
+        +navlink('соглашения').main-header__navlink--has-subnav
+      +headerButtons('войти', 'зарегистрироваться')
+
+      .container
+        aside.search-filter-page__filter
+        
+        main.search-filter-page__content
