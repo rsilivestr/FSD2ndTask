@@ -27,20 +27,22 @@ html(lang="en")
     .content-wrapper.has-fixed-header
 
       aside.search-filter-page__filters
-        +inputBox('даты пребывания в отеле')
+        +inputBox('даты пребывания в отеле').mb20
           +filterDateDrop
-        +inputBox('гости')
+        +inputBox('гости').mb20
           +inputDrop('single', 'Количество гостей')
             +dropOption('взрослые', '', '', '', 0, 10)
             +dropOption('дети', '', '', '', 0, 10)
             +dropOption('младенцы', '', '', '', 0, 10)
-        +inputBox('Диапазон цены')
+        +inputBox('Диапазон цены').mb20
           +rangeSlider
-        +inputBox('опции')
+          span.search-filter-page__range-caption Стоимость за сутки пребывания в номере
+        +inputBox('опции').mb20
           +checkbox('можно курить')
           +checkbox('можно с питомцами')
           +checkbox('можно пригласить гостей (до 10 человек)')
-        +inputBox('Доступность')
+        +inputBox('Доступность').mb20
+          .mb10
           +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
           +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
         +checkboxGroup('дополнительные удобства')

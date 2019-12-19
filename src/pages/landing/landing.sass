@@ -2,10 +2,15 @@
 
 .main-content--page_landing
   display: flex
+  flex-direction: column
   justify-content: space-between
   min-height: 830px
+  margin-top: 70px
   background: url('/assets/images/bg1.jpg') center no-repeat
   background-size: cover
+
+  @include fw.media('>=topnav')
+    margin-top: 0
 
 .form--page_landing
   align-self: flex-start

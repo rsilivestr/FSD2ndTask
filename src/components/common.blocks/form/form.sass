@@ -8,10 +8,13 @@
 .form
   position: relative
   max-width: 380px
-  padding: 40px 30px 30px 30px
+  padding: 30px 12px 24px 12px
   background: #ffffff
   border-radius: 3px
   box-shadow: 0 0 20px fw.$dark10
+
+  @include fw.media('>=footcols')
+    padding: 40px 30px 30px 30px
 
   &__title
     display: flex
@@ -56,7 +59,7 @@
   &__datepicker-double
     position: relative
     display: flex
-    flex-flow: row wrap
+    flex-flow: row nowrap
     justify-content: space-between
     margin-bottom: 20px
 

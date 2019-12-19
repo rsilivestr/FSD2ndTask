@@ -9,3 +9,5 @@ function toggleFliters () {
   UIfiltersPanel.classList.toggle('search-filter-page__filters--expanded');
   UIexpandBtn.classList.toggle('search-filter-page__expand-filters--expanded');
 }
+
+// remove class on resize
