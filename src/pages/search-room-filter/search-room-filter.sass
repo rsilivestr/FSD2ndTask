@@ -1,0 +1,25 @@
+@use 'Styles/forward' as fw
+
+.content-wrapper
+  display: flex
+  flex-flow: row nowrap
+  width: 100%
+  max-width: 1200px
+  padding-left: 20px
+  padding-right: 20px
+
+  @include fw.media('>=l')
+    margin: 0 auto
+
+
+.search-filter-page__filter
+  width: 266px
+  margin-right: 60px
+
+.search-filter-page__content
+  flex: auto
+
+.search-filter-page__rooms
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between

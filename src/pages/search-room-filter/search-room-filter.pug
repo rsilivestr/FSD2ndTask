@@ -1,6 +1,7 @@
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
+include ~CommonBlocks/room-card/room-card
 
 <!DOCTYPE html>
 html(lang="en")
@@ -22,7 +23,48 @@ html(lang="en")
         +navlink('соглашения').main-header__navlink--has-subnav
       +headerButtons('войти', 'зарегистрироваться')
 
-      .container
-        aside.search-filter-page__filter
-        
-        main.search-filter-page__content
+    .content-wrapper
+
+      aside.search-filter-page__filter
+        +inputBox('даты пребывания в отеле')
+          +filterDateDrop
+        +inputBox('гости')
+          +inputDrop('single', 'Количество гостей')
+            +dropOption('взрослые', '', '', '', 0, 10)
+            +dropOption('дети', '', '', '', 0, 10)
+            +dropOption('младенцы', '', '', '', 0, 10)
+        +inputBox('Диапазон цены')
+          +rangeSlider
+        +inputBox('checkbox buttons')
+          +checkbox('можно курить')
+          +checkbox('можно с питомцами')
+          +checkbox('можно пригласить гостей (до 10 человек)')
+        +inputBox('Доступность')
+          +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
+          +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
+        +checkboxGroup('дополнительные удобства')
+          +checkbox('Завтрак')
+          +checkbox('Письменный стол')
+          +checkbox('Стул для кормления')
+          +checkbox('Кроватка')
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')
+          +checkbox('Телевизор')
+          +checkbox('Шампунь')
+
+      main.search-filter-page__content
+        h1.search-filter-page__title Номера, которые мы для вас подобрали
+        .search-filter-page__rooms
+          //- +roomCard(roomPhoto='room1.png', roomRating=5, roomNumber, dailyCost, reviewCount=0)
+          +roomCard('room1.jpg', 5, 888, 9990, 145)
+          +roomCard('room2.jpg', 4, 840, 9900, 65)
+          +roomCard('room3.jpg', 3, 980, 8500, 35)
+          +roomCard('room4.jpg', 5, 856, 7300, 19)
+          +roomCard('room5.jpg', 4, 740, 6000, 44)
+          +roomCard('room6.jpg', 3, 982, 5800, 56)
+          +roomCard('room7.jpg', 5, 678, 5500, 45)
+          +roomCard('room8.jpg', 4, 450, 5300, 39)
+          +roomCard('room9.jpg', 3, 350, 5000, 77)
+          +roomCard('room10.jpg', 5, 666, 5000, 25)
+          +roomCard('room11.jpg', 3, 444, 5000, 15)
+          +roomCard('room12.jpg', 3, 352, 5000, 55)
