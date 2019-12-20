@@ -49,9 +49,9 @@
       text-transform: uppercase
       text-align: center
       line-height: 26px
-      cursor: pointer
 
       &--expandable
+        cursor: pointer
 
         &::after
           @extend .material-icons
@@ -62,10 +62,13 @@
           transition: all .1s
 
         @include fw.media('>=footcols')
-          text-align: left
+          cursor: default
 
           &::after
             display: none
+
+      @include fw.media('>=footcols')
+        text-align: left
 
       &--expanded::after
         transform: rotate(-180deg)

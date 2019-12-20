@@ -17,6 +17,7 @@ CHANGED
 
 CHANGE
   - rename media breakpoints
+  - refactor containers
   ? close dropdown on apply
 
 ADDED
@@ -41,5 +42,6 @@ FIX
   - add top-margin to main / wrapper (due to fixed header)
   - filters margins
   - align footer subscribtion title to left on desktop
+  - there are multiple header on headers & footers page so remove fixed style
 
 pub on github pages
