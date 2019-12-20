@@ -13,7 +13,14 @@ dropdown
 
 Current page - Landing
 
+CHANGED
+
+CHANGE
+  - rename media breakpoints
+  ? close dropdown on apply
+
 ADDED
+  + checkbox-group &attributes
 
 ADD
   - add shadow to dp
@@ -22,16 +29,17 @@ ADD
   - room-card dots
   - caption for range slider
   ? apply filters button
+  - range dropdown scripts
 
 FIXED
+  + lessened checkbox group height
 
 FIX
-  ? close dropdown on apply
   - check header shadows
   - room-card lux
   - rise dropdown z-index
   - add top-margin to main / wrapper (due to fixed header)
   - filters margins
-  - range dropdown
+  - align footer subscribtion title to left on desktop
 
 pub on github pages

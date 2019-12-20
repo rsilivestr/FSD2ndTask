@@ -110,7 +110,6 @@ html(lang="ru")
         .form-elements__grid-item
           //- range slider
           +inputBox('range slider', 'm')
-            .mb23
             +rangeSlider
           .mb44
 
@@ -140,20 +139,20 @@ html(lang="ru")
         //- b 1 --------------------------------------//
 
         .form-elements__grid-item
-          .ml-1
-            //- dropdown
-            +inputBox('dropdown', 'm')
-              +inputDrop('multi', '')
-                +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-                +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
-                +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
-            .mb21
-            //- dropdown expanded
-            +inputBox('dropdown', 'm')
-              +inputDrop('multi', '', true)
-                +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-                +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
-                +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
+          //- .ml-1
+          //- dropdown
+          +inputBox('dropdown', 'm')
+            +inputDrop('multi', '')
+              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
+              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
+          .mb21
+          //- dropdown expanded
+          +inputBox('dropdown', 'm')
+            +inputDrop('multi', '', true)
+              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
+              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
                 
           .mb40
 

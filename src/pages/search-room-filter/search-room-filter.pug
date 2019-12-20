@@ -27,25 +27,37 @@ html(lang="en")
     .content-wrapper.has-fixed-header
 
       aside.search-filter-page__filters
+        //- filter date dropdown
         +inputBox('даты пребывания в отеле').mb20
           +filterDateDrop
-        +inputBox('гости').mb20
+        //- guests dropdown
+        +inputBox('гости').mb30
           +inputDrop('single', 'Количество гостей')
             +dropOption('взрослые', '', '', '', 0, 10)
             +dropOption('дети', '', '', '', 0, 10)
             +dropOption('младенцы', '', '', '', 0, 10)
-        +inputBox('Диапазон цены').mb20
+        //- range
+        +inputBox('Диапазон цены').mb30
           +rangeSlider
           span.search-filter-page__range-caption Стоимость за сутки пребывания в номере
-        +inputBox('опции').mb20
+        //- checkboxes
+        +inputBox('опции').mb30
           +checkbox('можно курить')
           +checkbox('можно с питомцами')
           +checkbox('можно пригласить гостей (до 10 человек)')
-        +inputBox('Доступность').mb20
-          .mb10
+        //- rich checkboxes
+        +inputBox('Доступность').mb30
+          .mb15
           +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
           +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
-        +checkboxGroup('дополнительные удобства')
+        //- dropdown
+        +inputBox('dropdown', 'm').mb20
+          +inputDrop('multi', '')
+            +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
+            +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
+            +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
+        //- expandable checkbox group
+        +checkboxGroup('дополнительные удобства').mb30
           +checkbox('Завтрак')
           +checkbox('Письменный стол')
           +checkbox('Стул для кормления')
@@ -54,6 +66,9 @@ html(lang="en")
           +checkbox('Шампунь')
           +checkbox('Телевизор')
           +checkbox('Шампунь')
+        //- button to apply filters
+        +button('применить фильтры', 'gradient', 'm')
+        //- button to expand / hide on small screens
         button.search-filter-page__expand-filters
           i.material-icons arrow_forward
 

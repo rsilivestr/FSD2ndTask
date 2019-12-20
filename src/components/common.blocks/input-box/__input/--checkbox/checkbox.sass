@@ -1,45 +1,50 @@
 @use 'Styles/forward' as fw
 
 .input-box__checkbox-group
-  border: none
+  max-height: 2.4rem
+  overflow: hidden
+  transition: all .2s
   font-family: 'Montserrat', sans-serif
   font-size: 1.2rem
+  border: none
 
-.input-box__checkbox-group-content
-  display: none
-  flex-direction: column
-  padding-top: 3px
-  flex-wrap: nowrap
+  &-content
+    // display: none
+    flex-direction: column
+    margin-top: 10px
+    padding-top: 3px
+    flex-wrap: nowrap
 
-.input-box__checkbox-group-title
-  position: relative
-  width: 100%
-  height: 44px
-  line-height: 44px
-  text-transform: uppercase
-  font-weight: 700
-  cursor: pointer
+  &-title
+    position: relative
+    width: 100%
+    line-height: 2.4rem
+    text-transform: uppercase
+    font-weight: 700
+    cursor: pointer
 
-  &:after
-    @extend .material-icons
-    @extend .centered-flex
-    content: '\e5cf'
-    position: absolute
-    width: 44px
-    height: 44px
-    right: 0
-    top: 0
-    color: fw.$dark50
-    transition: all .1s
-    z-index: -1
+    &:after
+      @extend .material-icons
+      @extend .centered-flex
+      content: '\e5cf'
+      // position: absolute
+      // right: 0
+      // top: 0
+      float: right
+      color: fw.$dark50
+      transition: all .1s
+      z-index: -1
 
-.input-box__checkbox-group--expanded
-  .input-box__checkbox-group-content
-    display: block
+  &--expanded
+    max-height: 100%
+    transition: all .2s
 
-  .input-box__checkbox-group-title::after
-    transform: rotate(-180deg)
-    transition: all .1s
+    .input-box__checkbox-group-content
+      display: block
+
+    .input-box__checkbox-group-title::after
+      transform: rotate(-180deg)
+      transition: all .1s
 
 .input-box__checkbox-item
   position: relative
