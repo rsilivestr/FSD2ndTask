@@ -74,8 +74,8 @@
   &__navlink
     display: inline-block
     line-height: 24px
-    // padding: 0 5px
-    margin: 0 10px
+    padding: 10px
+    // margin: 10px
     text-transform: capitalize
     text-decoration: none
     color: fw.$dark50
@@ -84,14 +84,23 @@
       font-weight: 700
       color: fw.$dark75
 
-    &--has-subnav::after
-      @extend .material-icons
-      content: '\e5cf'
-      vertical-align: middle
+    &--has-subnav
+      &::after
+        @extend .material-icons
+        content: '\e5cf'
+        vertical-align: middle
+
+      // compensate after
+      @include fw.media('<tablet')
+        margin-left: 10px
 
     &:hover
       @extend .text-gradient
 
+    @include fw.media('>=tablet')
+      padding: 0
+      margin: 0 10px
+  
   // end __navlink
 
   &__user-panel

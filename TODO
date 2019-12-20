@@ -13,15 +13,19 @@ dropdown
 
 Current page - Landing
 
+
+
 CHANGED
 
 CHANGE
   - rename media breakpoints
   - refactor containers
   ? close dropdown on apply
+  - move common.blocks to components
 
 ADDED
   + checkbox-group &attributes
+  + added minimal padding (.full-width-container) to creative footer
 
 ADD
   - add shadow to dp
@@ -34,6 +38,11 @@ ADD
 
 FIXED
   + lessened checkbox group height
+  + fixed fixed headers collapsing on 'headers & footers' page
+  + fixed overlapping headers z-indexes on 'headers & footers' page
+  + fixed footer column subscribe heading alignmnent on desktop
+  + fixed footer column cursor
+  + aligned footer subscribtion title to left on desktop
 
 FIX
   - check header shadows
@@ -41,7 +50,6 @@ FIX
   - rise dropdown z-index
   - add top-margin to main / wrapper (due to fixed header)
   - filters margins
-  - align footer subscribtion title to left on desktop
   - there are multiple header on headers & footers page so remove fixed style
 
 pub on github pages
