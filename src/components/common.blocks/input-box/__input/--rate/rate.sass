@@ -1,12 +1,12 @@
 @use 'Styles/forward' as fw
 
-.input-box__rate-box
+.rate-box
   display: inline-flex
   flex-flow: row-reverse nowrap
   justify-content: flex-end
 
   &:hover
-    .rate-box__star
+    .rate-box__star--rateable
       &:after
         content: '\e83a'
         background: fw.$mainGradient50
@@ -20,20 +20,22 @@
       background: fw.$mainGradient
       background-clip: text
 
-.input-box__rate-box + .input-box__rate-box
-  margin-left: 20px
+  + .rate-box
+    margin-left: 20px
 
-.rate-box__star
-  cursor: pointer
-  
-  &:after
-    @extend .material-icons
-    content: '\e83a'
-    @extend .text-gradient
+  &__star
+    
+    &--rateable
+      cursor: pointer
+    
+    &:after
+      @extend .material-icons
+      content: '\e83a'
+      @extend .text-gradient
 
-  &:hover ~ .rate-box__star::after
+    &:hover ~ .rate-box__star::after
+        content: '\e838'
+
+    &--active::after,
+    &--active ~ .rate-box__star::after
       content: '\e838'
-
-.rate-box__star--active::after,
-.rate-box__star--active ~ .rate-box__star::after
-  content: '\e838'

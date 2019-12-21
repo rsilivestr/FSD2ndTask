@@ -9,7 +9,6 @@
 
 .form__datepicker-double
   .datepicker-inline
-    // display: none
     position: absolute
     top: 100%
     margin-top: 5px
@@ -24,21 +23,13 @@
     display: block
 
 .datepicker
-  width: 100%
   // compensate for box-sizing
   margin: -1px
-  // max-width: 320px
 
   &-inline
-    // position: relative
-
-    // position: absolute
-    // top: 100%
-    // margin: -1px
     width: 100%
     background: #fff
     z-index: 30
-    // margin-top: 5px
     width: 100%
     max-width: 320px
 
@@ -68,8 +59,6 @@
     @extend .text-gradient
 
   &--cell
-    // min-width: 40px
-    height: 39px
     color: fw.$dark50
     border-radius: 0
     z-index: 20
@@ -146,6 +135,23 @@
         background: fw.$mainGradient
 
   // end --cell
+
+  &--pointer
+    display: none
+
+  &--size_l
+    width: 320px
+
+    &.datepicker--cell
+      height: 39px
+
+  &--size_m
+    width: 266px
+
+    &.datepicker--cell
+      height: 32px
+
+// end .datepicker
 
 .-range-from-::after,
 .-range-to-::after

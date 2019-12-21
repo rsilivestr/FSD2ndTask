@@ -1,7 +1,7 @@
-mixin starRating(score)
-  .input-box__rate-box
+mixin starRating(score, rateable=false)
+  .rate-box(class = rateable ? 'rate-box--rateable': '')
     each val in [5, 4, 3, 2, 1]
       if (val==score)
-        .rate-box__star.rate-box__star--active
+        .rate-box__star.rate-box__star--active(class = rateable ? 'rate-box__star--rateable': '')
       else
-        .rate-box__star
+        .rate-box__star(class = rateable ? 'rate-box__star--rateable': '')

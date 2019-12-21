@@ -16,6 +16,7 @@ Current page - Landing
 
 
 CHANGED
+  + set dropdown z-index to 30
 
 CHANGE
   - rename media breakpoints
@@ -26,11 +27,12 @@ CHANGE
 ADDED
   + checkbox-group &attributes
   + added minimal padding (.full-width-container) to creative footer
+  + added margin to --has-subnav navlinks on mobile for centered alignmnent
+  + added fixed width to static datepicker
+  + added --ratable modifier to rate-box
 
 ADD
   - add shadow to dp
-  - add negative margin to icons in mobile menu links with subnav
-  - fixed rating
   - room-card dots
   - caption for range slider
   ? apply filters button
@@ -43,13 +45,12 @@ FIXED
   + fixed footer column subscribe heading alignmnent on desktop
   + fixed footer column cursor
   + aligned footer subscribtion title to left on desktop
+  + added top-margin to main / wrapper (due to fixed header)
 
 FIX
-  - check header shadows
+  ? check header shadows
   - room-card lux
-  - rise dropdown z-index
-  - add top-margin to main / wrapper (due to fixed header)
-  - filters margins
-  - there are multiple header on headers & footers page so remove fixed style
+  ? filters margins
+  - dropdowns cursor and click over icon
 
 pub on github pages
