@@ -13,16 +13,7 @@ html(lang="en")
     title Search room
   body.page.page--layout_search-filter.search-filter-page
 
-    +mainHeader.search-filter-page__header
-      +logoToxin.main-header__logo
-      +navBtn
-      +headerNav
-        +navlink('о нас')
-        +navlink('услуги').main-header__navlink--has-subnav
-        +navlink('вакансии')
-        +navlink('новости')
-        +navlink('соглашения').main-header__navlink--has-subnav
-      +headerButtons('войти', 'зарегистрироваться')
+    +mainHeaderPages(true)
 
     .content-wrapper.has-fixed-header
 
@@ -76,9 +67,9 @@ html(lang="en")
       main.search-filter-page__content
         h1.search-filter-page__title Номера, которые мы для вас подобрали
         .search-filter-page__rooms
-          +roomCard('room1.jpg', 5, 888, 9990, 145).search-filter-page__room-card
+          +roomCard('room1.jpg', 5, 888, 9990, 145, true).search-filter-page__room-card
           +roomCard('room2.jpg', 4, 840, 9900, 65).search-filter-page__room-card
-          +roomCard('room3.jpg', 3, 980, 8500, 35).search-filter-page__room-card
+          +roomCard('room3.jpg', 3, 980, 8500, 35, true).search-filter-page__room-card
           +roomCard('room4.jpg', 5, 856, 7300, 19).search-filter-page__room-card
           +roomCard('room5.jpg', 4, 740, 6000, 44).search-filter-page__room-card
           +roomCard('room6.jpg', 3, 982, 5800, 56).search-filter-page__room-card

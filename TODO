@@ -17,42 +17,47 @@ Current page - Landing
 
 CHANGED
   + set dropdown z-index to 30
+  + changed double datepicker on form elements page
 
 CHANGE
   - rename media breakpoints
   - refactor containers
   ? close dropdown on apply
   - move common.blocks to components
-  - double dropdown on form elements page
   - give similar names to dropdown mixins
+  - range dropdown months to lowercase
+  ? bundle icons with fontello
+  - landing page: center form on small screens @include fw.media('<tablet')
 
 ADDED
   + checkbox-group &attributes
-  + added minimal padding (.full-width-container) to creative footer
-  + added margin to --has-subnav navlinks on mobile for centered alignmnent
-  + added fixed width to static datepicker
-  + added --ratable modifier to rate-box
+  + minimal padding (.full-width-container) to creative footer
+  + margin to --has-subnav navlinks on mobile for centered alignmnent
+  + fixed width to static datepicker
+  + --ratable modifier to rate-box
   + range dropdown scripts
-  + added shadow to dp
-  + added apply filters button
+  + shadow to dp
+  + apply_filters button
+  + room-card lux option to mixin
 
 ADD
   - room-card dots
   - caption for range slider
+  - head mixin
+  - mainHeaderRu mixin
 
 FIXED
   + lessened checkbox group height
-  + fixed fixed headers collapsing on 'headers & footers' page
-  + fixed overlapping headers z-indexes on 'headers & footers' page
-  + fixed footer column subscribe heading alignmnent on desktop
-  + fixed footer column cursor
+  + fixed headers collapsing on 'headers & footers' page
+  + overlapping headers z-indexes on 'headers & footers' page
+  + footer column subscribe heading alignmnent on desktop
+  + footer column cursor
   + aligned footer subscribtion title to left on desktop
   + added top-margin to main / wrapper (due to fixed header)
-  ~ fixed dropdown shadow not expanding to contents (now slightly overlaps with display)
+  ~ dropdown shadow not expanding to contents (now slightly overlaps with display)
 
 FIX
   ? check header shadows
-  - room-card lux
   ? filters margins
 
 pub on github pages

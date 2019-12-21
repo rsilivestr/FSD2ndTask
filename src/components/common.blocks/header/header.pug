@@ -53,3 +53,16 @@ mixin headerButtons(login='login', register='register')
 mixin headerUser()
   .main-header__user-panel
     a(href="#some-url-or-menu").main-header__user-menu= username
+
+//- main header for website pages
+mixin mainHeaderPages(shadow='false')
+  +mainHeader(class = shadow ? 'main-header--has-shadow' : '')
+    +logoToxin.main-header__logo
+    +navBtn
+    +headerNav
+      +navlink('о нас')
+      +navlink('услуги').main-header__navlink--has-subnav
+      +navlink('вакансии')
+      +navlink('новости')
+      +navlink('соглашения').main-header__navlink--has-subnav
+    +headerButtons('войти', 'зарегистрироваться')
