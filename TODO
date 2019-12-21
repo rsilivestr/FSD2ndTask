@@ -18,6 +18,8 @@ Current page - Landing
 CHANGED
   + set dropdown z-index to 30
   + changed double datepicker on form elements page
+  + landing page: center form on screens < tablet
+  + range dropdown months to lowercase
 
 CHANGE
   - rename media breakpoints
@@ -25,9 +27,9 @@ CHANGE
   ? close dropdown on apply
   - move common.blocks to components
   - give similar names to dropdown mixins
-  - range dropdown months to lowercase
   ? bundle icons with fontello
-  - landing page: center form on small screens @include fw.media('<tablet')
+  - smooth form paddings change on xs
+  - remove unused classes like .page .page--layout_... etc.
 
 ADDED
   + checkbox-group &attributes
@@ -39,11 +41,12 @@ ADDED
   + shadow to dp
   + apply_filters button
   + room-card lux option to mixin
+  + margin to double dropdown so inpunts won't stick together
+  + head mixin
 
 ADD
   - room-card dots
   - caption for range slider
-  - head mixin
   - mainHeaderRu mixin
 
 FIXED

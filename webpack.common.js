@@ -168,6 +168,7 @@ module.exports = {
       Pages: path.resolve(__dirname, 'src/pages/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
       CommonBlocks: path.resolve(__dirname, 'src/components/common.blocks/'),
+      UtilBlocks: path.resolve(__dirname, 'src/components/utility.blocks/'),
     }
   }
 };

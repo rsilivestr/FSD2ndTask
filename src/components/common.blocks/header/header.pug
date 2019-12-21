@@ -55,7 +55,7 @@ mixin headerUser()
     a(href="#some-url-or-menu").main-header__user-menu= username
 
 //- main header for website pages
-mixin mainHeaderPages(shadow='false')
+mixin mainHeaderPages(shadow=false)
   +mainHeader(class = shadow ? 'main-header--has-shadow' : '')
     +logoToxin.main-header__logo
     +navBtn

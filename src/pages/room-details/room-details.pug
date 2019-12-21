@@ -1,14 +1,11 @@
+include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Landing Page
-  body.page.page--layout_landing
++head('Room details')
+  body.page.landing.page--layout_landing
 
     +mainHeaderPages
+
+    header.landing__secondary-header

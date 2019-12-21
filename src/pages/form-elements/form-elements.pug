@@ -1,3 +1,4 @@
+include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/button/button
@@ -7,13 +8,7 @@ include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/user-comment/user-comment
 
-<!DOCTYPE html>
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Form Elements
++head('Form Elements')
   body.page.page--layout_form-elements
     +headerUIKit
     main.main-content.main-content--page_form-elements.full-width-container

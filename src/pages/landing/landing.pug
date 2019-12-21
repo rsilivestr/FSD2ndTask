@@ -1,14 +1,10 @@
+include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Landing Page
++head('Landing Page')
+
   body.page.page--layout_landing
 
     +mainHeaderPages
@@ -16,6 +12,5 @@ html(lang="en")
     main.main-content.main-content--page_landing.full-width-container
       +formSearchRoom.form--page_landing
       p.main-content__caption Лучшие номера для вашей работы,<br>отдыха и просто вдохновения
-
 
     +footer

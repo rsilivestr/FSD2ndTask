@@ -9,7 +9,7 @@ mixin filterDateDrop
 
 mixin datepickerDouble
   .datepicker-double&attributes(attributes)
-    +inputBox('прибытие', 'xs')
+    +inputBox('прибытие', 'xs').mr5
       .date-dropdown
         input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.date-dropdown__start
     +inputBox('выезд', 'xs')

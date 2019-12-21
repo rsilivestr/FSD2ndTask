@@ -1,16 +1,12 @@
+include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 include ~CommonBlocks/room-card/room-card
 include ~CommonBlocks/pagination/pagination
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Search room
+
++head('Search room')
   body.page.page--layout_search-filter.search-filter-page
 
     +mainHeaderPages(true)

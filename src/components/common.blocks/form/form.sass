@@ -7,11 +7,20 @@
 
 .form
   position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
   max-width: 380px
-  padding: 30px 12px 24px 12px
+  padding: 40px 15px 30px 15px
   background: #ffffff
   border-radius: 3px
   box-shadow: 0 0 20px fw.$dark10
+
+  > *
+    // smooth form paddings change on xs
+    width: 100%
+    max-width: 320px
 
   @include fw.media('>=footcols')
     padding: 40px 30px 30px 30px

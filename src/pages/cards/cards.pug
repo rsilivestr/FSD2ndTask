@@ -1,14 +1,9 @@
+include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 include ~CommonBlocks/form/form
 include ~CommonBlocks/room-card/room-card
 
-<!DOCTYPE html>
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Cards
++head('Cards')
   body.page.page--layout_cards
     +headerUIKit
     main.main-content.main-content--page_cards.full-width-container
