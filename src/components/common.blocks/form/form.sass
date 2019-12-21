@@ -56,12 +56,25 @@
   &__btn--main
     margin-top: 20px
 
-  &__datepicker-double
-    position: relative
-    display: flex
-    flex-flow: row nowrap
-    justify-content: space-between
-    margin-bottom: 20px
+  &__datepicker
+    display: none
+
+    &--visible
+      display: block
+
+    &-double
+      position: relative
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      margin-bottom: 20px
+      max-width: 320px
+
+      .datepicker-inline
+        position: absolute
+        top: 100%
+        margin-top: 5px
+
 
 // end .form
 

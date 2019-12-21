@@ -3,7 +3,6 @@
 .dropdown,
 .date-dropdown
   position: relative
-  z-index: 20
 
   *::selection
     background: transparent
@@ -19,7 +18,9 @@
     height: 44px
     color: fw.$dark50
     transition: all .1s
-    z-index: 10
+
+  &--is-open
+    z-index: 50
 
   &--is-open,
   &--force-open
@@ -63,11 +64,9 @@
     border: 1px solid fw.$dark50
     border-top: none
     border-radius: 0 0 4px 4px
+    box-shadow: 0 10px 20px fw.$dark05
     cursor: default
     overflow: hidden
-    z-index: 30
-    // height: 0
-    // transition: height 1s
 
     &--visible,
     &--force-visible
@@ -76,9 +75,6 @@
     &--visible
       position: absolute
       background: #ffffff
-      z-index: 10
-      // height: auto
-      // transition: all 1s
 
   // end __contents
 

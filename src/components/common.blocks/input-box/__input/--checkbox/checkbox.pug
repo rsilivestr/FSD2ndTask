@@ -8,6 +8,6 @@ mixin checkbox(label, isChecked=false, desc)
   label(class = desc ? 'input-box__checkbox-item--rich' : '').input-box__checkbox-item&attributes(attributes)
     input(type='checkbox', checked = (isChecked == true) ? true : false).input-box__input--checkbox
     span.input-box__stylish-checkbox
-    span(class = desc ? 'input-box__checkbox-label--bold' : '').input-box__checkbox-label= label
+    pre(class = desc ? 'input-box__checkbox-label--bold' : '').input-box__checkbox-label= label
     if(desc)
       pre.input-box__checkbox-description= desc

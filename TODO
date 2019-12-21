@@ -23,6 +23,8 @@ CHANGE
   - refactor containers
   ? close dropdown on apply
   - move common.blocks to components
+  - double dropdown on form elements page
+  - give similar names to dropdown mixins
 
 ADDED
   + checkbox-group &attributes
@@ -30,13 +32,13 @@ ADDED
   + added margin to --has-subnav navlinks on mobile for centered alignmnent
   + added fixed width to static datepicker
   + added --ratable modifier to rate-box
+  + range dropdown scripts
+  + added shadow to dp
+  + added apply filters button
 
 ADD
-  - add shadow to dp
   - room-card dots
   - caption for range slider
-  ? apply filters button
-  - range dropdown scripts
 
 FIXED
   + lessened checkbox group height
@@ -46,11 +48,11 @@ FIXED
   + fixed footer column cursor
   + aligned footer subscribtion title to left on desktop
   + added top-margin to main / wrapper (due to fixed header)
+  ~ fixed dropdown shadow not expanding to contents (now slightly overlaps with display)
 
 FIX
   ? check header shadows
   - room-card lux
   ? filters margins
-  - dropdowns cursor and click over icon
 
 pub on github pages

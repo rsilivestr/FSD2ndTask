@@ -18,86 +18,70 @@ html(lang="ru")
     +headerUIKit
     main.main-content.main-content--page_form-elements.full-width-container
 
+      //- grid container ---------------------------//
+
       .form-elements__grid
+
 
         //- a 1 --------------------------------------//
       
         .form-elements__grid-item
-          +inputBox('text field')
+          +inputBox('text field').mb22
             +textField('Email')
 
-          .mb22
-
-          +inputBox('text field')
+          +inputBox('text field').mb21
             +textField('This is pretty awesome', 'text', false, 'uikit_always-focused')
 
-          .mb21
-
-          +inputBox('dropdown')
+          +inputBox('dropdown').mb23
             +inputDrop('single', 'Количество гостей')
               +dropOption('взрослые', '', '', '', 0, 10)
               +dropOption('дети', '', '', '', 0, 10)
               +dropOption('младенцы', '', '', '', 0, 10)
  
-          .mb23
-              
-          +inputBox('masked text field')
+          +inputBox('masked text field').mb42
             +maskedDate
 
-          .mb42
-
           //- double date dropdown
-          .form__row
-            +inputBox('Date dropdown', 'xs')
-              +dateDrop
-
-            +inputBox('Date dropdown', 'xs')
-              +dateDrop
-          .mb41
+          +datepickerDouble.form__datepicker-double.mb41
 
           //- filter date dropdown
-          +inputBox('filter date dropdown', 'm')
+          +inputBox('filter date dropdown', 'm').mb42
             +filterDateDrop
-          .mb42
 
           //- subscribtion text field
-          +inputBox('subscribtion text field', 'm')
+          +inputBox('subscribtion text field', 'm').mb101
             +textField('Email', 'email', 'subscribe')
-          .mb101
+
 
         //- a 2 --------------------------------------//
 
         .form-elements__grid-item
           //- checkbox buttons
-          +inputBox('checkbox buttons', 's')
+          +inputBox('checkbox buttons', 's').mb41
             .mb16
             +checkbox('Можно курить')
             +checkbox('Можно с питомцами', true)
-            +checkbox("Можно пригласить гостей (до 10 человек)", true)
-          .mb41
+            +checkbox("Можно пригласить гостей\n(до 10 человек)", true)
 
           //- radio buttons
-          +inputBox('radio buttons')
+          +inputBox('radio buttons').mb41
             .mb16
             +radioGroup('gender')
               +radioItem('man', 'Мужчина', true)
               +radioItem('woman', 'Женщина')
-          .mb41
 
           //- toggle
-          +inputBox('toggle')
+          +inputBox('toggle').mb44
             .mb16
             +inputToggle('Получать спецпредложения', true)
             .mb14
             +inputToggle('Получать спецпредложения')
-          .mb44
 
           //- like button
-          +inputBox('like button', 'm')
+          +inputBox('like button', 'm').mb40
             .mb16
             +likeBtn(2)
             +likeBtn(12, true)
-          .mb40
 
           //- rate button
           +inputBox('rate button')
@@ -105,16 +89,16 @@ html(lang="ru")
             +starRating(4)
             +starRating(5, true)
         
+
         //- a 3 --------------------------------------//
 
         .form-elements__grid-item
           //- range slider
-          +inputBox('range slider', 'm')
+          +inputBox('range slider', 'm').mb44
             +rangeSlider
-          .mb44
 
           //- buttons
-          +inputBox('buttons')
+          +inputBox('buttons').mb40
             .mb15
             +button('click me','gradient','s',false)
             +button('click me','gradient','s',true).ml20
@@ -130,31 +114,30 @@ html(lang="ru")
             .mb30
             +button('перейти к оплате','arrowed','l',false)
 
-          .mb40
           //- pagination
           +inputBox('pagination', 's')
             .mb17
             +pagination
+
 
         //- b 1 --------------------------------------//
 
         .form-elements__grid-item
           //- .ml-1
           //- dropdown
-          +inputBox('dropdown', 'm')
+          +inputBox('dropdown', 'm').mb21
             +inputDrop('multi', '')
               +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
               +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
               +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
-          .mb21
+
           //- dropdown expanded
-          +inputBox('dropdown', 'm')
+          +inputBox('dropdown', 'm').mb40
             +inputDrop('multi', '', true)
               +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
               +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
               +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
                 
-          .mb40
 
         //- b 2 --------------------------------------//
 
