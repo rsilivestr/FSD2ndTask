@@ -1,0 +1,37 @@
+.room-details__gal-header
+  display: grid
+  grid-template: "main sec-top" 242px "main sec-bot" 243px / 68.125% auto
+  width: 100%
+
+.gal-header__image
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+
+  &--main
+    background-image: url('/assets/images/header1.jpg')
+    grid-area: main
+
+  &--sec-top
+    background-image: url('/assets/images/header2.jpg')
+
+  &--sec-bot
+    background-image: url('/assets/images/header3.jpg')
+
+.room-details
+  &__main
+    display: grid
+    grid-template: "icon-desc diagram aside" auto "reviews reviews aside" auto "rules refund aside" auto / 290px 350px 380px
+    column-gap: 70px
+    row-gap: 30px
+    padding-top: 70px
+  
+  &__features
+  
+  &__diagram
+
+  &__reviews
+    grid-area: reviews
+
+  &__aside
+    grid-area: aside
