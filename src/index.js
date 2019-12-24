@@ -5,16 +5,4 @@ import 'CommonBlocks/dropdown/dropdown.js';
 import 'CommonBlocks/date-dropdown/date-dropdown.js';
 import 'CommonBlocks/form/form.js';
 import 'Pages/search-room-filter/search-room-filter.js';
-
-// const routerNav = document.querySelector('.router__nav'),
-//       routerIframe = document.querySelector('.router__current-page');
-
-// if(routerNav) {
-//   routerNav.addEventListener('click', e => {
-//     if(e.target.classList.contains('router__navlink')) {
-//       e.preventDefault();
-
-//       routerIframe.src = e.target.href;
-//     }
-//   });
-// }
+import 'Pages/room-details/room-details.js';

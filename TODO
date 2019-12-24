@@ -30,6 +30,8 @@ CHANGE
   ? bundle icons with fontello
   - smooth form paddings change on xs
   - remove unused classes like .page .page--layout_... etc.
+  - reduce user-comment margin
+
 
 ADDED
   + checkbox-group &attributes
@@ -48,6 +50,10 @@ ADD
   - room-card dots
   - caption for range slider
   - mainHeaderRu mixin
+  - footer top-border mix
+  - canvas image fallback
+  - font-family classes to extend
+
 
 FIXED
   + lessened checkbox group height

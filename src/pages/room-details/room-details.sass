@@ -1,3 +1,5 @@
+@use 'Styles/forward' as fw
+
 .room-details__gal-header
   display: grid
   grid-template: "main sec-top" 242px "main sec-bot" 243px / 68.125% auto
@@ -24,14 +26,44 @@
     grid-template: "icon-desc diagram aside" auto "reviews reviews aside" auto "rules refund aside" auto / 290px 350px 380px
     column-gap: 70px
     row-gap: 30px
+    align-items: start
     padding-top: 70px
+    padding-bottom: 70px
   
   &__features
   
   &__diagram
+
+  &__rate-canvas-wrap
+    position: relative
+    width: 120px
+    height: 120px
+    cursor: default
+    
+  &__rate-counter
+    position: absolute
+    top: 40px
+    left: 0
+    right: 0
+    font-size: 2.4rem
+    font-family: 'Quicksand', 'Montserrat', serif
+    text-align: center
+    font-weight: 700
+    @extend .text-gradient
+
+    &::selection
+      background: transparent
+      
+    &::after
+      content: 'голосов'
+      display: block
+      font-size: 1.2rem
 
   &__reviews
     grid-area: reviews
 
   &__aside
     grid-area: aside
+
+  &__footer
+    border-top: 1px solid fw.$dark10
