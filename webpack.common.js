@@ -55,6 +55,14 @@ module.exports = {
       template: './src/pages/room-details/room-details.pug',
       filename: 'pages/room-details.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/register/register.pug',
+      filename: 'pages/register.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/login/login.pug',
+      filename: 'pages/login.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       ignoreOrder: false,

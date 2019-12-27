@@ -1,0 +1,11 @@
+include ~UtilBlocks/head
+include ~CommonBlocks/header/header
+include ~CommonBlocks/footer/footer
+include ~CommonBlocks/form/form
+
++head('Room details')
+  body.page.page--layout_room-details
+    +mainHeaderPages
+    main.main-content.main-content--page_login
+      +formLogin.page-login__form
+    +footer.room-details__footer
