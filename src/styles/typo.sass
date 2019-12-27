@@ -64,18 +64,30 @@ p
   justify-content: center
 
 .bullet-list
+  list-style-type: none
   color: palette.$dark75
-  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><circle cx="5" cy="5" r="5" fill="lightgrey"/></svg>')
-  
+  // list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10"><circle cx="5" cy="5" r="5" fill="lightgrey"/></svg>')
+  // fiber_manual_record e061
+  height: auto
+
 .bullet-list__item
   position: relative
   font-size: 1.4rem
   line-height: 2.4rem
-  padding-left: .4rem
-  margin: 1rem 0 0 1.7rem
+  padding-left: 0rem
+  margin-left: 2rem
 
   &::first-letter
     text-transform: capitalize
+
+  &::before
+    @extend .material-icons
+    color: palette.$dark25
+    content: '\e061'
+    font-size: 1.5rem
+    position: absolute
+    left: -2rem
+    top: .45rem
 
 .text-gradient
   background: palette.$mainGradient

@@ -25,7 +25,7 @@
 html
   box-sizing: border-box
   font-family: Montserrat, sans-serif
-  line-height: 1
+  // line-height: inherit
   font-size: 10px
 
 *, *:before, *:after
@@ -59,16 +59,19 @@ body
 
 .main-content
   flex: auto
-  // margin-left: auto
-  // margin-right: auto
+  width: 100%
+  max-width: 1200px
+  padding-left: calc(50vw - 155px)
+  padding-right: calc(50vw - 155px)
+  margin-left: auto
+  margin-right: auto
 
-.container--width_m,
+  @include fw.media('>=340px')
+    padding-left: 20px
+    padding-right: 20px
+
 .main-content--width_m
-  max-width: 1160px
-
-.container--width_l,
-.main-content--width_l
-  max-width: 1440px
+  width: 1200px
 
 .full-width-container
   padding-left: 5px

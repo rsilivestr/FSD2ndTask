@@ -9,4 +9,4 @@ mixin userComment(uid, name, age, likes, liked, text)
       .user-comment__like-counter
         +likeBtn(likes, liked, 'user-comment__like-counter')
       .user-comment__text
-        pre= text
+        p= text

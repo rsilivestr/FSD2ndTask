@@ -31,6 +31,7 @@ CHANGE
   - smooth form paddings change on xs
   - remove unused classes like .page .page--layout_... etc.
   - reduce user-comment margin
+  - social icon padding-left -> margin
 
 
 ADDED
@@ -53,6 +54,7 @@ ADD
   - footer top-border mix
   - canvas image fallback
   - font-family classes to extend
+  - border-bottom or box-shadow to fixed header
 
 
 FIXED
@@ -68,5 +70,6 @@ FIXED
 FIX
   ? check header shadows
   ? filters margins
+  ? hide search filters on screen size change
 
 pub on github pages

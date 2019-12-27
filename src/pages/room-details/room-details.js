@@ -2,7 +2,7 @@ const UIwrap = document.querySelector('.room-details__rate-canvas-wrap'),
   UIgraphCanvas = document.querySelector('.room-details__rate-canvas');
 
 if (UIwrap) {
-  drawGraph(130, 65, 65, 48);
+  drawGraph(130, 65, 65, 10);
 
 
 }
@@ -123,7 +123,6 @@ function gradHeight(start, end) {
   if (start > axis && end < axis) {
     botGradient = 1;
   }
-  console.log(botGradient)
 
   return grad = { top: topGradient, bot: botGradient }
 }
