@@ -45,12 +45,13 @@ body
   flex-flow: column nowrap
 
 .router
-  display: flex
-  flex-direction: column
+  @extend .centered-flex
 
 .router__nav
   display: flex
+  flex-flow: row wrap
   justify-content: center
+  padding: 20px
   font-size: 1.6rem
 
 .router__navlink
@@ -60,35 +61,37 @@ body
     background-color: #eee
 
 .main-content
+  // push footer to bottom
   flex: auto
+
+  position: relative
   width: 100%
-  padding-left: calc(50vw - 155px)
-  padding-right: calc(50vw - 155px)
+  padding-left: 5px
+  padding-right: 5px
   margin-left: auto
   margin-right: auto
 
-  @include fw.media('>=340px')
+  @include fw.media('>=330px')
+    padding-left: calc(50vw - 160px)
+    padding-right: calc(50vw - 160px)
+
+  @include fw.media('>=350px')
     padding-left: 20px
     padding-right: 20px
 
 .main-content--width_m
-  max-width: 1200px
+  @include fw.media('>=l')
+    max-width: 1200px
 
 .main-content--width_m-fixed
-  width: 1200px
+    width: 1200px
 
 .full-width-container
   max-width: 100%
-  padding-left: 5px
-  padding-right: 5px
-
-  @include fw.media('>=creative')
-    padding-left: 20px
-    padding-right: 20px
 
   @include fw.media('>=l')
-    padding-left: calc( 50vw - 580px )
-    padding-right: calc( 50vw - 580px )
+    padding-left: calc( 50vw - 585px )
+    padding-right: calc( 50vw - 585px )
 
   &--shrink_medium
     @include fw.media('>=creative','<m')

@@ -1,14 +1,10 @@
+include ~UtilBlocks/head
+
 - const pages = [{ title: 'Colors', url: 'pages/colors.html' }, { title: 'Form Elements', url: 'pages/form-elements.html' }, {title: 'Cards', url: 'pages/cards.html' }, { title: 'Headers & Footers', url: 'pages/headers-footers.html' }, { title: 'Landing', url: 'pages/landing.html' }, { title: 'Search room', url: 'pages/search-room-filter.html' }, { title: 'Room details', url: 'pages/room-details.html' }, { title: 'Registration', url: 'pages/register.html' }, { title: 'Login', url: 'pages/login.html' } ]
 
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Pages
++head('Pages')
   body.router
+    h1 Pages
     nav.router__nav
-      i.icon-menu
       each page in pages
         a.router__navlink(href=page.url)=page.title
-    //- iframe.router__current-page(src="pages/colors.html", frameborder="1")

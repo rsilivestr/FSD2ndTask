@@ -46,15 +46,16 @@ ADDED
   + room-card lux option to mixin
   + margin to double dropdown so inpunts won't stick together
   + head mixin
+  + mainHeaderRu mixin
 
 ADD
   - room-card dots
-  - caption for range slider
-  - mainHeaderRu mixin
-  - footer top-border mix
+  ? caption for range slider
+  ? footer top-border mix
   - canvas image fallback
   - font-family classes to extend
   - border-bottom or box-shadow to fixed header
+  - russian footer
 
 
 FIXED
@@ -66,6 +67,8 @@ FIXED
   + aligned footer subscribtion title to left on desktop
   + added top-margin to main / wrapper (due to fixed header)
   ~ dropdown shadow not expanding to contents (now slightly overlaps with display)
+  + room details 320 paddings, review count, legend, form
+  + shrink filters on 320
 
 FIX
   ? check header shadows

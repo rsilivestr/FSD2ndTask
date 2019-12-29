@@ -19,14 +19,14 @@
 .search-filter-page
 
   &__filters
-    width: 307px
-    padding: 40px 20px
+    width: 287px
+    padding: 40px 10px
     background: #ffffff
     z-index: 40
     // hide on mobile
     position: fixed
     top: 70px
-    left: -307px
+    left: -287px
     bottom: 0
     // border on mobile
     border-right: 1px solid fw.$dark50
@@ -34,7 +34,12 @@
 
     &--expanded
       left: 0
-    
+
+    @include fw.media('>=footcols')
+      left: -307px
+      width: 307px
+      padding: 40px 20px
+
     @include fw.media('>=topnav')
       position: relative
       top: 0
@@ -47,13 +52,10 @@
     display: flex
     align-items: center
     justify-content: flex-end
-    // position: fixed
     position: absolute
     top: 40vh
-    // left: 306px
-    left: 307px
+    left: 287px
     height: 70px
-    // width: 70px
     width: 35px
     padding: 10px
     border: 1px solid fw.$dark50
@@ -62,6 +64,9 @@
     background: #fff
     cursor: pointer
     transition: left .25s
+
+    @include fw.media('>=footcols')
+      left: 307px
 
     i
       transition: all .25s .25s

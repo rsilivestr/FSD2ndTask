@@ -37,12 +37,14 @@
     padding-top: 70px
     padding-bottom: 70px
     grid-template-areas: 'aside' 'icon-desc' 'diagram' 'rules' 'refund' 'reviews'
-    grid-template-columns: auto
+    grid-template-columns: 100%
+    place-items: center
     
     @include fw.media('>=830px')
       grid-template-areas: 'icon-desc aside' 'diagram aside' 'rules refund' 'reviews reviews'
       grid-template-columns: auto 380px
       column-gap: 70px
+      place-items: start
 
     @include fw.media('>=l')
       grid-template-areas: 'icon-desc diagram aside' 'reviews reviews aside' 'rules refund aside'
@@ -50,24 +52,33 @@
       column-gap: 70px
       max-width: 100%
 
-  // &__features
-  
   &__rate-graph
     display: flex
     flex-flow: row wrap
     align-items: flex-end
-    min-width: 316px
+    justify-content: center
+    
+    @include fw.media('>=830px')
+      justify-content: flex-start
 
   &__graph-title
     width: 100%
+    text-align: center
+
+    @include fw.media('>=830px')
+      text-align: left
 
   &__rate-canvas-wrap
     position: relative
     width: 120px
     height: 120px
-    margin-right: 30px
+    margin-right: 10px
     cursor: default
-    
+  
+  @include fw.media('>=footcols')
+    &__rate-canvas-wrap
+      margin-right: 30px
+
   &__rate-counter
     position: absolute
     top: 40px
@@ -109,10 +120,21 @@
     grid-area: reviews
 
   &__review-counter
+    padding-left: 30px
+    margin-left: auto
     font-size: 1.4rem
+    line-height: 2.4rem
     font-weight: 400
     color: fw.$dark50
     float: right
+
+  &__rules,
+  &__refund
+    width: 100%
+    max-width: 320px
+
+    @include fw.media('>=830px')
+      max-width: 100%
 
   &__aside
     grid-area: aside
@@ -123,3 +145,6 @@
 
   &__footer
     border-top: 1px solid fw.$dark10
+
+// @include fw.media()
+//   .room-details__rate-canvas-wrap
