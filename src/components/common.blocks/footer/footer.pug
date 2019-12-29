@@ -66,3 +66,44 @@ mixin footerCreative
     +logoToxin.main-footer__logo
     p.main-footer__text.mb25 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
     +footsocial
+
+
+//--- Russian Header ---//
+
+mixin footerRU
+  footer.main-footer&attributes(attributes)
+    .full-width-container.full-width-container--shrink_medium.main-footer__nav-section
+      .main-footer__col
+        +logoToxin.main-footer__logo
+        p.main-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+
+      +footCol('навигация').main-footer__col-title--expandable
+        ul.main-footer__nav-list
+          +footLink('О нас')
+          +footLink('Новости')
+          +footLink('Служба поддержки')
+          +footLink('услуги')
+
+      +footCol('о нас').main-footer__col-title--expandable
+        ul.main-footer__nav-list
+          +footLink('О сервисе')
+          +footLink('Наша команда')
+          +footLink('Вакансии')
+          +footLink('Инвесторы')
+
+      +footCol('служба поддержки').main-footer__col-title--expandable
+        ul.main-footer__nav-list
+          +footLink('Соглашения')
+          +footLink('Сообщества')
+          +footLink('Связь с нами')
+      
+      +footCol('подписка')
+        p.main-footer__text Получайте специальные предложения и новости сервиса
+        +inputBox('', 'm')
+          +textField('Your email address', 'email', 'subscribe').main-footer__subscribe
+
+    //- end __nav-section
+
+    .main-footer__copy-section.full-width-container
+      p.main-footer__copy-text Copyright &copy; 2018 Toxin отель. Все права зачищены XD.
+      +footsocial

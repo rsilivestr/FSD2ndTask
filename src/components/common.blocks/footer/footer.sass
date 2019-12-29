@@ -140,10 +140,14 @@
   &__social-link
     display: inline-block
     margin-left: 10px
-
+ 
   &__social-icon
     font-size: 2.4rem
-    @extend .text-gradient
+    // @extend .text-gradient
+    
+    // chrome sux
+    &::before
+      @extend .text-gradient
 
 
   // Creative Footer

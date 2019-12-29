@@ -29,7 +29,7 @@ CHANGE
   ? bundle icons with fontello
   - rename media breakpoints
   - give similar names to dropdown mixins
-  - remove unused classes like .page .page--layout_... etc.
+  - remove unused classes like .page .page--layout_... etc. ...or not
   - reduce user-comment margin
 
 
@@ -48,13 +48,13 @@ ADDED
   + mainHeaderRu mixin
   + room-card dots
   + border-bottom or box-shadow to fixed header
+  + russian footer
 
 ADD
   ? caption for range slider
   ? footer top-border mix
   ? canvas image fallback
-  - font-family classes to extend
-  - russian footer
+  ? font-family classes to extend
 
 
 FIXED
@@ -70,6 +70,7 @@ FIXED
   + shrink filters on 320
   + social icons margin
   + filters not expanding due to media rules
+  + full-width-container footer no paddings on xs
 
 FIX
   ? check header shadows
