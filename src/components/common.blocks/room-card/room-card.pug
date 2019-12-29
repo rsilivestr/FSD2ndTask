@@ -2,7 +2,17 @@ include ../input-box/input-box
 
 mixin roomCard(roomPhoto='room1.png', roomRating=5, roomNumber, dailyCost, reviewCount=0, lux=false)
   .room-card&attributes(attributes)
-    img(src=`/assets/images/${roomPhoto}`, alt='Фото комнаты').room-card__photo
+    .room-card__photo
+      img(src=`/assets/images/${roomPhoto}`, alt='Фото комнаты')
+      .room-card__dots
+        button.room-card__dot.room-card__dot--current
+          i.icon-circle
+        button.room-card__dot
+          i.icon-circle-empty
+        button.room-card__dot
+          i.icon-circle-empty
+        button.room-card__dot
+          i.icon-circle-empty
     .room-card__info
       h2.room-card__title.form__title
         span.form__title-room(class = lux ? 'form__title-room--lux' : '')= roomNumber

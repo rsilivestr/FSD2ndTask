@@ -31,7 +31,7 @@ CHANGE
   - smooth form paddings change on xs
   - remove unused classes like .page .page--layout_... etc.
   - reduce user-comment margin
-  - social icon padding-left -> margin
+  - remove cursor-pointer from buttons, dropdowns
 
 
 ADDED
@@ -47,12 +47,12 @@ ADDED
   + margin to double dropdown so inpunts won't stick together
   + head mixin
   + mainHeaderRu mixin
+  + room-card dots
 
 ADD
-  - room-card dots
   ? caption for range slider
   ? footer top-border mix
-  - canvas image fallback
+  ? canvas image fallback
   - font-family classes to extend
   - border-bottom or box-shadow to fixed header
   - russian footer
@@ -69,6 +69,7 @@ FIXED
   ~ dropdown shadow not expanding to contents (now slightly overlaps with display)
   + room details 320 paddings, review count, legend, form
   + shrink filters on 320
+  + social icons margin
 
 FIX
   ? check header shadows

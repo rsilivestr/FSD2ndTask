@@ -8,10 +8,24 @@
   overflow: auto
 
   &__photo
+    position: relative
+    display: flex
     width: 100%
     height: auto
     border-radius: 4px 4px 0 0
     overflow: hidden
+
+  &__dots
+    position: absolute
+    bottom: 15px
+    right: 15px
+    z-index: 10
+  
+  &__dot
+    font-size: .8rem
+    color: #ffffff
+    background: transparent
+    border: none
 
   &__info
     margin: 20px
