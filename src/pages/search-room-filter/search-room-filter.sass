@@ -32,13 +32,13 @@
     border-right: 1px solid fw.$dark50
     transition: left .25s
 
-    &--expanded
-      left: 0
-
     @include fw.media('>=footcols')
       left: -307px
       width: 307px
       padding: 40px 20px
+    
+    &--expanded
+      left: 0
 
     @include fw.media('>=topnav')
       position: relative

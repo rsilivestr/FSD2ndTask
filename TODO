@@ -20,18 +20,17 @@ CHANGED
   + changed double datepicker on form elements page
   + landing page: center form on screens < tablet
   + range dropdown months to lowercase
+  + remove cursor-pointer from buttons, dropdowns
+  ~ refactor containers
+  ~ smooth form paddings change on xs
 
 CHANGE
-  - rename media breakpoints
-  - refactor containers
   ? close dropdown on apply
-  - move common.blocks to components
-  - give similar names to dropdown mixins
   ? bundle icons with fontello
-  - smooth form paddings change on xs
+  - rename media breakpoints
+  - give similar names to dropdown mixins
   - remove unused classes like .page .page--layout_... etc.
   - reduce user-comment margin
-  - remove cursor-pointer from buttons, dropdowns
 
 
 ADDED
@@ -48,13 +47,13 @@ ADDED
   + head mixin
   + mainHeaderRu mixin
   + room-card dots
+  + border-bottom or box-shadow to fixed header
 
 ADD
   ? caption for range slider
   ? footer top-border mix
   ? canvas image fallback
   - font-family classes to extend
-  - border-bottom or box-shadow to fixed header
   - russian footer
 
 
@@ -70,6 +69,7 @@ FIXED
   + room details 320 paddings, review count, legend, form
   + shrink filters on 320
   + social icons margin
+  + filters not expanding due to media rules
 
 FIX
   ? check header shadows

@@ -2,8 +2,8 @@ include ../input-box/input-box
 
 mixin roomCard(roomPhoto='room1.png', roomRating=5, roomNumber, dailyCost, reviewCount=0, lux=false)
   .room-card&attributes(attributes)
-    .room-card__photo
-      img(src=`/assets/images/${roomPhoto}`, alt='Фото комнаты')
+    .room-card__photos
+      img(src=`/assets/images/${roomPhoto}`, alt='Фото комнаты').room-card__photo
       .room-card__dots
         button.room-card__dot.room-card__dot--current
           i.icon-circle
