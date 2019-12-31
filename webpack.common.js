@@ -118,12 +118,7 @@ module.exports = {
         use: [          
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              // npm run build
-              // publicPath: '/dist/',
-              // npm start
-              // publicPath: '/',
-            },
+            options: {},
           },
           {
             loader: 'css-loader',
