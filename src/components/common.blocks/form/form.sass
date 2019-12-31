@@ -14,8 +14,8 @@
   max-width: 380px
   padding: 40px 15px 30px 15px
   background: #ffffff
-  border-radius: 3px
-  box-shadow: 0 0 20px fw.$dark10
+  border-radius: 4px
+  box-shadow: 0 0 20px fw.$dark25
 
   > *
     // smooth form paddings change on xs
@@ -28,7 +28,7 @@
   &__title
     display: flex
     align-items: flex-end
-    margin-bottom: 21px
+    margin-bottom: 20px
     @extend .ff-quicksand
 
     &-room
@@ -39,16 +39,19 @@
         font-size: 1.4rem
 
       &--lux::after
+        @extend .ff-montserrat
+        @extend .text-gradient
         content: ' люкс'
         font-size: 1.4rem
-        @extend .text-gradient
 
     // end -room
 
     &-price
+      @extend .ff-montserrat
       color: fw.$dark50
+      line-height: 2.4rem
       font-size: 1.4rem
-      line-height: 1.8rem
+      font-weight: 700
 
       &::after
         content: ' в сутки'
@@ -63,8 +66,8 @@
     flex-direction: row
     justify-content: space-between
 
-  &__btn--main
-    margin-top: 21px
+  // &__btn--main
+    // margin-top: 21px
 
   &__datepicker
     display: none
@@ -91,14 +94,14 @@
 .bill-info
   position: relative
   width: 100%
-  line-height: 2.4rem
+  line-height: 1.8rem
   font-size: 1.4rem
   color: fw.$dark75
-  margin-bottom: 16px
+  margin-bottom: 19px
 
   &__title,
   &__sum
-    padding-bottom: 8px
+    padding: 6px 0
 
   &__title
 
@@ -118,11 +121,14 @@
   &__sum
     min-width: 75px
     text-align: right
+    vertical-align: top
 
   &__total
     display: flex
     flex-flow: row nowrap
+    align-items: flex-end
     width: 100%
+    @extend .ff-quicksand
     color: fw.$dark100
     font-size: 1.9rem
     font-weight: 700
@@ -137,5 +143,5 @@
       content: ''
       flex: auto
       order: 2
-      margin: 3px 5px
+      margin: 5px 5px
       border-bottom: 1px dotted fw.$dark25

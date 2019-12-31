@@ -11,14 +11,14 @@ mixin formRegistration
     +textField('Имя').mb10
     +textField('Фамилия').mb10
 
-    +radioGroup('gender').mb20
+    +radioGroup('gender').mb25
       +radioItem('man', 'Мужчина', true)
       +radioItem('woman', 'Женщина')
 
-    +inputBox('дата рождения').mb20
+    +inputBox('дата рождения').mb22
       +maskedDate
 
-    +inputBox('данные для входа в сервис')
+    +inputBox('данные для входа в сервис').mb24
       +textField('Email', 'email').mb10
       +textField('Пароль', 'password').mb10
       +inputToggle('Получать спецпредложения')

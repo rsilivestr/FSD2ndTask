@@ -8,7 +8,7 @@ mixin formLogin
   form.form.form--type_login&attributes(attributes)
     h1.form__title Войти
     +textField('Email', 'email').mb10
-    +textField('Пароль', 'password')
+    +textField('Пароль', 'password').mb20
     +button('войти', 'arrowed', 'l').form__btn--main
-    +formPrompt('Нет аккаунта на токсин?')
+    +formPrompt('Нет аккаунта на Toxin?')
       +aButton('создать', 'bordered').form__btn.form__btn--prompt

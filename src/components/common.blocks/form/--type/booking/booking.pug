@@ -7,7 +7,7 @@ mixin formBooking
   form.form.form--type_booking&attributes(attributes)
     h1.form__title
       span.form__title-room.form__title-room--lux 888
-      span.form__title-price 9 900₽
+      span.form__title-price 9 990₽
     
     //- .form__row.mb20
       +inputBox('прибытие', 'xs')
@@ -19,7 +19,7 @@ mixin formBooking
 
 
     +inputBox('гости', 'l')
-      +inputDrop('single', 'Сколько гостей').mb20
+      +inputDrop('single', 'Сколько гостей').mb14
         +dropOption('взрослые', '', '', '', 0, 10)
         +dropOption('дети', '', '', '', 0, 10)
         +dropOption('младенцы', '', '', '', 0, 10)
@@ -41,7 +41,7 @@ mixin formBooking
         //-   td(colspan='2')
         //-     span Итого
         //-     span 38&nbsp;081₽
-    .bill-info__row.bill-info__total
+    .bill-info__row.bill-info__total.mb19
       span.bill-info__total-title Итого
       span.bill-info__total-sum 38&nbsp;081₽
     
