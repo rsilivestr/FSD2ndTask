@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     app: [ 
       './src',
-      'Assets/fonts/fonts.css',
+      'Styles/fonts.css',
       'Styles/index.sass',
     ]
   },
@@ -91,7 +91,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // for github pages
-              publicPath: '/FSD2ndTask/dist/',
+              // publicPath: '/FSD2ndTask/dist/',
             },
           },
           {
@@ -121,9 +121,9 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // for github pages
-              publicPath: '/FSD2ndTask/dist/',
-              // for apache
+              // npm run build
+              publicPath: '/dist/',
+              // npm start
               // publicPath: '/',
             },
           },
