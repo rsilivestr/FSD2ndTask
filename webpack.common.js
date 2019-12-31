@@ -118,7 +118,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // Specifies a custom public path for the target file(s).
-              publicPath: '/',
+              publicPath: '/FSD2ndTask/dist/',
             },
           },
           'css-loader'
