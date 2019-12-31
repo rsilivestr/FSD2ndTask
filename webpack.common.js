@@ -64,7 +64,7 @@ module.exports = {
       filename: 'pages/login.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'styles/[name].css',
       ignoreOrder: false,
     }),
     new CopyWebpackPlugin([{
@@ -92,7 +92,11 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            // options: { importLoaders: 1 }
+            options: {
+              importLoaders: 2,
+              // don't generate random pictures
+              url: false
+            }
           },
           {
             loader: 'postcss-loader',
@@ -110,7 +114,13 @@ module.exports = {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
         use: [          
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // Specifies a custom public path for the target file(s).
+              publicPath: '/',
+            },
+          },
           'css-loader'
         ],
       },
