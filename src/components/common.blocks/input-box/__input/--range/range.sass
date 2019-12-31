@@ -2,6 +2,8 @@
 
 @import '~nouislider/distribute/nouislider.min.css'
 
+
+
 .noUi-horizontal
   border: none
 
@@ -27,20 +29,6 @@
   background: transparent
   box-shadow: none
 
-.noUi-handle
-  width: 16px
-  height: 16px
-  left: 72%
-  top: -5.2px
-  border-radius: 8px
-  border: 2px solid #fff
-  box-shadow: none
-  cursor: grab
-
-  &:after,
-  &:before
-    display: none
-
 .input-box__range
   margin: 20px 0 10px
 
@@ -51,3 +39,19 @@
     font-size: 1.2rem
     text-transform: uppercase
     color: fw.$dark50
+
+  
+  &.noUi-horizontal .noUi-handle
+    width: 16px
+    height: 16px
+    top: -5.2px
+    left: 72% !important
+
+  .noUi-handle
+    border: 2px solid #fff
+    border-radius: 8px
+    box-shadow: none
+
+    &:after,
+    &:before
+      display: none

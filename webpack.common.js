@@ -70,6 +70,9 @@ module.exports = {
     new CopyWebpackPlugin([{
         from:'src/assets/images',to:'assets/images'
     }]),
+    new CopyWebpackPlugin([{
+        from:'src/assets/fonts',to:'assets/fonts'
+    }]),
   ],
   module: {
     rules: [
@@ -89,16 +92,11 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              // for github pages
-              // publicPath: '/FSD2ndTask/dist/',
-            },
+            options: {},
           },
           {
             loader: 'css-loader',
             options: {
-              // importLoaders: 2,
-              // don't generate random pictures
               url: false
             }
           },
@@ -122,12 +120,17 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // npm run build
-              publicPath: '/dist/',
+              // publicPath: '/dist/',
               // npm start
               // publicPath: '/',
             },
           },
-          'css-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
         ],
       },
       {
