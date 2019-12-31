@@ -89,6 +89,10 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: {
+              // for github pages
+              publicPath: '/FSD2ndTask/dist/',
+            },
           },
           {
             loader: 'css-loader',
@@ -117,8 +121,10 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // Specifies a custom public path for the target file(s).
+              // for github pages
               publicPath: '/FSD2ndTask/dist/',
+              // for apache
+              // publicPath: '/',
             },
           },
           'css-loader'

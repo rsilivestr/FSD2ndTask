@@ -1,5 +1,5 @@
 ## Links
-Repo  https://github.com/rsilivestr/FSD2ndTask/deployments
+Repo  https://github.com/rsilivestr/FSD2ndTask/
 Pages https://rsilivestr.github.io/FSD2ndTask/dist/
 
 ## Description
