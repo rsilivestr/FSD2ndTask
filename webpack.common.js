@@ -91,7 +91,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // for github pages
-              // publicPath: 'FSD2ndTask/dist',
+              publicPath: '/FSD2ndTask/dist/',
             },
           },
           {
