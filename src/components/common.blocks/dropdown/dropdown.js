@@ -90,11 +90,11 @@ function updateOption(btn) {
     action = btn.classList.contains(cname.controlAdd) ? 'add' : 'subtract',
     UIvalue = opt.querySelector(csel.optionValue);
   let currentValue = UIvalue.innerText;
-  if (action == 'subtract' && parseInt(currentValue) > parseInt(min)) {
+  if (action == 'subtract' && +currentValue > +min) {
     currentValue--;
     UIvalue.innerText = currentValue;
     updateOptionControls(opt)
-  } else if (action == 'add' && parseInt(currentValue) < parseInt(max)) {
+  } else if (action == 'add' && +currentValue < +max) {
     currentValue++
     UIvalue.innerText = currentValue;
     updateOptionControls(opt)
@@ -117,9 +117,9 @@ function updateSingleOptionControls(opt) {
   const UIsub = opt.querySelector(csel.controlSub),
     UIadd = opt.querySelector(csel.controlAdd),
     UIvalue = opt.querySelector(csel.optionValue),
-    cur = parseInt(UIvalue.innerText),
-    min = opt.dataset.min ? parseInt(opt.dataset.min) : 0,
-    max = opt.dataset.max ? parseInt(opt.dataset.max) : 99;
+    cur = +UIvalue.innerText,
+    min = opt.dataset.min ? +opt.dataset.min : 0,
+    max = opt.dataset.max ? +opt.dataset.max : 99;
   if(cur == min) {
     UIsub.classList.add(cname.controlDisabled);
   } else {
@@ -176,7 +176,7 @@ function updateSingleValDisplay(drop) {
   let guestCount = 0, guestCase;
   // count option values sum
   drop.querySelectorAll(csel.option).forEach(opt => {
-    guestCount += parseInt(opt.querySelector(csel.optionValue).innerText);
+    guestCount += +opt.querySelector(csel.optionValue).innerText;
   });
   // set valid word case
   if (guestCount % 10 == 1 && guestCount != 11) {
