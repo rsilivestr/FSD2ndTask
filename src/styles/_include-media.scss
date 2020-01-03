@@ -36,16 +36,15 @@ $breakpoints: (
   // 'tablet': 768px,
   // 'desktop': 1024px
   // 'desktop': 1200px
-  'xs': 320px,
   // eng footer
   // 'footcols': 400px,
-  // ru footer
+  'phone': 320px,
   'footcols': 560px,
   'creative': 600px,
   'tablet': 768px,
   'topnav': 920px,
-  'm': 1000px,
-  'l': 1200px
+  'desktop': 1000px,
+  'widest': 1200px
 ) !default;
 
 

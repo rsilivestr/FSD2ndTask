@@ -10,7 +10,7 @@ mixin header(username)
 
     +logoToxin.main-header__logo
 
-    button.button.button--style_text.button--size_auto.main-header__menu-btn
+    button.button.button--style_text.button--size_auto.main-header__btn--menu.main-header__btn--iconic
       i.material-icons menu
 
     nav.main-header__nav
@@ -27,7 +27,7 @@ mixin header(username)
         +button('register').main-header__btn
     else
       .main-header__user-panel
-        a(href="#some-url-or-menu").main-header__user-menu= username
+        a(href="#some-url-or-menu" data-name= username).main-header__user-menu.main-header__btn--account= username
 
 //- submixins - for customization
 mixin mainHeader

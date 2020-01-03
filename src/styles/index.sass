@@ -27,7 +27,6 @@
 html
   box-sizing: border-box
   font-family: Montserrat, sans-serif
-  // line-height: inherit
   font-size: 10px
 
 *, *:before, *:after
@@ -80,7 +79,7 @@ body
     padding-right: 20px
 
 .main-content--width_m
-  @include fw.media('>=l')
+  @include fw.media('>=widest')
     max-width: 1200px
 
 .main-content--width_m-fixed
@@ -99,12 +98,27 @@ body
     padding-left: 20px
     padding-right: 20px
 
-  @include fw.media('>=l')
+  @include fw.media('>=widest')
     padding-left: calc( 50vw - 585px )
     padding-right: calc( 50vw - 585px )
 
   &--shrink_medium
-    @include fw.media('>=creative','<m')
+    @include fw.media('>=creative','<desktop')
+      padding-left: calc( 50vw - 280px )
+      padding-right: calc( 50vw - 280px )
+
+  &--creative
+    @include fw.media('>=creative')
+      padding-left: calc( 50vw - 280px )
+      padding-right: calc( 50vw - 280px )
+
+.hidden
+  @include fw.media('>=widest')
+    padding-left: calc( 50vw - 585px )
+    padding-right: calc( 50vw - 585px )
+
+  &--shrink_medium
+    @include fw.media('>=creative','<desktop')
       padding-left: calc( 50vw - 280px )
       padding-right: calc( 50vw - 280px )
 

@@ -49,7 +49,7 @@
       column-gap: 70px
       place-items: start
 
-    @include fw.media('>=l')
+    @include fw.media('>=widest')
       grid-template-areas: 'icon-desc diagram aside' 'reviews reviews aside' 'rules refund aside'
       grid-template-columns: 290px 350px 380px
       column-gap: 70px
@@ -143,11 +143,5 @@
     grid-area: aside
     z-index: 20
 
-    // @include fw.media('>=tablet')
-      // grid-area: aside
-
   &__footer
     border-top: 1px solid fw.$dark10
-
-// @include fw.media()
-//   .room-details__rate-canvas-wrap

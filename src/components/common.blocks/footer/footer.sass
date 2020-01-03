@@ -12,7 +12,7 @@
     padding-bottom: 50px
     border-bottom: 1px solid fw.$dark10
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       padding-top: 100px
       padding-bottom: 100px
       justify-content: space-between
@@ -30,15 +30,15 @@
       @include fw.media('>=footcols')
         margin-top: 40px
 
-      @include fw.media('>=m')
+      @include fw.media('>=desktop')
         margin-top: 0
 
     &:first-of-type,
     &:last-of-type
-      @include fw.media('<m')
+      @include fw.media('<widest')
         align-items: center
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       max-width: 260px
 
     &-title
@@ -77,7 +77,7 @@
     margin-bottom: 20px
 
   &__text
-    @include fw.media('<m')
+    @include fw.media('<desktop')
       max-width: 560px
       text-align: center
 
@@ -119,7 +119,7 @@
     min-height: 70px
     padding: 40px 20px
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       flex-flow: row nowrap
       padding: 0 20px
 
@@ -127,14 +127,14 @@
     text-align: center
     width: 220px
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       text-align: left
       width: auto
 
   &__social
     margin: 20px 0 0 0
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       margin: 0 0 0 auto
 
   &__social-link
@@ -143,15 +143,12 @@
  
   &__social-icon
     font-size: 2.4rem
-    // @extend .text-gradient
     
     // chrome sux
     &::before
       @extend .text-gradient
 
-
   // Creative Footer
-
   &--creative
     padding-top: 100px
     padding-block: 100px

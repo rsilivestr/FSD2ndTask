@@ -1,7 +1,8 @@
 const UIheader = document.querySelector('.main-header'),
   UInav = UIheader ? UIheader.querySelector('.main-header__nav') : null,
   UIloginBtn = document.querySelector('.main-header__btn--login'),
-  UIregBtn = document.querySelector('.main-header__btn--register');
+  UIregBtn = document.querySelector('.main-header__btn--register'),
+  UIaccountBtn = document.querySelector('.main-header__btn--account');
 
 // check if page has header
 if (UIheader) {
@@ -20,33 +21,49 @@ function resizeHeader(firstLoad=false) {
     // toggle view
     isDesktop = !isDesktop;
 
-    // change buttons style
-    UIloginBtn.classList.remove('button--style_bordered');
-    UIloginBtn.classList.add('button--style_text');
-    UIloginBtn.classList.add('main-header__btn--iconic');
-    UIregBtn.classList.remove('button--style_gradient');
-    UIregBtn.classList.add('button--style_text');
-    UIregBtn.classList.add('main-header__btn--iconic');
+    // change buttons classes and contents
 
-    // change buttons content to icons
-    UIloginBtn.innerHTML = '<i class="material-icons">input</i>'
-    UIregBtn.innerHTML = '<i class="material-icons">person_add</i>'
+    if(UIloginBtn) {
+      UIloginBtn.classList.remove('button--style_bordered');
+      // UIloginBtn.classList.add('button--style_text');
+      UIloginBtn.classList.add('main-header__btn--iconic');
+      UIloginBtn.innerHTML = '<i class="material-icons">input</i>';
+    }
+
+    if(UIregBtn) {
+      UIregBtn.classList.remove('button--style_gradient');
+      // UIregBtn.classList.add('button--style_text');
+      UIregBtn.classList.add('main-header__btn--iconic');
+      UIregBtn.innerHTML = '<i class="material-icons">person_add</i>';
+    }
+
+    if(UIaccountBtn) {
+      UIaccountBtn.classList.add('main-header__btn--iconic');
+      UIaccountBtn.innerHTML = '<i class="material-icons">account_circle</i>';
+    }
 
   } else if ((window.innerWidth >= 920 && !isDesktop) || (window.innerWidth >= 920 && firstLoad)) {
     // toggle view
     isDesktop = !isDesktop;
 
-    // change buttons style
-    UIloginBtn.classList.add('button--style_bordered');
-    UIloginBtn.classList.remove('button--style_text');
-    UIloginBtn.classList.remove('main-header__btn--iconic');
-    UIregBtn.classList.add('button--style_gradient');
-    UIregBtn.classList.remove('button--style_text');
-    UIregBtn.classList.remove('main-header__btn--iconic');
+    if(UIloginBtn) {
+      UIloginBtn.classList.add('button--style_bordered');
+      // UIloginBtn.classList.remove('button--style_text');
+      UIloginBtn.classList.remove('main-header__btn--iconic');
+      UIloginBtn.innerHTML = UIloginBtn.dataset.name;
+    }
 
-    // change buttons content to text
-    UIloginBtn.innerHTML = UIloginBtn.dataset.name;
-    UIregBtn.innerHTML = UIregBtn.dataset.name;
+    if(UIregBtn) {
+      UIregBtn.classList.add('button--style_gradient');
+      // UIregBtn.classList.remove('button--style_text');
+      UIregBtn.classList.remove('main-header__btn--iconic');
+      UIregBtn.innerHTML = UIregBtn.dataset.name;
+    }
+
+    if(UIaccountBtn) {
+      UIaccountBtn.classList.remove('main-header__btn--iconic');
+      UIaccountBtn.innerHTML = UIaccountBtn.dataset.name;
+    }
   }
 
   // reset main-header__nav--expanded class on width > "tablet"

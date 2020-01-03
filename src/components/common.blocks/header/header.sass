@@ -33,7 +33,7 @@
     max-width: 40px
     overflow: hidden
 
-    @include fw.media('>=m')
+    @include fw.media('>=desktop')
       max-width: 100%
 
   @include fw.media('>=topnav')
@@ -101,23 +101,19 @@
     display: flex
     
     @include fw.media('>=tablet')
-      padding-left: 30px
+      padding-left: 15px
       border-left: 1px solid fw.$dark25
+    
+    @include fw.media('>=topnav')
+      padding-left: 30px
       
   &__user-menu
     display: inline-flex
-    width: 24px
     white-space: nowrap
-    overflow: hidden
     text-decoration: none
     color: fw.$dark50
 
-    &::before
-      @extend .material-icons
-      content: '\e853'
-      font-size: 24px
-
-    &:hover::before
+    &:hover i
       @extend .text-gradient
 
     @include fw.media('>=topnav')
@@ -134,6 +130,9 @@
         
   &__btn
     max-height: 34px
+
+    &--register
+      margin-left: 20px
 
     &--iconic
       padding: 10px
