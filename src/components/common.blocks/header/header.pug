@@ -35,7 +35,7 @@ mixin mainHeader
     block
 
 mixin navBtn
-  button.button.button--style_text.button--size_auto.main-header__menu-btn
+  button.button.button--style_text.button--size_auto.main-header__btn.main-header__btn--menu.main-header__btn--iconic
     i.material-icons menu
 
 mixin headerNav
@@ -47,8 +47,8 @@ mixin navlink(name, current)
 
 mixin headerButtons(login='login', register='register')
   .main-header__user-buttons
-    +aButton(login, 'bordered', 'auto')(data-name=login).main-header__btn
-    +aButton(register, 'gradient', 'auto')(data-name=register).main-header__btn
+    +aButton(login, 'bordered', 'auto')(data-name=login).main-header__btn.main-header__btn--login
+    +aButton(register, 'gradient', 'auto')(data-name=register).main-header__btn.main-header__btn--register
 
 mixin headerUser()
   .main-header__user-panel

@@ -1,6 +1,7 @@
 @use 'Styles/forward' as fw
 
 .button
+  display: inline-flex
   position: relative
   width: 100%
   font-family: 'Montserrat' sans-serif
@@ -21,7 +22,6 @@
 
     &_gradient,
     &_arrowed
-      display: inline-flex
       justify-content: center
       align-items: center
       background: fw.$mainGradient
@@ -48,7 +48,7 @@
 
     &_text
       @extend .text-gradient
-      padding: 0 1px
+      // padding: 0 1px
       line-height: 1.5rem
 
       &:disabled

@@ -41,25 +41,11 @@
     max-width: 100%
     border: none
 
-  &__menu-btn
-    margin: 0 20px 0 auto
-    color: fw.$dark50
-    background: transparent
-
-    // just ':hover' works in firefox but chromium needs exact text element
-    &:hover i
-      @extend .text-gradient
-
-    @include fw.media('>=tablet')
-      display: none
-
   &__nav
     display: none
     margin-left: auto
     text-align: center
-
     z-index: 51
-
 
     &--expanded
       position: absolute
@@ -147,17 +133,26 @@
     display: flex
         
   &__btn
-    // min-width: 50px
     max-height: 34px
 
     &--iconic
+      padding: 10px
+      margin-left: 5px
+      max-height: 100%
       color: fw.$dark50
       background: transparent
 
       &:hover i
         @extend .text-gradient
 
-    + .main-header__btn
-      margin-left: 20px
+    &--menu
+      margin-left: auto
+      color: fw.$dark50
+      background: transparent
 
-    @include fw.media('>=topnav')
+      // just ':hover' works in firefox but chromium needs exact text element
+      &:hover i
+        @extend .text-gradient
+
+      @include fw.media('>=tablet')
+        visibility: collapse

@@ -1,7 +1,7 @@
 const UIheader = document.querySelector('.main-header'),
   UInav = UIheader ? UIheader.querySelector('.main-header__nav') : null,
-  UIloginBtn = document.querySelectorAll('.main-header__btn')[0],
-  UIregBtn = document.querySelectorAll('.main-header__btn')[1];
+  UIloginBtn = document.querySelector('.main-header__btn--login'),
+  UIregBtn = document.querySelector('.main-header__btn--register');
 
 // check if page has header
 if (UIheader) {
@@ -57,7 +57,7 @@ function resizeHeader(firstLoad=false) {
 
 // toggle mobile menu
 function toggleNav(e) {
-  if (e.target.closest('.main-header__menu-btn')) {
+  if (e.target.closest('.main-header__btn--menu')) {
     UInav.classList.toggle('main-header__nav--expanded');
   }
 }
