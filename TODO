@@ -75,6 +75,7 @@ FIX
   ? check header shadows
   ? filters margins
   ? hide search filters on screen size change
-  - button .button .main-header__menu-btn display
+  - filters scroll
+  - search room paddings
 
 pub on github pages

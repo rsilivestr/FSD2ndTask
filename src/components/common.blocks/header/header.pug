@@ -6,7 +6,7 @@ mixin headerUIKit
     +logoUIKit
 
 mixin header(username)
-  header.main-header.full-width-container&attributes(attributes)
+  header.main-header&attributes(attributes)
 
     +logoToxin.main-header__logo
 
@@ -31,7 +31,7 @@ mixin header(username)
 
 //- submixins - for customization
 mixin mainHeader
-  header.main-header.full-width-container&attributes(attributes)
+  header.main-header&attributes(attributes)
     block
 
 mixin navBtn

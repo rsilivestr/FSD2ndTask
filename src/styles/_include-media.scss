@@ -32,13 +32,9 @@
 ///  $breakpoints: ('phone': 320px);
 ///
 $breakpoints: (
-  // 'phone': 320px,
-  // 'tablet': 768px,
-  // 'desktop': 1024px
-  // 'desktop': 1200px
-  // eng footer
-  // 'footcols': 400px,
   'phone': 320px,
+  'dyn-padding': 390px,
+  'const-padding': 420px,
   'footcols': 560px,
   'creative': 600px,
   'tablet': 768px,
