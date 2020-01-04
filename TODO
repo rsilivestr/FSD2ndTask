@@ -23,11 +23,12 @@ CHANGED
   + remove cursor-pointer from buttons, dropdowns
   ~ refactor containers
   ~ smooth form paddings change on xs
+  + pagination's divs to links
+  + renamed media breakpoints
 
 CHANGE
   ? close dropdown on apply
   ? bundle icons with fontello
-  - rename media breakpoints
   - give similar names to dropdown mixins
   - remove unused classes like .page .page--layout_... etc. ...or not
   - reduce user-comment margin
@@ -70,12 +71,10 @@ FIXED
   + social icons margin
   + filters not expanding due to media rules
   + full-width-container footer no paddings on xs
+  + search room paddings
 
 FIX
   ? check header shadows
   ? filters margins
   ? hide search filters on screen size change
   - filters scroll
-  - search room paddings
-
-pub on github pages

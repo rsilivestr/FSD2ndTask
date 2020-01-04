@@ -1,35 +1,39 @@
 @use 'Styles/forward' as fw
 
-.content-wrapper
-  display: flex
-  flex-flow: row nowrap
-  margin-top: 100px
-  width: 100%
-  max-width: 1200px
-  padding-left: 20px
-  padding-right: 20px
+.search-room-page
+  &__wrapper
+    display: flex
+    flex-flow: row nowrap
+    margin-top: 100px
+    width: 100%
+    max-width: 1200px
+    padding-left: 20px
+    padding-right: 20px
 
-  @include fw.media('>=topnav')
-    margin-top: 30px
+    @include fw.media('>=topnav')
+      margin-top: 30px
 
-  @include fw.media('>=widest')
-    margin-left: auto
-    margin-right: auto
+    @include fw.media('>=widest')
+      margin-left: auto
+      margin-right: auto
 
-.search-filter-page
+  &--noscroll
+    overflow: hidden
 
   &__filters
-    width: 287px
-    padding: 40px 10px
-    background: #ffffff
-    z-index: 40
     // hide on mobile
+    // position: absolute
+    // top: -30px
     position: fixed
     top: 70px
     left: -287px
-    bottom: 0
-    // border on mobile
+    width: 287px
+    height: calc( 100vh - 70px )
+    padding: 40px 10px
+    background: #ffffff
     border-right: 1px solid fw.$dark50
+    overflow-y: scroll
+    z-index: 40
     transition: left .25s
 
     @include fw.media('>=footcols')
@@ -47,14 +51,15 @@
       border: 0
       padding: 0
       min-width: 266px
+      overflow-y: auto
   
   &__expand-filters
     display: flex
     align-items: center
     justify-content: flex-end
-    position: absolute
-    top: 40vh
-    left: 287px
+    position: fixed
+    top: calc( 50vh - 35px )
+    left: 0
     height: 70px
     width: 35px
     padding: 10px
@@ -71,9 +76,12 @@
     i
       transition: all .25s .25s
 
-    &--expanded i
-      transform: rotate(180deg)
-      transition: all .25s .25s
+    &--expanded 
+      left: 287px
+      
+      i
+        transform: rotate(180deg)
+        transition: all .25s .25s
 
     @include fw.media('>=topnav')
       display: none
@@ -84,8 +92,12 @@
     color: fw.$dark50
     margin-top: 15px
 
+  &__apply-btn
+    margin-bottom: 15px
+
   &__content
     flex: auto
+    height: 100%
     
     @include fw.media('>=topnav')
       margin-left: 30px

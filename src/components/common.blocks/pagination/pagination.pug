@@ -1,12 +1,12 @@
 mixin pagination
   .pagination
-    .pagination__control.pagination__control--left.pagination__control--hidden
+    a(href="#some-url").pagination__control.pagination__control--left.pagination__control--hidden
       i.material-icons arrow_back
-    .pagination__page.pagination__page--active 1
-    .pagination__page 2
-    .pagination__page 3
+    a(href="#some-url").pagination__page.pagination__page--active 1
+    a(href="#some-url").pagination__page 2
+    a(href="#some-url").pagination__page 3
     .pagination__gap ...
-    .pagination__page 15
-    .pagination__control.pagination__control--right
+    a(href="#some-url").pagination__page 15
+    a(href="#some-url").pagination__control.pagination__control--right
       i.material-icons arrow_forward
-    .pagination__tooltip 1 – 12 из 100+ вариантов аренды
+    p.pagination__tooltip 1 – 12 из 100+ вариантов аренды

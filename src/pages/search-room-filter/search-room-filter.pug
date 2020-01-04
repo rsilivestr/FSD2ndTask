@@ -6,13 +6,14 @@ include ~CommonBlocks/room-card/room-card
 include ~CommonBlocks/pagination/pagination
 
 +head('Search room')
-  body.page.page--layout_search-filter.search-filter-page
+  body.page.page--layout_search-filter.search-room-page
 
     +mainHeaderPages(true)
 
-    .content-wrapper.has-fixed-header
+    .content-wrapper.has-fixed-header.main-content.search-room-page__wrapper
 
-      aside.search-filter-page__filters
+      aside.search-room-page__filters
+        //- .filters-wrapper
         //- filter date dropdown
         +inputBox('даты пребывания в отеле').mb20
           +filterDateDrop
@@ -25,7 +26,7 @@ include ~CommonBlocks/pagination/pagination
         //- range
         +inputBox('Диапазон цены').mb30
           +rangeSlider
-          span.search-filter-page__range-caption Стоимость за сутки пребывания в номере
+          span.search-room-page__range-caption Стоимость за сутки пребывания в номере
         //- checkboxes
         +inputBox('опции').mb30
           .mb15
@@ -54,27 +55,27 @@ include ~CommonBlocks/pagination/pagination
           +checkbox('Телевизор')
           +checkbox('Шампунь')
         //- button to apply filters
-        +button('применить фильтры', 'gradient', 'm')
+        +button('применить фильтры', 'gradient', 'm').search-room-page__apply-btn
         //- button to expand / hide on small screens
-        button.search-filter-page__expand-filters
+        button.search-room-page__expand-filters
           i.material-icons arrow_forward
 
-      main.search-filter-page__content
-        h1.search-filter-page__title Номера, которые мы для вас подобрали
-        .search-filter-page__rooms
-          +roomCard('room1.jpg', 5, 888, 9990, 145, true).search-filter-page__room-card
-          +roomCard('room2.jpg', 4, 840, 9900, 65).search-filter-page__room-card
-          +roomCard('room3.jpg', 3, 980, 8500, 35, true).search-filter-page__room-card
-          +roomCard('room4.jpg', 5, 856, 7300, 19).search-filter-page__room-card
-          +roomCard('room5.jpg', 4, 740, 6000, 44).search-filter-page__room-card
-          +roomCard('room6.jpg', 3, 982, 5800, 56).search-filter-page__room-card
-          +roomCard('room7.jpg', 5, 678, 5500, 45).search-filter-page__room-card
-          +roomCard('room8.jpg', 4, 450, 5300, 39).search-filter-page__room-card
-          +roomCard('room9.jpg', 3, 350, 5000, 77).search-filter-page__room-card
-          +roomCard('room10.jpg', 5, 666, 5000, 25).search-filter-page__room-card
-          +roomCard('room11.jpg', 3, 444, 5000, 15).search-filter-page__room-card
-          +roomCard('room12.jpg', 3, 352, 5000, 55).search-filter-page__room-card
+      main.search-room-page__content
+        h1.search-room-page__title Номера, которые мы для вас подобрали
+        .search-room-page__rooms
+          +roomCard('room1.jpg', 5, 888, 9990, 145, true).search-room-page__room-card
+          +roomCard('room2.jpg', 4, 840, 9900, 65).search-room-page__room-card
+          +roomCard('room3.jpg', 3, 980, 8500, 35, true).search-room-page__room-card
+          +roomCard('room4.jpg', 5, 856, 7300, 19).search-room-page__room-card
+          +roomCard('room5.jpg', 4, 740, 6000, 44).search-room-page__room-card
+          +roomCard('room6.jpg', 3, 982, 5800, 56).search-room-page__room-card
+          +roomCard('room7.jpg', 5, 678, 5500, 45).search-room-page__room-card
+          +roomCard('room8.jpg', 4, 450, 5300, 39).search-room-page__room-card
+          +roomCard('room9.jpg', 3, 350, 5000, 77).search-room-page__room-card
+          +roomCard('room10.jpg', 5, 666, 5000, 25).search-room-page__room-card
+          +roomCard('room11.jpg', 3, 444, 5000, 15).search-room-page__room-card
+          +roomCard('room12.jpg', 3, 352, 5000, 55).search-room-page__room-card
         +pagination
 
     //- end .content-wrapper
-    +footerRU.search-filter-page__footer
+    +footerRU.search-room-page__footer
