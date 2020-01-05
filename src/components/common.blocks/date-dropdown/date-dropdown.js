@@ -1,4 +1,4 @@
-import datepicker from 'air-datepicker'
+import datepicker from 'air-datepicker';
 
 
 //---- double dropdown: 2 dates in different inputs ----//
@@ -6,7 +6,7 @@ import datepicker from 'air-datepicker'
 const UIdoublePickers = document.querySelectorAll('.datepicker-double');
 
 if (UIdoublePickers) {
-    // for each instanse of double date dropdown
+  // for each instanse of double date dropdown
   UIdoublePickers.forEach(picker => {
     
     const UIdatepickerStart = picker.querySelector('.date-dropdown__start'),

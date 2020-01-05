@@ -23,7 +23,8 @@ const cname = {
 // class selector strings
 const csel = {};
 for (const key in cname) {
-  if (cname.hasOwnProperty(key)) {
+  // if (cname.hasOwnProperty(key)) {
+  if (key) {
     const value = cname[key];
     csel[key] = '.' + value;
   }
@@ -93,11 +94,11 @@ function updateOption(btn) {
   if (action == 'subtract' && +currentValue > +min) {
     currentValue--;
     UIvalue.innerText = currentValue;
-    updateOptionControls(opt)
+    updateOptionControls(opt);
   } else if (action == 'add' && +currentValue < +max) {
-    currentValue++
+    currentValue++;
     UIvalue.innerText = currentValue;
-    updateOptionControls(opt)
+    updateOptionControls(opt);
   }
 }
 

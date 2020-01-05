@@ -13,9 +13,10 @@ module.exports = merge(common, {
       }), 
       new OptimizeCSSAssetsPlugin(),
     ],
-    splitChunks: {      
+    splitChunks: {
       cacheGroups: {
         commons: {
+          enforce: true,
           test: /[\\/]node_modules[\\/]/,
             name(module) {
               return `vendors/${module.identifier().split('/').reduceRight(item => item).split('.')[0]}`;

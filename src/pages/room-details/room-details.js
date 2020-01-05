@@ -28,7 +28,7 @@ function drawGraph(great = 0, good = 0, avg = 0, poor = 0) {
     // great reviews arc
     if (great) {
       // current arc length in radian
-      greatArc = great / total * p2;
+      const greatArc = great / total * p2;
       endAngle = startAngle - greatArc + gap;
 
       // get top and bottom points of an arc
@@ -46,7 +46,7 @@ function drawGraph(great = 0, good = 0, avg = 0, poor = 0) {
     
     // good reviews arc
     if (good) {
-      goodArc = good / total * p2;
+      const goodArc = good / total * p2;
       startAngle = endAngle - gap;
       endAngle = startAngle - goodArc + gap;
 
@@ -62,7 +62,7 @@ function drawGraph(great = 0, good = 0, avg = 0, poor = 0) {
     
     // average reviews arc
     if (avg) {
-      avgArc = avg / total * p2;
+      const avgArc = avg / total * p2;
       startAngle = endAngle - gap;
       endAngle = startAngle - avgArc + gap;
 
@@ -78,7 +78,7 @@ function drawGraph(great = 0, good = 0, avg = 0, poor = 0) {
 
     // poor reviews arc
     if (poor) {
-      poorArc = poor / total * p2;
+      const poorArc = poor / total * p2;
       startAngle = endAngle - gap;
       endAngle = startAngle - poorArc + gap;
 
@@ -119,10 +119,11 @@ function gradHeight(start, end) {
     botGradient = (startHeight > endHeight) ? startHeight : endHeight;
 
   // check if arc crosses y axis, if it does - set bottomGradient = 1
-  let axis = - Math.PI * 1.5
+  let axis = -1.5 * Math.PI;
   if (start > axis && end < axis) {
     botGradient = 1;
   }
 
-  return grad = { top: topGradient, bot: botGradient }
+  const grad = { top: topGradient, bot: botGradient };
+  return grad;
 }

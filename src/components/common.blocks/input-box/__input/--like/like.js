@@ -1,4 +1,4 @@
-document.body.addEventListener('click', handleLike)
+document.body.addEventListener('click', handleLike);
 
 function handleLike(e) {
   if(e.target.classList.contains('input-box__like-checkbox')) {
