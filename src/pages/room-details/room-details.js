@@ -3,8 +3,6 @@ const UIwrap = document.querySelector('.room-details__rate-canvas-wrap'),
 
 if (UIwrap) {
   drawGraph(130, 65, 65, 10);
-
-
 }
 
 function drawGraph(great = 0, good = 0, avg = 0, poor = 0) {
