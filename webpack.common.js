@@ -1,5 +1,5 @@
+/* eslint-disable */
 const path = require('path'),
-      { CleanWebpackPlugin } = require('clean-webpack-plugin'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       MiniCssExtractPlugin = require('mini-css-extract-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
@@ -18,7 +18,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
