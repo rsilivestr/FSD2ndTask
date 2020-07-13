@@ -14,7 +14,7 @@
 
     @include fw.media('>=desktop')
       padding-top: 100px
-      padding-bottom: 100px
+      padding-bottom: 86px
       justify-content: space-between
 
   &__col
@@ -43,7 +43,7 @@
       max-width: 260px
 
     &-title
-      margin-bottom: 20px
+      margin-bottom: 12px
       color: fw.$dark100
       font-size: 1.2rem
       text-transform: uppercase
@@ -75,9 +75,10 @@
         transition: all .1s
       
   &__logo
-    margin-bottom: 20px
+    margin-bottom: 13px
 
   &__text
+    line-height: 2.4rem
     @include fw.media('<desktop')
       max-width: 560px
       text-align: center
@@ -87,13 +88,12 @@
     list-style-type: none
     text-align: center
 
-    
     @include fw.media('>=footcols')
       display: block
       text-align: left
 
     &-item
-      margin-bottom: 20px
+      margin-bottom: 13px
     
     &--expanded
       display: block
@@ -104,6 +104,7 @@
     text-decoration: none
     display: inline-block
     font-size: 1.4rem
+    line-height: 2.4rem
 
     &:hover
       text-decoration: underline
@@ -136,10 +137,13 @@
     margin: 20px 0 0 0
 
     @include fw.media('>=desktop')
-      margin: 0 0 0 auto
+      height: 3.2rem
+      margin: 0 -5px 0 auto
 
   &__social-link
     display: inline-block
+    // width: 3rem
+    text-align: center
     margin-left: 10px
  
   &__social-icon

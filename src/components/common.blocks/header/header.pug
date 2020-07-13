@@ -7,27 +7,25 @@ mixin headerUIKit
 
 mixin header(username)
   header.main-header&attributes(attributes)
+    .main-header__wrapper
+      +logoToxin.main-header__logo
 
-    +logoToxin.main-header__logo
+      button.button.button--style_text.button--size_auto.main-header__btn--menu.main-header__btn--iconic
+        i.material-icons menu
 
-    button.button.button--style_text.button--size_auto.main-header__btn--menu.main-header__btn--iconic
-      i.material-icons menu
+      nav.main-header__nav
+        a(href="#some-url").main-header__navlink.main-header__navlink--current home
+        a(href="#some-url").main-header__navlink about us
+        a(href="#some-url").main-header__navlink.main-header__navlink--has-subnav services
+        a(href="#some-url").main-header__navlink careers
+        a(href="#some-url").main-header__navlink news
+        a(href="#some-url").main-header__navlink documentation
 
-    nav.main-header__nav
-      a(href="#some-url").main-header__navlink.main-header__navlink--current home
-      a(href="#some-url").main-header__navlink about us
-      a(href="#some-url").main-header__navlink.main-header__navlink--has-subnav services
-      a(href="#some-url").main-header__navlink careers
-      a(href="#some-url").main-header__navlink news
-      a(href="#some-url").main-header__navlink documentation
-
-    if (!username)
-      .main-header__user-buttons
-        +button('login', 'bordered').main-header__btn
-        +button('register').main-header__btn
-    else
-      .main-header__user-panel
-        a(href="#some-url-or-menu" data-name= username).main-header__user-menu.main-header__btn--account= username
+      if (!username)
+        +headerButtons('login', 'register')
+      else
+        .main-header__user-panel
+          a(href="#some-url-or-menu" data-name= username).main-header__user-menu.main-header__btn--account= username
 
 //- submixins - for customization
 mixin mainHeader

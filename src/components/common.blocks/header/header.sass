@@ -2,7 +2,7 @@
 @use '../logo/logo'
 
 .uikit-header
-  height: 144px
+  height: 150px
 
   &__logo
     margin: 30px
@@ -19,6 +19,15 @@
   font-size: 1.4rem
   border-bottom: 1px solid fw.$dark25
   z-index: 50
+
+  &__wrapper
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    width: 100%
+    height: 70px
+    max-width: 1160px
+    margin: 0 auto
 
   &--has-shadow
     box-shadow: 0 10px 20px fw.$dark05
@@ -93,7 +102,7 @@
 
     @include fw.media('>=tablet')
       padding: 0
-      margin: 0 10px
+      margin: 0 13.5px
   
   // end __navlink
 
