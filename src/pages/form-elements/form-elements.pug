@@ -28,7 +28,7 @@ include ~CommonBlocks/user-comment/user-comment
             +textField('This is pretty awesome', 'text', false, 'uikit_always-focused')
 
           +inputBox('dropdown').mb23
-            +inputDrop('single', 'Количество гостей')
+            +inputDrop('single', 'Сколько гостей')
               +dropOption('взрослые', '', '', '', 0, 10)
               +dropOption('дети', '', '', '', 0, 10)
               +dropOption('младенцы', '', '', '', 0, 10)
@@ -37,7 +37,7 @@ include ~CommonBlocks/user-comment/user-comment
             +maskedDate
 
           //- double date dropdown
-          +datepickerDouble.form__datepicker-double.mb41
+          +datepickerDouble.form__datepicker-double.mb42
 
           //- filter date dropdown
           +inputBox('filter date dropdown', 'm').mb42
@@ -89,7 +89,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         .form-elements__grid-item
           //- range slider
-          +inputBox('range slider', 'm').mb44
+          +inputBox('range slider', 'm').mb32
             +rangeSlider
 
           //- buttons
@@ -157,6 +157,7 @@ include ~CommonBlocks/user-comment/user-comment
         //- c 1 --------------------------------------//
 
         .form-elements__grid-item
+          .mb10
           //- expandable checkbox list
           +inputBox('', 'm')
             +checkboxGroup('Expandable checkbox list')
@@ -169,7 +170,7 @@ include ~CommonBlocks/user-comment/user-comment
               +checkbox('Телевизор')
               +checkbox('Шампунь')
 
-          .mb20
+          .mb38
 
           //- expanded expandable checkbox list
           +inputBox('', 'm')
@@ -224,6 +225,7 @@ include ~CommonBlocks/user-comment/user-comment
         //- e 1 --------------------------------------//
 
         .form-elements__grid-item.form-elements__grid-item--wide
+          .mb20
+
           //- comment (wide)
-                
-          +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')
+          +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')

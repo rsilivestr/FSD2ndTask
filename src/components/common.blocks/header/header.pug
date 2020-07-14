@@ -30,7 +30,8 @@ mixin header(username)
 //- submixins - for customization
 mixin mainHeader
   header.main-header&attributes(attributes)
-    block
+    .main-header__wrapper
+      block
 
 mixin navBtn
   button.button.button--style_text.button--size_auto.main-header__btn.main-header__btn--menu.main-header__btn--iconic

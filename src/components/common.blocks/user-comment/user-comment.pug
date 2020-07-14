@@ -8,5 +8,5 @@ mixin userComment(uid, name, age, likes, liked, text)
     .user-comment__body
       .user-comment__like-counter
         +likeBtn(likes, liked, 'user-comment__like-counter')
-      .user-comment__text
-        p= text
+      p.user-comment__text
+        = text
