@@ -28,18 +28,18 @@ include ~CommonBlocks/pagination/pagination
           +rangeSlider
           span.search-room-page__range-caption Стоимость за сутки пребывания в номере
         //- checkboxes
-        +inputBox('опции').mb30
+        +inputBox('опции').mb32
           .mb15
           +checkbox('можно курить')
           +checkbox('можно с питомцами')
           +checkbox('можно пригласить гостей\n(до 10 человек)')
         //- rich checkboxes
-        +inputBox('Доступность').mb30
+        +inputBox('Доступность').mb32
           .mb15
           +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
           +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
         //- dropdown
-        +inputBox('удобства номера', 'm').mb20
+        +inputBox('удобства номера', 'm').mb24
           +inputDrop('multi', '')
             +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
             +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)

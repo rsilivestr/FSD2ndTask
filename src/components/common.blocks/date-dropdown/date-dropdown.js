@@ -1,5 +1,6 @@
-import datepicker from 'air-datepicker';
+/* eslint-disable */
 
+import datepicker from 'air-datepicker';
 
 //---- double dropdown: 2 dates in different inputs ----//
 
@@ -147,6 +148,25 @@ if (UImountPointForReallyStaticAirDatepickerOnCardsPage) {
   
   // set date
   reallyStaticAirDatepickerOnCardsPage.selectDate([monday, friday]);
+
+  // get container
+  const stPicker = UImountPointForReallyStaticAirDatepickerOnCardsPage.querySelector('.datepicker');
+
+  // append buttons
+  const statBtnPanel = document.createElement('div');
+  statBtnPanel.className = 'datepicker__buttons-panel';
+  stPicker.appendChild(statBtnPanel);
+
+  const clearBtn = document.createElement('button');
+  clearBtn.className = 'button button--style_text button--size_auto datepicker__clear-btn';
+  clearBtn.innerText = 'очистить';
+  statBtnPanel.appendChild(clearBtn);
+
+  const applyBtn = document.createElement('button');
+  applyBtn.className = 'button button--style_text button--size_auto datepicker__apply-btn';
+  applyBtn.innerText = 'применить';
+  statBtnPanel.appendChild(applyBtn);
+
 }
 
 

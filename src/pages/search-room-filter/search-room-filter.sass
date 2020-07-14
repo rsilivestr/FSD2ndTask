@@ -21,9 +21,6 @@
     overflow: hidden
 
   &__filters
-    // hide on mobile
-    // position: absolute
-    // top: -30px
     position: fixed
     top: 70px
     left: -287px
@@ -32,7 +29,7 @@
     padding: 40px 10px
     background: #ffffff
     border-right: 1px solid fw.$dark50
-    overflow-y: scroll
+    overflow-y: auto
     z-index: 40
     transition: left .25s
 
@@ -51,6 +48,7 @@
       border: 0
       padding: 0
       min-width: 266px
+      height: auto
       overflow-y: auto
   
   &__expand-filters
@@ -70,14 +68,11 @@
     cursor: pointer
     transition: left .25s
 
-    @include fw.media('>=footcols')
-      left: 307px
-
     i
       transition: all .25s .25s
 
     &--expanded 
-      left: 287px
+      left: 307px
       
       i
         transform: rotate(180deg)
@@ -90,7 +85,7 @@
     display: block
     font-size: 1.2rem
     color: fw.$dark50
-    margin-top: 15px
+    margin-top: 2px
 
   &__apply-btn
     margin-bottom: 15px
