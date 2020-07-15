@@ -8,7 +8,7 @@ include ~CommonBlocks/user-comment/user-comment
 +head('Room details')
   body.page.page--layout_room-details
 
-    +mainHeaderPages
+    +mainHeaderPages.main-header--lang_ru
 
     header.room-details__gal-header.gal-header
       .gal-header__image.gal-header__image--main
@@ -40,24 +40,24 @@ include ~CommonBlocks/user-comment/user-comment
 
 
       section.room-details__reviews
-        h2.room-details__reviews-title.mb20 Отзывы посетителей номера
+        h2.room-details__reviews-title Отзывы посетителей номера
           span.room-details__review-counter 2 отзыва
 
-        +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.').mb22
+        +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')
 
         +userComment('uid2222', 'Патрисия Стеклышкова', 'неделю назад', 2, false, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент')
 
 
       section.room-details__rules
-        h2.mb20 Правила
+        h2 Правила
         ul.bullet-list
           li.bullet-list__item Нельзя с питомцами
           li.bullet-list__item Без вечеринок и мероприятий
           li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
 
       section.room-details__refund
-        h2.mb20 Отмена
-        p Бесплатная отмена в течение 48 ч.<br>После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        h2 Отмена
+        p Бесплатная отмена в течение 48 ч. После<br>этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
 
       +formBooking.room-details__aside

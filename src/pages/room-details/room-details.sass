@@ -34,11 +34,11 @@
   &__main
     display: grid
     align-items: start
-    row-gap: 30px
+    row-gap: 14px
     max-width: 830px
     margin: auto
     padding-top: 70px
-    padding-bottom: 70px
+    padding-bottom: 60px
     grid-template-areas: 'aside' 'icon-desc' 'diagram' 'rules' 'refund' 'reviews'
     grid-template-columns: 100%
     place-items: center
@@ -58,7 +58,7 @@
   &__rate-graph
     display: flex
     flex-flow: row wrap
-    align-items: flex-end
+    align-items: flex-start
     justify-content: center
     
     @include fw.media('>=830px')
@@ -71,16 +71,20 @@
     @include fw.media('>=830px')
       text-align: left
 
+  &__rate-canvas
+    width: 122px
+    height: 122px
+
   &__rate-canvas-wrap
     position: relative
-    width: 120px
-    height: 120px
+    width: 122px
+    height: 122px
     margin-right: 10px
     cursor: default
   
   @include fw.media('>=footcols')
     &__rate-canvas-wrap
-      margin-right: 30px
+      margin-right: 27px
 
   &__rate-counter
     position: absolute
@@ -97,11 +101,15 @@
       background: transparent
       
     &::after
-      content: 'голосов'
+      content: 'ГОЛОСОВ'
       display: block
       font-size: 1.2rem
-    
+  
+  &__graph-legend
+    margin-top: 28px
+
   &__legend-item
+    margin-bottom: 0
 
     &--style_great::before
       background: linear-gradient(#ffe39c, #ffba9c)
@@ -122,6 +130,15 @@
   &__reviews
     grid-area: reviews
 
+    .user-comment:not(:last-child)
+      margin-bottom: 13px
+
+    .user-comment:last-child
+      margin-bottom: 20px
+
+    &-title
+      margin-bottom: 9px
+
   &__review-counter
     padding-left: 30px
     margin-left: auto
@@ -134,7 +151,13 @@
   &__rules,
   &__refund
     width: 100%
-    max-width: 320px
+
+    h2
+      margin-bottom: 18px
+
+  &__refund p
+    width: 100%
+    line-height: 2.4rem
 
     @include fw.media('>=830px')
       max-width: 100%
