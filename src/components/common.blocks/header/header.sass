@@ -164,3 +164,13 @@
 
       @include fw.media('>=tablet')
         visibility: collapse
+
+// for russian header
+.main-header--lang_ru
+  @include fw.media('>=topnav')
+    .main-header__btn--register
+      padding-left: 20px
+      padding-right: 20px
+
+    .main-header__navlink
+      margin: 0 9px

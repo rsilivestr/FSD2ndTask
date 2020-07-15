@@ -33,6 +33,7 @@
 
     &-room
       flex: auto
+      align-items: flex-end
 
       &::before
         content: '№ '
@@ -41,15 +42,15 @@
       &--lux::after
         @extend .ff-montserrat
         @extend .text-gradient
-        content: ' люкс'
-        font-size: 1.4rem
+        content: ' ЛЮКС'
+        font-size: 1.2rem
 
     // end -room
 
     &-price
       @extend .ff-montserrat
       color: fw.$dark50
-      line-height: 2.4rem
+      line-height: 2rem
       font-size: 1.4rem
       font-weight: 700
 

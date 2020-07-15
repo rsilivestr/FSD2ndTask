@@ -55,7 +55,7 @@ mixin headerUser()
 
 //- main header for website pages
 mixin mainHeaderPages(shadow=false)
-  +mainHeader(class = shadow ? 'main-header--has-shadow' : '')
+  +mainHeader(class = shadow ? 'main-header--has-shadow' : '')&attributes(attributes)
     +logoToxin.main-header__logo
     +navBtn
     +headerNav
