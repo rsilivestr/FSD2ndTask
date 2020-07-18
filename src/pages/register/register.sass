@@ -1,14 +1,17 @@
 @use 'Styles/forward' as fw
 
-.main-content--page_register
+.page-register__main
   padding-top: 30px
-  padding-bottom: 30px
+  padding-bottom: 25px
   margin-top: 70px
   // background: center / cover url(FSD2ndTask/dist/assets/images/bg-reg.jpg)
-  background: center / cover url(../assets/images/bg-reg.jpg)
+  background: center top 25% / cover url(../assets/images/bg-reg.jpg)
 
   @include fw.media('>=topnav')
     margin-top: 0
 
 .page-register__form
   margin: auto
+
+.page-register__footer
+  margin-top: -1px

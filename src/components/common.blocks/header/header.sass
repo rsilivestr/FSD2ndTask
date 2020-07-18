@@ -42,6 +42,9 @@
     max-width: 40px
     overflow: hidden
 
+    @include fw.media('>=topnav')
+      margin-top: 4px
+
     @include fw.media('>=desktop')
       max-width: 100%
 
@@ -165,7 +168,23 @@
       @include fw.media('>=tablet')
         visibility: collapse
 
-// for russian header
+
+// button margins overwrite
+.main-header
+  @include fw.media('>=topnav')
+    .main-header__nav
+      padding: 0 16px
+
+    .main-header__btn--login
+      padding: 0 9px
+
+    .main-header__btn--register
+      padding: 0 20px
+
+    .main-header__navlink
+      margin: 0 13.5px
+
+  // for russian header
 .main-header--lang_ru
   @include fw.media('>=topnav')
     .main-header__nav
@@ -174,8 +193,8 @@
     .main-header__btn--login
       padding: 0 10px
 
-    .main-header__btn--register
-      padding: 0 20px
+    // .main-header__btn--register
+    //   padding: 0 20px
 
     .main-header__navlink
       margin: 0 10px

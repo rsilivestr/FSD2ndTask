@@ -4,8 +4,8 @@ include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 
 +head('Register')
-  body.page.page--layout_register
-    +mainHeaderPages
-    main.main-content.main-content--page_register
+  body.page.page-register
+    +mainHeaderPages.main-header--lang_ru
+    main.main-content.page-register__main
       +formRegistration.page-register__form
-    +footerRU.room-details__footer
+    +footerRU.page-register__footer

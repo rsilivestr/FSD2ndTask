@@ -14,7 +14,7 @@
 
     @include fw.media('>=desktop')
       padding-top: 100px
-      padding-bottom: 86px
+      padding-bottom: 83px
       justify-content: space-between
 
   &__col
@@ -43,12 +43,12 @@
       max-width: 260px
 
     &-title
-      margin-bottom: 12px
+      margin-bottom: 13px
       color: fw.$dark100
       font-size: 1.2rem
       text-transform: uppercase
       text-align: center
-      line-height: 2.6rem
+      line-height: 2.4rem
 
       &--expandable
         cursor: pointer
@@ -75,7 +75,7 @@
         transition: all .1s
       
   &__logo
-    margin-bottom: 13px
+    margin-bottom: 14px
 
   &__text
     line-height: 2.4rem
@@ -93,7 +93,7 @@
       text-align: left
 
     &-item
-      margin-bottom: 13px
+      margin-bottom: 14px
     
     &--expanded
       display: block
@@ -110,7 +110,7 @@
       text-decoration: underline
 
   &__subscribe
-    margin-top: 20px
+    margin-top: 23px
 
   // end footer__nav-section subelements
 
@@ -158,3 +158,11 @@
     padding-top: 100px
     padding-block: 100px
     text-align: center
+
+.main-footer--lang_ru
+  @include fw.media('>=footcols')
+    .main-footer__logo
+      margin-bottom: 15px
+
+    .main-footer__col-title
+      margin-bottom: 14px

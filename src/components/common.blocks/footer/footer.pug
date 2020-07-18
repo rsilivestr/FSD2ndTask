@@ -11,8 +11,8 @@ mixin footer
       +footCol('navigation').main-footer__col-title--expandable
         ul.main-footer__nav-list
           +footLink('About Us')
-          +footLink('Support')
           +footLink('News')
+          +footLink('Support')
           +footLink('Products')
 
       +footCol('about us').main-footer__col-title--expandable
@@ -68,10 +68,10 @@ mixin footerCreative
     +footsocial
 
 
-//--- Russian Header ---//
+//--- Russian Footer ---//
 
 mixin footerRU
-  footer.main-footer&attributes(attributes)
+  footer.main-footer.main-footer--lang_ru&attributes(attributes)
     .full-width-container.full-width-container--shrink_medium.main-footer__nav-section
       .main-footer__col
         +logoToxin.main-footer__logo
