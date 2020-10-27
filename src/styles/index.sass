@@ -24,6 +24,8 @@
 @use 'CommonBlocks/form/form'
 @use 'CommonBlocks/room-card/room-card'
 
+@use 'mb'
+
 html
   box-sizing: border-box
   font-family: Montserrat, sans-serif
@@ -55,7 +57,7 @@ body
 
 .router__navlink
   padding: 10px
-    
+
   &:hover
     background-color: #eee
 
@@ -83,17 +85,17 @@ body
     max-width: 1200px
 
 .main-content--width_m-fixed
-    width: 1200px
+  width: 1200px
 
 .full-width-container
   max-width: 100%
   padding-left: 5px
   padding-right: 5px
-  
+
   @include fw.media('>=dyn-padding')
     padding-left: calc(50vw - 190px)
     padding-right: calc(50vw - 190px)
-  
+
   @include fw.media('>=const-padding')
     padding-left: 20px
     padding-right: 20px

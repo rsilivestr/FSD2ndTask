@@ -33,8 +33,10 @@
     box-shadow: 0 10px 20px fw.$dark05
 
   // fix for uikit headers-footers page
-  + .main-header
-    z-index: 49
+  &--uikit
+    position: relative
+    + .main-header--uikit
+      z-index: 49
   // end fix
 
   &__logo
@@ -64,7 +66,7 @@
       top: 100%
       left: 0
       width: 100%
-      
+
       display: flex
       flex-flow: column nowrap
       align-items: center
@@ -106,19 +108,19 @@
     @include fw.media('>=tablet')
       padding: 0
       margin: 0 13.5px
-  
+
   // end __navlink
 
   &__user-panel
     display: flex
-    
+
     @include fw.media('>=tablet')
       padding-left: 15px
       border-left: 1px solid fw.$dark25
-    
+
     @include fw.media('>=topnav')
       padding-left: 30px
-      
+
   &__user-menu
     display: inline-flex
     white-space: nowrap
@@ -139,7 +141,7 @@
 
   &__user-buttons
     display: flex
-        
+
   &__btn
     max-height: 34px
 
@@ -167,7 +169,6 @@
 
       @include fw.media('>=tablet')
         visibility: collapse
-
 
 // button margins overwrite
 .main-header
