@@ -52,12 +52,12 @@
     "nouislider": "^14.6.0"
   },
   "lint-staged": {
-    "src/**/*.js": ["eslint --fix", "git add"],
-    "src/**/*.{js,sass}": ["prettier --write", "git add"]
+    "src/**/*.js": "eslint --fix",
+    "src/**/*.{js,sass}": "prettier --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build & git add . & lint-staged"
+      "pre-commit": "npm run build & lint-staged"
     }
   }
 }
