@@ -66,12 +66,18 @@ module.exports = {
       filename: 'styles/[name].css',
       ignoreOrder: false,
     }),
-    new CopyWebpackPlugin([{
-        from:'src/assets/images',to:'assets/images'
-    }]),
-    new CopyWebpackPlugin([{
-        from:'src/assets/fonts',to:'assets/fonts'
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images', 
+          to: 'assets/images'
+        },
+        {
+          from:'src/assets/fonts',
+          to:'assets/fonts'
+        }
+      ]
+    }),
   ],
   module: {
     rules: [
