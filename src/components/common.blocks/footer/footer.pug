@@ -37,7 +37,7 @@ mixin footer
 
     .main-footer__copy-section.full-width-container
       p.main-footer__copy-text Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
-      +footsocial
+      +footSocial
 
 //--- sub mixins ---//
 
@@ -50,13 +50,13 @@ mixin footLink(title)
   li.main-footer__nav-list-item
     a(href="#some-url").main-footer__navlink= title
 
-mixin footsocial
+mixin footSocial
   .main-footer__social
-    a(href="#some-url").main-footer__social-link
+    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
       i.main-footer__social-icon.icon-twitter
-    a(href="#some-url").main-footer__social-link
+    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
       i.main-footer__social-icon.icon-facebook-squared
-    a(href="#some-url").main-footer__social-link
+    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
       i.main-footer__social-icon.icon-instagram
 
 
@@ -65,7 +65,7 @@ mixin footerCreative
   footer.main-footer.main-footer--creative.full-width-container.full-width-container--creative&attributes(attributes)
     +logoToxin.main-footer__logo
     p.main-footer__text.mb25 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-    +footsocial
+    +footSocial
 
 
 //--- Russian Footer ---//
@@ -106,4 +106,4 @@ mixin footerRU
 
     .main-footer__copy-section.full-width-container
       p.main-footer__copy-text Copyright &copy; 2018 Toxin отель. Все права зачищены XD.
-      +footsocial
+      +footSocial
