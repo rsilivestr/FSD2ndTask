@@ -52,8 +52,10 @@
     "nouislider": "^14.6.0"
   },
   "lint-staged": {
-    "src/**/*.js": "eslint --fix",
-    "src/**/*.{js,sass}": "prettier --write"
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "husky": {
     "hooks": {

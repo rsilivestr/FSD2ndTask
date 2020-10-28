@@ -1,15 +1,9 @@
 @use 'Styles/forward' as fw
 @import '~air-datepicker/dist/css/datepicker'
-// @import '~js-datepicker/dist/datepicker.min.css'
-// @import '~js-datepicker/src/datepicker.scss'
-
-// .mount-point-for-really-static-air-datepicker-on-cards-page
-
-// .really-static-air-datepicker-on-cards-page
 
 .datepicker
   // compensate for box-sizing
-  margin: -1px
+  // margin: -1px
   box-shadow: 0 5px 10px fw.$dark05
 
   @include fw.media('>=footcols')
@@ -77,7 +71,7 @@
         // focus
       // range to
         // focus
-    
+
     &.-selected-
       color: #ffffff
       font-weight: 700
@@ -167,7 +161,6 @@
   width: 100%
   height: 100%
   z-index: 10
-
 
 // border radiuses
 .datepicker--cell

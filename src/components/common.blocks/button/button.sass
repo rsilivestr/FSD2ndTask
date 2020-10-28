@@ -1,6 +1,7 @@
 @use 'Styles/forward' as fw
 
 .button
+  @extend .centered-flex
   display: inline-flex
   position: relative
   width: 100%
@@ -8,14 +9,10 @@
   text-transform: uppercase
   text-align: center
   font-size: 1.2rem
-  // line-height: 2.4rem
   font-weight: 700
   border: none
   text-decoration: none
-  @extend .centered-flex
-  
-  &:disabled
-    // cursor: not-allowed
+  cursor: pointer
 
   &--style
 
@@ -47,7 +44,6 @@
 
     &_text
       @extend .text-gradient
-      // padding: 0 1px
       line-height: 1.5rem
 
       &:disabled
