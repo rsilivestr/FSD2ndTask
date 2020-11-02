@@ -57,8 +57,6 @@
           @extend .material-icons
           content: '\e5cf'
           vertical-align: top
-          // compensate for width grow to stay centered
-          margin-right: -12px
           transition: all .1s
 
         @include fw.media('>=footcols')
@@ -73,7 +71,7 @@
       &--expanded::after
         transform: rotate(-180deg)
         transition: all .1s
-      
+
   &__logo
     margin-bottom: 14px
 
@@ -94,7 +92,7 @@
 
     &-item
       margin-bottom: 14px
-    
+
     &--expanded
       display: block
 
@@ -145,10 +143,10 @@
     // width: 3rem
     text-align: center
     margin-left: 10px
- 
+
   &__social-icon
     font-size: 2.4rem
-    
+
     // chrome sux
     &::before
       @extend .text-gradient
