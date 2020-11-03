@@ -1,53 +1,53 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .input-box__radio-group
   display: flex
 
 .input-box__radio-item + .input-box__radio-item
-  margin-left: fw.$controlSize
-  
+  margin-left: $controlSize
+
 .input-box__radio-item
   display: flex
-  line-height: fw.$controlSize
-  color: fw.$dark50
-  font-family: 'Montserrat', sans-serif
+  line-height: $controlSize
+  color: $dark50
+  font-family: $mainFont
   font-size: 1.4rem
   cursor: pointer
 
 .input-box__radio-btn,
 .input-box__radio-mark
-  height: fw.$controlSize
-  width: fw.$controlSize
+  height: $controlSize
+  width: $controlSize
 
 .input-box__radio-btn
-  margin-right: fw.$controlSize / 2
+  margin-right: $controlSize / 2
   cursor: pointer
   opacity: 0
   z-index: 20
 
   &:checked + .input-box__radio-mark
-    border-color: fw.$purple
+    border-color: $purple
 
   &:checked ~ .input-box__radio-label
-    color: fw.$dark75
+    color: $dark75
 
   &:checked + .input-box__radio-mark::after
     display: block
 
 .input-box__radio-mark
   display: block
-  border-radius: fw.$controlSize / 2
+  border-radius: $controlSize / 2
   position: absolute
   z-index: 10
-  border: 1px solid fw.$dark25
+  border: 1px solid $dark25
 
   &:after
     content: ""
     position: absolute
-    height: fw.$controlInnerSize
-    width: fw.$controlInnerSize
-    left: fw.$controlInnerOffset
-    top: fw.$controlInnerOffset
-    background: fw.$mainGradient
+    height: $controlInnerSize
+    width: $controlInnerSize
+    left: $controlInnerOffset
+    top: $controlInnerOffset
+    background: $mainGradient
     border-radius: 50%
     display: none

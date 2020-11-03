@@ -1,9 +1,9 @@
-@use 'Styles/forward'
+@use 'Styles/forward' as *
 
 .main-content--page_colors
   padding-top: 37px
   display: flex
-  color: forward.$dark100
+  color: $dark100
 
 .color-list__item
   display: flex
@@ -15,32 +15,32 @@
   height: 70px
   border-radius: 6px
   margin-right: 40px
-  
+
 .color-list__preview-box--bg_dark100
-  background-color: forward.$dark100
+  background-color: $dark100
 
 .color-list__preview-box--bg_dark75
-  background-color: forward.$dark75
+  background-color: $dark75
 
 .color-list__preview-box--bg_dark50
-  background-color: forward.$dark50
+  background-color: $dark50
 
 .color-list__preview-box--bg_dark25
-  background-color: forward.$dark25
+  background-color: $dark25
 
 .color-list__preview-box--bg_dark5
-  background-color: forward.$dark05
+  background-color: $dark05
 
 .color-list__preview-box--bg_purple
-  background-color: forward.$purple
+  background-color: $purple
 
 .color-list__preview-box--bg_green
-  background-color: forward.$green
+  background-color: $green
 
 .color-list__caption
-  @extend .ff-quicksand
+  font-family: $titleFont
   line-height: 1.5
-  
+
 .color-list__color-title
   font-weight: 700
 
@@ -61,19 +61,19 @@
   width: 67px
   padding-right: 30px
   text-align: right
-  color: forward.$dark25
-  @extend .ff-montserrat
+  color: $dark25
+  font-family: $mainFont
 
   h1,h2,h3
     font-weight: 400
 
 .typo-list__desc
-  @extend .ff-quicksand
+  font-family: $titleFont
 
 .typo-list__desc
   h1,h2,h3
     font-weight: 700
 
 .typo-list__desc p
-  color: forward.$dark75
-  @extend .ff-montserrat
+  color: $dark75
+  font-family: $mainFont

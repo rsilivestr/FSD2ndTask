@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 @use './--type/booking/booking'
 @use './--type/login/login'
 @use './--type/registration/registration'
@@ -15,21 +15,21 @@
   padding: 40px 15px 30px 15px
   background: #ffffff
   border-radius: 4px
-  box-shadow: 0 0 20px fw.$dark25
+  box-shadow: 0 0 20px $dark25
 
   > *
     // smooth form paddings change on xs
     width: 100%
     max-width: 320px
 
-  @include fw.media('>=footcols')
+  @include media('>=footcols')
     padding: 40px 30px 30px 30px
 
   &__title
     display: flex
     align-items: flex-end
     margin-bottom: 20px
-    @extend .ff-quicksand
+    font-family: $titleFont
 
     &-room
       flex: auto
@@ -40,16 +40,16 @@
         font-size: 1.4rem
 
       &--lux::after
-        @extend .ff-montserrat
         @extend .text-gradient
         content: ' ЛЮКС'
+        font-family: $mainFont
         font-size: 1.2rem
 
     // end -room
 
     &-price
-      @extend .ff-montserrat
-      color: fw.$dark50
+      font-family: $mainFont
+      color: $dark50
       line-height: 2rem
       font-size: 1.4rem
       font-weight: 700
@@ -94,7 +94,7 @@
   width: 100%
   line-height: 1.8rem
   font-size: 1.4rem
-  color: fw.$dark75
+  color: $dark75
   margin-bottom: 19px
 
   &__title,
@@ -112,8 +112,8 @@
       width: 20px
       height: 20px
       margin-top: 2px
-      color: fw.$dark25
-      border: 1px solid fw.$dark25
+      color: $dark25
+      border: 1px solid $dark25
       border-radius: 50%
 
   &__sum
@@ -126,8 +126,8 @@
     flex-flow: row nowrap
     align-items: flex-end
     width: 100%
-    @extend .ff-quicksand
-    color: fw.$dark100
+    font-family: $titleFont
+    color: $dark100
     font-size: 1.9rem
     font-weight: 700
 
@@ -142,4 +142,4 @@
       flex: auto
       order: 2
       margin: 5px 5px
-      border-bottom: 1px dotted fw.$dark25
+      border-bottom: 1px dotted $dark25

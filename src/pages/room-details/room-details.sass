@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .room-details__gal-header
   display: grid
@@ -8,7 +8,7 @@
   max-height: 485px
   margin-top: 70px
 
-  @include fw.media('>=topnav')
+  @include media('>=topnav')
     grid-template-columns: 68.125% auto
     margin-top: 0
 
@@ -18,16 +18,13 @@
   background-position: center center
 
   &--main
-    // background-image: url(FSD2ndTask/dist/assets/images/header1.jpg)
     background-image: url(../assets/images/header1.jpg)
     grid-area: main
 
   &--sec-top
-    // background-image: url(FSD2ndTask/dist/assets/images/header2.jpg)
     background-image: url(../assets/images/header2.jpg)
 
   &--sec-bot
-    // background-image: url(FSD2ndTask/dist/assets/images/header3.jpg)
     background-image: url(../assets/images/header3.jpg)
 
 .room-details
@@ -42,14 +39,14 @@
     grid-template-areas: 'aside' 'icon-desc' 'diagram' 'rules' 'refund' 'reviews'
     grid-template-columns: 100%
     place-items: center
-    
-    @include fw.media('>=830px')
+
+    @include media('>=830px')
       grid-template-areas: 'icon-desc aside' 'diagram aside' 'rules refund' 'reviews reviews'
       grid-template-columns: auto 380px
       column-gap: 70px
       place-items: start
 
-    @include fw.media('>=widest')
+    @include media('>=widest')
       grid-template-areas: 'icon-desc diagram aside' 'reviews reviews aside' 'rules refund aside'
       grid-template-columns: 290px 350px 380px
       column-gap: 70px
@@ -60,15 +57,15 @@
     flex-flow: row wrap
     align-items: flex-start
     justify-content: center
-    
-    @include fw.media('>=830px')
+
+    @include media('>=830px')
       justify-content: flex-start
 
   &__graph-title
     width: 100%
     text-align: center
 
-    @include fw.media('>=830px')
+    @include media('>=830px')
       text-align: left
 
   &__rate-canvas
@@ -81,8 +78,8 @@
     height: 122px
     margin-right: 10px
     cursor: default
-  
-  @include fw.media('>=footcols')
+
+  @include media('>=footcols')
     &__rate-canvas-wrap
       margin-right: 27px
 
@@ -92,19 +89,19 @@
     left: 0
     right: 0
     font-size: 2.4rem
-    font-family: 'Quicksand', 'Montserrat', serif
+    font-family: $titleFont
     text-align: center
     font-weight: 700
     @extend .text-gradient
 
     &::selection
       background: transparent
-      
+
     &::after
       content: 'ГОЛОСОВ'
       display: block
       font-size: 1.2rem
-  
+
   &__graph-legend
     margin-top: 28px
 
@@ -122,7 +119,7 @@
 
     &--style_poor::before
       background: linear-gradient(#909090, #3d4975)
-    
+
     &::before
       color: transparent
       background-clip: text
@@ -145,7 +142,7 @@
     font-size: 1.4rem
     line-height: 2.4rem
     font-weight: 400
-    color: fw.$dark50
+    color: $dark50
     float: right
 
   &__rules,
@@ -159,7 +156,7 @@
     width: 100%
     line-height: 2.4rem
 
-    @include fw.media('>=830px')
+    @include media('>=830px')
       max-width: 100%
 
   &__aside
@@ -167,4 +164,4 @@
     z-index: 20
 
   &__footer
-    border-top: 1px solid fw.$dark10
+    border-top: 1px solid $dark10
