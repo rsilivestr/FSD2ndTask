@@ -11,9 +11,8 @@ include ~CommonBlocks/user-comment/user-comment
     +mainHeaderPages.main-header--lang_ru
 
     header.room-details__gal-header.gal-header
-      .gal-header__image.gal-header__image--main
-      .gal-header__image.gal-header__image--sec-top
-      .gal-header__image.gal-header__image--sec-bot
+      for section in ['main', 'sec-top', 'sec-bot']
+        .gal-header__image(class = `gal-header__image--${section}`)
 
 
     main.main-content.main-content--width_m.room-details__main
@@ -32,11 +31,14 @@ include ~CommonBlocks/user-comment/user-comment
         .room-details__rate-canvas-wrap
           canvas(height='120', width='120').room-details__rate-canvas
         ul.bullet-list.room-details__graph-legend
-          li.bullet-list__item.room-details__legend-item.room-details__legend-item--style_great Великолепно
-          li.bullet-list__item.room-details__legend-item.room-details__legend-item--style_good Хорошо
-          li.bullet-list__item.room-details__legend-item.room-details__legend-item--style_average Удовлетворительно
-          li.bullet-list__item.room-details__legend-item.room-details__legend-item--style_poor Разочарован
-
+          - items = [
+          -   {en: 'great', ru: 'Великолепно'},
+          -   {en: 'good', ru: 'Хорошо'},
+          -   {en: 'average', ru: 'Удовлетворительно'},
+          -   {en: 'poor', ru: 'Разочарован'},
+          - ]
+          each item in items
+            li.bullet-list__item.room-details__legend-item(class=`room-details__legend-item--style_${item.en}`)= item.ru
 
 
       section.room-details__reviews
@@ -51,9 +53,8 @@ include ~CommonBlocks/user-comment/user-comment
       section.room-details__rules
         h2 Правила
         ul.bullet-list
-          li.bullet-list__item Нельзя с питомцами
-          li.bullet-list__item Без вечеринок и мероприятий
-          li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
+          each item in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,\n а выезд до 12:00']
+            li.bullet-list__item= item
 
       section.room-details__refund
         h2 Отмена

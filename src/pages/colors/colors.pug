@@ -1,46 +1,22 @@
 include ~UtilBlocks/head
 include ~CommonBlocks/header/header
 
+mixin colorBox(colorName, classSuffix, hexCode)
+  figure.color-list__item
+    .color-list__preview-box(class=` color-list__preview-box--bg_${classSuffix}`)
+    figcaption.color-list__caption
+      h2.color-list__color-title= colorName
+      p.color-list__color-hex= hexCode
+
 +head('Colors & Type')
   body.page.page--layout_colors
     +headerUIKit
     main.main-content.main-content--width_m-fixed.main-content--page_colors
       .color-list
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_dark100
-          figcaption.color-list__caption
-            h2.color-list__color-title Dark Shade 100%
-            p.color-list__color-hex #1f2041
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_dark75
-          figcaption.color-list__caption
-            h2.color-list__color-title Dark Shade 75%
-            p.color-list__color-hex #1f2041
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_dark50
-          figcaption.color-list__caption
-            h2.color-list__color-title Dark Shade 50%
-            p.color-list__color-hex #1f2041
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_dark25
-          figcaption.color-list__caption
-            h2.color-list__color-title Dark Shade 25%
-            p.color-list__color-hex #1f2041
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_dark5
-          figcaption.color-list__caption
-            h2.color-list__color-title Dark Shade 5%
-            p.color-list__color-hex #1f2041
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_purple
-          figcaption.color-list__caption
-            h2.color-list__color-title Purple
-            p.color-list__color-hex #bc0cff
-        figure.color-list__item
-          .color-list__preview-box.color-list__preview-box--bg_green
-          figcaption.color-list__caption
-            h2.color-list__color-title Green
-            p.color-list__color-hex #6fcf97
+        each percent in ['100', '75', '50', '25', '5']
+          +colorBox(`Dark Shade ${percent}%`, `dark${percent}`, '#1f2041')
+        +colorBox('Purple', 'purple', '#bc0cff')
+        +colorBox('Green', 'green', '#6fcf97')
       .typo-list
         table
           tbody

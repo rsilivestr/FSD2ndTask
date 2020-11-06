@@ -8,21 +8,13 @@ mixin formBooking
     h1.form__title
       span.form__title-room.form__title-room--lux 888
       span.form__title-price 9 990₽
-    
-    //- .form__row.mb20
-      +inputBox('прибытие', 'xs')
-        +dateDrop
-      +inputBox('выезд', 'xs')
-        +dateDrop
 
     +datepickerDouble.form__datepicker-double
 
-
     +inputBox('гости', 'l')
       +inputDrop('single', 'Сколько гостей').mb14
-        +dropOption('взрослые', '', '', '', 0, 10)
-        +dropOption('дети', '', '', '', 0, 10)
-        +dropOption('младенцы', '', '', '', 0, 10)
+        each title in ['взрослые', 'дети', 'младенцы']
+          +dropOption(title, '', '', '', 0, 10)
 
     //- Bill info here ------------------------
     //- Table
@@ -37,10 +29,6 @@ mixin formBooking
         tr.bill-info__row.bill-info__extra
           td.bill-info__title.bill-info__title--has-hint Сбор за дополнительные услуги
           td.bill-info__sum 300₽
-        //- tr.bill-info__row.bill-info__total
-        //-   td(colspan='2')
-        //-     span Итого
-        //-     span 38&nbsp;081₽
     .bill-info__row.bill-info__total.mb19
       span.bill-info__total-title Итого
       span.bill-info__total-sum 38&nbsp;081₽

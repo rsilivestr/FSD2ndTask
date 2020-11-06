@@ -10,23 +10,18 @@ mixin footer
 
       +footCol('navigation').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('About Us')
-          +footLink('News')
-          +footLink('Support')
-          +footLink('Products')
+          each title in ['About Us', 'News', 'Support', 'Products']
+            +footLink(title)
 
       +footCol('about us').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('Who we are')
-          +footLink('Our team')
-          +footLink('Careers')
-          +footLink('Investors')
+          each title in ['Who we are', 'Our team', 'Careers', 'Investors']
+            +footLink(title)
 
       +footCol('support').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('Documentation')
-          +footLink('Community')
-          +footLink('Get in touch')
+          each title in ['Documentation', 'Community', 'Get in touch']
+            +footLink(title)
       
       +footCol('subscribe to our newsletter')
         p.main-footer__text Receive our latest news and promotions in your inbox!
@@ -52,12 +47,9 @@ mixin footLink(title)
 
 mixin footSocial
   .main-footer__social
-    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
-      i.main-footer__social-icon.icon-twitter
-    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
-      i.main-footer__social-icon.icon-facebook-squared
-    a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
-      i.main-footer__social-icon.icon-instagram
+    each iconName in ['twitter', 'facebook-squared', 'instagram']
+      a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
+        i(class=`main-footer__social-icon icon-${iconName}`)
 
 
 //--- Footer Creative ---//
@@ -79,23 +71,18 @@ mixin footerRU
 
       +footCol('навигация').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('О нас')
-          +footLink('Новости')
-          +footLink('Служба поддержки')
-          +footLink('Услуги')
+          each title in ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
+            +footLink(title)
 
       +footCol('о нас').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('О сервисе')
-          +footLink('Наша команда')
-          +footLink('Вакансии')
-          +footLink('Инвесторы')
+          each title in ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
+            +footLink(title)
 
       +footCol('служба поддержки').main-footer__col-title--expandable
         ul.main-footer__nav-list
-          +footLink('Соглашения')
-          +footLink('Сообщества')
-          +footLink('Связь с нами')
+          each title in ['Соглашения', 'Сообщества', 'Связь с нами']
+            +footLink(title)
       
       +footCol('подписка')
         p.main-footer__text Получайте специальные предложения и новости сервиса

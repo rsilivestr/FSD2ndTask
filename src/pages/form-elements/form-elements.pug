@@ -29,9 +29,8 @@ include ~CommonBlocks/user-comment/user-comment
 
           +inputBox('dropdown').mb23
             +inputDrop('single', 'Сколько гостей')
-              +dropOption('взрослые', '', '', '', 0, 10)
-              +dropOption('дети', '', '', '', 0, 10)
-              +dropOption('младенцы', '', '', '', 0, 10)
+              each title in ['взрослые', 'дети', 'младенцы']
+                +dropOption(title, '', '', '', 0, 10)
  
           +inputBox('masked text field').mb42
             +maskedDate
@@ -139,9 +138,8 @@ include ~CommonBlocks/user-comment/user-comment
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Сколько гостей', true)
-              +dropOption('взрослые', '', '', '', 0, 10)
-              +dropOption('дети', '', '', '', 0, 10)
-              +dropOption('младенцы', '', '', '', 0, 10)
+              each title in ['взрослые', 'дети', 'младенцы']
+                +dropOption(title, '', '', '', 0, 10)
 
         //- b 3 --------------------------------------//
         
@@ -160,28 +158,16 @@ include ~CommonBlocks/user-comment/user-comment
           //- expandable checkbox list
           +inputBox('', 'm')
             +checkboxGroup('Expandable checkbox list')
-              +checkbox('Завтрак')
-              +checkbox('Письменный стол')
-              +checkbox('Стул для кормления')
-              +checkbox('Кроватка')
-              +checkbox('Телевизор')
-              +checkbox('Шампунь')
-              +checkbox('Телевизор')
-              +checkbox('Шампунь')
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
+                +checkbox(label)
 
           .mb38
 
           //- expanded expandable checkbox list
           +inputBox('', 'm')
             +checkboxGroup('Expandable checkbox list', true)
-              +checkbox('Завтрак')
-              +checkbox('Письменный стол', true)
-              +checkbox('Стул для кормления', true)
-              +checkbox('Кроватка', true)
-              +checkbox('Телевизор')
-              +checkbox('Шампунь')
-              +checkbox('Телевизор')
-              +checkbox('Шампунь')
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
+                +checkbox(label)
 
           .mb20
 
@@ -207,9 +193,8 @@ include ~CommonBlocks/user-comment/user-comment
           h3 bullet list
           .mb13
           ul.bullet-list
-            li.bullet-list__item нельзя с питомцами
-            li.bullet-list__item без вечеринок и мероприятий
-            li.bullet-list__item Время прибытия — после 13:00,<br>а выезд до 12:00
+            each li in ['нельзя с питомцами', 'без вечеринок и мероприятий', "Время прибытия — после 13:00,\n а выезд до 12:00"]
+              li.bullet-list__item= li
 
         //- d 1 --------------------------------------//
 

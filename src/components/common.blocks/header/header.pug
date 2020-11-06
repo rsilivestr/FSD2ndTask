@@ -5,6 +5,9 @@ mixin headerUIKit
   header.uikit-header.container.container--width_l
     +logoUIKit
 
+mixin navlink(title)
+  a(href="#some-url").main-header__navlink&attributes(attributes)= title
+
 mixin header(username)
   header.main-header&attributes(attributes)
     .main-header__wrapper
@@ -14,12 +17,12 @@ mixin header(username)
         i.material-icons menu
 
       nav.main-header__nav
-        a(href="#some-url").main-header__navlink.main-header__navlink--current home
-        a(href="#some-url").main-header__navlink about us
-        a(href="#some-url").main-header__navlink.main-header__navlink--has-subnav services
-        a(href="#some-url").main-header__navlink careers
-        a(href="#some-url").main-header__navlink news
-        a(href="#some-url").main-header__navlink documentation
+        +navlink('home').main-header__navlink--current
+        +navlink('about us')
+        +navlink('services').main-header__navlink--has-subnav
+        +navlink('casreers')
+        +navlink('news')
+        +navlink('documentation')
 
       if (!username)
         +headerButtons('login', 'register')
@@ -40,9 +43,6 @@ mixin navBtn
 mixin headerNav
   nav.main-header__nav
     block
-
-mixin navlink(name, current)
-  a(href="#some-url", class = current ? 'main-header__navlink--current' : '').main-header__navlink&attributes(attributes)= name
 
 mixin headerButtons(login='login', register='register')
   .main-header__user-buttons

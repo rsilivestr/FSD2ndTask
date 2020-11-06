@@ -7,18 +7,11 @@ mixin formSearchRoom
     
     h1.form__title Найдём номера под ваши пожелания
 
-    //- .form__row.mb20
-      +inputBox('прибытие', 'xs')
-        +dateDrop
-      +inputBox('выезд', 'xs')
-        +dateDrop
-
     +datepickerDouble.form__datepicker-double
 
     +inputBox('гости', 'l').mb21
       +inputDrop('single', 'Сколько гостей').mb10
-        +dropOption('взрослые', '', '', '', 0, 10)
-        +dropOption('дети', '', '', '', 0, 10)
-        +dropOption('младенцы', '', '', '', 0, 10)
+        each title in ['взрослые', 'дети', 'младенцы']
+          +dropOption(title, '', '', '', 0, 10)
     
     +button('подобрать номер', 'arrowed', 'l', false).form__btn--main
