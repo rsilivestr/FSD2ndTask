@@ -3,10 +3,8 @@ include ../input-box/__input/--like/like
 
 mixin userComment(uid, name, age, likes, liked, text)
   .user-comment&attributes(attributes)
-    //- +imageTitle('comment', 'uid1111', 'Мурад Сарафанов', '5 дней назад')
     +imageTitle('comment', uid, name, age)
     .user-comment__body
-      .user-comment__like-counter
-        +likeBtn(likes, liked, 'user-comment__like-counter')
+      +likeBtn(likes, liked).user-comment__like-counter
       p.user-comment__text
         = text

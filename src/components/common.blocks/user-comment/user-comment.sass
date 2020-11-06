@@ -1,20 +1,17 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .user-comment
-  // padding: 20px 0
-
   &__body
     display: flex
     flex-flow: row nowrap
     align-items: flex-start
 
   &__like-counter
-    margin-top: 1px
-    @extend .centered-flex
-    width: 48px
+    margin: 1px 4px 0
 
   &__text
-    margin-left: 1rem
+    margin-left: 10px
     line-height: 2.4rem
-    color: fw.$dark50
+    color: $dark50
     font-size: 1.4rem
+    white-space: pre-line
