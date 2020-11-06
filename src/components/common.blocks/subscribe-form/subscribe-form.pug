@@ -1,0 +1,5 @@
+mixin subscribeForm(placeholder='Your email address')
+  form.subscribe-form&attributes(attributes)
+    .input-box
+      input(placeholder=placeholder type='email').input-box__input.input-box__input--text.subscribe-form__input
+      button(type='submit').subscribe-form__submit

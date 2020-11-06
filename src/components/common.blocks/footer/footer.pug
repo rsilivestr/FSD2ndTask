@@ -1,5 +1,6 @@
 include ../logo/logo
 include ../input-box/input-box
+include ../subscribe-form/subscribe-form
 
 mixin footer
   footer.main-footer&attributes(attributes)
@@ -25,8 +26,7 @@ mixin footer
       
       +footCol('subscribe to our newsletter')
         p.main-footer__text Receive our latest news and promotions in your inbox!
-        +inputBox('', 'm')
-          +textField('Your email address', 'email', 'subscribe').main-footer__subscribe
+        +subscribeForm.main-footer__subscribe-form
 
     //- end __nav-section
 
@@ -86,8 +86,7 @@ mixin footerRU
       
       +footCol('подписка')
         p.main-footer__text Получайте специальные предложения и новости сервиса
-        +inputBox('', 'm')
-          +textField('Your email address', 'email', 'subscribe').main-footer__subscribe
+        +subscribeForm('Email').main-footer__subscribe-form
 
     //- end __nav-section
 
