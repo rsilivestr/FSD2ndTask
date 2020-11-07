@@ -31,10 +31,16 @@ const FSD2ndTaskDropdown = (() => {
     }
   }
 
-  const UIdrops = document.querySelectorAll(CSEL.dropdown),
-    UIsingle = document.querySelectorAll(CSEL.single),
-    UImulti = document.querySelectorAll(CSEL.multi),
-    UIoptions = document.querySelectorAll(CSEL.option);
+  const UIdrops = document.querySelectorAll(CSEL.dropdown);
+  const UIsingle = document.querySelectorAll(CSEL.single);
+  const UImulti = document.querySelectorAll(CSEL.multi);
+  const UIoptions = document.querySelectorAll(CSEL.option);
+
+  const closeDrop = (drop) => {
+    drop.classList.remove(CNAME.open);
+    drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
+    drop.closest('.input-box').classList.remove('input-box--active');
+  };
 
   // function to handle any dropdown click interactions
   function toggleDropdown(e) {
@@ -44,8 +50,7 @@ const FSD2ndTaskDropdown = (() => {
       // close all dropdowns other than targeted
       UIdrops.forEach((drop) => {
         if (drop !== UIcurrent) {
-          drop.classList.remove(CNAME.open);
-          drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
+          closeDrop(drop);
         }
       });
       // toggle clicked dropdown
@@ -64,7 +69,9 @@ const FSD2ndTaskDropdown = (() => {
         }
       } else if (e.target.classList.contains(CNAME.btnApply)) {
         // if apply button clicked
-        updateSingleValDisplay(e.target.closest(CSEL.dropdown));
+        const parentDrop = e.target.closest(CSEL.dropdown);
+        updateSingleValDisplay(parentDrop);
+        closeDrop(parentDrop);
       } else if (e.target.classList.contains(CNAME.btnClear)) {
         // if clear button clicked
         e.target
@@ -75,12 +82,7 @@ const FSD2ndTaskDropdown = (() => {
       }
     } else {
       // close any and all dropdowns if none targeted
-      UIdrops.forEach((drop) => {
-        drop.classList.remove(CNAME.open);
-        drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
-        // decrease parent box z-index
-        drop.closest('.input-box').classList.remove('input-box--active');
-      });
+      UIdrops.forEach((drop) => closeDrop(drop));
     }
   }
 
