@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .dropdown,
 .date-dropdown
@@ -16,18 +16,16 @@
     top: 0
     width: 44px
     height: 44px
-    color: fw.$dark50
+    color: $dark50
     transition: all .1s
-
-  &--is-open
-    z-index: 50
 
   &--is-open,
   &--force-open
-    box-shadow: 0 10px 20px fw.$dark05
+    z-index: 50
+    box-shadow: 0 10px 20px $dark05
 
     .dropdown__display
-      border-color: fw.$dark50
+      border-color: $dark50
       border-radius: 4px 4px 0 0
 
     &::after
@@ -41,15 +39,15 @@
     position: relative
     cursor: default
     background: transparent
-    color: fw.$dark75
-    border-color: fw.$dark25
+    color: $dark75
+    border-color: $dark25
     z-index: 20
 
     &--style_lowercase
       text-transform: lowercase
 
     &::placeholder
-      color: fw.$dark75
+      color: $dark75
 
   // end __display
 
@@ -63,19 +61,17 @@
     padding: 6px 6px 7px 14px
     font-size: 1.4rem
     font-weight: 400
-    color: fw.$dark50
-    border: 1px solid fw.$dark50
+    color: $dark50
+    border: 1px solid $dark50
     border-top: none
     border-radius: 0 0 4px 4px
-    box-shadow: 0 10px 20px fw.$dark05
+    box-shadow: 0 10px 20px $dark05
     cursor: default
     overflow: hidden
 
     &--visible,
     &--force-visible
       display: block
-
-    &--visible
       position: absolute
       background: #ffffff
 
@@ -89,7 +85,7 @@
     font-size: 1.18rem
     line-height: 28px
     font-weight: 700
-    color: fw.$dark100
+    color: $dark100
 
     &:not(:last-of-type)
       margin-bottom: 7px
@@ -109,9 +105,9 @@
       width: $optionHeight
       background: #fff
       line-height: 30px
-      color: fw.$dark50
+      color: $dark50
       font-size: 1.8rem
-      border: 1px solid fw.$dark25
+      border: 1px solid $dark25
       border-radius: 50%
       cursor: pointer
 
@@ -124,7 +120,7 @@
     margin: 20px 0 5px
 
     &--clear
-      color: fw.$dark50
+      color: $dark50
       background: transparent
 
     &--apply

@@ -1,9 +1,10 @@
 mixin inputDrop(type, placeholder, forceOpen)
   .dropdown(
-    class='dropdown--type_'+type,
-    class=forceOpen ? 'dropdown--force-open' : '')&attributes(attributes)
+    class = `dropdown--type_${type}`,
+    class = forceOpen ? 'dropdown--force-open' : ''
+  )&attributes(attributes)
     input(type='text' readonly placeholder=placeholder).dropdown__display.input-box__input
-    .dropdown__contents(class=forceOpen ?'dropdown__contents--force-visible' : '')
+    .dropdown__contents(class = forceOpen ? 'dropdown__contents--force-visible' : '')
       block
       if(type=='single')
         +dropButtons
