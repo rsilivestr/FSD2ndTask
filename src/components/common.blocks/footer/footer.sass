@@ -6,21 +6,18 @@
 
   &__nav-section
     display: flex
-    flex-flow: row wrap
-    justify-content: space-around
+    flex-flow: row nowrap
+    justify-content: center
     padding-top: 80px
 
     @include media('>=1080px')
       padding-top: 100px
-      padding-bottom: 83px
+      padding-bottom: 80px
       justify-content: space-between
-      padding-top: 50px
-      padding-bottom: 50px
       border-bottom: 1px solid $dark10
 
   &__col
     display: none
-    flex-flow: column nowrap
     text-align: center
 
     &:first-child
@@ -29,11 +26,6 @@
     @include media('>=1080px')
       display: block
       text-align: left
-
-    &:first-of-type,
-    &:last-of-type
-      @include media('<widest')
-        align-items: center
 
     @include media('>=1080px')
       min-width: 160px
@@ -44,11 +36,7 @@
       color: $dark100
       font-size: 1.2rem
       text-transform: uppercase
-      text-align: center
       line-height: 2.4rem
-
-      @include media('>=footcols')
-        text-align: left
 
   &__logo
     margin-bottom: 14px
@@ -61,13 +49,7 @@
       text-align: center
 
   &__nav-list
-    display: none
     list-style-type: none
-    text-align: center
-
-    @include media('>=1080px')
-      display: block
-      text-align: left
 
     &-item
       margin-bottom: 14px
@@ -90,14 +72,12 @@
 
   &__copy-section
     display: flex
-    flex-flow: column nowrap
-    align-items: center
-    min-height: 70px
-    padding: 0 20px 100px
+    justify-content: center
+    padding: 20px 20px 100px
 
     @include media('>=1080px')
-      flex-flow: row nowrap
-      padding: 0 20px
+      justify-content: space-between
+      padding: 20px
 
   &__copy-text
     display: none
@@ -105,23 +85,15 @@
     @include media('>=1080px')
       display: block
 
-  &__social
-    margin: 20px 0 0 0
-
-    @include media('>=1080px')
-      height: 3.2rem
-      margin: 0 -5px 0 auto
-
   &__social-link
     display: inline-block
-    // width: 3rem
     text-align: center
     margin-left: 10px
 
   &__social-icon
     font-size: 2.4rem
 
-    // chrome sux
+    // chrome fix
     &::before
       @extend .text-gradient
 
@@ -130,11 +102,3 @@
     padding-top: 100px
     padding-block: 100px
     text-align: center
-
-  &--lang_ru
-    @include media('>=footcols')
-      .main-footer__logo
-        margin-bottom: 15px
-
-      .main-footer__col-title
-        margin-bottom: 14px
