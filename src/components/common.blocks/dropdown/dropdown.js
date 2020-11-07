@@ -50,6 +50,8 @@ const FSD2ndTaskDropdown = (() => {
       });
       // toggle clicked dropdown
       UIcurrent.classList.toggle(CNAME.open);
+      // increase parent box z-index
+      UIcurrent.closest('.input-box').classList.toggle('input-box--active');
       // show contents
       e.target.nextElementSibling.classList.toggle(CNAME.visible);
       // when dropdown-content is clicked
@@ -76,6 +78,8 @@ const FSD2ndTaskDropdown = (() => {
       UIdrops.forEach((drop) => {
         drop.classList.remove(CNAME.open);
         drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
+        // decrease parent box z-index
+        drop.closest('.input-box').classList.remove('input-box--active');
       });
     }
   }
