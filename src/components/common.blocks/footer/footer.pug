@@ -9,17 +9,17 @@ mixin footer
         +logoToxin.main-footer__logo
         p.main-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 
-      +footCol('navigation').main-footer__col-title--expandable
+      +footCol('navigation')
         ul.main-footer__nav-list
           each title in ['About Us', 'News', 'Support', 'Products']
             +footLink(title)
 
-      +footCol('about us').main-footer__col-title--expandable
+      +footCol('about us')
         ul.main-footer__nav-list
           each title in ['Who we are', 'Our team', 'Careers', 'Investors']
             +footLink(title)
 
-      +footCol('support').main-footer__col-title--expandable
+      +footCol('support')
         ul.main-footer__nav-list
           each title in ['Documentation', 'Community', 'Get in touch']
             +footLink(title)
