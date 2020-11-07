@@ -2,7 +2,6 @@ include ../input-box/input-box
 
 mixin dot(is = {current: false})
   button.room-card__dot(class = (is.current === true) ? 'room-card__dot--current' : '')
-    i.icon-circle
 
 mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost, reviewCount = 0, lux = false)
   .room-card&attributes(attributes)
@@ -16,9 +15,14 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
           +dot({current})
 
     .room-card__info
-      h2.room-card__title.form__title
-        span.form__title-room(class = lux ? 'form__title-room--lux' : '')= roomNumber
-        span.form__title-price= dailyCost
+      h2.room-card__title.form-title
+        span.form-title__room
+          span.form-title__number №
+          = roomNumber
+          if (lux)
+            span.form-title__lux люкс
+        span.form-title__price= dailyCost
+          span.form-title__price-period в сутки
       .room-card__rating
         +starRating(roomRating)
         span.room-card__review-counter= reviewCount

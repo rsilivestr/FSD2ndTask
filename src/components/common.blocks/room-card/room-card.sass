@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .room-card
   background: #ffffff
@@ -7,7 +7,7 @@
   min-height: 257.5px
   border-radius: 4px
   overflow: auto
-  box-shadow: 0 10px 20px fw.$dark05
+  box-shadow: 0 10px 20px CSEL$dark05
 
   &__photos
     position: relative
@@ -19,6 +19,7 @@
   &__photo
     position: absolute
     min-width: 100%
+    transition: left 0.25s
 
   &__dots
     position: absolute
@@ -27,20 +28,28 @@
     z-index: 10
 
   &__dot
-    font-size: .8rem
+    padding: 2px
+    font-size: .9rem
     color: #ffffff
     background: transparent
     border: none
     cursor: pointer
 
+    &::after
+      font-family: 'fa-icons'
+      content: '\f10c'
+
+    &--current::after
+      content: '\f111'
+
   &__info
     padding: 20px 20px 16px
 
   &__title
-    border-bottom: 1px solid fw.$dark25
+    border-bottom: 1px solid CSEL$dark25
     padding-bottom: 10px
     margin-bottom: 8px
-    font-family: 'Quicksand', 'Open Sans', sans-serif
+    font-family: $titleFont
 
   &__rating
     display: flex
@@ -50,7 +59,7 @@
   &__review-counter
     font-size: 1.4rem
     font-weight: 700
-    color: fw.$dark50
+    color: CSEL$dark50
 
     &::after
       content: ' Отзывов'
