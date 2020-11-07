@@ -25,39 +25,40 @@
   @include media('>=footcols')
     padding: 40px 30px 30px 30px
 
-  &__title
+  &-title
     display: flex
     align-items: flex-end
     margin-bottom: 20px
     font-family: $titleFont
 
-    &-room
+    &__number
+      font-size: 1.4rem
+      margin-right: 4px
+
+    &__room
       flex: auto
       align-items: flex-end
 
-      &::before
-        content: '№ '
-        font-size: 1.4rem
-
-      &--lux::after
-        @extend .text-gradient
-        content: ' ЛЮКС'
-        font-family: $mainFont
-        font-size: 1.2rem
+    &__lux
+      @extend .text-gradient
+      font-family: $mainFont
+      font-size: 1.2rem
+      margin-left: 5px
+      text-transform: uppercase
 
     // end -room
 
-    &-price
+    &__price
       font-family: $mainFont
       color: $dark50
-      line-height: 2rem
+      line-height: 2.2rem
       font-size: 1.4rem
       font-weight: 700
 
-      &::after
-        content: ' в сутки'
-        font-size: 1.2rem
-        font-weight: 400
+    &__price-period
+      font-size: 1.2rem
+      font-weight: 400
+      margin-left: 4px
 
   // end __title
 

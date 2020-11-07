@@ -14,7 +14,6 @@ include ~CommonBlocks/user-comment/user-comment
       for section in ['main', 'sec-top', 'sec-bot']
         .gal-header__image(class = `gal-header__image--${section}`)
 
-
     main.main-content.main-content--width_m.room-details__main
       .room-details__features
         h2 Сведения о номере
@@ -24,7 +23,6 @@ include ~CommonBlocks/user-comment/user-comment
         +imageTitle('emoji', 'location_city', 'удобство', 'окно в каждой из спален')
         //- уют
         +imageTitle('emoji', 'whatshot', 'уют', 'номер оснащен камином')
-
 
       .room-details__rate-graph
         h2.mb20.room-details__graph-title Впечатления от номера
@@ -40,7 +38,6 @@ include ~CommonBlocks/user-comment/user-comment
           each item in items
             li.bullet-list__item.room-details__legend-item(class=`room-details__legend-item--style_${item.en}`)= item.ru
 
-
       section.room-details__reviews
         h2.room-details__reviews-title Отзывы посетителей номера
           span.room-details__review-counter 2 отзыва
@@ -48,7 +45,6 @@ include ~CommonBlocks/user-comment/user-comment
         +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')
 
         +userComment('uid2222', 'Патрисия Стеклышкова', 'неделю назад', 2, false, 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент')
-
 
       section.room-details__rules
         h2 Правила
@@ -60,8 +56,6 @@ include ~CommonBlocks/user-comment/user-comment
         h2 Отмена
         p Бесплатная отмена в течение 48 ч. После<br>этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-
-      +formBooking.room-details__aside
-
+      +formBooking({ number: '888', lux: true }).room-details__aside
 
     +footerRU.room-details__footer

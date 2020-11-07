@@ -3,11 +3,17 @@ include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/input-box/input-box
 
-mixin formBooking
+mixin formBooking(room)
+  - number = room.number || '999';
   form.form.form--type_booking&attributes(attributes)
-    h1.form__title
-      span.form__title-room.form__title-room--lux 888
-      span.form__title-price 9 990₽
+    h1.form-title
+      span.form-title__room
+        span.form-title__number №
+        = number
+        if (room.lux === true)
+          span.form-title__lux люкс
+      span.form-title__price 9 990₽
+        span.form-title__price-period в сутки
 
     +datepickerDouble.form__datepicker-double
 
@@ -16,8 +22,7 @@ mixin formBooking
         each title in ['взрослые', 'дети', 'младенцы']
           +dropOption(title, '', '', '', 0, 10)
 
-    //- Bill info here ------------------------
-    //- Table
+    //- Bill info
     table.form__bill.bill-info
       tbody
         tr.bill-info__row.bill-info__initial
