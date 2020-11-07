@@ -63,18 +63,18 @@ include ~CommonBlocks/pagination/pagination
       main.search-room-page__content
         h1.search-room-page__title Номера, которые мы для вас подобрали
         .search-room-page__rooms
-          +roomCard('room1.jpg', 5, 888, '9 990₽', 145, true).search-room-page__room-card
-          +roomCard('room2.jpg', 4, 840, '9 900₽', 65).search-room-page__room-card
-          +roomCard('room3.jpg', 3, 980, '8 500₽', 35, true).search-room-page__room-card
-          +roomCard('room4.jpg', 5, 856, '7 300₽', 19).search-room-page__room-card
-          +roomCard('room5.jpg', 4, 740, '6 000₽', 44).search-room-page__room-card
-          +roomCard('room6.jpg', 3, 982, '5 800₽', 56).search-room-page__room-card
-          +roomCard('room7.jpg', 5, 678, '5 500₽', 45).search-room-page__room-card
-          +roomCard('room8.jpg', 4, 450, '5 300₽', 39).search-room-page__room-card
-          +roomCard('room9.jpg', 3, 350, '5 000₽', 77).search-room-page__room-card
-          +roomCard('room10.jpg', 5, 666, '5 000₽', 25).search-room-page__room-card
-          +roomCard('room11.jpg', 3, 444, '5 000₽', 15).search-room-page__room-card
-          +roomCard('room12.jpg', 3, 352, '5 000₽', 55).search-room-page__room-card
+          +roomCard(['room1.jpg', 'room3.jpg', 'room6.jpg'], 5, 888, '9 990₽', 145, true).search-room-page__room-card
+          +roomCard(['room2.jpg', 'room9.jpg'], 4, 840, '9 900₽', 65).search-room-page__room-card
+          +roomCard(['room3.jpg', 'room11.jpg'], 3, 980, '8 500₽', 35, true).search-room-page__room-card
+          +roomCard(['room4.jpg', 'room12.jpg', 'room3.jpg'], 5, 856, '7 300₽', 19).search-room-page__room-card
+          +roomCard(['room5.jpg'], 4, 740, '6 000₽', 44).search-room-page__room-card
+          +roomCard(['room6.jpg', 'room11.jpg'], 3, 982, '5 800₽', 56).search-room-page__room-card
+          +roomCard(['room7.jpg', 'room5.jpg'], 5, 678, '5 500₽', 45).search-room-page__room-card
+          +roomCard(['room8.jpg', 'room4.jpg', 'room7.jpg'], 4, 450, '5 300₽', 39).search-room-page__room-card
+          +roomCard(['room9.jpg', 'room1.jpg'], 3, 350, '5 000₽', 77).search-room-page__room-card
+          +roomCard(['room10.jpg', 'room8.jpg', 'room3.jpg'], 5, 666, '5 000₽', 25).search-room-page__room-card
+          +roomCard(['room11.jpg', 'room3.jpg'], 3, 444, '5 000₽', 15).search-room-page__room-card
+          +roomCard(['room12.jpg', 'room5.jpg', 'room4.jpg'], 3, 352, '5 000₽', 55).search-room-page__room-card
         +pagination
 
     //- end .content-wrapper
