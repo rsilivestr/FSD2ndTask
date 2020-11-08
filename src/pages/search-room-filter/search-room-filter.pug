@@ -13,16 +13,14 @@ include ~CommonBlocks/pagination/pagination
     .content-wrapper.has-fixed-header.main-content.search-room-page__wrapper
 
       aside.search-room-page__filters
-        //- .filters-wrapper
         //- filter date dropdown
-        +inputBox('даты пребывания в отеле').mb20
+        +inputBox('даты пребывания в отеле').mb20.js-filter-datepicker
           +filterDateDrop
         //- guests dropdown
         +inputBox('гости').mb30
           +inputDrop('single', 'Количество гостей')
-            +dropOption('взрослые', '', '', '', 0, 10)
-            +dropOption('дети', '', '', '', 0, 10)
-            +dropOption('младенцы', '', '', '', 0, 10)
+            each item in ['взрослые', 'дети', 'младенцы']
+              +dropOption(item, '', '', '', 0, 10)
         //- range
         +inputBox('Диапазон цены').mb30
           +rangeSlider
@@ -30,15 +28,14 @@ include ~CommonBlocks/pagination/pagination
         //- checkboxes
         +inputBox('опции').mb32
           .mb15
-          +checkbox('можно курить')
-          +checkbox('можно с питомцами')
-          +checkbox('можно пригласить гостей\n(до 10 человек)')
+          each label in ['можно курить', 'можно с питомцами', 'можно пригласить гостей\n(до 10 человек)']
+            +checkbox(label)
         //- rich checkboxes
         +inputBox('Доступность').mb32
           .mb15
           +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
           +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
-        //- dropdown
+        //- comfort dropdown
         +inputBox('удобства номера', 'm').mb24
           +inputDrop('multi', '')
             +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
@@ -46,14 +43,8 @@ include ~CommonBlocks/pagination/pagination
             +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
         //- expandable checkbox group
         +checkboxGroup('дополнительные удобства').mb30
-          +checkbox('Завтрак')
-          +checkbox('Письменный стол')
-          +checkbox('Стул для кормления')
-          +checkbox('Кроватка')
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
-          +checkbox('Телевизор')
-          +checkbox('Шампунь')
+          each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь','Телевизор','Шампунь']
+            +checkbox(label)
         //- button to apply filters
         +button('применить фильтры', 'gradient', 'm').search-room-page__apply-btn
         //- button to expand / hide on small screens
@@ -63,11 +54,11 @@ include ~CommonBlocks/pagination/pagination
       main.search-room-page__content
         h1.search-room-page__title Номера, которые мы для вас подобрали
         .search-room-page__rooms
-          +roomCard(['room1.jpg', 'room3.jpg', 'room6.jpg'], 5, 888, '9 990₽', 145, true).search-room-page__room-card
+          +roomCard(['room1.jpg', 'room3.jpg', 'room6.jpg', 'room11.jpg'], 5, 888, '9 990₽', 145, true).search-room-page__room-card
           +roomCard(['room2.jpg', 'room9.jpg'], 4, 840, '9 900₽', 65).search-room-page__room-card
           +roomCard(['room3.jpg', 'room11.jpg'], 3, 980, '8 500₽', 35, true).search-room-page__room-card
           +roomCard(['room4.jpg', 'room12.jpg', 'room3.jpg'], 5, 856, '7 300₽', 19).search-room-page__room-card
-          +roomCard(['room5.jpg'], 4, 740, '6 000₽', 44).search-room-page__room-card
+          +roomCard(['room5.jpg', 'room1.jpg', 'room12.jpg'], 4, 740, '6 000₽', 44).search-room-page__room-card
           +roomCard(['room6.jpg', 'room11.jpg'], 3, 982, '5 800₽', 56).search-room-page__room-card
           +roomCard(['room7.jpg', 'room5.jpg'], 5, 678, '5 500₽', 45).search-room-page__room-card
           +roomCard(['room8.jpg', 'room4.jpg', 'room7.jpg'], 4, 450, '5 300₽', 39).search-room-page__room-card

@@ -39,7 +39,6 @@ const FSD2ndTaskDropdown = (() => {
   const closeDrop = (drop) => {
     drop.classList.remove(CNAME.open);
     drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
-    drop.closest('.input-box').classList.remove('input-box--active');
   };
 
   // function to handle any dropdown click interactions
@@ -55,8 +54,6 @@ const FSD2ndTaskDropdown = (() => {
       });
       // toggle clicked dropdown
       UIcurrent.classList.toggle(CNAME.open);
-      // increase parent box z-index
-      UIcurrent.closest('.input-box').classList.toggle('input-box--active');
       // show contents
       e.target.nextElementSibling.classList.toggle(CNAME.visible);
       // when dropdown-content is clicked

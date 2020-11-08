@@ -5,9 +5,9 @@ include ~CommonBlocks/input-box/input-box
 mixin formSearchRoom
   form.form.form--type_search-room&attributes(attributes)
     
-    h1.form__title Найдём номера под ваши пожелания
+    h1.form-title Найдём номера под ваши пожелания
 
-    +datepickerDouble.form__datepicker-double
+    +datepickerDouble.form__datepicker-double.js-search-room-datepicker
 
     +inputBox('гости', 'l').mb21
       +inputDrop('single', 'Сколько гостей').mb10

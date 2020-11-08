@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .search-room-page
   &__wrapper
@@ -10,10 +10,10 @@
     padding-left: 20px
     padding-right: 20px
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       margin-top: 30px
 
-    @include fw.media('>=widest')
+    @include media('>=widest')
       margin-left: auto
       margin-right: auto
 
@@ -28,20 +28,20 @@
     height: calc( 100vh - 70px )
     padding: 40px 10px
     background: #ffffff
-    border-right: 1px solid fw.$dark50
+    border-right: 1px solid $dark50
     overflow-y: auto
     z-index: 40
     transition: left .25s
 
-    @include fw.media('>=footcols')
+    @include media('>=footcols')
       left: -307px
       width: 307px
       padding: 40px 20px
-    
+
     &--expanded
       left: 0
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       position: relative
       top: 0
       left: 0
@@ -50,7 +50,7 @@
       min-width: 266px
       height: auto
       overflow-y: auto
-  
+
   &__expand-filters
     display: flex
     align-items: center
@@ -61,7 +61,7 @@
     height: 70px
     width: 35px
     padding: 10px
-    border: 1px solid fw.$dark50
+    border: 1px solid $dark50
     border-left: 0
     border-radius: 0 50px 50px 0
     background: #fff
@@ -71,20 +71,20 @@
     i
       transition: all .25s .25s
 
-    &--expanded 
+    &--expanded
       left: 307px
-      
+
       i
         transform: rotate(180deg)
         transition: all .25s .25s
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       display: none
 
   &__range-caption
     display: block
     font-size: 1.2rem
-    color: fw.$dark50
+    color: $dark50
     margin-top: 2px
 
   &__apply-btn
@@ -93,11 +93,11 @@
   &__content
     flex: auto
     height: 100%
-    
-    @include fw.media('>=topnav')
+
+    @include media('>=topnav')
       margin-left: 30px
 
-    @include fw.media('>=widest')
+    @include media('>=widest')
       margin-left: 60px
 
   &__title
@@ -112,18 +112,18 @@
   &__room-card
     max-width: 100%
     margin-bottom: 20px
-    box-shadow: 0 5px 10px fw.$dark05
-    
-    @include fw.media('>=creative')
-      max-width: calc(50% - 10px)
-    
-    @include fw.media('>=topnav')
+    box-shadow: 0 5px 10px $dark05
+
+    @include media('>=creative')
       max-width: calc(50% - 10px)
 
-    @include fw.media('>=widest')
+    @include media('>=topnav')
+      max-width: calc(50% - 10px)
+
+    @include media('>=widest')
       max-width: 270px
-      box-shadow: 0 10px 20px fw.$dark05
-  
+      box-shadow: 0 10px 20px $dark05
+
   &__footer
     margin-top: 70px
-    border-top: 1px solid fw.$dark10
+    border-top: 1px solid $dark10

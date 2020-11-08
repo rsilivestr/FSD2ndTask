@@ -73,8 +73,8 @@ module.exports = {
           to: 'assets/images'
         },
         {
-          from:'src/assets/fonts',
-          to:'assets/fonts'
+          from: 'src/assets/fonts',
+          to: 'assets/fonts'
         }
       ]
     }),

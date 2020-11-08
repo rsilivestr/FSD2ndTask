@@ -6,7 +6,7 @@ include ~CommonBlocks/form/__prompt/prompt
 
 mixin formLogin
   form.form.form--type_login&attributes(attributes)
-    h1.form__title Войти
+    h1.form-title Войти
     +textField('Email', 'email').mb10
     +textField('Пароль', 'password').mb19
     +button('войти', 'arrowed', 'l').form__btn--main

@@ -21,7 +21,6 @@
 
   &--is-open,
   &--force-open
-    z-index: 50
     box-shadow: 0 10px 20px $dark05
 
     .dropdown__display
@@ -41,7 +40,6 @@
     background: transparent
     color: $dark75
     border-color: $dark25
-    z-index: 20
 
     &--style_lowercase
       text-transform: lowercase
@@ -74,6 +72,9 @@
       display: block
       position: absolute
       background: #ffffff
+
+    &--visible
+      z-index: 10
 
   // end __contents
 
