@@ -1,4 +1,4 @@
-import FSD2ndTaskRoomSlider from './FSD2ndTaskRoomSlider';
+import FSD2ndTaskRoomSlider from 'Plugins/FSD2ndTaskRoomSlider';
 
 const sliders = Array.from(document.querySelectorAll('.room-card__photos'));
 

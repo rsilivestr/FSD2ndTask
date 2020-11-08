@@ -167,6 +167,7 @@ module.exports = {
     alias: {
       Assets: path.resolve(__dirname, 'src/assets/'),
       Pages: path.resolve(__dirname, 'src/pages/'),
+      Plugins: path.resolve(__dirname, 'src/plugins/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
       CommonBlocks: path.resolve(__dirname, 'src/components/common.blocks/'),
       UtilBlocks: path.resolve(__dirname, 'src/components/utility.blocks/'),
