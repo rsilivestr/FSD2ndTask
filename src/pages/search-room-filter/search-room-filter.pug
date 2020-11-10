@@ -23,7 +23,7 @@ include ~CommonBlocks/pagination/pagination
               +dropOption(item, '', '', '', 0, 10)
         //- range
         +inputBox('Диапазон цены').mb30
-          +rangeSlider
+          .input-box__range.js-rangeslider
           span.search-room-page__range-caption Стоимость за сутки пребывания в номере
         //- checkboxes
         +inputBox('опции').mb32
