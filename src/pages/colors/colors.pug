@@ -11,7 +11,7 @@ mixin colorBox(colorName, classSuffix, hexCode)
 +head('Colors & Type')
   body.page.page--layout_colors
     +headerUIKit
-    main.main-content.main-content--width_m-fixed.main-content--page_colors
+    main.main-content--page_colors
       .color-list
         each percent in ['100', '75', '50', '25', '5']
           +colorBox(`Dark Shade ${percent}%`, `dark${percent}`, '#1f2041')
@@ -24,12 +24,16 @@ mixin colorBox(colorName, classSuffix, hexCode)
               td.typo-list__example 
                 h1.font_montserrat H1
               td.typo-list__desc 
-                h1 This one is the sub-section or widget title
+                h1 This one is the sub-section or
+                 br
+                 | widget title
             tr
               td.typo-list__example
                 h2.font_montserrat H2
               td.typo-list__desc 
-                h2 Next one is the item title inside widgets
+                h2 Next one is the item title inside 
+                  br
+                  | widgets
             tr
               td.typo-list__example
                 h3.font_montserrat H3
@@ -39,4 +43,6 @@ mixin colorBox(colorName, classSuffix, hexCode)
               td.typo-list__example
                 p.font_montserrat Body
               td.typo-list__desc 
-                p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+                p This is the body text which is used for most
+                  br
+                  | of the design, like paragraphs, lists, etc.

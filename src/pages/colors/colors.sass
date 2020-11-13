@@ -1,7 +1,7 @@
 @use 'Styles/forward' as *
 
 .main-content--page_colors
-  padding-top: 37px
+  margin: 34px 0 0 150px
   display: flex
   color: $dark100
 
@@ -39,9 +39,9 @@
 
 .color-list__caption
   font-family: $titleFont
-  line-height: 1.5
 
 .color-list__color-title
+  margin-top: 7px
   font-weight: 700
 
 .color-list__color-hex
@@ -50,12 +50,21 @@
   font-weight: 300
 
 .typo-list
-  width: 475px
-  margin-left: auto
+  width: 415px
+  margin-left: 426px
+  white-space: pre-line
 
 .typo-list tr
-  height: 110px
   vertical-align: top
+
+  &:nth-child(1)
+    height: 109px
+
+  &:nth-child(2)
+    height: 94px
+
+  &:nth-child(3)
+    height: 57px
 
 .typo-list__example
   width: 67px
@@ -64,16 +73,20 @@
   color: $dark25
   font-family: $mainFont
 
-  h1,h2,h3
+  h1, h2, h3
     font-weight: 400
+    line-height: 1
 
 .typo-list__desc
-  font-family: $titleFont
+  h1, h2
+    font-family: $titleFont
 
-.typo-list__desc
-  h1,h2,h3
-    font-weight: 700
+  h3, p
+    font-family: $mainFont
 
-.typo-list__desc p
-  color: $dark75
-  font-family: $mainFont
+  h1, h2, h3
+    line-height: 1.2
+
+  p
+    color: $dark75
+    line-height: 2.6rem
