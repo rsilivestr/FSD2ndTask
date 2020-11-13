@@ -3,7 +3,8 @@
 .search-room-page
   &__wrapper
     display: flex
-    flex-flow: row nowrap
+    flex-flow: column nowrap
+    align-items: center
     margin-top: 100px
     width: 100%
     max-width: 1200px
@@ -11,75 +12,16 @@
     padding-right: 20px
 
     @include media('>=topnav')
+      flex-direction: row
+      align-items: flex-start
       margin-top: 30px
 
     @include media('>=widest')
       margin-left: auto
       margin-right: auto
 
-  &--noscroll
-    overflow: hidden
-
   &__filters
-    position: fixed
-    top: 70px
-    left: -287px
-    width: 287px
-    height: calc( 100vh - 70px )
-    padding: 40px 10px
-    background: #ffffff
-    border-right: 1px solid $dark50
-    overflow-y: auto
-    z-index: 40
-    transition: left .25s
-
-    @include media('>=footcols')
-      left: -307px
-      width: 307px
-      padding: 40px 20px
-
-    &--expanded
-      left: 0
-
-    @include media('>=topnav')
-      position: relative
-      top: 0
-      left: 0
-      border: 0
-      padding: 0
-      min-width: 266px
-      height: auto
-      overflow-y: auto
-
-  &__expand-filters
-    display: flex
-    align-items: center
-    justify-content: flex-end
-    position: fixed
-    top: calc( 50vh - 35px )
-    left: 0
-    height: 70px
-    width: 35px
-    padding: 10px
-    border: 1px solid $dark50
-    border-left: 0
-    border-radius: 0 50px 50px 0
-    background: #fff
-    cursor: pointer
-    transition: left .25s
-
-    i
-      transition: all .25s .25s
-
-    &--expanded
-      left: 307px
-
-      i
-        transform: rotate(180deg)
-        transition: all .25s .25s
-
-    @include media('>=topnav')
-      display: none
+    max-width: 266px
 
   &__range-caption
     display: block
