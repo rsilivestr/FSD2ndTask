@@ -11,7 +11,7 @@ include ~CommonBlocks/user-comment/user-comment
 +head('Form Elements')
   body.page.page--layout_form-elements
     +headerUIKit
-    main.main-content.main-content--width_m-fixed.main-content--page_form-elements
+    main.main-content--page_form-elements
 
       //- grid container ---------------------------//
 
@@ -72,7 +72,7 @@ include ~CommonBlocks/user-comment/user-comment
             +inputToggle('Получать спецпредложения')
 
           //- like button
-          +inputBox('like button', 'm').mb40
+          +inputBox('like button', 'm').mb38
             .mb16
             +likeBtn(2)
             +likeBtn(12, true)
@@ -116,7 +116,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 1 --------------------------------------//
 
-        .form-elements__grid-item(style="margin-bottom: 200px")
+        .form-elements__grid-item.area-b
           //- dropdown
           +inputBox('dropdown', 'm').mb21
             +inputDrop('multi', '')
@@ -134,7 +134,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 2 --------------------------------------//
 
-        .form-elements__grid-item
+        .form-elements__grid-item.area-b
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Сколько гостей', true)
@@ -143,7 +143,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 3 --------------------------------------//
         
-        .form-elements__grid-item
+        .form-elements__grid-item.area-b
           //- wide dropdown with button ПРИМЕНИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Сколько гостей', true)
@@ -153,18 +153,17 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 1 --------------------------------------//
 
-        .form-elements__grid-item
-          .mb10
+        .form-elements__grid-item.area-c
           //- expandable checkbox list
-          +inputBox('', 'm')
+          +inputBox('', 'm')(style="width: 256px")
             +checkboxGroup('Expandable checkbox list')
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
                 +checkbox(label)
 
-          .mb38
+          .mb39
 
           //- expanded expandable checkbox list
-          +inputBox('', 'm')
+          +inputBox('', 'm')(style="width: 256px")
             +checkboxGroup('Expandable checkbox list', true)
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
                 +checkbox(label)
@@ -173,9 +172,9 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 2 --------------------------------------//
 
-        .form-elements__grid-item
+        .form-elements__grid-item.area-c
 
-          .mb15
+          .mb5
 
           //- rich checkbox buttons
           +inputBox('rich checkbox buttons', 'm')
@@ -185,9 +184,9 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 3 --------------------------------------//
 
-        .form-elements__grid-item
+        .form-elements__grid-item.area-c
 
-          .mb15
+          .mb5
 
           //- bullet list
           h3 bullet list
@@ -198,7 +197,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- d 1 --------------------------------------//
 
-        .form-elements__grid-item
+        .form-elements__grid-item.area-d
           //- комфорт
           +imageTitle('emoji', 'insert_emoticon', 'комфорт', 'шумопоглощающие стены')
           //- удобство
@@ -208,7 +207,8 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- e 1 --------------------------------------//
 
-        .form-elements__grid-item.form-elements__grid-item--wide
+        .form-elements__grid-item.form-elements__grid-item--wide.area-e
+
           .mb20
 
           //- comment (wide)
