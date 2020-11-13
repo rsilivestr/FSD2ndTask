@@ -25,4 +25,6 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
           span.form-title__price-period в сутки
       .room-card__rating
         +starRating(roomRating)
-        span.room-card__review-counter= reviewCount
+        span.room-card__review-counter
+          strong #{reviewCount}
+          |  отзывов

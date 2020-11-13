@@ -14,6 +14,8 @@ include ~CommonBlocks/room-card/room-card
         +formBooking({ number: '888', lux: true })
         +formLogin
       .main-content__column
-        .mount-point-for-really-static-air-datepicker-on-cards-page
+        .js-datepicker-static
+          input(type="hidden")
+          input(type="hidden")
         +roomCard(['room1.jpg', 'room2.jpg', 'room3.jpg'], 5, 888, '9 990₽', 145, true).room-card--width_m
         +roomCard(['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'], 4, 840, '9 900₽', 65).room-card--width_m
