@@ -1,0 +1,5 @@
+mixin socialLinks
+  .social-links&attributes(attributes)
+    each iconName in ['twitter', 'facebook-squared', 'instagram']
+      a(href="#some-url" rel="noreferrer" target="_blank").social-links__link
+        i(class=`social-links__icon icon-${iconName}`)

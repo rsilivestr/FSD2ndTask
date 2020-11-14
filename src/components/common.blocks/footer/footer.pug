@@ -1,6 +1,7 @@
 include ../logo/logo
 include ../input-box/input-box
 include ../subscribe-form/subscribe-form
+include ../social-links/social-links
 
 mixin footer
   footer.main-footer&attributes(attributes)
@@ -32,7 +33,7 @@ mixin footer
 
     .main-footer__copy-section.full-width-container
       p.main-footer__copy-text Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
-      +footSocial
+      +socialLinks
 
 //--- sub mixins ---//
 
@@ -45,19 +46,12 @@ mixin footLink(title)
   li.main-footer__nav-list-item
     a(href="#some-url").main-footer__navlink= title
 
-mixin footSocial
-  .main-footer__social
-    each iconName in ['twitter', 'facebook-squared', 'instagram']
-      a(href="#some-url" rel="noreferrer" target="_blank").main-footer__social-link
-        i(class=`main-footer__social-icon icon-${iconName}`)
-
-
 //--- Footer Creative ---//
 mixin footerCreative
   footer.main-footer.main-footer--creative.full-width-container.full-width-container--creative&attributes(attributes)
     +logoToxin.main-footer__logo
-    p.main-footer__text.mb25 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-    +footSocial
+    p.main-footer__text.mb30 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    +socialLinks.main-footer__social
 
 
 //--- Russian Footer ---//
@@ -92,4 +86,4 @@ mixin footerRU
 
     .main-footer__copy-section.full-width-container
       p.main-footer__copy-text Copyright &copy; 2018 Toxin отель. Все права защищены.
-      +footSocial
+      +socialLinks
