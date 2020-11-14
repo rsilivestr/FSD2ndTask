@@ -36,12 +36,12 @@
 
     &_arrowed::after
       @extend .centered-flex
+      @extend .material-icons
       position: absolute
       height: 44px
       width: 44px
       top: 0
       right: 0
-      @extend .material-icons
       content: '\e5c8'
       color: #fff
 
@@ -54,17 +54,13 @@
         background: transparent
 
     &_bordered
-      height: 44px
-      padding: 0 9px
-
+      color: fw.$purple
       background: linear-gradient(#fff, #fff), fw.$mainGradient
       background-repeat: no-repeat
       background-origin: padding-box, border-box
-
       border: 10px solid transparent
       border-radius: 22px
-
-      color: fw.$purple
+      height: 44px
 
       &::before
         content: ""

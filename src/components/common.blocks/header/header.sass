@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 @use '../logo/logo'
 
 .uikit-header
@@ -15,7 +15,7 @@
   padding: 0 15px
   background: #ffffff
   font-size: 1.4rem
-  border-bottom: 1px solid fw.$dark25
+  border-bottom: 1px solid $dark25
   z-index: 50
 
   &__wrapper
@@ -28,7 +28,7 @@
     margin: 0 auto
 
   &--has-shadow
-    box-shadow: 0 10px 20px fw.$dark05
+    box-shadow: 0 10px 20px $dark05
 
   // fix for uikit headers-footers page
   &--uikit
@@ -42,13 +42,13 @@
     max-width: 40px
     overflow: hidden
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       margin-top: 4px
 
-    @include fw.media('>=desktop')
+    @include media('>=desktop')
       max-width: 100%
 
-  @include fw.media('>=topnav')
+  @include media('>=topnav')
     position: relative
     max-width: 100%
     border: none
@@ -56,6 +56,7 @@
   &__nav
     display: none
     margin-left: auto
+    margin-right: 30px
     text-align: center
     z-index: 51
 
@@ -71,12 +72,11 @@
 
       padding: 10px 0
       background: #fff
-      border-top: 1px solid fw.$dark10
-      box-shadow: 0 4px 4px fw.$dark10
+      border-top: 1px solid $dark10
+      box-shadow: 0 4px 4px $dark10
 
-    @include fw.media('>=tablet')
+    @include media('>=tablet')
       display: block
-      padding: 0 20px
 
   &__navlink
     display: inline-block
@@ -84,52 +84,55 @@
     padding: 10px
     text-transform: capitalize
     text-decoration: none
-    color: fw.$dark50
+    color: $dark50
 
     &--current
       font-weight: 700
-      color: fw.$dark75
+      color: $dark75
 
     &--has-subnav
       &::after
+        // @extend .centered-flex
         @extend .material-icons
         content: '\e5cf'
         vertical-align: middle
-        width: 21px
+        width: 18px
 
       // compensate after
-      @include fw.media('<tablet')
+      @include media('<tablet')
         margin-left: 10px
 
     &:hover
       @extend .text-gradient
 
-    @include fw.media('>=tablet')
+    @include media('>=tablet')
       padding: 0
-      margin: 0 13.5px
+
+      &:not(:first-child)
+        margin-left: 30px
 
   // end __navlink
 
   &__user-panel
     display: flex
 
-    @include fw.media('>=tablet')
+    @include media('>=tablet')
       padding-left: 15px
-      border-left: 1px solid fw.$dark25
+      border-left: 1px solid $dark25
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       padding-left: 30px
 
   &__user-menu
     display: inline-flex
     white-space: nowrap
     text-decoration: none
-    color: fw.$dark50
+    color: $dark50
 
     &:hover i
       @extend .text-gradient
 
-    @include fw.media('>=topnav')
+    @include media('>=topnav')
       width: auto
       padding: 8px 0
 
@@ -144,14 +147,21 @@
   &__btn
     max-height: 34px
 
+    &--login
+      @include media('>=topnav')
+        padding: 0 9.5px
+
     &--register
       margin-left: 20px
+
+      @include media('>=topnav')
+        padding: 0 19.5px
 
     &--iconic
       padding: 10px
       margin-left: 5px
       max-height: 100%
-      color: fw.$dark50
+      color: $dark50
       background: transparent
 
       &:hover i
@@ -159,42 +169,28 @@
 
     &--menu
       margin-left: auto
-      color: fw.$dark50
+      color: $dark50
       background: transparent
 
       // just ':hover' works in firefox but chromium needs exact text element
       &:hover i
         @extend .text-gradient
 
-      @include fw.media('>=tablet')
+      @include media('>=tablet')
         visibility: collapse
-
-// button margins overwrite
-.main-header
-  @include fw.media('>=topnav')
-    .main-header__nav
-      padding: 0 16px
-
-    .main-header__btn--login
-      padding: 0 9px
-
-    .main-header__btn--register
-      padding: 0 20px
-
-    &__navlink
-      margin: 0 15px
 
   // for russian header
 .main-header--lang_ru
-  @include fw.media('>=topnav')
-    .main-header__nav
-      padding: 0 10px
+  @include media('>=topnav')
+    .main-header
+      &__btn--login
+        padding: 0 10px
 
-    .main-header__btn--login
-      padding: 0 10px
+      &__btn--register
+        padding: 0 20px
 
-    // .main-header__btn--register
-    //   padding: 0 20px
+      &__navlink
+        margin: 0
 
-    .main-header__navlink
-      margin: 0 10px
+        &:not(:first-of-type)
+          margin-left: 20px
