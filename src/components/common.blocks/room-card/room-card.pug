@@ -7,6 +7,10 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
   .room-card&attributes(attributes)
     .room-card__photos
       .room-card__photos-ratio
+      button.room-card__control.room-card__control--direction_left
+        i.material-icons.room-card__icon-left arrow_back_ios
+      button.room-card__control.room-card__control--direction_right
+        i.material-icons.room-card__icon-right arrow_forward_ios
       - len = roomPhotos.length;
       each pic in roomPhotos
         img(src='../assets/images/' + pic, alt='Фото комнаты').room-card__photo
@@ -16,8 +20,9 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
           +dot({current})
 
     .room-card__info
+      //- a(href="#some-url").room-card__link
       h2.room-card__title.form-title
-        span.form-title__room
+        a(href="#some-url").form-title__room
           span.form-title__number №
           = roomNumber
           if (lux)

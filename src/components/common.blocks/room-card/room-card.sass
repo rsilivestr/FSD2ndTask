@@ -7,21 +7,47 @@
   min-height: 257.5px
   border-radius: 4px
   overflow: auto
-  box-shadow: 0 10px 20px CSEL$dark05
+  box-shadow: 0 10px 20px $dark05
 
   &__photos
     position: relative
     display: flex
-    // min-height: 151px
     border-radius: 4px 4px 0 0
     overflow: hidden
+
+    &:hover .room-card__control
+      display: block
+
+  &__control
+    border: none
+    color: #ffffff
+    cursor: pointer
+    display: none
+    height: 100%
+    position: absolute
+    text-align: center
+    width: 42px
+    z-index: 9
+
+    &--direction_left
+      background: linear-gradient(to right, $dark50, transparent)
+      left: 0
+
+    &--direction_right
+      background: linear-gradient(to left, $dark50, transparent)
+      right: 0
+
+  &__icon-left,
+  &__icon-right
+    font-size: 1.6rem
+
+  &__icon-left
+    margin-left: 1rem
 
   // image aspect ratio
   &__photos-ratio
     position: relative
     width: 100%
-    // 151px
-    // padding-bottom: 55.93%
     // 151.38px
     padding-bottom: 56.07%
 
@@ -56,7 +82,7 @@
     padding: 0 20px
 
   &__title
-    border-bottom: 1px solid CSEL$dark25
+    border-bottom: 1px solid $dark25
     padding-bottom: 10px
     margin-bottom: 8px
     font-family: $titleFont

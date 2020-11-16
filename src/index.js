@@ -9,3 +9,4 @@ import 'Pages/form-elements/form-elements';
 import 'Pages/search-room-filter/search-room-filter';
 import 'Pages/room-details/room-details';
 import 'Pages/cards/cards';
+import 'Pages/register/register';
