@@ -9,6 +9,15 @@ mixin formLogin
     h1.form-title Войти
     +textField('Email', 'email').mb10
     +textField('Пароль', 'password').mb19
-    +button('войти', 'arrowed', 'l').form__btn--main
+    +button({ 
+      title: 'войти', 
+      style: 'arrowed', 
+      size: 'l'
+    }).form__btn--main
     +formPrompt('Нет аккаунта на Toxin?')
-      +aButton('создать', 'bordered').form__btn.form__btn--prompt
+      +aButton({ 
+        title: 'создать', 
+        style: 'bordered', 
+        size: 's', 
+        url: './register.html' 
+      }).form__btn.form__btn--prompt

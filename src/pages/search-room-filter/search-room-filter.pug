@@ -46,7 +46,11 @@ include ~CommonBlocks/pagination/pagination
           each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь','Телевизор','Шампунь']
             +checkbox(label)
         //- button to apply filters
-        +button('применить фильтры', 'gradient', 'm').search-room-page__apply-btn
+        +button({ 
+          title: 'применить фильтры',
+          style: 'gradient',
+          size: 'm'
+        }).search-room-page__apply-btn
 
       main.search-room-page__content
         h1.search-room-page__title Номера, которые мы для вас подобрали

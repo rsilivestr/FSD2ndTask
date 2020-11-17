@@ -20,9 +20,8 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
           +dot({current})
 
     .room-card__info
-      //- a(href="#some-url").room-card__link
       h2.room-card__title.form-title
-        a(href="#some-url").form-title__room
+        a(href="./room-details.html").form-title__room
           span.form-title__number №
           = roomNumber
           if (lux)

@@ -14,4 +14,9 @@ mixin formSearchRoom
         each title in ['взрослые', 'дети', 'младенцы']
           +dropOption(title, '', '', '', 0, 10)
     
-    +button('подобрать номер', 'arrowed', 'l', false).form__btn--main
+    +aButton({ 
+      title: 'подобрать номер', 
+      style: 'arrowed', 
+      size: 'l',
+      url: './search-room-filter.html'
+    }).form__btn--main

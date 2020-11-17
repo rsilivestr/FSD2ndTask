@@ -94,19 +94,46 @@ include ~CommonBlocks/user-comment/user-comment
           //- buttons
           +inputBox('buttons').mb40
             .mb15
-            +button('click me','gradient','s',false)
-            +button('click me','gradient','s',true).ml20
+            +button()
+            +button({
+              title: 'click me',
+              style: 'gradient',
+              size: 's',
+              disabled: true
+            }).ml20
             
             .mb30
-            +button('click me','bordered','s',false)
-            +button('click me','bordered','s',true).ml20
+            +button({
+              title: 'click me',
+              style: 'bordered',
+              size: 's'
+            })
+            +button({
+              title: 'click me',
+              style: 'bordered',
+              size: 's',
+              disabled: true
+            }).ml20
             
             .mb31
-            +button('click me','text','auto',false)
-            +button('click me','text','auto',true).ml20
+            +button({
+              title: 'click me',
+              style: 'text',
+              size: 'auto',
+            })
+            +button({
+              title: 'click me',
+              style: 'text',
+              size: 'auto',
+              disabled: true,
+            }).ml20
 
             .mb30
-            +button('перейти к оплате','arrowed','l',false)
+            +button({
+              title: 'перейти к оплате',
+              style: 'arrowed',
+              size: 'l',
+            })
 
           //- pagination
           +inputBox('pagination', 's')

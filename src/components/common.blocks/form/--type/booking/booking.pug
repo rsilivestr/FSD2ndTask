@@ -38,4 +38,8 @@ mixin formBooking(room)
       span.bill-info__total-title Итого
       span.bill-info__total-sum 38&nbsp;081₽
     
-    +button('забронировать','arrowed','l',false).form__btn--main
+    +button({
+      title: 'забронировать',
+      style: 'arrowed',
+      size: 'l'
+    }).form__btn--main

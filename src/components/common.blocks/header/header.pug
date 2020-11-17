@@ -40,14 +40,10 @@ mixin navBtn
   button.button.button--style_text.button--size_auto.main-header__btn.main-header__btn--menu.main-header__btn--iconic
     i.material-icons menu
 
-mixin headerNav
-  nav.main-header__nav
-    block
-
 mixin headerButtons(login='login', register='register')
   .main-header__user-buttons
-    +aButton(login, 'bordered', 'auto')(data-name=login).main-header__btn.main-header__btn--login
-    +aButton(register, 'gradient', 'auto')(data-name=register).main-header__btn.main-header__btn--register
+    +aButton({ title: login, style: 'bordered', size: 'auto', url: './login.html'  })(data-name=login).main-header__btn.main-header__btn--login
+    +aButton({ title: register, style: 'gradient', size: 'auto', url: './register.html' })(data-name=register).main-header__btn.main-header__btn--register
 
 mixin headerUser()
   .main-header__user-panel
@@ -58,7 +54,7 @@ mixin mainHeaderPages(shadow=false)
   +mainHeader(class = shadow ? 'main-header--has-shadow' : '').main-header--lang_ru&attributes(attributes)
     +logoToxin.main-header__logo
     +navBtn
-    +headerNav
+    nav.main-header__nav
       +navlink('о нас')
       +navlink('услуги').main-header__navlink--has-subnav
       +navlink('вакансии')

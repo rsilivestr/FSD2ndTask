@@ -23,7 +23,16 @@ mixin formRegistration
       +textField('Пароль', 'password').mb10
       +inputToggle('Получать спецпредложения')
     
-    +button('перейти к оплате','arrowed','l',false).form__btn--main
+    +button({ 
+      title: 'перейти к оплате', 
+      style: 'arrowed', 
+      size: 'l'
+    }).form__btn--main
 
     +formPrompt('Уже есть аккаунт на Toxin?')
-      +aButton('войти', 'bordered', 's').form__btn.form__btn--prompt
+      +aButton({ 
+        title: 'войти', 
+        style: 'bordered', 
+        size: 's', 
+        url: './login.html' 
+      }).form__btn.form__btn--prompt
