@@ -1,5 +1,5 @@
 // common
-@use 'forward' as fw
+@use 'forward' as *
 // pages
 @use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
@@ -26,7 +26,8 @@
 // header overwrites the button block
 @use 'CommonBlocks/header/header'
 @use 'CommonBlocks/footer/footer'
-
+// Mixes
+@use 'mix'
 @use 'mb'
 
 html
@@ -75,16 +76,16 @@ body
   margin-left: auto
   margin-right: auto
 
-  @include fw.media('>=dyn-padding')
+  @include media('>=dyn-padding')
     padding-left: calc(50vw - 190px)
     padding-right: calc(50vw - 190px)
 
-  @include fw.media('>=const-padding')
+  @include media('>=const-padding')
     padding-left: 20px
     padding-right: 20px
 
 .main-content--width_m
-  @include fw.media('>=widest')
+  @include media('>=widest')
     max-width: 1200px
 
 .main-content--width_m-fixed
@@ -95,40 +96,40 @@ body
   padding-left: 5px
   padding-right: 5px
 
-  @include fw.media('>=dyn-padding')
+  @include media('>=dyn-padding')
     padding-left: calc(50vw - 190px)
     padding-right: calc(50vw - 190px)
 
-  @include fw.media('>=const-padding')
+  @include media('>=const-padding')
     padding-left: 20px
     padding-right: 20px
 
-  @include fw.media('>=widest')
+  @include media('>=widest')
     padding-left: calc( 50vw - 585px )
     padding-right: calc( 50vw - 585px )
 
   &--shrink_medium
-    @include fw.media('>=creative','<desktop')
+    @include media('>=creative','<desktop')
       padding-left: calc( 50vw - 280px )
       padding-right: calc( 50vw - 280px )
 
   &--creative
-    @include fw.media('>=creative')
+    @include media('>=creative')
       padding-left: calc( 50vw - 280px )
       padding-right: calc( 50vw - 280px )
 
 .hidden
-  @include fw.media('>=widest')
+  @include media('>=widest')
     padding-left: calc( 50vw - 585px )
     padding-right: calc( 50vw - 585px )
 
   &--shrink_medium
-    @include fw.media('>=creative','<desktop')
+    @include media('>=creative','<desktop')
       padding-left: calc( 50vw - 280px )
       padding-right: calc( 50vw - 280px )
 
   &--creative
-    @include fw.media('>=creative')
+    @include media('>=creative')
       padding-left: calc( 50vw - 280px )
       padding-right: calc( 50vw - 280px )
 

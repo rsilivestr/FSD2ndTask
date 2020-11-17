@@ -3,87 +3,103 @@ include ../input-box/input-box
 include ../subscribe-form/subscribe-form
 include ../social-links/social-links
 
-mixin footer
-  footer.main-footer&attributes(attributes)
-    .full-width-container.full-width-container--shrink_medium.main-footer__nav-section
-      .main-footer__col
-        +logoToxin.main-footer__logo
-        p.main-footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+-
+  var preset = {
+    text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+    nav: [
+      {
+        title: 'Навигация',
+        links: [
+          {
+            title: 'О нас',
+            url: '#some-url',
+          },
+          {
+            title: 'Новости',
+            url: '#some-url',
+          },
+          {
+            title: 'Служба поддержки',
+            url: '#some-url'
+          },
+          {
+            title: 'Услуги',
+            url: '#some-url',
+          },
+        ]
+      },
+      {
+        title: 'О нас',
+        links: [
+          {
+            title: 'О сервисе',
+            url: '#some-url',
+          },
+          {
+            title: 'Наша команда',
+            url: '#some-url',
+          },
+          {
+            title: 'Вакансии',
+            url: '#some-url',
+          },
+          {
+            title: 'Инвесторы',
+            url: '#some-url',
+          },
+        ]
+      },
+      {
+        title: 'Служба поддержки',
+        links: [
+          {
+            title: 'Соглашения',
+            url: '#some-url',
+          },
+          {
+            title: 'Сообщества',
+            url: '#some-url',
+          },
+          {
+            title: 'Связь с нами',
+            url: '#some-url',
+          },
+        ]
+      },
+    ],
+    subscribe: {
+      title: 'Подписка',
+      text: 'Получайте специальные предложения и новости сервиса',
+    },
+    copyText: 'Copyright © 2018 Toxin отель. Все права защищены.',
+  }
 
-      +footCol('navigation')
-        ul.main-footer__nav-list
-          each title in ['About Us', 'News', 'Support', 'Products']
-            +footLink(title)
+mixin footer(content = {})
+  -
+    var text = content.text || preset.text
+    var nav = content.nav || preset.nav
+    var subscribe = content.subscribe || preset.subscribe
+    var subscribeTitle = subscribe.title || preset.subscribe.title
+    var subscribeText = subscribe.text || preset.subscribe.text
+    var copyText = content.copyText || preset.copyText
 
-      +footCol('about us')
-        ul.main-footer__nav-list
-          each title in ['Who we are', 'Our team', 'Careers', 'Investors']
-            +footLink(title)
-
-      +footCol('support')
-        ul.main-footer__nav-list
-          each title in ['Documentation', 'Community', 'Get in touch']
-            +footLink(title)
-      
-      +footCol('subscribe to our newsletter')
-        p.main-footer__text Receive our latest news and promotions in your inbox!
-        +subscribeForm.main-footer__subscribe-form
-
-    //- end __nav-section
-
-    .main-footer__copy-section.full-width-container
-      p.main-footer__copy-text Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
-      +socialLinks
-
-//--- sub mixins ---//
-
-mixin footCol(title)
-  .main-footer__col
-    h2.main-footer__col-title&attributes(attributes)= title
-    block
-
-mixin footLink(title)
-  li.main-footer__nav-list-item
-    a(href="#some-url").main-footer__navlink= title
-
-//--- Footer Creative ---//
-mixin footerCreative
-  footer.main-footer.main-footer--creative.full-width-container.full-width-container--creative&attributes(attributes)
-    +logoToxin.main-footer__logo
-    p.main-footer__text.mb30 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-    +socialLinks.main-footer__social
-
-
-//--- Russian Footer ---//
-
-mixin footerRU
-  footer.main-footer.main-footer--lang_ru&attributes(attributes)
-    .full-width-container.full-width-container--shrink_medium.main-footer__nav-section
-      .main-footer__col
-        +logoToxin.main-footer__logo
-        p.main-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-
-      +footCol('навигация').main-footer__col-title--expandable
-        ul.main-footer__nav-list
-          each title in ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
-            +footLink(title)
-
-      +footCol('о нас').main-footer__col-title--expandable
-        ul.main-footer__nav-list
-          each title in ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
-            +footLink(title)
-
-      +footCol('служба поддержки').main-footer__col-title--expandable
-        ul.main-footer__nav-list
-          each title in ['Соглашения', 'Сообщества', 'Связь с нами']
-            +footLink(title)
-      
-      +footCol('подписка')
-        p.main-footer__text Получайте специальные предложения и новости сервиса
-        +subscribeForm('Email').main-footer__subscribe-form
-
-    //- end __nav-section
-
-    .main-footer__copy-section.full-width-container
-      p.main-footer__copy-text Copyright &copy; 2018 Toxin отель. Все права защищены.
-      +socialLinks
+  footer.footer&attributes(attributes)
+    .footer__nav-section.container.show-1080-up
+      .footer__col
+        +logoToxin.footer__logo
+        p.footer__text= text
+      each subnav in nav
+        .footer__col
+          h2.footer__col-title= subnav.title
+          ul.footer__nav-list
+            each link in subnav.links
+              li.footer__nav-list-item
+                a(href=link.url).footer__navlink= link.title
+      .footer__col
+        h2.footer__col-title= subscribeTitle
+        p.footer__text= subscribeText
+        +subscribeForm.footer__subscribe-form
+    .footer__copy-section.container
+      +logoToxin.hide-1080-up
+      p.footer__copy-text= copyText
+      +socialLinks.footer__social

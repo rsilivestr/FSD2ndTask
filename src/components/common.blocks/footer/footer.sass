@@ -1,8 +1,9 @@
 @use 'Styles/forward' as *
 
-.main-footer
+.footer
   background: #ffffff
   color: $dark50
+  position: relative
 
   &__nav-section
     display: flex
@@ -14,7 +15,6 @@
       padding-top: 100px
       padding-bottom: 83px
       justify-content: space-between
-      border-bottom: 1px solid $dark10
 
   &__col
     display: none
@@ -71,22 +71,26 @@
   // end footer__nav-section subelements
 
   &__copy-section
-    display: flex
-    justify-content: center
     align-items: center
-    padding: 28px 20px 110px
+    display: flex
+    flex-direction: column
+    gap: 20px
+    justify-content: center
     line-height: 2.6rem
+    padding-top: 110px
+    padding-bottom: 110px
 
     @include media('>=1080px')
+      flex-direction: row
       justify-content: space-between
-      padding: 0
+      padding-top: 0
+      padding-bottom: 0
       min-height: 70px
 
   &__copy-text
-    display: none
-
-    @include media('>=1080px')
-      display: block
+    // display: none
+    // @include media('>=1080px')
+    // display: block
 
   // Creative Footer
   &--creative
@@ -96,3 +100,12 @@
     padding-top: 100px
     padding-bottom: 110px
     text-align: center
+
+  &::after
+    border-bottom: 1px solid $dark10
+    bottom: 71px
+    position: absolute
+    width: 100%
+
+    @include media('>=1080px')
+      content: ''
