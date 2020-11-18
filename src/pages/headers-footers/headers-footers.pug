@@ -5,15 +5,15 @@ include ~CommonBlocks/footer/footer
 +head('Headers & Footers')
   body.page--layout_headers-footers
 
-    +headerUIKit
+    header.uikit-header
+      +logoUIKit
 
     .mb39
 
-    +header.main-header--uikit.mb40
+    +header.mb40
 
-    +header('Cosmin Negoita').main-header--uikit.mb40
-
+    +header({ username: 'Юлий Цезарь' }).mb40
+    
     +footer().mb40
-
-
+    
     //- +footerCreative.mb40

@@ -5,8 +5,8 @@
   &__logo
     margin: 30px
 
-.main-header
-  position: fixed
+.header
+  position: relative
   display: flex
   flex-flow: row nowrap
   align-items: center
@@ -15,8 +15,7 @@
   padding: 0 15px
   background: #ffffff
   font-size: 1.4rem
-  border-bottom: 1px solid $dark25
-  z-index: 50
+  z-index: 15
 
   &__wrapper
     display: flex
@@ -24,17 +23,13 @@
     align-items: center
     width: 100%
     height: 70px
-    max-width: 1160px
-    margin: 0 auto
 
   &--has-shadow
     box-shadow: 0 10px 20px $dark05
 
   // fix for uikit headers-footers page
-  &--uikit
-    position: relative
-    + .main-header--uikit
-      z-index: 49
+  + .header
+    z-index: 14
   // end fix
 
   &__logo
@@ -42,8 +37,8 @@
     max-width: 40px
     overflow: hidden
 
-    @include media('>=topnav')
-      margin-top: 4px
+    // @include media('>=topnav')
+    //   margin-top: 4px
 
     @include media('>=desktop')
       max-width: 100%
@@ -98,9 +93,9 @@
         vertical-align: middle
         width: 18px
 
-      // compensate after
-      @include media('<tablet')
-        margin-left: 10px
+      // // compensate after
+      // @include media('<tablet')
+      //   margin-left: 10px
 
     &:hover
       @extend .text-gradient
@@ -133,8 +128,8 @@
       @extend .text-gradient
 
     @include media('>=topnav')
+      line-height: 30px
       width: auto
-      padding: 8px 0
 
       &::before
         display: none
@@ -147,50 +142,35 @@
   &__btn
     max-height: 34px
 
-    &--login
-      @include media('>=topnav')
-        padding: 0 9.5px
+    &--type
 
-    &--register
-      margin-left: 20px
+      &_login
+        @include media('>=topnav')
+          padding: 0 10px
 
-      @include media('>=topnav')
-        padding: 0 19.5px
+      &_register
+        margin-left: 20px
 
-    &--iconic
-      padding: 10px
-      margin-left: 5px
-      max-height: 100%
-      color: $dark50
-      background: transparent
+        @include media('>=topnav')
+          padding: 0 20px
 
-      &:hover i
-        @extend .text-gradient
+      &_iconic
+        padding: 10px
+        margin-left: 5px
+        max-height: 100%
+        color: $dark50
+        background: transparent
 
-    &--menu
-      margin-left: auto
-      color: $dark50
-      background: transparent
+        &:hover i
+          @extend .text-gradient
 
-      // just ':hover' works in firefox but chromium needs exact text element
-      &:hover i
-        @extend .text-gradient
+      &_menu
+        margin-left: auto
+        color: $dark50
+        background: transparent
 
-      @include media('>=tablet')
-        visibility: collapse
+        &:hover i
+          @extend .text-gradient
 
-  // for russian header
-.main-header--lang_ru
-  @include media('>=topnav')
-    .main-header
-      &__btn--login
-        padding: 0 10px
-
-      &__btn--register
-        padding: 0 20px
-
-      &__navlink
-        margin: 0
-
-        &:not(:first-of-type)
-          margin-left: 20px
+        @include media('>=tablet')
+          visibility: collapse

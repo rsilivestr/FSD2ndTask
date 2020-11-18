@@ -4,7 +4,7 @@ include ../subscribe-form/subscribe-form
 include ../social-links/social-links
 
 -
-  var preset = {
+  var footerDefaults = {
     text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
     nav: [
       {
@@ -76,12 +76,12 @@ include ../social-links/social-links
 
 mixin footer(content = {})
   -
-    var text = content.text || preset.text
-    var nav = content.nav || preset.nav
-    var subscribe = content.subscribe || preset.subscribe
-    var subscribeTitle = subscribe.title || preset.subscribe.title
-    var subscribeText = subscribe.text || preset.subscribe.text
-    var copyText = content.copyText || preset.copyText
+    var text = content.text || footerDefaults.text
+    var nav = content.nav || footerDefaults.nav
+    var subscribe = content.subscribe || footerDefaults.subscribe
+    var subscribeTitle = subscribe.title || footerDefaults.subscribe.title
+    var subscribeText = subscribe.text || footerDefaults.subscribe.text
+    var copyText = content.copyText || footerDefaults.copyText
 
   footer.footer&attributes(attributes)
     .footer__nav-section.container.show-1080-up

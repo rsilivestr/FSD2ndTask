@@ -1,63 +1,61 @@
-include ../logo/logo
 include ../button/button
+include ../logo/logo
 
-mixin headerUIKit
-  header.uikit-header.container.container--width_l
-    +logoUIKit
+-
+  var headerDefaults = {
+    nav: [
+      { title: 'О нас', url: '#some-url', current: true },
+      { title: 'Услуги', url: '#some-url', expandable: true },
+      { title: 'Вакансии', url: '#some-url' },
+      { title: 'Новости', url: '#some-url' },
+      { title: 'Соглашения', url: '#some-url', expandable: true },
+    ],
+    username: '',
+    buttons: [
+      { 
+        type: 'login',
+        title: 'Войти',
+        style: 'bordered',
+        size: 'auto',
+        url: './login.html'
+      },
+      {
+        type: 'register',
+        title: 'Зарегистрироваться',
+        style: 'gradient',
+        size: 'auto',
+        url: './register.html'
+      }
+    ]
+  }
 
-mixin navlink(title)
-  a(href="#some-url").main-header__navlink&attributes(attributes)= title
+mixin header(content = {})
+  -
+    var nav = content.nav || headerDefaults.nav;
+    var username = content.username || headerDefaults.username;
+    var buttons = content.buttons || headerDefaults.buttons;
 
-mixin header(username)
-  header.main-header&attributes(attributes)
-    .main-header__wrapper
-      +logoToxin.main-header__logo
-
-      button.button.button--style_text.button--size_auto.main-header__btn--menu.main-header__btn--iconic
+  header.header&attributes(attributes)
+    .header__wrapper.container
+      +logoToxin.header__logo
+      button.button.button--style_text.button--size_auto.header__btn--type_menu.header__btn--type_iconic
         i.material-icons menu
-
-      nav.main-header__nav
-        +navlink('home').main-header__navlink--current
-        +navlink('about us')
-        +navlink('services').main-header__navlink--has-subnav
-        +navlink('careers')
-        +navlink('news')
-        +navlink('documentation')
-
-      if (!username)
-        +headerButtons('login', 'register')
+      nav.header__nav
+        each link in nav
+          a(
+            href = link.url
+            class = link.current ? 'header__navlink--current' : ''
+            class = link.expandable ? 'header__navlink--has-subnav' : ''
+          ).header__navlink= link.title
+      if !username
+        .header__user-buttons
+          each button in buttons
+            +aButton({ 
+              title: button.title, 
+              style: button.style,
+              size: button.size,
+              url: button.url,
+            })(class = `header__btn header__btn--type_${button.type}` data-name = button.title)
       else
-        .main-header__user-panel
-          a(href="#some-url-or-menu" data-name= username).main-header__user-menu.main-header__btn--account= username
-
-//- submixins - for customization
-mixin mainHeader
-  header.main-header&attributes(attributes)
-    .main-header__wrapper
-      block
-
-mixin navBtn
-  button.button.button--style_text.button--size_auto.main-header__btn.main-header__btn--menu.main-header__btn--iconic
-    i.material-icons menu
-
-mixin headerButtons(login='login', register='register')
-  .main-header__user-buttons
-    +aButton({ title: login, style: 'bordered', size: 'auto', url: './login.html'  })(data-name=login).main-header__btn.main-header__btn--login
-    +aButton({ title: register, style: 'gradient', size: 'auto', url: './register.html' })(data-name=register).main-header__btn.main-header__btn--register
-
-mixin headerUser()
-  .main-header__user-panel
-    a(href="#some-url-or-menu").main-header__user-menu= username
-
-//- main header for website pages
-mixin mainHeaderPages(shadow=false)
-  +mainHeader(class = shadow ? 'main-header--has-shadow' : '').main-header--lang_ru&attributes(attributes)
-    +logoToxin.main-header__logo
-    +navBtn
-    nav.main-header__nav
-      +navlink('о нас')
-      +navlink('услуги').main-header__navlink--has-subnav
-      +navlink('вакансии')
-      +navlink('новости')
-      +navlink('соглашения').main-header__navlink--has-subnav
-    +headerButtons('войти', 'зарегистрироваться')
+        .header__user-panel
+          a(href = "#some-url" data-name = username).header__user-menu.header__btn--type_account= username
