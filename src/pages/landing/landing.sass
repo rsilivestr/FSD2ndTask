@@ -1,33 +1,33 @@
 @use 'Styles/forward' as fw
 
-.main-content--page_landing
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  min-height: 830px
-  background: url('../assets/images/bg1.jpg') center no-repeat
-  background-size: cover
+.page--layout_landing
+  .main-content
+    background: url('../assets/images/bg1.jpg') center no-repeat
+    background-size: cover
+    height: 830px
+    width: 100%
 
-  @include fw.media('>=topnav')
-    margin-top: 0
+    &__caption
+      color: fw.$dark75
+      line-height: 2.4rem
 
-.form--page_landing
-  margin-top: 70px
-  align-self: center
+      align-self: center
+      text-align: center
 
-  @include fw.media('>=tablet')
-    align-self: flex-start
-    // Perfect pixel /s
-    // margin-left: -1px
+      @include fw.media('>=tablet')
+        align-self: flex-end
+        text-align: right
 
-.main-content__caption
-  margin-bottom: 20px
-  color: fw.$dark75
-  line-height: 2.4rem
+    .container
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      height: 100%
+      padding-bottom: 20px
+      padding-top: 70px
 
-  align-self: center
-  text-align: center
+  .form
+    align-self: center
 
-  @include fw.media('>=tablet')
-    align-self: flex-end
-    text-align: right
+    @include fw.media('>=tablet')
+      align-self: flex-start

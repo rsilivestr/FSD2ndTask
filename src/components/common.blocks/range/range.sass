@@ -27,19 +27,6 @@
   background: transparent
   box-shadow: none
 
-.input-box__range
-  // For label positioning
-  position: initial
-  margin: 23px 0 0
-  // Styling by tag selector for 'plugin'
-  label
-    position: absolute
-    top: 0
-    right: 0
-    font-size: 1.2rem
-    text-transform: uppercase
-    color: $dark50
-
 div.noUi-horizontal .noUi-handle
   width: 16px
   height: 16px
@@ -54,3 +41,22 @@ div.noUi-handle
   &::after,
   &::before
     display: none
+
+.range
+  // For label positioning
+  position: initial
+  margin: 23px 0 0
+
+  &__label
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 1.2rem
+    text-transform: uppercase
+    color: $dark50
+
+  &__caption
+    display: block
+    font-size: 1.2rem
+    color: $dark50
+    margin-top: 2px

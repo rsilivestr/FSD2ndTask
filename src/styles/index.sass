@@ -1,34 +1,34 @@
 // common
 @use 'forward' as *
 // pages
-@use 'Pages/colors/colors'
 @use 'Pages/cards/cards'
+@use 'Pages/colors/colors'
 @use 'Pages/form-elements/form-elements'
 @use 'Pages/headers-footers/headers-footers'
 @use 'Pages/landing/landing'
-@use 'Pages/search-room-filter/search-room-filter'
-@use 'Pages/room-details/room-details'
 @use 'Pages/login/login'
 @use 'Pages/register/register'
+@use 'Pages/room-details/room-details'
+@use 'Pages/search-room-filter/search-room-filter'
 // components
-@use 'CommonBlocks/social-links/social-links'
-@use 'CommonBlocks/logo/logo'
-@use 'CommonBlocks/input-box/input-box'
 @use 'CommonBlocks/button/button'
-@use 'CommonBlocks/pagination/pagination'
-@use 'CommonBlocks/dropdown/dropdown'
 @use 'CommonBlocks/date-dropdown/date-dropdown'
-@use 'CommonBlocks/image-title/image-title'
-@use 'CommonBlocks/user-comment/user-comment'
-@use 'CommonBlocks/form/form'
-@use 'CommonBlocks/room-card/room-card'
-@use 'CommonBlocks/subscribe-form/subscribe-form'
-// header overwrites the button block
-@use 'CommonBlocks/header/header'
+@use 'CommonBlocks/dropdown/dropdown'
 @use 'CommonBlocks/footer/footer'
+@use 'CommonBlocks/form/form'
+@use 'CommonBlocks/header/header'
+@use 'CommonBlocks/image-title/image-title'
+@use 'CommonBlocks/input-box/input-box'
+@use 'CommonBlocks/logo/logo'
+@use 'CommonBlocks/pagination/pagination'
+@use 'CommonBlocks/range/range'
+@use 'CommonBlocks/room-card/room-card'
+@use 'CommonBlocks/social-links/social-links'
+@use 'CommonBlocks/subscribe-form/subscribe-form'
+@use 'CommonBlocks/user-comment/user-comment'
 // Mixes
-@use 'mix'
 @use 'mb'
+@use 'mix'
 
 html
   box-sizing: border-box
@@ -68,70 +68,9 @@ body
 .main-content
   // push footer to bottom
   flex: auto
-
-  position: relative
-  width: 100%
-  padding-left: 5px
-  padding-right: 5px
   margin-left: auto
   margin-right: auto
-
-  @include media('>=dyn-padding')
-    padding-left: calc(50vw - 190px)
-    padding-right: calc(50vw - 190px)
-
-  @include media('>=const-padding')
-    padding-left: 20px
-    padding-right: 20px
-
-.main-content--width_m
-  @include media('>=widest')
-    max-width: 1200px
-
-.main-content--width_m-fixed
-  width: 1200px
-
-.full-width-container
-  max-width: 100%
-  padding-left: 5px
-  padding-right: 5px
-
-  @include media('>=dyn-padding')
-    padding-left: calc(50vw - 190px)
-    padding-right: calc(50vw - 190px)
-
-  @include media('>=const-padding')
-    padding-left: 20px
-    padding-right: 20px
-
-  @include media('>=widest')
-    padding-left: calc( 50vw - 585px )
-    padding-right: calc( 50vw - 585px )
-
-  &--shrink_medium
-    @include media('>=creative','<desktop')
-      padding-left: calc( 50vw - 280px )
-      padding-right: calc( 50vw - 280px )
-
-  &--creative
-    @include media('>=creative')
-      padding-left: calc( 50vw - 280px )
-      padding-right: calc( 50vw - 280px )
-
-.hidden
-  @include media('>=widest')
-    padding-left: calc( 50vw - 585px )
-    padding-right: calc( 50vw - 585px )
-
-  &--shrink_medium
-    @include media('>=creative','<desktop')
-      padding-left: calc( 50vw - 280px )
-      padding-right: calc( 50vw - 280px )
-
-  &--creative
-    @include media('>=creative')
-      padding-left: calc( 50vw - 280px )
-      padding-right: calc( 50vw - 280px )
+  position: relative
 
 .hidden
   display: none

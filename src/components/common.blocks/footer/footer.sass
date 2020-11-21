@@ -5,6 +5,9 @@
   color: $dark50
   position: relative
 
+  &--has-border
+    border-top: 1px solid $dark10
+
   &__nav-section
     display: flex
     flex-flow: row nowrap
@@ -87,20 +90,7 @@
       padding-bottom: 0
       min-height: 70px
 
-  &__copy-text
-    // display: none
-    // @include media('>=1080px')
-    // display: block
-
-  // Creative Footer
-  &--creative
-    align-items: center
-    display: flex
-    flex-direction: column
-    padding-top: 100px
-    padding-bottom: 110px
-    text-align: center
-
+  // border between nav and copy sections
   &::after
     border-bottom: 1px solid $dark10
     bottom: 71px

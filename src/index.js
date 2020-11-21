@@ -4,6 +4,7 @@ import 'CommonBlocks/input-box/__input/__input';
 import 'CommonBlocks/dropdown/dropdown';
 import 'CommonBlocks/form/form';
 import 'CommonBlocks/room-card/room-card';
+import 'CommonBlocks/range/range';
 // Pages
 import 'Pages/form-elements/form-elements';
 import 'Pages/search-room-filter/search-room-filter';

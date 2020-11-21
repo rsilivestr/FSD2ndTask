@@ -1,60 +1,30 @@
 @use 'Styles/forward' as *
 
-.search-room-page
-  &__wrapper
+.page--layout_search-room-filter
+  .content
     display: flex
     flex-flow: column nowrap
     align-items: center
-    margin-top: 100px
-    width: 100%
-    max-width: 1200px
-    padding-left: 20px
-    padding-right: 20px
+    margin-top: 30px
+    margin-bottom: 70px
 
     @include media('>=topnav')
       flex-direction: row
       align-items: flex-start
-      margin-top: 30px
 
-    @include media('>=widest')
-      margin-left: auto
-      margin-right: auto
-
-  &__filters
+  .room-filters
     max-width: 266px
     width: 100%
 
-  &__range-caption
-    display: block
-    font-size: 1.2rem
-    color: $dark50
-    margin-top: 2px
-
-  &__apply-btn
-    margin-bottom: 15px
-
-  &__content
-    flex: auto
-    height: 100%
-
+  .main-content
     @include media('>=topnav')
       margin-left: 30px
 
     @include media('>=widest')
       margin-left: 60px
 
-  &__title
-    margin-bottom: 20px
-
-  &__rooms
-    display: flex
-    flex-flow: row wrap
-    justify-content: space-between
-    margin-bottom: 22px
-
-  &__room-card
+  .room-card
     max-width: 100%
-    margin-bottom: 20px
     box-shadow: 0 5px 10px $dark05
 
     @include media('>=creative')
@@ -67,10 +37,10 @@
       max-width: 270px
       box-shadow: 0 10px 20px $dark05
 
-  &__footer
-    margin-top: 70px
-    border-top: 1px solid $dark10
-
-  // footer overwrite
-  .main-footer
-    margin-top: 68px
+  .search-results
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    margin-bottom: 22px
+    margin-top: 20px
+    row-gap: 20px

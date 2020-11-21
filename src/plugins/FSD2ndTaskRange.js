@@ -7,6 +7,7 @@ export class FSD2ndTaskRange {
 
   _createLabel() {
     const label = document.createElement('label');
+    label.className = 'range__label';
 
     return label;
   }
@@ -50,22 +51,3 @@ export class FSD2ndTaskRange {
     this.UI.container.noUiSlider.on('update', () => this._updateLabel());
   }
 }
-
-// const UIrange = document.querySelector('.input-box__range');
-// const UIrangeLabel = document.querySelector('.input-box__range-label');
-
-// noUiSlider.create(UIrange, {
-//   start: [5000, 10000],
-//   step: 500,
-//   behaviour: 'drag',
-//   connect: true,
-//   range: {
-//     'min': 0,
-//     'max': 15000
-//   }
-// });
-
-// UIrange.noUiSlider.on('update', () => {
-//   const rangeValues = UIrange.noUiSlider.get().map(x => x.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ').replace('.00', ''));
-//   UIrangeLabel.innerText = `${rangeValues[0]}₽ - ${rangeValues[1]}₽`;
-// });

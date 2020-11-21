@@ -7,6 +7,7 @@ include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/user-comment/user-comment
+include ~CommonBlocks/range/range
 
 +head('Form Elements')
   body.page.page--layout_form-elements
@@ -90,7 +91,7 @@ include ~CommonBlocks/user-comment/user-comment
         .form-elements__grid-item
           //- range slider
           +inputBox('range slider', 'm').mb32
-            .input-box__range.js-rangepicker
+            +rangeSlider.js-rangepicker
 
           //- buttons
           +inputBox('buttons').mb40
