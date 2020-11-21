@@ -37,11 +37,11 @@ include ~CommonBlocks/user-comment/user-comment
             +maskedDate.js-masked-date
 
           //- double date dropdown
-          +datepickerDouble.form__datepicker-double.js-datepicker-double.mb42
+          +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-datepicker-double.mb42
 
           //- filter date dropdown
           +inputBox('filter date dropdown', 'm').js-datepicker-range.mb42
-            +filterDateDrop
+            +dateDropdown
 
           //- subscribtion text field
           +inputBox('subscribtion text field', 'm')

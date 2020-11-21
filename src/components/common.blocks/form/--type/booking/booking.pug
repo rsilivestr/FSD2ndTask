@@ -15,7 +15,7 @@ mixin formBooking(room)
       span.form-title__price 9 990₽
         span.form-title__price-period в сутки
 
-    +datepickerDouble.form__datepicker-double.js-booking-datepicker
+    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-booking-datepicker
 
     +inputBox('гости', 'l')
       +inputDrop('single', 'Сколько гостей').mb14

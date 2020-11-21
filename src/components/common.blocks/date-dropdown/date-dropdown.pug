@@ -1,16 +1,19 @@
-mixin dateDrop
-  .date-dropdown.date-dropdown--single&attributes(attributes)
-    input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.datepicker--single
+mixin dateDropdown(options = {})
+  -
+    var type = options.type || 'single';
+    var placeholder = options.placeholder || '';
+    var labelStart = options.labelStart || 'Прибытие';
+    var labelEnd = options.labelEnd || 'Выезд';
 
-mixin filterDateDrop
-  .date-dropdown.date-dropdown--range&attributes(attributes)
-    input(type='text' readonly).date-dropdown__display.input-box__input.datepicker-range
+  if type === 'single'
+    .date-dropdown.date-dropdown--range&attributes(attributes)
+      input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.datepicker-range
 
-mixin datepickerDouble
-  .datepicker-double&attributes(attributes)
-    +inputBox('прибытие', 'xs').mr5
-      .date-dropdown
-        input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.date-dropdown__start
-    +inputBox('выезд', 'xs')
-      .date-dropdown
-        input(type='text' readonly placeholder='ДД.ММ.ГГГГ').date-dropdown__display.input-box__input.date-dropdown__end
+  else if type === 'double'
+    .datepicker-double&attributes(attributes)
+      +inputBox(labelStart, 'xs').mr5
+        .date-dropdown
+          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.date-dropdown__start
+      +inputBox(labelEnd, 'xs')
+        .date-dropdown
+          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.date-dropdown__end

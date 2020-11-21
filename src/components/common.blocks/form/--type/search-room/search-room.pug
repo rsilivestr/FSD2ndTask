@@ -7,7 +7,7 @@ mixin formSearchRoom
     
     h1.form-title Найдём номера под ваши пожелания
 
-    +datepickerDouble.form__datepicker-double.js-search-room-datepicker
+    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-search-room-datepicker
 
     +inputBox('гости', 'l').mb21
       +inputDrop('single', 'Сколько гостей').mb10
