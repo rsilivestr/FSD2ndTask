@@ -1,10 +1,15 @@
 include ../image-title/image-title
 include ../input-box/__input/--like/like
 
-mixin userComment(uid, name, age, likes, liked, text)
+mixin userComment(comment)
   .user-comment&attributes(attributes)
-    +imageTitle('comment', uid, name, age)
+    +imageTitle({
+      type: 'comment',
+      src: comment.avatar,
+      heading: comment.username,
+      text: comment.age
+    })
     .user-comment__body
-      +likeBtn(likes, liked).user-comment__like-counter
+      +likeBtn(comment.likes, comment.isLiked).user-comment__like-counter
       p.user-comment__text
-        = text
+        = comment.text

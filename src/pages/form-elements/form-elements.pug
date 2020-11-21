@@ -227,9 +227,19 @@ include ~CommonBlocks/user-comment/user-comment
 
         .form-elements__grid-item.area-d
           //- комфорт
-          +imageTitle('emoji', 'insert_emoticon', 'комфорт', 'шумопоглощающие стены')
+          +imageTitle({
+            type: 'emoji',
+            src: 'insert_emoticon',
+            heading: 'комфорт',
+            text: 'шумопоглощающие стены',
+          }).bb-25
           //- удобство
-          +imageTitle('emoji', 'location_city', 'удобство', 'окно в каждой из спален')
+          +imageTitle({
+            type: 'emoji',
+            src: 'location_city',
+            heading: 'удобство',
+            text: 'окно в каждой из спален',
+          })
 
           .mb50
 
@@ -240,4 +250,11 @@ include ~CommonBlocks/user-comment/user-comment
           .mb20
 
           //- comment (wide)
-          +userComment('uid1111', 'Мурад Сарафанов', '5 дней назад', 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.')
+          +userComment({
+            age: '5 дней назад',
+            avatar: '../assets/images/uid1111.jpg',
+            isLiked: true,
+            likes: 12,
+            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
+            username: 'Мурад Сарафанов',
+          })
