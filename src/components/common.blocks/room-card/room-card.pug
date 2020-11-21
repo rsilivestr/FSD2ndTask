@@ -1,8 +1,5 @@
 include ../input-box/input-box
 
-mixin dot(is = {current: false})
-  button.room-card__dot(class = (is.current === true) ? 'room-card__dot--current' : '')
-
 mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost, reviewCount = 0, lux = false)
   .room-card&attributes(attributes)
     .room-card__photos
@@ -14,11 +11,10 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
       - len = roomPhotos.length;
       each pic in roomPhotos
         img(src='../assets/images/' + pic, alt='Фото комнаты').room-card__photo
-      .room-card__dots
+      nav.room-card__nav
         - for (let i = 0; i < len; i += 1)
           - current = i === 0 || false;
-          +dot({current})
-
+          button(class = (current === true) ? 'room-card__navbtn--current' : '').room-card__navbtn
     .room-card__info
       h2.room-card__title.form-title
         a(href="./room-details.html").form-title__room
