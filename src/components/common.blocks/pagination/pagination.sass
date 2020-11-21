@@ -8,7 +8,7 @@
   font-size: 1.2rem
 
   &__control,
-  &__page,
+  &__link,
   &__gap
     @extend .centered-flex
     height: 40px
@@ -18,12 +18,14 @@
 
   &__control
     background: fw.$secondaryGradient
-    color: #fff
+    border: none
+    color: #ffffff
+    cursor: pointer
 
     &--hidden
       display: none
 
-  &__page
+  &__link
     color: fw.$dark50
 
     &--active

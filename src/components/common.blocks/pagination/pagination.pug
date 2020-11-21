@@ -1,12 +1,37 @@
-mixin pagination
+-
+  var paginationDefaults = {
+    controls: {
+      left: false,
+      right: true,
+    },
+    pagesLeft: [
+      { number: 1, url: '#page-url', active: true },
+      { number: 2, url: '#page-url' },
+      { number: 3, url: '#page-url' },
+    ],
+    gapText: '...',
+    pagesRight: [{ number: 15, url: '#page-url' }],
+    resultsRange: [1, 12],
+    resultsTotal: '100+',
+  }
+
+mixin pagination(data = {})
+  -
+    var controls = data.controls || paginationDefaults.controls;
+    var pagesLeft = data.pagesLeft || paginationDefaults.pagesLeft;
+    var gapText = data.gapText || paginationDefaults.gapText;
+    var pagesRight = data.pagesRight || paginationDefaults.pagesRight;
+    var resultsRange = data.resultsRange || paginationDefaults.resultsRange;
+    var resultsTotal = data.resultsTotal || paginationDefaults.resultsTotal;
+
   .pagination
-    a(href="#some-url").pagination__control.pagination__control--left.pagination__control--hidden
-      i.material-icons arrow_back_ios
-    a(href="#some-url").pagination__page.pagination__page--active 1
-    a(href="#some-url").pagination__page 2
-    a(href="#some-url").pagination__page 3
-    .pagination__gap ...
-    a(href="#some-url").pagination__page 15
-    a(href="#some-url").pagination__control.pagination__control--right
+    button(class = controls.left ? '' : 'pagination__control--hidden').pagination__control
+      i.material-icons arrow_back
+    each link in pagesLeft
+      a(href = link.url class = link.active ? 'pagination__link--active' : '').pagination__link= link.number
+    span.pagination__gap= gapText
+    each link in pagesRight
+      a(href = link.url class = link.active ? 'pagination__link--active' : '').pagination__link= link.number
+    button(class = controls.right ? '' : 'pagination__control--hidden').pagination__control
       i.material-icons arrow_forward
-    p.pagination__tooltip 1 – 12 из 100+ вариантов аренды
+    p.pagination__tooltip= `${resultsRange[0]} – ${resultsRange[1]} из ${resultsTotal} вариантов аренды`
