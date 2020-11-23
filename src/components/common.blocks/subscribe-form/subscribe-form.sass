@@ -1,18 +1,22 @@
 @use 'Styles/forward' as *
 
-.subscribe-form__submit
-  @extend .centered-flex
-  position: absolute
-  right: 0
-  bottom: 0
-  height: 44px
-  width: 44px
-  border: none
-  background: transparent
-  cursor: pointer
-  z-index: 60
+.subscribe-form
+  .input-box__input
+    padding-right: 44px
 
-  &:after
-    @extend .material-icons
-    @extend .text-gradient
-    content: '\e5c8'
+  &__submit
+    @extend .centered-flex
+    position: absolute
+    right: 0
+    bottom: 0
+    height: 44px
+    width: 44px
+    border: none
+    background: transparent
+    cursor: pointer
+    z-index: 60
+
+    &:after
+      @extend .material-icons
+      @extend .text-gradient
+      content: '\e5c8'

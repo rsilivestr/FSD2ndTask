@@ -11,7 +11,13 @@ module.exports = {
       './src',
       'Styles/fonts.css',
       'Styles/index.sass',
-    ]
+    ],
+    cards: './src/pages/cards/cards',
+    form_elements: './src/pages/form-elements/form-elements',
+    landing: './src/pages/landing/landing',
+    register: './src/pages/register/register',
+    room_details: './src/pages/room-details/room-details',
+    search_room_filter: './src/pages/search-room-filter/search-room-filter',
   },
   output: {
     filename: 'scripts/[name].js',
@@ -24,43 +30,53 @@ module.exports = {
       datepicker: 'air-datepicker',
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.pug',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/colors/colors.pug',
-      filename: 'pages/colors.html'
+      filename: 'pages/colors.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/form-elements/form-elements.pug',
-      filename: 'pages/form-elements.html'
+      filename: 'pages/form-elements.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/cards/cards.pug',
-      filename: 'pages/cards.html'
+      filename: 'pages/cards.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/headers-footers/headers-footers.pug',
-      filename: 'pages/headers-footers.html'
+      filename: 'pages/headers-footers.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/landing/landing.pug',
-      filename: 'pages/landing.html'
+      filename: 'pages/landing.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/search-room-filter/search-room-filter.pug',
-      filename: 'pages/search-room-filter.html'
+      filename: 'pages/search-room-filter.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/room-details/room-details.pug',
-      filename: 'pages/room-details.html'
+      filename: 'pages/room-details.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/register/register.pug',
-      filename: 'pages/register.html'
+      filename: 'pages/register.html',
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/login/login.pug',
-      filename: 'pages/login.html'
+      filename: 'pages/login.html',
+      inject: false,
     }),
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',

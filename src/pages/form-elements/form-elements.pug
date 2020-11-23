@@ -35,7 +35,7 @@ include ~CommonBlocks/range/range
                 +dropOption(title, '', '', '', 0, 10)
  
           +inputBox('masked text field').mb42
-            +maskedDate.js-masked-date
+            +textField('ДД.ММ.ГГГГ').js-masked-date
 
           //- double date dropdown
           +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-datepicker-double.mb42
@@ -259,3 +259,5 @@ include ~CommonBlocks/range/range
             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
             username: 'Мурад Сарафанов',
           })
+
+    script(type="text/javascript" src="../scripts/form_elements.js")

@@ -1,10 +1,48 @@
 include ~UtilBlocks/head
 
-- const pages = [{ title: 'Colors', url: 'pages/colors.html' }, { title: 'Form Elements', url: 'pages/form-elements.html' }, {title: 'Cards', url: 'pages/cards.html' }, { title: 'Headers & Footers', url: 'pages/headers-footers.html' }, { title: 'Landing', url: 'pages/landing.html' }, { title: 'Search room', url: 'pages/search-room-filter.html' }, { title: 'Room details', url: 'pages/room-details.html' }, { title: 'Registration', url: 'pages/register.html' }, { title: 'Login', url: 'pages/login.html' } ]
+-
+  const FSD2ndTaskPages = [
+    {
+      title: 'Colors',
+      url: 'pages/colors.html',
+    },
+    {
+      title: 'Form Elements',
+      url: 'pages/form-elements.html',
+    },
+    {
+      title: 'Cards',
+      url: 'pages/cards.html',
+    },
+    {
+      title: 'Headers & Footers',
+      url: 'pages/headers-footers.html',
+    },
+    {
+      title: 'Landing',
+      url: 'pages/landing.html',
+    },
+    {
+      title: 'Search room',
+      url: 'pages/search-room-filter.html',
+    },
+    {
+      title: 'Room details',
+      url: 'pages/room-details.html',
+    },
+    {
+      title: 'Registration',
+      url: 'pages/register.html',
+    },
+    {
+      title: 'Login',
+      url: 'pages/login.html',
+    }
+  ]
 
 +head('Pages')
   body.router
     h1 Pages
     nav.router__nav
-      each page in pages
+      each page in FSD2ndTaskPages
         a.router__navlink(href=page.url)=page.title

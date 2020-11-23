@@ -1,5 +1,3 @@
-import { FSD2ndTaskDatepicker } from 'Plugins/FSD2ndTaskDatepicker';
+import { FSD2ndTaskDatepicker } from 'CommonBlocks/date-dropdown/date-dropdown';
 
-if (document.querySelector('.form--type_search-room')) {
-  new FSD2ndTaskDatepicker('.js-search-room-datepicker');
-}
+new FSD2ndTaskDatepicker('.js-search-room-datepicker');
