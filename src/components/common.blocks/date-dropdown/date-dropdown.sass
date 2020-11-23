@@ -1,21 +1,21 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 @import '~air-datepicker/dist/css/datepicker'
 
 .datepicker
-  box-shadow: 0 5px 10px fw.$dark05
+  box-shadow: 0 5px 10px $dark05
 
-  @include fw.media('>=footcols')
-    box-shadow: 0 10px 20px fw.$dark05
+  @include media('>=footcols')
+    box-shadow: 0 10px 20px $dark05
 
   &-inline
     position: absolute
     top: 105%
     width: 318px
-    box-shadow: 0 5px 10px fw.$dark05
+    box-shadow: 0 5px 10px $dark05
     z-index: 30
 
-    @include fw.media('>=footcols')
-      box-shadow: 0 10px 20px fw.$dark05
+    @include media('>=footcols')
+      box-shadow: 0 10px 20px $dark05
 
   &-range
     // short months names to lowercase
@@ -29,7 +29,7 @@
     border: none
 
     &-title
-      color: fw.$dark100
+      color: $dark100
       font-weight: 700
       font-size: 1.9rem
 
@@ -50,7 +50,7 @@
     margin-bottom: 12px
 
   &--cell
-    color: fw.$dark50
+    color: $dark50
     margin-bottom: 1.25px
     border-radius: 0
     z-index: 20
@@ -61,7 +61,7 @@
     // focus
     &.-focus-
       border: none
-      background: fw.$mainGradient50
+      background: $mainGradient50
 
     // selected
       // range from
@@ -72,16 +72,16 @@
     &.-selected-
       color: #ffffff
       font-weight: 700
-      background: fw.$mainGradient
+      background: $mainGradient
 
     // in range
       // after
       // focus
         // after
     &.-in-range-
-      background: fw.$mainGradient25
+      background: $mainGradient25
       &.-focus-
-        background: fw.$mainGradient25
+        background: $mainGradient25
 
     // current
       // after
@@ -102,29 +102,29 @@
     &.-current-
       color: #ffffff
       font-weight: 700
-      background: fw.$secondaryGradient
+      background: $secondaryGradient
       &.-selected-
-        background: fw.$secondaryGradient
+        background: $secondaryGradient
         &.-focus-
-          background: fw.$secondaryGradient
+          background: $secondaryGradient
       &.-in-range-
         color: #ffffff
         &::after
-          background: fw.$mainGradient25
+          background: $mainGradient25
         &.-focus-
-          background: fw.$secondaryGradient
+          background: $secondaryGradient
           &::after
-            background: fw.$mainGradient25
+            background: $mainGradient25
             border-radius: 0
       &.-focus-
         color: #ffffff
 
     &.-focus-.-in-range-::after
-      background: fw.$mainGradient50
+      background: $mainGradient50
 
     &.-selected-
       &.-focus-
-        background: fw.$mainGradient
+        background: $mainGradient
 
   // end --cell
 
@@ -147,7 +147,7 @@
 
 .-range-from-::after,
 .-range-to-::after
-  background: fw.$mainGradient25
+  background: $mainGradient25
 
 .-in-range-::after,
 .-range-from-::after,
@@ -183,4 +183,4 @@
 
 .datepicker__clear-btn
   background: transparent
-  color: fw.$dark50
+  color: $dark50

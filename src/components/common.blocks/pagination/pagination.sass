@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .pagination
   display: inline-flex
@@ -17,7 +17,7 @@
     text-decoration: none
 
   &__control
-    background: fw.$secondaryGradient
+    background: $secondaryGradient
     border: none
     color: #ffffff
     cursor: pointer
@@ -26,10 +26,10 @@
       display: none
 
   &__link
-    color: fw.$dark50
+    color: $dark50
 
     &--active
-      background: fw.$mainGradient
+      background: $mainGradient
       font-weight: 700
       color: #fff
 
@@ -37,5 +37,5 @@
     width: 100%
     margin-top: 8px
     font-size: 1.4rem
-    color: fw.$dark75
+    color: $dark75
     text-align: center

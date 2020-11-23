@@ -3,9 +3,9 @@ include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
 
-+head('Login')
-  body.page.page-login
++head('Войти в Toxin')
+  body.page.page--layout_login
     +header
-    main.main-content.page-login__main
-      +formLogin.page-login__form
-    +footer()
+    main.main-content
+      +formLogin
+    +footer

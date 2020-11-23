@@ -1,10 +1,6 @@
 @use 'Styles/forward' as *
 @use '../logo/logo'
 
-.uikit-header
-  &__logo
-    margin: 30px
-
 .header
   position: relative
   display: flex
@@ -16,6 +12,9 @@
   background: #ffffff
   font-size: 1.4rem
   z-index: 15
+
+  &--uikit
+    padding: 30px
 
   &__wrapper
     display: flex
@@ -36,9 +35,6 @@
     position: relative
     max-width: 40px
     overflow: hidden
-
-    // @include media('>=topnav')
-    //   margin-top: 4px
 
     @include media('>=desktop')
       max-width: 100%

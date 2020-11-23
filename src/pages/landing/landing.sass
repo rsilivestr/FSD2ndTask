@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .page--layout_landing
   .main-content
@@ -6,18 +6,7 @@
     background-size: cover
     height: 830px
 
-    &__caption
-      color: fw.$dark75
-      line-height: 2.4rem
-
-      align-self: center
-      text-align: center
-
-      @include fw.media('>=tablet')
-        align-self: flex-end
-        text-align: right
-
-    .container
+    &__inner
       display: flex
       flex-direction: column
       justify-content: space-between
@@ -25,8 +14,19 @@
       padding-bottom: 20px
       padding-top: 70px
 
+  .caption
+    color: $dark75
+    line-height: 2.4rem
+
+    align-self: center
+    text-align: center
+
+    @include media('>=tablet')
+      align-self: flex-end
+      text-align: right
+
   .form
     align-self: center
 
-    @include fw.media('>=tablet')
+    @include media('>=tablet')
       align-self: flex-start

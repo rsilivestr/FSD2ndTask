@@ -1,4 +1,4 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 @use '--text/text'
 @use '--masked/masked'
 @use '--toggle/toggle'
@@ -26,8 +26,8 @@
 
   &:hover,
   &:focus
-    border-color: fw.$dark50
-    color: fw.$dark100
+    border-color: $dark50
+    color: $dark100
 
     &::placeholder
-      color: fw.$dark75
+      color: $dark75

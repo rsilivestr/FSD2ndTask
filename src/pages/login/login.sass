@@ -1,14 +1,9 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
-.page-login__main
-  @extend .centered-flex
-  min-height: 683px
-  padding-top: 30px
-  padding-bottom: 30px
-  background: center top 24% / cover url(../assets/images/bg-reg.jpg)
-
-  @include fw.media('>=topnav')
-    margin-top: 0
-
-.page-login__form
-  margin: auto
+.page--layout_login
+  .main-content
+    @extend .centered-flex
+    background: center top 24% / cover url(../assets/images/bg-reg.jpg)
+    min-height: 683px
+    padding-bottom: 30px
+    padding-top: 30px

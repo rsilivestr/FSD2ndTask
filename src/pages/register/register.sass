@@ -1,12 +1,8 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
-.page-register__main
-  padding-top: 30px
-  padding-bottom: 25px
-  background: center top 25% / cover url(../assets/images/bg-reg.jpg)
-
-  @include fw.media('>=topnav')
-    margin-top: 0
-
-.page-register__form
-  margin: auto
+.page--layout_register
+  .main-content
+    @extend .centered-flex
+    background: center top 25% / cover url(../assets/images/bg-reg.jpg)
+    padding-bottom: 25px
+    padding-top: 30px

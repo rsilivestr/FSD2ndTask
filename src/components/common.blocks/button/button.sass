@@ -1,11 +1,11 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .button
   @extend .centered-flex
   display: inline-flex
   position: relative
   width: 100%
-  font-family: 'Montserrat' sans-serif
+  font-family: $mainFont
   text-transform: uppercase
   text-align: center
   font-size: 1.2rem
@@ -23,13 +23,13 @@
     &_arrowed
       justify-content: center
       align-items: center
-      background: fw.$mainGradient
+      background: $mainGradient
       color: #fff
       height: 44px
       border-radius: 22px
 
       &:disabled
-        background: fw.$mainGradient50
+        background: $mainGradient50
 
     &_gradient
       padding: 0 18px
@@ -50,12 +50,12 @@
       line-height: 1.5rem
 
       &:disabled
-        color: fw.$dark50
+        color: $dark50
         background: transparent
 
     &_bordered
-      color: fw.$purple
-      background: linear-gradient(#fff, #fff), fw.$mainGradient
+      color: $purple
+      background: linear-gradient(#fff, #fff), $mainGradient
       background-repeat: no-repeat
       background-origin: padding-box, border-box
       border: 10px solid transparent

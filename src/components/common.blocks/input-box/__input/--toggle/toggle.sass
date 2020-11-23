@@ -1,14 +1,14 @@
-@use 'Styles/forward' as fw
+@use 'Styles/forward' as *
 
 .input-box__input--toggle,
 .input-box__toggle-slider
-  height: fw.$controlSize
-  width: fw.$controlSize * 2
+  height: $controlSize
+  width: $controlSize * 2
 
 .input-box__toggle-item
   position: relative
   display: flex
-  font-family: 'Montserrat', sans-serif
+  font-family: $mainFont
   cursor: pointer
 
 .input-box__input--toggle
@@ -18,34 +18,34 @@
   cursor: pointer
 
   &:checked + .input-box__toggle-slider
-    border-color: fw.$purple
+    border-color: $purple
 
   &:checked + .input-box__toggle-slider::after
-    left: fw.$controlSize + fw.$controlInnerOffset
-    background: fw.$mainGradient
+    left: $controlSize + $controlInnerOffset
+    background: $mainGradient
     transition: left .1s
 
   &:checked ~ .input-box__toggle-label
-    color: fw.$dark75
+    color: $dark75
 
 .input-box__toggle-slider
   position: absolute
-  border: 1px solid fw.$dark25
-  border-radius: fw.$controlSize / 2
+  border: 1px solid $dark25
+  border-radius: $controlSize / 2
   z-index: 10
 
   &:after
     content: ""
     position: absolute
-    height: fw.$controlInnerSize
-    width: fw.$controlInnerSize
-    left: fw.$controlInnerOffset
-    top: fw.$controlInnerOffset
+    height: $controlInnerSize
+    width: $controlInnerSize
+    left: $controlInnerOffset
+    top: $controlInnerOffset
     border-radius: 50%
-    background-color: fw.$dark25
+    background-color: $dark25
     transition: left .1s
 
 .input-box__toggle-label
   font-size: 1.4rem
   line-height: 1.8rem
-  color: fw.$dark50
+  color: $dark50
