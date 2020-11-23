@@ -1,0 +1,56 @@
+@use  'forward' as *
+
+$maxTitleHeight: 252px
+
+.pages
+  @extend .centered-flex
+  overflow: hidden
+
+  *::selection
+    background-color: transparent
+
+  h1
+    color: #8882
+    font-family: 'Fira Code', $titleFont
+    font-size: 24vw
+    line-height: $maxTitleHeight
+    position: absolute
+    top: 10vh
+
+    @include media('>=1050px')
+      font-size: $maxTitleHeight
+
+  &__nav
+    display: flex
+    flex-flow: row wrap
+    font-size: 1.6rem
+    justify-content: center
+    padding: 20px
+
+  &__link
+    padding: 10px
+    text-decoration: none
+
+    &:hover
+      background-color: #333
+      color: #fff
+
+  &::before
+    background-color: #333
+    content: ''
+    display: block
+    height: 44vh
+    position: absolute
+    top: 0
+    transform: matrix(1, -0.1, 0, 1, 0, -100)
+    width: 100%
+
+  &::after
+    background-color: #333
+    bottom: 0
+    content: ''
+    display: block
+    height: 44vh
+    position: absolute
+    transform: matrix(1, -0.1, 0, 1, 0, 100)
+    width: 100%

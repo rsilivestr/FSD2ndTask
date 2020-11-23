@@ -4,9 +4,24 @@
   margin-left: auto
   margin-right: auto
   max-width: 1200px
-  padding-left: 20px
-  padding-right: 20px
+  padding-left: 5px
+  padding-right: 5px
   width: 100%
+
+  @include media ('>=tablet')
+    padding-left: 20px
+    padding-right: 20px
+
+.main-content
+  // push footer to bottom
+  flex: auto
+  margin-left: auto
+  margin-right: auto
+  position: relative
+  width: 100%
+
+.hidden
+  display: none
 
 .show-1080-up
   @include media('<1080px')

@@ -41,8 +41,8 @@ include ~UtilBlocks/head
   ]
 
 +head('Pages')
-  body.router
+  body.pages
     h1 Pages
-    nav.router__nav
+    nav.pages__nav
       each page in FSD2ndTaskPages
-        a.router__navlink(href=page.url)=page.title
+        a.pages__link(href=page.url)=page.title

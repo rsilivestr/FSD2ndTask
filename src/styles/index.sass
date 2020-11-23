@@ -1,5 +1,6 @@
 // common
 @use 'forward' as *
+@use 'pages'
 // pages
 @use 'Pages/cards/cards'
 @use 'Pages/colors/colors'
@@ -32,7 +33,7 @@
 
 html
   box-sizing: border-box
-  font-family: Montserrat, sans-serif
+  font-family: $mainFont
   font-size: 10px
 
 *, *:before, *:after
@@ -48,30 +49,3 @@ body
   min-height: 100vh
   display: flex
   flex-flow: column nowrap
-
-.router
-  @extend .centered-flex
-
-.router__nav
-  display: flex
-  flex-flow: row wrap
-  justify-content: center
-  padding: 20px
-  font-size: 1.6rem
-
-.router__navlink
-  padding: 10px
-
-  &:hover
-    background-color: #eee
-
-.main-content
-  // push footer to bottom
-  flex: auto
-  margin-left: auto
-  margin-right: auto
-  position: relative
-  width: 100%
-
-.hidden
-  display: none
