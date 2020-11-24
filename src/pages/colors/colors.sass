@@ -1,92 +1,94 @@
 @use 'Styles/forward' as *
 
-.main-content--page_colors
-  margin: 34px 0 0 150px
-  display: flex
-  color: $dark100
+.page--layout_colors
+  .main-content
+    margin: 34px 0 0 150px
+    display: flex
+    color: $dark100
 
-.color-list__item
-  display: flex
-  align-items: center
-  margin-bottom: 20px
+.color-list
+  &__item
+    display: flex
+    align-items: center
+    margin-bottom: 20px
 
-.color-list__preview-box
-  width: 70px
-  height: 70px
-  border-radius: 6px
-  margin-right: 40px
+  &__preview-box
+    width: 70px
+    height: 70px
+    border-radius: 6px
+    margin-right: 40px
 
-.color-list__preview-box--bg_dark100
-  background-color: $dark100
+    &--bg_dark100
+      background-color: $dark100
 
-.color-list__preview-box--bg_dark75
-  background-color: $dark75
+    &--bg_dark75
+      background-color: $dark75
 
-.color-list__preview-box--bg_dark50
-  background-color: $dark50
+    &--bg_dark50
+      background-color: $dark50
 
-.color-list__preview-box--bg_dark25
-  background-color: $dark25
+    &--bg_dark25
+      background-color: $dark25
 
-.color-list__preview-box--bg_dark5
-  background-color: $dark05
+    &--bg_dark5
+      background-color: $dark05
 
-.color-list__preview-box--bg_purple
-  background-color: $purple
+    &--bg_purple
+      background-color: $purple
 
-.color-list__preview-box--bg_green
-  background-color: $green
+    &--bg_green
+      background-color: $green
 
-.color-list__caption
-  font-family: $titleFont
+  &__caption
+    font-family: $titleFont
 
-.color-list__color-title
-  margin-top: 7px
-  font-weight: 700
+  &__color-title
+    margin-top: 7px
+    font-weight: 700
 
-.color-list__color-hex
-  text-transform: uppercase
-  font-size: 19px
-  font-weight: 300
+  &__color-hex
+    text-transform: uppercase
+    font-size: 19px
+    font-weight: 300
 
 .typo-list
   width: 415px
   margin-left: 426px
   white-space: pre-line
 
-.typo-list tr
-  vertical-align: top
+  tr
+    vertical-align: top
 
-  &:nth-child(1)
-    height: 109px
+    &:nth-child(1)
+      height: 109px
 
-  &:nth-child(2)
-    height: 94px
+    &:nth-child(2)
+      height: 94px
 
-  &:nth-child(3)
-    height: 57px
+    &:nth-child(3)
+      height: 57px
 
-.typo-list__example
-  width: 67px
-  padding-right: 30px
-  text-align: right
-  color: $dark25
-  font-family: $mainFont
-
-  h1, h2, h3
-    font-weight: 400
-    line-height: 1
-
-.typo-list__desc
-  h1, h2
-    font-family: $titleFont
-
-  h3, p
+  &__example
+    width: 67px
+    padding-right: 30px
+    text-align: right
+    color: $dark25
     font-family: $mainFont
 
-  h1, h2, h3
-    line-height: 1.2
+    h1, h2, h3
+      font-weight: 400
+      line-height: 1
 
-  p
-    color: $dark75
-    line-height: 2.6rem
+  &__desc
+    h1, h2
+      font-family: $titleFont
+
+    h3, p
+      font-family: $mainFont
+
+    h1, h2, h3
+      line-height: 1.2
+
+    p
+      color: $dark75
+      line-height: 2.6rem

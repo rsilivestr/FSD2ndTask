@@ -12,7 +12,7 @@ mixin colorBox(colorName, classSuffix, hexCode)
   body.page.page--layout_colors
     header.header--uikit
       +logoUIKit
-    main.main-content--page_colors
+    main.main-content
       .color-list
         each percent in ['100', '75', '50', '25', '5']
           +colorBox(`Dark Shade ${percent}%`, `dark${percent}`, '#1f2041')

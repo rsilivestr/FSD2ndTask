@@ -1,14 +1,12 @@
 @use 'Styles/forward'
 
 .page--layout_cards
-  min-width: 1200px
   background: forward.$dark05
 
-.main-content--page_cards
-  display: grid
-  grid-template-columns: 380px 380px 320px
-  column-gap: 40px
-  margin: 39px 0 140px 140px
-
-.main-content__column > *
-  margin-bottom: 40px
+  .main-content
+    column-gap: 40px
+    display: grid
+    grid-template-columns: 380px 380px 320px
+    margin-top: 39px
+    margin-bottom: 40px
+    padding-left: 140px

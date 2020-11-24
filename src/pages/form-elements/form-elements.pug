@@ -13,16 +13,11 @@ include ~CommonBlocks/range/range
   body.page.page--layout_form-elements
     header.header--uikit
       +logoUIKit
-    main.main-content--page_form-elements
-
-      //- grid container ---------------------------//
-
-      .form-elements__grid
-
+    main.main-content.fe-grid
 
         //- a 1 --------------------------------------//
 
-        .form-elements__grid-item(style='margin-bottom: 101px')
+        .fe-grid__item
           +inputBox('text field').mb22
             +textField('Email')
 
@@ -51,7 +46,7 @@ include ~CommonBlocks/range/range
 
         //- a 2 --------------------------------------//
 
-        .form-elements__grid-item
+        .fe-grid__item
           //- checkbox buttons
           +inputBox('checkbox buttons', 's').mb41
             .mb16
@@ -88,7 +83,7 @@ include ~CommonBlocks/range/range
 
         //- a 3 --------------------------------------//
 
-        .form-elements__grid-item
+        .fe-grid__item
           //- range slider
           +inputBox('range slider', 'm').mb32
             +rangeSlider.js-rangepicker
@@ -145,7 +140,7 @@ include ~CommonBlocks/range/range
 
         //- b 1 --------------------------------------//
 
-        .form-elements__grid-item.area-b
+        .fe-grid__item
           //- dropdown
           +inputBox('dropdown', 'm').mb21
             +inputDrop('multi', '')
@@ -163,7 +158,7 @@ include ~CommonBlocks/range/range
 
         //- b 2 --------------------------------------//
 
-        .form-elements__grid-item.area-b
+        .fe-grid__item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Сколько гостей', true)
@@ -172,7 +167,7 @@ include ~CommonBlocks/range/range
 
         //- b 3 --------------------------------------//
         
-        .form-elements__grid-item.area-b
+        .fe-grid__item
           //- wide dropdown with button ПРИМЕНИТЬ
           +inputBox('dropdown')
             +inputDrop('single', 'Сколько гостей', true)
@@ -182,7 +177,7 @@ include ~CommonBlocks/range/range
 
         //- c 1 --------------------------------------//
 
-        .form-elements__grid-item.area-c
+        .fe-grid__item
           //- expandable checkbox list
           +inputBox('', 'm')(style="width: 256px")
             +checkboxGroup('Expandable checkbox list')
@@ -201,7 +196,7 @@ include ~CommonBlocks/range/range
 
         //- c 2 --------------------------------------//
 
-        .form-elements__grid-item.area-c
+        .fe-grid__item
 
           .mb5
 
@@ -213,7 +208,7 @@ include ~CommonBlocks/range/range
 
         //- c 3 --------------------------------------//
 
-        .form-elements__grid-item.area-c
+        .fe-grid__item
 
           .mb5
 
@@ -226,7 +221,7 @@ include ~CommonBlocks/range/range
 
         //- d 1 --------------------------------------//
 
-        .form-elements__grid-item.area-d
+        .fe-grid__item
           //- комфорт
           +imageTitle({
             type: 'emoji',
@@ -246,7 +241,7 @@ include ~CommonBlocks/range/range
 
         //- e 1 --------------------------------------//
 
-        .form-elements__grid-item.form-elements__grid-item--wide.area-e
+        .fe-grid__item.area-e
 
           .mb20
 
