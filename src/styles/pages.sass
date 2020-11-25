@@ -1,7 +1,5 @@
 @use  'forward' as *
 
-$maxTitleHeight: 252px
-
 .pages
   @extend .centered-flex
   overflow: hidden
@@ -12,13 +10,10 @@ $maxTitleHeight: 252px
   h1
     color: #8882
     font-family: 'Fira Code', $titleFont
-    font-size: 24vw
-    line-height: $maxTitleHeight
+    font-size: clamp(64px, 24vw, 256px)
+    line-height: 252px
     position: absolute
     top: 10vh
-
-    @include media('>=1050px')
-      font-size: $maxTitleHeight
 
   &__nav
     display: flex

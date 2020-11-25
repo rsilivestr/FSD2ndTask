@@ -1,17 +1,7 @@
-// common
-@use 'forward' as *
-@use 'pages'
-// pages
-@use 'Pages/cards/cards'
-@use 'Pages/colors/colors'
-@use 'Pages/form-elements/form-elements'
-@use 'Pages/headers-footers/headers-footers'
-@use 'Pages/landing/landing'
-@use 'Pages/login/login'
-@use 'Pages/register/register'
-@use 'Pages/room-details/room-details'
-@use 'Pages/search-room-filter/search-room-filter'
-// components
+// CSS reset
+@use 'reset'
+
+// Components
 @use 'CommonBlocks/button/button'
 @use 'CommonBlocks/date-dropdown/date-dropdown'
 @use 'CommonBlocks/dropdown/dropdown'
@@ -27,25 +17,19 @@
 @use 'CommonBlocks/social-links/social-links'
 @use 'CommonBlocks/subscribe-form/subscribe-form'
 @use 'CommonBlocks/user-comment/user-comment'
+
+// Pages
+@use 'pages'
+@use 'Pages/cards/cards'
+@use 'Pages/colors/colors'
+@use 'Pages/form-elements/form-elements'
+@use 'Pages/headers-footers/headers-footers'
+@use 'Pages/landing/landing'
+@use 'Pages/login/login'
+@use 'Pages/register/register'
+@use 'Pages/room-details/room-details'
+@use 'Pages/search-room-filter/search-room-filter'
+
 // Mixes
 @use 'mb'
 @use 'mix'
-
-html
-  box-sizing: border-box
-  font-family: $mainFont
-  font-size: 10px
-
-*, *:before, *:after
-  box-sizing: inherit
-  margin: 0
-  padding: 0
-  font-size: 100%
-  line-height: inherit
-  font-family: inherit
-  color: inherit
-
-body
-  min-height: 100vh
-  display: flex
-  flex-flow: column nowrap
