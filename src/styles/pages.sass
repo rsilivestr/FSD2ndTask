@@ -32,20 +32,22 @@
 
   &::before
     background-color: #333
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%)
     content: ''
     display: block
-    height: 44vh
+    height: 44%
     position: absolute
     top: 0
-    transform: matrix(1, -0.1, 0, 1, 0, -100)
     width: 100%
+    z-index: -1
 
   &::after
     background-color: #333
+    clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%)
     bottom: 0
     content: ''
     display: block
     height: 44vh
     position: absolute
-    transform: matrix(1, -0.1, 0, 1, 0, 100)
     width: 100%
+    z-index: -1
