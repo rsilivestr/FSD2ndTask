@@ -25,7 +25,7 @@ include ~CommonBlocks/range/range
             +textField('This is pretty awesome', 'text', 'uikit_always-focused')
 
           +inputBox('dropdown').mb23
-            +inputDrop('single', 'Сколько гостей')
+            +inputDrop('single', 'Сколько гостей').super-dropdown
               each title in ['взрослые', 'дети', 'младенцы']
                 +dropOption(title, '', '', '', 0, 10)
  
