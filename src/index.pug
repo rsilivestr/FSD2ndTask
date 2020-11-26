@@ -42,7 +42,7 @@ include ~UtilBlocks/head
 
 +head('Pages')
   body.pages
-    h1 Pages
+    h1.pages__heading Pages
     nav.pages__nav
       each page in FSD2ndTaskPages
         a.pages__link(href=page.url)=page.title

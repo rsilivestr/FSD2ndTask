@@ -7,13 +7,12 @@
   *::selection
     background-color: transparent
 
-  h1
-    color: #8882
+  &__heading
+    color: #89a3
     font-family: 'Fira Code', $titleFont
     font-size: clamp(64px, 24vw, 256px)
-    line-height: 252px
     position: absolute
-    top: 10vh
+    top: 10%
 
   &__nav
     display: flex
@@ -35,7 +34,7 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%)
     content: ''
     display: block
-    height: 44%
+    height: clamp(32vh, 32vw, 42vh)
     position: absolute
     top: 0
     width: 100%
@@ -47,7 +46,7 @@
     bottom: 0
     content: ''
     display: block
-    height: 44vh
+    height: clamp(30vh, 32vw, 40vh)
     position: absolute
     width: 100%
     z-index: -1
