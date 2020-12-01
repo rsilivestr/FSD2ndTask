@@ -18,7 +18,7 @@ mixin dropOption(name, nameSingle, nameFew, nameMany, min=0, max, val)
     data-many = nameMany)
     span.dropdown__option-name= name
     button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
-    span.dropdown__option-value= val ? val : min
+    input.dropdown__option-value(value= val ? val : min)
     button.dropdown__option-control.dropdown__option-control--add +
 
 mixin dropButtons

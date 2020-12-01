@@ -47,6 +47,10 @@
     &::placeholder
       color: $dark75
 
+  .dropdown__display
+    padding-right: 44px
+    text-overflow: ellipsis
+
   // end __display
 
 // end .dropdown, .date-dropdown common styles
@@ -94,12 +98,12 @@
     &-name
       flex: auto
       text-transform: uppercase
-      vertical-align: 0px
 
     &-value
-      width: 32px
+      border: 0
+      line-height: 2.8rem
       text-align: center
-      line-height: 28px
+      width: 32px
 
     &-control
       height: $optionHeight
@@ -113,6 +117,7 @@
       cursor: pointer
 
       &--disabled
+        cursor: default
         opacity: .5
 
   // end __option

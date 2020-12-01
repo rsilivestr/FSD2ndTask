@@ -25,7 +25,7 @@ include ~CommonBlocks/range/range
             +textField('This is pretty awesome', 'text', 'uikit_always-focused')
 
           +inputBox('dropdown').mb23
-            +inputDrop('single', 'Сколько гостей').super-dropdown
+            +inputDrop('single', 'Сколько гостей').js-dropdown-1
               each title in ['взрослые', 'дети', 'младенцы']
                 +dropOption(title, '', '', '', 0, 10)
  
@@ -143,7 +143,7 @@ include ~CommonBlocks/range/range
         .fe-grid__item
           //- dropdown
           +inputBox('dropdown', 'm').mb21
-            +inputDrop('multi', '')
+            +inputDrop('multi', '').js-dropdown-2
               +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
               +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
               +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)

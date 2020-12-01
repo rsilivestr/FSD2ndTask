@@ -1,217 +1,223 @@
-// const FSD2ndTaskDropdown = (() => {
-//   // class names
-//   const CNAME = {
-//     dropdown: 'dropdown',
-//     multi: 'dropdown--type_multi',
-//     single: 'dropdown--type_single',
-//     display: 'dropdown__display',
-//     open: 'dropdown--is-open',
-//     contents: 'dropdown__contents',
-//     visible: 'dropdown__contents--visible',
-//     option: 'dropdown__option',
-//     optionValue: 'dropdown__option-value',
-//     optionName: 'dropdown__option-name',
-//     control: 'dropdown__option-control',
-//     controlAdd: 'dropdown__option-control--add',
-//     controlSub: 'dropdown__option-control--subtract',
-//     controlDisabled: 'dropdown__option-control--disabled',
-//     btn: 'button',
-//     btnApply: 'dropdown__btn--apply',
-//     btnClear: 'dropdown__btn--clear',
-//     btnDisabled: 'hidden',
-//   };
+const defaultSelectors = {
+  dropdown: '.dropdown',
+  input: '.dropdown__display',
+  list: '.dropdown__contents',
+  listItem: '.dropdown__option',
+  listItemValue: '.dropdown__option-value',
+  listBtn: '.dropdown__option-control',
+  addBtn: '.dropdown__option-control--add',
+  subtractBtn: '.dropdown__option-control--subtract',
+  disabledBtn: '.dropdown__option-control--disabled',
+  applyBtn: '.dropdown__btn--apply',
+  clearBtn: '.dropdown__btn--clear',
+};
 
-//   // class selector strings
-//   const CSEL = {};
-//   for (const key in CNAME) {
-//     // if (CNAME.hasOwnProperty(key)) {
-//     if (key) {
-//       const value = CNAME[key];
-//       CSEL[key] = `.${value}`;
-//     }
-//   }
+const defaultClasses = {
+  disabledBtn: 'dropdown__option-control--disabled',
+  hiddenBtn: 'hidden',
+  visibleList: 'dropdown__contents--visible',
+};
 
-//   const UIdrops = document.querySelectorAll(CSEL.dropdown);
-//   const UIsingle = document.querySelectorAll(CSEL.single);
-//   const UImulti = document.querySelectorAll(CSEL.multi);
-//   const UIoptions = document.querySelectorAll(CSEL.option);
+export class FSD2ndTaskDropdown {
+  constructor(element = null, options = {}) {
+    this._init(element, options);
+  }
 
-//   const closeDrop = (drop) => {
-//     drop.classList.remove(CNAME.open);
-//     drop.querySelector(CSEL.contents).classList.remove(CNAME.visible);
-//   };
+  _guestCase(sum) {
+    if (sum % 100 === 11) return ' гостей';
+    if (sum % 10 === 1) return ' гость';
+    if (sum % 10 > 1 && sum % 10 < 5 && (sum % 100 < 10 || sum % 100 > 20))
+      return ' гостя';
+    return ' гостей';
+  }
 
-//   // function to handle any dropdown click interactions
-//   function toggleDropdown(e) {
-//     // when dropdown display is clicked
-//     if (e.target.classList.contains(CNAME.display)) {
-//       const UIcurrent = e.target.parentElement;
-//       // close all dropdowns other than targeted
-//       UIdrops.forEach((drop) => {
-//         if (drop !== UIcurrent) {
-//           closeDrop(drop);
-//         }
-//       });
-//       // toggle clicked dropdown
-//       UIcurrent.classList.toggle(CNAME.open);
-//       // show contents
-//       e.target.nextElementSibling.classList.toggle(CNAME.visible);
-//       // when dropdown-content is clicked
-//     } else if (e.target.closest(CSEL.contents)) {
-//       // when control (add / subtract) is clicked
-//       if (e.target.classList.contains(CNAME.control)) {
-//         updateOption(e.target);
-//         if (e.target.closest(CSEL.multi)) {
-//           updateDisplay(e.target.closest(CSEL.multi));
-//         }
-//       } else if (e.target.classList.contains(CNAME.btnApply)) {
-//         // if apply button clicked
-//         const parentDrop = e.target.closest(CSEL.dropdown);
-//         updateSingleValDisplay(parentDrop);
-//         closeDrop(parentDrop);
-//       } else if (e.target.classList.contains(CNAME.btnClear)) {
-//         // if clear button clicked
-//         e.target
-//           .closest(CSEL.dropdown)
-//           .querySelectorAll(CSEL.optionValue)
-//           .forEach((opt) => (opt.innerText = 0));
-//         updateDisplay(e.target.closest(CSEL.dropdown));
-//       }
-//     } else {
-//       // close any and all dropdowns if none targeted
-//       UIdrops.forEach((drop) => closeDrop(drop));
-//     }
-//   }
+  _getValues() {
+    const itemInputs = Array.from(
+      this.dropdown.querySelectorAll(this.selectors.listItemValue)
+    );
+    const values = itemInputs.map((item) => parseInt(item.value));
 
-//   // update option value on control click
-//   function updateOption(btn) {
-//     const opt = btn.parentElement,
-//       min = opt.dataset.min || 0,
-//       max = opt.dataset.max || 99,
-//       action = btn.classList.contains(CNAME.controlAdd) ? 'add' : 'subtract',
-//       UIvalue = opt.querySelector(CSEL.optionValue);
-//     let currentValue = UIvalue.innerText;
-//     if (action == 'subtract' && +currentValue > +min) {
-//       currentValue--;
-//       UIvalue.innerText = currentValue;
-//       updateOptionControls(opt);
-//     } else if (action == 'add' && +currentValue < +max) {
-//       currentValue++;
-//       UIvalue.innerText = currentValue;
-//       updateOptionControls(opt);
-//     }
-//   }
+    return values;
+  }
 
-//   // choose how to update controls state
-//   function updateOptionControls(opt = null) {
-//     if (opt) {
-//       // update single option if invoked with parameter
-//       updateSingleOptionControls(opt);
-//     } else {
-//       // update values in all dropdowns, e.g. on load
-//       UIoptions.forEach((opt) => updateSingleOptionControls(opt));
-//     }
-//   }
+  _getStrings() {
+    const items = Array.from(
+      this.dropdown.querySelectorAll(this.selectors.listItem)
+    );
 
-//   // enable or disable option controls "+" & "-"
-//   function updateSingleOptionControls(opt) {
-//     const UIsub = opt.querySelector(CSEL.controlSub),
-//       UIadd = opt.querySelector(CSEL.controlAdd),
-//       UIvalue = opt.querySelector(CSEL.optionValue),
-//       cur = +UIvalue.innerText,
-//       min = opt.dataset.min || 0,
-//       max = opt.dataset.max || 99;
-//     if (cur == min) {
-//       UIsub.classList.add(CNAME.controlDisabled);
-//     } else {
-//       UIsub.classList.remove(CNAME.controlDisabled);
-//     }
-//     if (cur == max) {
-//       UIadd.classList.add(CNAME.controlDisabled);
-//     } else {
-//       UIadd.classList.remove(CNAME.controlDisabled);
-//     }
-//   }
+    const itemValues = items.map((item) => {
+      const value = item.querySelector(this.selectors.listItemValue).value;
 
-//   // select funtcion to update display
-//   function updateDisplay(drop) {
-//     if (drop) {
-//       if (drop.classList.contains(CNAME.multi)) {
-//         updateMultiValDisplay(drop);
-//       } else if (drop.classList.contains(CNAME.single)) {
-//         updateSingleValDisplay(drop);
-//       }
-//     } else {
-//       UImulti.forEach((drop) => updateMultiValDisplay(drop));
-//       UIsingle.forEach((drop) => updateSingleValDisplay(drop));
-//     }
-//   }
+      if (value % 100 === 11) return `${value} ${item.dataset.many}`;
 
-//   // update display with separated option values
-//   function updateMultiValDisplay(drop) {
-//     let out = '';
-//     drop.querySelectorAll(CSEL.option).forEach((opt, index) => {
-//       const value = opt.querySelector(CSEL.optionValue).innerText;
-//       let name;
-//       // set valid word case
-//       if (value % 10 == 1 && value != 11) {
-//         // cases of 111 and further are not addressed
-//         name = opt.dataset.single;
-//       } else if (
-//         (value % 10 < 5 && value < 5) ||
-//         (value % 10 < 5 && value > 21)
-//       ) {
-//         name = opt.dataset.few;
-//       } else {
-//         name = opt.dataset.many;
-//       }
-//       if (index < 1) {
-//         out += `${value} ${name}, `;
-//       } else if (index < 2) {
-//         out += `${value} ${name}...`;
-//       }
-//     });
-//     drop.querySelector(CSEL.display).value = out.toLowerCase();
-//   }
+      if (value % 10 === 1) return `${value} ${item.dataset.single}`;
 
-//   // update display with single value of options sum
-//   function updateSingleValDisplay(drop) {
-//     let guestCount = 0,
-//       guestCase;
-//     // count option values sum
-//     drop.querySelectorAll(CSEL.option).forEach((opt) => {
-//       guestCount += +opt.querySelector(CSEL.optionValue).innerText;
-//     });
-//     // set valid word case
-//     if (guestCount % 10 == 1 && guestCount != 11) {
-//       // 111
-//       guestCase = 'гость';
-//     } else if (
-//       (guestCount % 10 < 5 && guestCount < 5) ||
-//       (guestCount % 10 < 5 && guestCount > 21)
-//     ) {
-//       guestCase = 'гостя';
-//     } else {
-//       guestCase = 'гостей';
-//     }
-//     drop.querySelector(CSEL.display).value = `${guestCount} ${guestCase}`;
-//     if (guestCount > 0) {
-//       drop.querySelector(CSEL.btnClear).classList.remove(CNAME.btnDisabled);
-//     } else {
-//       drop.querySelector(CSEL.btnClear).classList.add(CNAME.btnDisabled);
-//       drop.querySelector(CSEL.display).value = '';
-//     }
-//   }
+      if (
+        value % 10 > 1 &&
+        value % 10 < 5 &&
+        (value % 100 < 10 || value % 100 > 20)
+      )
+        return `${value} ${item.dataset.few}`;
 
-//   const init = () => {
-//     // initialize dropdowns' states
-//     updateOptionControls();
-//     updateDisplay();
+      return `${value} ${item.dataset.many}`;
+    });
 
-//     // listen to clicks
-//     document.body.addEventListener('mousedown', toggleDropdown);
-//   };
-//   return { init };
-// })();
+    return itemValues;
+  }
 
-// FSD2ndTaskDropdown.init();
+  _applyMulti() {
+    const strings = this._getStrings();
+
+    this.input.value = '';
+
+    strings.forEach((string) => {
+      if (string[0] !== '0') {
+        if (this.input.value === '') this.input.value = string;
+        else this.input.value += `, ${string}`;
+      }
+    });
+  }
+
+  _apply() {
+    const values = this._getValues();
+    // Get sum of list item values
+    const sum = values.reduce((a, b) => a + b, 0);
+
+    if (sum > 0) {
+      // Set input value
+      this.input.value = sum.toString() + this._guestCase(sum);
+    } else {
+      // Clear input
+      this.input.value = '';
+    }
+
+    this._updateClearBtn();
+
+    this._toggleDropdown();
+  }
+
+  _clear() {
+    const items = this.dropdown.querySelectorAll(this.selectors.listItemValue);
+    // Clear list item values
+    items.forEach((item) => (item.value = '0'));
+    // Clear input
+    this.input.value = '';
+
+    this._updateClearBtn();
+  }
+
+  _updateListItem(item) {
+    const value = item.querySelector(this.selectors.listItemValue).value;
+    const addBtn = item.querySelector(this.selectors.addBtn);
+    const subtractBtn = item.querySelector(this.selectors.subtractBtn);
+    // Enable / disable buttons
+    if (value === item.dataset.min) {
+      subtractBtn.classList.add(this.classes.disabledBtn);
+      addBtn.classList.remove(this.classes.disabledBtn);
+    } else if (value === item.dataset.max) {
+      subtractBtn.classList.remove(this.classes.disabledBtn);
+      addBtn.classList.add(this.classes.disabledBtn);
+    } else {
+      subtractBtn.classList.remove(this.classes.disabledBtn);
+      addBtn.classList.remove(this.classes.disabledBtn);
+    }
+  }
+
+  _updateList() {
+    this.dropdown
+      .querySelectorAll(this.selectors.listItem)
+      .forEach((item) => this._updateListItem(item));
+  }
+
+  _updateClearBtn() {
+    if (this.input.value === '') {
+      this.clearBtn.classList.add(this.classes.hiddenBtn);
+    } else {
+      this.clearBtn.classList.remove(this.classes.hiddenBtn);
+    }
+  }
+
+  _subtract(e) {
+    const currentListItem = e.target.closest(this.selectors.listItem);
+
+    const btn = e.target.closest(this.selectors.subtractBtn);
+    if (btn) {
+      if (!btn.classList.contains(this.classes.disabledBtn)) {
+        const valueInput = e.target.nextElementSibling;
+        const value = parseInt(valueInput.value);
+        // Update value
+        valueInput.value = (value - 1).toString();
+
+        this._updateListItem(currentListItem);
+      }
+    }
+
+    if (this.type === 'multi') this._applyMulti();
+  }
+
+  _add(e) {
+    const currentListItem = e.target.closest(this.selectors.listItem);
+
+    const btn = e.target.closest(this.selectors.addBtn);
+    if (btn) {
+      if (!btn.classList.contains(this.classes.disabledBtn)) {
+        const valueInput = e.target.previousElementSibling;
+        const value = parseInt(valueInput.value);
+
+        valueInput.value = (value + 1).toString();
+
+        this._updateListItem(currentListItem);
+      }
+    }
+
+    if (this.type === 'multi') this._applyMulti();
+  }
+
+  _toggleDropdown() {
+    this.list.classList.toggle(this.classes.visibleList);
+  }
+
+  _close(e) {
+    const el = e.target.closest(this.selectors.dropdown);
+    if (el !== this.dropdown) {
+      this.list.classList.remove(this.classes.visibleList);
+    }
+  }
+
+  _addListeners() {
+    this.input.addEventListener('click', () => this._toggleDropdown());
+    this.list.addEventListener('click', (e) => this._subtract(e));
+    this.list.addEventListener('click', (e) => this._add(e));
+
+    if (this.type === 'single') {
+      this.applyBtn.addEventListener('click', () => this._apply());
+      this.clearBtn.addEventListener('click', () => this._clear());
+    }
+
+    document.body.addEventListener('click', (e) => this._close(e));
+  }
+
+  _init(element, options) {
+    if (typeof element === 'string')
+      this.dropdown = document.querySelector(element);
+    else this.dropdown = element;
+
+    this.type = options.type || 'single';
+    this.selectors = options.selectors || defaultSelectors;
+    this.classes = options.classes || defaultClasses;
+
+    this.input = this.dropdown.querySelector(this.selectors.input);
+    this.list = this.dropdown.querySelector(this.selectors.list);
+
+    if (this.type === 'single') {
+      this.applyBtn = this.dropdown.querySelector(this.selectors.applyBtn);
+      this.clearBtn = this.dropdown.querySelector(this.selectors.clearBtn);
+    } else {
+      this._applyMulti();
+    }
+
+    this._updateList();
+
+    this._addListeners();
+  }
+}

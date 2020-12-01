@@ -19,7 +19,7 @@ include ~CommonBlocks/range/range
           +dateDropdown
         //- guests dropdown
         +inputBox('гости').mb30
-          +inputDrop('single', 'Количество гостей')
+          +inputDrop('single', 'Количество гостей').js-guest-dropdown
             each item in ['взрослые', 'дети', 'младенцы']
               +dropOption(item, '', '', '', 0, 10)
         //- range
@@ -37,7 +37,7 @@ include ~CommonBlocks/range/range
           +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
         //- comfort dropdown
         +inputBox('удобства номера', 'm').mb24
-          +inputDrop('multi', '')
+          +inputDrop('multi', '').js-comfort-dropdown
             +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
             +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
             +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
