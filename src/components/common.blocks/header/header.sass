@@ -46,35 +46,34 @@
   &__nav
     display: none
     margin-left: auto
-    margin-right: 30px
+    margin-right: 20px
     text-align: center
     z-index: 51
 
     &--expanded
-      position: absolute
-      top: 100%
-      left: 0
-      width: 100%
-
-      display: flex
-      flex-flow: column nowrap
       align-items: center
-
-      padding: 10px 0
       background: #fff
       border-top: 1px solid $dark10
       box-shadow: 0 4px 4px $dark10
+      display: flex
+      flex-flow: column nowrap
+      left: 0
+      padding: 10px 0
+      position: absolute
+      top: 100%
+      width: 100%
 
     @include media('>=tablet')
-      display: block
+      display: flex
+      gap: 20px
 
   &__navlink
+    color: $dark50
     display: inline-block
     line-height: 2.4rem
     padding: 10px
-    text-transform: capitalize
     text-decoration: none
-    color: $dark50
+    text-transform: capitalize
 
     &--current
       font-weight: 700
@@ -82,36 +81,27 @@
 
     &--has-subnav
       &::after
-        // @extend .centered-flex
         @extend .material-icons
         content: '\e5cf'
+        margin-left: 1.5px
         vertical-align: middle
-        width: 18px
-
-      // // compensate after
-      // @include media('<tablet')
-      //   margin-left: 10px
+        width: 24px
 
     &:hover
       @extend .text-gradient
 
     @include media('>=tablet')
       padding: 0
-
-      &:not(:first-child)
-        margin-left: 30px
-
   // end __navlink
 
   &__user-panel
     display: flex
 
     @include media('>=tablet')
-      padding-left: 15px
+      padding-left: 20px
       border-left: 1px solid $dark25
 
     @include media('>=topnav')
-      padding-left: 30px
 
   &__user-menu
     display: inline-flex

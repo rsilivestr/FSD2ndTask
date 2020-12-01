@@ -2,7 +2,6 @@
 @use '_include-media' as im
 
 $mainFont: 'Montserrat', 'Gotham', 'Proxima Nova', 'Liberation Sans', sans-serif
-$titleFont: 'Quicksand', 'Open Sans', sans-serif
 
 .font-weight_light
   font-weight: 300
@@ -13,17 +12,17 @@ $titleFont: 'Quicksand', 'Open Sans', sans-serif
 .font-weight_bold
   font-weight: 700
 
-h1
-  font-family: $titleFont
-
-h1, h2, h3
+h1, h2, h3, h4
   line-height: 1.25
+  font-family: $mainFont
 
 h1
   font-size: 1.9rem
+  font-weight: 700
 
   @include im.media('>=400px')
     font-size: 2.4rem
+    line-height: 2.9rem
 
 h2
   font-size: 1.9rem

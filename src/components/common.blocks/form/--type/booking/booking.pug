@@ -15,7 +15,7 @@ mixin formBooking(room)
       span.form-title__price 9 990₽
         span.form-title__price-period в сутки
 
-    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-booking-datepicker
+    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-booking-datepicker.mb19
 
     +inputBox('гости', 'l')
       +inputDrop('single', 'Сколько гостей').mb14.js-booking-form-dropdown
@@ -34,7 +34,7 @@ mixin formBooking(room)
         tr.bill-info__row.bill-info__extra
           td.bill-info__title.bill-info__title--has-hint Сбор за дополнительные услуги
           td.bill-info__sum 300₽
-    .bill-info__row.bill-info__total.mb19
+    .bill-info__row.bill-info__total
       span.bill-info__total-title Итого
       span.bill-info__total-sum 38&nbsp;081₽
     
