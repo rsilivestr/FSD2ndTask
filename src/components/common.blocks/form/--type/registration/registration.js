@@ -1,3 +1,3 @@
-import { FSD2ndTaskMaskedDate } from 'Plugins/FSD2ndTaskMaskedDate';
+import { FSD2ndTaskMaskedDate } from 'CommonBlocks/masked-date/masked-date';
 
 new FSD2ndTaskMaskedDate('.js-dob-masked');

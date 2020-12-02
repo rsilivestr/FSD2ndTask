@@ -1,6 +1,6 @@
 import { FSD2ndTaskDatepicker } from 'CommonBlocks/date-dropdown/date-dropdown';
-import { FSD2ndTaskRange } from 'Plugins/FSD2ndTaskRange';
-import { FSD2ndTaskMaskedDate } from 'Plugins/FSD2ndTaskMaskedDate';
+import { FSD2ndTaskRange } from 'CommonBlocks/range/range';
+import { FSD2ndTaskMaskedDate } from 'CommonBlocks/masked-date/masked-date';
 import { FSD2ndTaskDropdown } from 'CommonBlocks/dropdown/dropdown';
 
 new FSD2ndTaskDatepicker('.js-datepicker-double');

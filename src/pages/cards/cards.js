@@ -2,11 +2,16 @@ import 'CommonBlocks/form/--type/booking/booking';
 import 'CommonBlocks/form/--type/registration/registration';
 import 'CommonBlocks/form/--type/search-room/search-room';
 import { FSD2ndTaskDatepicker } from 'CommonBlocks/date-dropdown/date-dropdown';
-// import { FSD2ndTaskDropdown } from 'CommonBlocks/dropdown/dropdown';
+import { FSD2ndTaskRoomSlider } from 'CommonBlocks/room-card/room-card';
 
 new FSD2ndTaskDatepicker('.js-datepicker-static');
 
-// Get elements
+const roomCardSliders = Array.from(
+  document.querySelectorAll('.room-card__photos')
+);
+roomCardSliders.forEach((slider) => new FSD2ndTaskRoomSlider(slider));
+
+// Get datepicker elements
 const container = document.querySelector('.js-datepicker-static');
 const picker = container.querySelector('.datepicker');
 // Force open datepicker
@@ -15,6 +20,3 @@ picker.classList.add('form__datepicker--visible');
 // Edit styles
 container.style.position = 'relative';
 picker.parentElement.style.position = 'relative';
-
-// document.body.querySelectorAll('.dropdown--type_single')
-//   .forEach(dropdown => new FSD2ndTaskDropdown(dropdown));
