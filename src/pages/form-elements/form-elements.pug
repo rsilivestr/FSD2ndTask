@@ -25,9 +25,7 @@ include ~CommonBlocks/range/range
             +textField('This is pretty awesome', 'text', 'uikit_always-focused')
 
           +inputBox('dropdown').mb23
-            +inputDrop('single', 'Сколько гостей').js-dropdown-1
-              each title in ['взрослые', 'дети', 'младенцы']
-                +dropOption(title, '', '', '', 0, 10)
+            +dropdown.js-dropdown-1
  
           +inputBox('masked text field').mb42
             +textField('ДД.ММ.ГГГГ').js-masked-date
@@ -143,37 +141,25 @@ include ~CommonBlocks/range/range
         .fe-grid__item
           //- dropdown
           +inputBox('dropdown', 'm').mb21
-            +inputDrop('multi', '').js-dropdown-2
-              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 4)
-              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 1)
+            +dropdown(dropdownMultiDefaults).js-dropdown-2
 
           //- dropdown expanded
           +inputBox('dropdown', 'm')
-            +inputDrop('multi', '', true)
-              +dropOption('спальни', 'спальня', 'спальни', 'спален', 1, 3, 2)
-              +dropOption('кровати', 'кровать', 'кровати', 'кроватей', 1, 6, 2)
-              +dropOption('ванные комнаты', 'ванная комната', 'ванных комнаты', 'ванных комнат', 0, 3, 0)
-
+            +dropdown(dropdownMultiDefaults, true)
 
         //- b 2 --------------------------------------//
 
         .fe-grid__item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
-            +inputDrop('single', 'Сколько гостей', true)
-              each title in ['взрослые', 'дети', 'младенцы']
-                +dropOption(title, '', '', '', 0, 10)
+            +dropdown({}, true)
 
         //- b 3 --------------------------------------//
         
         .fe-grid__item
           //- wide dropdown with button ПРИМЕНИТЬ
           +inputBox('dropdown')
-            +inputDrop('single', 'Сколько гостей', true)
-              +dropOption('взрослые', '', '', '', 0, 10, 2)
-              +dropOption('дети', '', '', '', 0, 10, 1)
-              +dropOption('младенцы', '', '', '', 0, 10)
+            +dropdown({}, true)
 
         //- c 1 --------------------------------------//
 

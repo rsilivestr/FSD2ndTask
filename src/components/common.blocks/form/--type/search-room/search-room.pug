@@ -10,9 +10,7 @@ mixin formSearchRoom
     +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-search-room-datepicker
 
     +inputBox('гости', 'l').mb21
-      +inputDrop('single', 'Сколько гостей').mb10.js-search-room-dropdown
-        each title in ['взрослые', 'дети', 'младенцы']
-          +dropOption(title, '', '', '', 0, 10)
+      +dropdown.mb10.js-search-room-dropdown
     
     +aButton({ 
       title: 'подобрать номер', 

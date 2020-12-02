@@ -18,9 +18,7 @@ mixin formBooking(room)
     +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-booking-datepicker.mb19
 
     +inputBox('гости', 'l')
-      +inputDrop('single', 'Сколько гостей').mb14.js-booking-form-dropdown
-        each title in ['взрослые', 'дети', 'младенцы']
-          +dropOption(title, '', '', '', 0, 10)
+      +dropdown.mb14.js-booking-form-dropdown
 
     //- Bill info
     table.form__bill.bill-info
