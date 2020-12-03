@@ -15,10 +15,23 @@ include ~CommonBlocks/room-card/room-card
         +formBooking({ number: '888', lux: true }).mb40
         +formLogin
       .main-content__column
-        .js-datepicker-static.mb38
+        .js-datepicker-static.mb46
           input(type="hidden")
           input(type="hidden")
-        +roomCard(['room1.jpg', 'room2.jpg', 'room3.jpg'], 5, 888, '9 990₽', 145, true).room-card--width_m.mb39
-        +roomCard(['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'], 4, 840, '9 900₽', 65).room-card--width_m
+        +roomCard({ 
+          photos: ['room1.jpg', 'room2.jpg', 'room3.jpg'],
+          rating: 5,
+          number: 888,
+          cost: '9 990',
+          reviewCount: 145,
+          lux: true,
+        }).room-card--width_m.mb39
+        +roomCard({
+          photos: ['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'],
+          rating: 4,
+          number: 840,
+          cost: '9 900₽',
+          reviewCount: 65,
+        }).room-card--width_m
 
     script(type="text/javascript" src="../scripts/cards.js")

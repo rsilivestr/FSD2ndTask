@@ -1,0 +1,54 @@
+@use 'Styles/forward' as *
+
+.bill-info
+  position: relative
+  width: 100%
+  line-height: 1.8rem
+  font-size: 1.4rem
+  color: $dark75
+
+  &__title,
+  &__sum
+    padding: 6px 0
+
+  &__title
+
+    &--has-hint::before
+      content: 'i'
+      display: inline-flex
+      float: right
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 20px
+      color: $dark25
+      border: 1px solid $dark25
+      border-radius: 50%
+
+  &__sum
+    min-width: 75px
+    text-align: right
+    vertical-align: top
+
+  &__total
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    margin-bottom: 20px
+    width: 100%
+    color: $dark100
+    font-size: 1.9rem
+    font-weight: 700
+
+    &-title
+      order: 1
+
+    &-sum
+      order: 3
+
+    &:after
+      content: ''
+      flex: auto
+      order: 2
+      margin: 5px 5px
+      border-bottom: 1px dotted $dark25

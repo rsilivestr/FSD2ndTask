@@ -1,0 +1,42 @@
+@use 'Styles/forward' as *
+@import '~nouislider/distribute/nouislider.min.css'
+
+.noUi-horizontal
+  border: none
+
+.noUi-base
+  height: 6px
+
+  &:after
+    content: ""
+    display: block
+    position: relative
+    width: 100%
+    height: 100%
+    top: -6.2px
+    border: 1px solid $dark25
+    border-radius: 3px
+    z-index: -1
+
+.noUi-handle,
+.noUi-connect
+  background: $secondaryGradient
+
+.noUi-target
+  background: transparent
+  box-shadow: none
+
+div.noUi-horizontal .noUi-handle
+  width: 16px
+  height: 16px
+  top: -5.2px
+  left: 72%
+
+div.noUi-handle
+  border: 2px solid #fff
+  border-radius: 8px
+  box-shadow: none
+
+  &::after,
+  &::before
+    display: none

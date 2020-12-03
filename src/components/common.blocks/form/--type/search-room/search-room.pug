@@ -5,9 +5,9 @@ include ~CommonBlocks/input-box/input-box
 mixin formSearchRoom
   form.form.form--type_search-room&attributes(attributes)
     
-    h1.form-title Найдём номера под ваши пожелания
+    h1.form__title.mb22 Найдём номера под ваши пожелания
 
-    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-search-room-datepicker
+    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-search-room-datepicker
 
     +inputBox('гости', 'l').mb21
       +dropdown.mb10.js-search-room-dropdown

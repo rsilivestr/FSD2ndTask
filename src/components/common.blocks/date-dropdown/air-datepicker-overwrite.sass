@@ -1,0 +1,116 @@
+@use 'Styles/forward' as *
+@import '~air-datepicker/dist/css/datepicker'
+
+.datepicker
+  &-range
+    // short months names to lowercase
+    text-transform: lowercase
+
+  &--content
+    padding: 15px 22px 20px
+
+  &--nav
+    padding: 17px 17px 15px
+    border: none
+
+    &-title
+      color: $dark100
+      font-weight: 700
+      font-size: 1.9rem
+
+  &--day-name
+    @extend .text-gradient
+    color: transparent
+    font-weight: 700
+    text-transform: capitalize
+
+  &--days-names
+    margin-bottom: 12px
+
+  &--cell
+    color: $dark50
+    margin-bottom: 1.25px
+    border-radius: 0
+    z-index: 20
+
+    &-day
+      font-size: 1.2rem
+
+    // focus
+    &.-focus-
+      border: none
+      background: $mainGradient50
+
+    &.-selected-
+      color: #ffffff
+      font-weight: 700
+      background: $mainGradient
+
+    &.-in-range-
+      background: $mainGradient25
+      &.-focus-
+        background: $mainGradient25
+
+    &.-current-
+      color: #ffffff
+      font-weight: 700
+      background: $secondaryGradient
+      &.-selected-
+        background: $secondaryGradient
+        &.-focus-
+          background: $secondaryGradient
+      &.-in-range-
+        color: #ffffff
+        &::after
+          background: $mainGradient25
+        &.-focus-
+          background: $secondaryGradient
+          &::after
+            background: $mainGradient25
+            border-radius: 0
+      &.-focus-
+        color: #ffffff
+
+    &.-focus-.-in-range-::after
+      background: $mainGradient50
+
+    &.-selected-
+      &.-focus-
+        background: $mainGradient
+
+  // end --cell
+
+  &--pointer
+    display: none
+
+.-range-from-::after,
+.-range-to-::after
+  background: $mainGradient25
+
+.-in-range-::after,
+.-range-from-::after,
+.-range-to-::after
+  content: ''
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 10
+
+// border radiuses
+.datepicker--cell
+  height: 39px
+
+  &.-current-,
+  &.-selected-,
+  &.-focus-:not(.-in-range-),
+  &.-focus-.-in-range-::after
+    border-radius: 20px
+
+.-range-from-::after,
+.-in-range-:nth-of-type(7n + 1)
+  border-radius: 20px 0 0 20px
+
+.-range-to-::after,
+.-in-range-:nth-of-type(7n)
+  border-radius: 0 20px 20px 0

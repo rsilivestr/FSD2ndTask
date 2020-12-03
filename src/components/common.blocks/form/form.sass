@@ -1,8 +1,4 @@
 @use 'Styles/forward' as *
-@use './--type/booking/booking'
-@use './--type/login/login'
-@use './--type/registration/registration'
-@use './--type/search-room/search-room'
 @use './__prompt/prompt'
 
 .form
@@ -12,132 +8,16 @@
   align-items: center
   width: 100%
   max-width: 380px
-  padding: 40px 15px 30px 15px
+  padding: 40px 30px 30px 30px
   background: #ffffff
   border-radius: 4px
   box-shadow: 0 0 20px $dark25
 
-  > *
-    // smooth form paddings change on xs
+  &__title
     width: 100%
-    max-width: 320px
-
-  @include media('>=footcols')
-    padding: 40px 30px 30px 30px
-
-  &-title
-    display: flex
-    align-items: flex-end
-    margin-bottom: 22px
-
-    &__number
-      font-size: 1.4rem
-      margin-right: 4px
-
-    &__room
-      flex: auto
-      align-items: flex-end
-      text-decoration: none
-
-    &__lux
-      @extend .text-gradient
-      font-size: 1.2rem
-      margin-left: 5px
-      text-transform: uppercase
-
-    // end -room
-
-    &__price
-      color: $dark50
-      font-size: 1.4rem
-      font-weight: 700
-
-    &__price-period
-      font-size: 1.2rem
-      font-weight: 400
-      margin-left: 4px
-
-  // end __title
 
   &__row
     display: flex
     max-width: 320px
     flex-direction: row
     justify-content: space-between
-
-  &__datepicker
-    display: none
-    width: 100%
-
-    &--visible
-      display: block
-
-    &-double
-      position: relative
-      display: flex
-      flex-flow: row nowrap
-      justify-content: space-between
-      margin-bottom: 21px
-      max-width: 320px
-
-      .datepicker-inline
-        position: absolute
-        top: 100%
-        margin-top: 5px
-
-// end .form
-
-.bill-info
-  position: relative
-  width: 100%
-  line-height: 1.8rem
-  font-size: 1.4rem
-  color: $dark75
-  margin-bottom: 22px
-
-  &__title,
-  &__sum
-    padding: 6px 0
-
-  &__title
-
-    &--has-hint::before
-      content: 'i'
-      display: inline-flex
-      float: right
-      align-items: center
-      justify-content: center
-      width: 20px
-      height: 20px
-      margin-top: 2px
-      color: $dark25
-      border: 1px solid $dark25
-      border-radius: 50%
-
-  &__sum
-    min-width: 75px
-    text-align: right
-    vertical-align: top
-
-  &__total
-    display: flex
-    flex-flow: row nowrap
-    align-items: flex-end
-    margin-bottom: 20px
-    width: 100%
-    color: $dark100
-    font-size: 1.9rem
-    font-weight: 700
-
-    &-title
-      order: 1
-
-    &-sum
-      order: 3
-
-    &:after
-      content: ''
-      flex: auto
-      order: 2
-      margin: 5px 5px
-      border-bottom: 1px dotted $dark25

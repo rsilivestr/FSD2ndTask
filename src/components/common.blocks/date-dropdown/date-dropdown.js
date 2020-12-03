@@ -2,7 +2,7 @@
 import datepicker from 'air-datepicker';
 
 export class FSD2ndTaskDatepicker {
-  constructor(selector, options = { range: false }) {
+  constructor(selector, options = {}) {
     this._init(selector, options);
   }
 
@@ -30,11 +30,11 @@ export class FSD2ndTaskDatepicker {
   }
 
   _togglePicker() {
-    this.UI.picker.classList.toggle('form__datepicker--visible');
+    this.UI.picker.parentElement.classList.toggle('datepicker-inline--visible');
   }
 
   _hidePicker() {
-    this.UI.picker.classList.remove('form__datepicker--visible');
+    this.UI.picker.parentElement.classList.remove('datepicker-inline--visible');
   }
 
   _fillRangeInput() {
@@ -82,7 +82,7 @@ export class FSD2ndTaskDatepicker {
 
   _addListeners() {
     // Toggle datepicker
-    if (this.options.range) {
+    if (this.range) {
       this.UI.input.addEventListener('click', () => this._togglePicker());
     } else {
       this.UI.inputStartDate.addEventListener('click', () =>
@@ -93,13 +93,13 @@ export class FSD2ndTaskDatepicker {
       );
     }
     // Clear inputs
-    if (this.options.range) {
+    if (this.range) {
       this.UI.clearBtn.addEventListener('click', () => this._clearRangeInput());
     } else {
       this.UI.clearBtn.addEventListener('click', () => this._clearInputs());
     }
     // Fill inputs
-    if (this.options.range) {
+    if (this.range) {
       this.UI.applyBtn.addEventListener('click', () => this._fillRangeInput());
     } else {
       this.UI.applyBtn.addEventListener('click', () => this._fillInputs());
@@ -107,11 +107,12 @@ export class FSD2ndTaskDatepicker {
   }
 
   _init(selector, options) {
-    this.options = options;
+    this.range = options.range || false;
+    this.size = options.size || 'l';
     this.UI = {};
     // Get container element
     this.UI.container = document.querySelector(selector);
-    if (this.options.range) {
+    if (this.range) {
       this.UI.input = this.UI.container.querySelector('input');
     } else {
       // Get start and end date inputs
@@ -131,7 +132,7 @@ export class FSD2ndTaskDatepicker {
       },
       multipleDates: 2,
       range: true,
-      classes: 'form__datepicker datepicker--size_l',
+      classes: `datepicker--size_${this.size}`,
     });
     // Access datepicker instance data
     /* eslint-disable-next-line */

@@ -1,9 +1,9 @@
 mixin dateDropdown(options = {})
   -
-    var type = options.type || 'single';
-    var placeholder = options.placeholder || '';
-    var labelStart = options.labelStart || 'Прибытие';
-    var labelEnd = options.labelEnd || 'Выезд';
+    const type = options.type || 'single';
+    const placeholder = options.placeholder || '';
+    const labelStart = options.labelStart || 'Прибытие';
+    const labelEnd = options.labelEnd || 'Выезд';
 
   if type === 'single'
     .date-dropdown.date-dropdown--range&attributes(attributes)

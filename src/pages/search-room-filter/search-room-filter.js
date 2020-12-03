@@ -3,7 +3,7 @@ import { FSD2ndTaskRange } from 'CommonBlocks/range/range';
 import { FSD2ndTaskDropdown } from 'CommonBlocks/dropdown/dropdown';
 import { FSD2ndTaskRoomSlider } from 'CommonBlocks/room-card/room-card';
 
-new FSD2ndTaskDatepicker('.js-filter-datepicker', { range: true });
+new FSD2ndTaskDatepicker('.js-filter-datepicker', { range: true, size: 'm' });
 
 new FSD2ndTaskRange('.js-rangeslider');
 

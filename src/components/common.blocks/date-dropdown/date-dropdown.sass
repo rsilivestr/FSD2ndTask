@@ -1,186 +1,67 @@
 @use 'Styles/forward' as *
-@import '~air-datepicker/dist/css/datepicker'
+@use './air-datepicker-overwrite'
 
 .datepicker
+  box-sizing: border-box
   box-shadow: 0 5px 10px $dark05
+  width: 100%
 
   @include media('>=footcols')
     box-shadow: 0 10px 20px $dark05
 
   &-inline
-    position: absolute
-    top: 105%
-    width: 318px
     box-shadow: 0 5px 10px $dark05
+    display: none
+    margin-top: 5px
+    position: absolute
+    top: 100%
     z-index: 30
 
     @include media('>=footcols')
       box-shadow: 0 10px 20px $dark05
 
-  &-range
-    // short months names to lowercase
-    text-transform: lowercase
+    &--visible
+      display: block
 
-  &--content
-    padding: 15px 22px 20px
-
-  &--nav
-    padding: 17px 17px 15px
-    border: none
-
-    &-title
-      color: $dark100
-      font-weight: 700
-      font-size: 1.9rem
+  &-double
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 21px
+    max-width: 320px
+    width: 100%
 
   &__arrow
     font-size: 2.4rem
 
-  &--day-name
-    font-weight: 700
-    text-transform: capitalize
-
-  &__arrow,
-  &--day-name
-    // --day-name does not work with just @extend
-    color: transparent
+  &__arrow
     @extend .text-gradient
 
-  &--days-names
-    margin-bottom: 12px
-
-  &--cell
-    color: $dark50
-    margin-bottom: 1.25px
-    border-radius: 0
-    z-index: 20
-
-    &-day
-      font-size: 1.2rem
-
-    // focus
-    &.-focus-
-      border: none
-      background: $mainGradient50
-
-    // selected
-      // range from
-        // focus
-      // range to
-        // focus
-
-    &.-selected-
-      color: #ffffff
-      font-weight: 700
-      background: $mainGradient
-
-    // in range
-      // after
-      // focus
-        // after
-    &.-in-range-
-      background: $mainGradient25
-      &.-focus-
-        background: $mainGradient25
-
-    // current
-      // after
-      // selected
-        // after
-        // range from
-          // after
-          // focus
-            // after
-        // range to
-          // after
-          // focus
-            // after  
-      // in range
-        // after
-        // focus
-          // after
-    &.-current-
-      color: #ffffff
-      font-weight: 700
-      background: $secondaryGradient
-      &.-selected-
-        background: $secondaryGradient
-        &.-focus-
-          background: $secondaryGradient
-      &.-in-range-
-        color: #ffffff
-        &::after
-          background: $mainGradient25
-        &.-focus-
-          background: $secondaryGradient
-          &::after
-            background: $mainGradient25
-            border-radius: 0
-      &.-focus-
-        color: #ffffff
-
-    &.-focus-.-in-range-::after
-      background: $mainGradient50
-
-    &.-selected-
-      &.-focus-
-        background: $mainGradient
-
-  // end --cell
-
-  &--pointer
-    display: none
-
   &--size_l
-    width: 320px
+    max-width: 320px
 
+    // Overwrite air datepicker
     .datepicker--cell
       height: 39px
 
   &--size_m
-    width: 266px
+    max-width: 266px
 
-    .datepicker--cell
-      height: 32px
+    // Overwrite air datepicker
+    .datepicker
+      &--nav-title
+        font-size: 1.6rem
 
-// end .datepicker
+      &--cell
+        height: 32px
 
-.-range-from-::after,
-.-range-to-::after
-  background: $mainGradient25
+  &__buttons-panel
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 0 20px 20px
 
-.-in-range-::after,
-.-range-from-::after,
-.-range-to-::after
-  content: ''
-  display: block
-  position: absolute
-  width: 100%
-  height: 100%
-  z-index: 10
-
-// border radiuses
-.datepicker--cell
-  &.-current-,
-  &.-selected-,
-  &.-focus-:not(.-in-range-),
-  &.-focus-.-in-range-::after
-    border-radius: 20px
-
-.-range-from-::after,
-.-in-range-:nth-of-type(7n + 1)
-  border-radius: 20px 0 0 20px
-
-.-range-to-::after,
-.-in-range-:nth-of-type(7n)
-  border-radius: 0 20px 20px 0
-
-.datepicker__buttons-panel
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  padding: 0 20px 20px
-
-.datepicker__clear-btn
-  background: transparent
-  color: $dark50
+  &__clear-btn
+    background: transparent
+    color: $dark50

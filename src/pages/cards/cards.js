@@ -13,10 +13,11 @@ roomCardSliders.forEach((slider) => new FSD2ndTaskRoomSlider(slider));
 
 // Get datepicker elements
 const container = document.querySelector('.js-datepicker-static');
-const picker = container.querySelector('.datepicker');
+const picker = container.querySelector('.datepicker-inline');
 // Force open datepicker
 // Will close on apply anyway
-picker.classList.add('form__datepicker--visible');
+picker.classList.add('datepicker-inline--visible');
 // Edit styles
 container.style.position = 'relative';
-picker.parentElement.style.position = 'relative';
+picker.style.position = 'relative';
+picker.style.marginTop = '0';

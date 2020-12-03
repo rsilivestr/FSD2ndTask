@@ -1,0 +1,26 @@
+mixin roomTitle(options = {})
+  -
+    const number = options.number || '999';
+    const lux = options.lux || false;
+    const price = options.price || '9 990';
+    const url = options.url || '';
+
+  if (!url)
+    h1.room-title&attributes(attributes)
+      span.room-title__room
+        span.room-title__number №
+        = number
+        if (lux)
+          span.room-title__lux люкс
+      span.room-title__price #{price}₽
+        span.room-title__price-period в сутки
+  else
+    h2.room-title&attributes(attributes)
+      a(href = url).room-title__room
+        span.room-title__number №
+        = number
+        if (lux)
+          span.room-title__lux люкс
+      span.room-title__price #{price}₽
+        span.room-title__price-period в сутки
+

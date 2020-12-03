@@ -48,8 +48,8 @@
   &__photos-ratio
     position: relative
     width: 100%
-    // 151.38px
-    padding-bottom: 56.07%
+    // 151px
+    padding-bottom: 55.93%
 
   &__photo
     position: absolute
@@ -78,14 +78,23 @@
       content: '\f111'
 
   &__info
-    margin-top: 21px
-    padding: 0 20px
+    display: flex
+    flex-direction: column
+    gap: 18px
+    padding: 21px 20px 17px
+    position: relative
+
+    // Decorative border
+    &::after
+      border-bottom: 1px solid $dark10
+      content: ''
+      position: absolute
+      bottom: 51px
+      left: 20px
+      right: 20px
 
   &__title
-    border-bottom: 1px solid $dark25
     line-height: 2rem
-    margin-bottom: 8px
-    padding-bottom: 10px
 
   &__rating
     display: flex

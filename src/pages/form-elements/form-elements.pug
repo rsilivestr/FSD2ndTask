@@ -8,6 +8,7 @@ include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/user-comment/user-comment
 include ~CommonBlocks/range/range
+include ~CommonBlocks/subscribe-form/subscribe-form
 
 +head('Form Elements')
   body.page.page--layout_form-elements
@@ -18,28 +19,28 @@ include ~CommonBlocks/range/range
         //- a 1 --------------------------------------//
 
         .fe-grid__item
-          +inputBox('text field').mb22
+          +inputBox('text field').mb20
             +textField('Email')
 
-          +inputBox('text field').mb21
+          +inputBox('text field').mb19
             +textField('This is pretty awesome', 'text', 'uikit_always-focused')
 
           +inputBox('dropdown').mb23
             +dropdown.js-dropdown-1
  
-          +inputBox('masked text field').mb42
+          +inputBox('masked text field').mb41
             +textField('ДД.ММ.ГГГГ').js-masked-date
 
           //- double date dropdown
-          +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-datepicker-double.mb42
+          +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double.mb40
 
           //- filter date dropdown
-          +inputBox('filter date dropdown', 'm').js-datepicker-range.mb42
+          +inputBox('filter date dropdown', 'm').js-datepicker-range.mb41
             +dateDropdown
 
           //- subscribtion text field
           +inputBox('subscribtion text field', 'm')
-            +textField('Email', 'email')
+            +subscribeForm
 
 
         //- a 2 --------------------------------------//
@@ -140,7 +141,7 @@ include ~CommonBlocks/range/range
 
         .fe-grid__item
           //- dropdown
-          +inputBox('dropdown', 'm').mb21
+          +inputBox('dropdown', 'm').mb20
             +dropdown(dropdownMultiDefaults).js-dropdown-2
 
           //- dropdown expanded
@@ -165,20 +166,16 @@ include ~CommonBlocks/range/range
 
         .fe-grid__item
           //- expandable checkbox list
-          +inputBox('', 'm')(style="width: 256px")
+          +inputBox('', 'm')(style="width: 256px").mb40
             +checkboxGroup('Expandable checkbox list')
-              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox(label)
-
-          .mb39
 
           //- expanded expandable checkbox list
           +inputBox('', 'm')(style="width: 256px")
             +checkboxGroup('Expandable checkbox list', true)
-              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь' ]
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox(label)
-
-          .mb20
 
         //- c 2 --------------------------------------//
 
@@ -214,14 +211,14 @@ include ~CommonBlocks/range/range
             src: 'insert_emoticon',
             heading: 'комфорт',
             text: 'шумопоглощающие стены',
-          }).bb-25
+          }).bb-10
           //- удобство
           +imageTitle({
             type: 'emoji',
             src: 'location_city',
             heading: 'удобство',
             text: 'окно в каждой из спален',
-          })
+          }).bb-10
 
           .mb50
 

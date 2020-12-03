@@ -1,41 +1,26 @@
+include ~CommonBlocks/bill-info/bill-info
 include ~CommonBlocks/button/button
-include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
+include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/input-box/input-box
+include ~CommonBlocks/room-title/room-title
 
 mixin formBooking(room)
-  - number = room.number || '999';
-  form.form.form--type_booking&attributes(attributes)
-    h1.form-title
-      span.form-title__room
-        span.form-title__number №
-        = number
-        if (room.lux === true)
-          span.form-title__lux люкс
-      span.form-title__price 9 990₽
-        span.form-title__price-period в сутки
+  -
+    const number = room.number || '999';
+    const lux = room.lux || false;
 
-    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).form__datepicker-double.js-booking-datepicker.mb19
+  form.form.form--type_booking&attributes(attributes)
+
+    +roomTitle({ number: '888', lux: true, price: '9 990' }).form__title.mb18
+
+    +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-booking-datepicker.mb19
 
     +inputBox('гости', 'l')
       +dropdown.mb14.js-booking-form-dropdown
 
-    //- Bill info
-    table.form__bill.bill-info
-      tbody
-        tr.bill-info__row.bill-info__initial
-          td.bill-info__title 9&nbsp;990₽ x 4 суток
-          td.bill-info__sum 39&nbsp;960₽
-        tr.bill-info__row.bill-info__discount
-          td.bill-info__title.bill-info__title--has-hint Сбор за услуги: скидка 2&nbsp;179₽
-          td.bill-info__sum 0₽
-        tr.bill-info__row.bill-info__extra
-          td.bill-info__title.bill-info__title--has-hint Сбор за дополнительные услуги
-          td.bill-info__sum 300₽
-    .bill-info__row.bill-info__total
-      span.bill-info__total-title Итого
-      span.bill-info__total-sum 38&nbsp;081₽
-    
+    +billInfo.mb24
+
     +button({
       title: 'забронировать',
       style: 'arrowed',

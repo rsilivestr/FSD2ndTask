@@ -1,6 +1,15 @@
-include ../input-box/input-box
+include ~CommonBlocks/input-box/input-box
+include ~CommonBlocks/room-title/room-title
 
-mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost, reviewCount = 0, lux = false)
+mixin roomCard(options = {})
+  -
+    const cost = options.cost || '9 999';
+    const lux = options.lux || false;
+    const number = options.number || '001';
+    const photos = options.photos || ['room1.png'];
+    const rating = options.rating || 0;
+    const reviewCount = options.reviewCount || 0;
+
   .room-card&attributes(attributes)
     .room-card__photos
       .room-card__photos-ratio
@@ -8,24 +17,17 @@ mixin roomCard(roomPhotos = ['room1.png'], roomRating = 5, roomNumber, dailyCost
         i.material-icons.room-card__icon-left arrow_back_ios
       button.room-card__control.room-card__control--direction_right
         i.material-icons.room-card__icon-right arrow_forward_ios
-      - len = roomPhotos.length;
-      each pic in roomPhotos
-        img(src='../assets/images/' + pic, alt='Фото комнаты').room-card__photo
+      - const len = photos.length;
+      each photo in photos
+        img(src='../assets/images/' + photo, alt='Фото комнаты').room-card__photo
       nav.room-card__nav
         - for (let i = 0; i < len; i += 1)
-          - current = i === 0 || false;
+          - const current = i === 0 || false;
           button(class = (current === true) ? 'room-card__navbtn--current' : '').room-card__navbtn
     .room-card__info
-      h2.room-card__title.form-title
-        a(href="./room-details.html").form-title__room
-          span.form-title__number №
-          = roomNumber
-          if (lux)
-            span.form-title__lux люкс
-        span.form-title__price= dailyCost
-          span.form-title__price-period в сутки
+      +roomTitle({ number, lux, price, url: './room-details.html'}).room-card__title
       .room-card__rating
-        +starRating(roomRating)
+        +starRating(rating)
         span.room-card__review-counter
           strong #{reviewCount}
           |  отзывов
