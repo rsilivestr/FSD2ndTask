@@ -1,0 +1,13 @@
+mixin checkbox(options = {})
+  -
+    const label = options.label || 'Галочка';
+    const checked = options.checked || false;
+    const text = options.text || '';
+
+  label.checkbox&attributes(attributes)
+    input(type='checkbox', checked=checked).checkbox__input
+    span.checkbox__replacer
+    .checkbox__label
+      span(class=text ? 'checkbox__title--bold' : '').checkbox__title= label
+      if (text)
+        span.checkbox__text= text

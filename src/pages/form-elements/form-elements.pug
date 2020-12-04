@@ -1,14 +1,16 @@
 include ~UtilBlocks/head
-include ~CommonBlocks/header/header
-include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/button/button
-include ~CommonBlocks/pagination/pagination
+include ~CommonBlocks/checkbox/checkbox
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
+include ~CommonBlocks/header/header
 include ~CommonBlocks/image-title/image-title
-include ~CommonBlocks/user-comment/user-comment
+include ~CommonBlocks/input-box/input-box
+include ~CommonBlocks/pagination/pagination
 include ~CommonBlocks/range/range
+include ~CommonBlocks/spoiler/spoiler
 include ~CommonBlocks/subscribe-form/subscribe-form
+include ~CommonBlocks/user-comment/user-comment
 
 +head('Form Elements')
   body.page.page--layout_form-elements
@@ -47,11 +49,11 @@ include ~CommonBlocks/subscribe-form/subscribe-form
 
         .fe-grid__item
           //- checkbox buttons
-          +inputBox('checkbox buttons', 's').mb41
+          +inputBox('checkbox buttons', 's').mb40
             .mb16
-            +checkbox('Можно курить')
-            +checkbox('Можно с питомцами', true)
-            +checkbox("Можно пригласить гостей\n(до 10 человек)", true)
+            +checkbox({ label: 'Можно курить' }).mb10
+            +checkbox({ label: 'Можно с питомцами', checked: true }).mb10
+            +checkbox({ label: 'Можно пригласить гостей (до\n 10 человек)', checked: true })
 
           //- radio buttons
           +inputBox('radio buttons').mb41
@@ -166,16 +168,16 @@ include ~CommonBlocks/subscribe-form/subscribe-form
 
         .fe-grid__item
           //- expandable checkbox list
-          +inputBox('', 'm')(style="width: 256px").mb40
-            +checkboxGroup('Expandable checkbox list')
+          +inputBox('', 'm').mb40
+            +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-                +checkbox(label)
+                +checkbox({ label })
 
           //- expanded expandable checkbox list
-          +inputBox('', 'm')(style="width: 256px")
-            +checkboxGroup('Expandable checkbox list', true)
+          +inputBox('', 'm')
+            +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-                +checkbox(label)
+                +checkbox({ label })
 
         //- c 2 --------------------------------------//
 
@@ -185,9 +187,15 @@ include ~CommonBlocks/subscribe-form/subscribe-form
 
           //- rich checkbox buttons
           +inputBox('rich checkbox buttons', 'm')
-            .mb15
-            +checkbox('Широкий коридор', false, 'Ширина коридоров в номере\nне менее 91 см.')
-            +checkbox('Помощник для инвалидов', false, 'На 1 этаже вас встретит специалист\nи проводит до номера.')
+            .mb16
+            +checkbox({
+              label: 'Широкий коридор',
+              text: 'Ширина коридоров в номере\nне менее 91 см.',
+            }).mb10
+            +checkbox({
+              label: 'Помощник для инвалидов',
+              text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
+            })
 
         //- c 3 --------------------------------------//
 
