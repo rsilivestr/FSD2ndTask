@@ -1,0 +1,53 @@
+@use 'Styles/forward' as *
+
+.toggle
+  cursor: pointer
+  display: flex
+  font-family: $mainFont
+  position: relative
+
+  &__input,
+  &__replacer
+    height: $controlSize
+    width: $controlSize * 2
+
+  &__input
+    cursor: pointer
+    margin-right: 10px
+    opacity: 0
+    z-index: 20
+
+    &:checked
+
+      + .toggle__replacer
+        border-color: $purple
+
+        &::after
+          left: $controlSize + $controlInnerOffset
+          background: $mainGradient
+          transition: left .1s
+
+      ~ .toggle__label
+        color: $dark75
+
+  &__replacer
+    position: absolute
+    border: 1px solid $dark25
+    border-radius: $controlSize / 2
+    z-index: 10
+
+    &::after
+      background-color: $dark25
+      border-radius: 50%
+      content: ""
+      height: $controlInnerSize
+      left: $controlInnerOffset
+      position: absolute
+      top: $controlInnerOffset
+      transition: left .1s
+      width: $controlInnerSize
+
+  &__label
+    color: $dark50
+    font-size: 1.4rem
+    line-height: 1.8rem

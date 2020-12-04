@@ -1,0 +1,9 @@
+mixin toggle(options = {})
+  -
+    const label = options.label || '';
+    const checked = options.checked || false;
+
+  label.toggle
+    input(type="checkbox" checked=checked).toggle__input
+    span.toggle__replacer
+    span.toggle__label= label

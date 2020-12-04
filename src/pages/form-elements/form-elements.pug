@@ -10,6 +10,7 @@ include ~CommonBlocks/pagination/pagination
 include ~CommonBlocks/range/range
 include ~CommonBlocks/spoiler/spoiler
 include ~CommonBlocks/subscribe-form/subscribe-form
+include ~CommonBlocks/toggle/toggle
 include ~CommonBlocks/user-comment/user-comment
 
 +head('Form Elements')
@@ -65,9 +66,9 @@ include ~CommonBlocks/user-comment/user-comment
           //- toggle
           +inputBox('toggle').mb44
             .mb16
-            +inputToggle('Получать спецпредложения', true)
+            +toggle({ label: 'Получать спецпредложения', checked: true })
             .mb14
-            +inputToggle('Получать спецпредложения')
+            +toggle({ label: 'Получать спецпредложения' })
 
           //- like button
           +inputBox('like button', 'm').mb38
