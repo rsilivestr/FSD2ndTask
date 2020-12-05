@@ -2,6 +2,7 @@ include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/form/__prompt/prompt
+include ~CommonBlocks/radio/radio
 include ~CommonBlocks/toggle/toggle
 
 mixin formRegistration
@@ -12,9 +13,18 @@ mixin formRegistration
     +textField('Имя').mb10
     +textField('Фамилия').mb10
 
-    +radioGroup('gender').mb24
-      +radioItem('man', 'Мужчина', true)
-      +radioItem('woman', 'Женщина')
+    +inputBox.radio-group.mb24
+      +radio({
+        name: 'gender',
+        value: 'man',
+        label: 'Мужчина',
+        checked: true,
+      })
+      +radio({
+        name: 'gender',
+        value: 'woman',
+        label: 'Женщина',
+      })
 
     +inputBox('дата рождения').mb20
       +textField('ММ.ДД.ГГГГ').js-dob-masked

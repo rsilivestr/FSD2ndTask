@@ -8,6 +8,7 @@ include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/like-counter/like-counter
 include ~CommonBlocks/pagination/pagination
+include ~CommonBlocks/radio/radio
 include ~CommonBlocks/range/range
 include ~CommonBlocks/spoiler/spoiler
 include ~CommonBlocks/subscribe-form/subscribe-form
@@ -60,9 +61,18 @@ include ~CommonBlocks/user-comment/user-comment
           //- radio buttons
           +inputBox('radio buttons').mb41
             .mb16
-            +radioGroup('gender')
-              +radioItem('man', 'Мужчина', true)
-              +radioItem('woman', 'Женщина')
+            .radio-group
+              +radio({
+                name: 'gender',
+                value: 'man',
+                label: 'Мужчина',
+                checked: true,
+              })
+              +radio({
+                name: 'gender',
+                value: 'woman',
+                label: 'Женщина',
+              })
 
           //- toggle
           +inputBox('toggle').mb44

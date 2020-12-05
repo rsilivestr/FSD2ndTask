@@ -1,0 +1,48 @@
+@use 'Styles/forward' as *
+
+.radio
+  color: $dark50
+  cursor: pointer
+  display: inline-flex
+  font-family: $mainFont
+  font-size: 1.4rem
+  line-height: $controlSize
+
+  &__input,
+  &__replacer
+    height: $controlSize
+    width: $controlSize
+
+  &__input
+    cursor: pointer
+    margin-right: $controlSize / 2
+    opacity: 0
+    z-index: 20
+
+    &:checked
+      + .radio__replacer
+        border-color: $purple
+
+        &::after
+          display: block
+
+      + .radio__label
+        color: $dark75
+
+  &__replacer
+    border: 1px solid $dark25
+    border-radius: $controlSize / 2
+    display: block
+    position: absolute
+    z-index: 10
+
+    &::after
+      background: $mainGradient
+      border-radius: 50%
+      content: ""
+      display: none
+      height: $controlInnerSize
+      left: $controlInnerOffset
+      position: absolute
+      top: $controlInnerOffset
+      width: $controlInnerSize
