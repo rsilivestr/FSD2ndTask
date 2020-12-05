@@ -47,7 +47,7 @@ include ~CommonBlocks/user-comment/user-comment
             +dateDropdown
 
           //- subscribtion text field
-          +inputBox('subscribtion text field', 'm')
+          +inputBox({ label: 'subscribtion text field', size: 'm' })
             +subscribeForm
 
 
@@ -55,15 +55,13 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- checkbox buttons
-          +inputBox('checkbox buttons', 's').mb40
-            .mb16
+          +inputBox({ label: 'checkbox buttons', size: 's', labelClass: 'mb16' }).mb40
             +checkbox({ label: 'Можно курить' }).mb10
             +checkbox({ label: 'Можно с питомцами', checked: true }).mb10
             +checkbox({ label: 'Можно пригласить гостей\n(до 10 человек)', checked: true })
 
           //- radio buttons
-          +inputBox('radio buttons').mb41
-            .mb16
+          +inputBox({ label: 'radio buttons', labelClass: 'mb16' }).mb41
             .radio-group
               +radio({
                 name: 'gender',
@@ -78,22 +76,18 @@ include ~CommonBlocks/user-comment/user-comment
               })
 
           //- toggle
-          +inputBox('toggle').mb44
-            .mb16
+          +inputBox({ label: 'toggle', labelClass: 'mb16' }).mb44
             +toggle({ label: 'Получать спецпредложения', checked: true }).mb14
-            
             +toggle({ label: 'Получать спецпредложения' })
 
           //- like button
-          +inputBox('like button', 'm').mb38
-            .mb16
-            +likeCounter({ value: 2 })(style="margin-right: 11px").js-like
+          +inputBox({ label: 'like button', size: 'm', labelClass: 'mb16' }).mb38
+            +likeCounter({ value: 2 }).js-like.mr11
             +likeCounter({ value: 12, checked: true }).js-like
 
           //- rate button
-          +inputBox('rate button')
-            .mb15
-            +starRating({ value: 4 })(style="margin-right: 20px")
+          +inputBox({ label: 'rate button', labelClass: 'mb15' })
+            +starRating({ value: 4 }).mr20
             +starRating({ value: 5, rateable: true }).js-rating
 
 
@@ -101,12 +95,11 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- range slider
-          +inputBox('range slider', 'm').mb32
+          +inputBox({ label: 'range slider', size: 'm' }).mb32
             +rangeSlider.js-rangepicker
 
           //- buttons
-          +inputBox('buttons').mb40
-            .mb15
+          +inputBox({ label: 'buttons', labelClass: 'mb15' }).mb40
             +button().mr19.mb30
             +button({
               title: 'click me',
@@ -148,8 +141,7 @@ include ~CommonBlocks/user-comment/user-comment
             })
 
           //- pagination
-          +inputBox('pagination', 's')
-            .mb17
+          +inputBox({ label: 'pagination', size: 's', labelClass: 'mb17' })
             +pagination
 
 
@@ -157,11 +149,11 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- dropdown
-          +inputBox('dropdown', 'm').mb20
+          +inputBox({ label: 'dropdown', size: 'm' }).mb20
             +dropdown(dropdownMultiDefaults).js-dropdown-2
 
           //- dropdown expanded
-          +inputBox('dropdown', 'm')
+          +inputBox({ label: 'dropdown', size: 'm' })
             +dropdown(dropdownMultiDefaults, true)
 
         //- b 2 --------------------------------------//
@@ -182,13 +174,13 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- expandable checkbox list
-          +inputBox('', 'm').mb40
+          +inputBox({ size: 'm' }).mb40
             +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox({ label })
 
           //- expanded expandable checkbox list
-          +inputBox('', 'm')
+          +inputBox({ size: 'm' })
             +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox({ label })
@@ -198,8 +190,7 @@ include ~CommonBlocks/user-comment/user-comment
         .fe-grid__item
 
           //- rich checkbox buttons
-          +inputBox('rich checkbox buttons', 'm').mt5
-            .mb16
+          +inputBox({ label: 'rich checkbox buttons', size: 'm', labelClass: 'mb16' }).mt5
             +checkbox({
               label: 'Широкий коридор',
               text: 'Ширина коридоров в номере\nне менее 91 см.',

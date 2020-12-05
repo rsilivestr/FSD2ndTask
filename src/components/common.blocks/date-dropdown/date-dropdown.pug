@@ -11,9 +11,9 @@ mixin dateDropdown(options = {})
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
-      +inputBox(labelStart, 'xs').mr5
+      +inputBox({ label: labelStart, size: 'xs' }).mr5
         .date-dropdown
           input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
-      +inputBox(labelEnd, 'xs')
+      +inputBox({ label: labelEnd, size: 'xs' })
         .date-dropdown
           input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end

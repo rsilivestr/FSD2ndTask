@@ -26,13 +26,11 @@ include ~CommonBlocks/range/range
         +inputBox('Диапазон цены').mb30
           +rangeSlider('Стоимость за сутки пребывания в номере').js-rangeslider
         //- checkboxes
-        +inputBox('правила дома').mb22
-          .mb15
+        +inputBox({ label: 'правила дома', labelClass: 'mb15' }).mb22
           each label in ['можно курить', 'можно с питомцами', 'можно пригласить гостей\n(до 10 человек)']
             +checkbox({ label }).mb10
         //- rich checkboxes
-        +inputBox('Доступность').mb31
-          .mb15
+        +inputBox({ label: 'Доступность', labelClass: 'mb15' }).mb31
           +checkbox({
             label: 'Широкий коридор',
             text: 'Ширина коридоров в номере\nне менее 91 см.',
@@ -42,7 +40,7 @@ include ~CommonBlocks/range/range
             text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
           })
         //- comfort dropdown
-        +inputBox('удобства номера', 'm').mb24
+        +inputBox({ label: 'удобства номера', size: 'm' }).mb24
           +dropdown(dropdownMultiDefaults).js-comfort-dropdown
         //- expandable checkbox group
         +spoiler({ title: 'дополнительные удобства'}).js-spoiler.mb30
