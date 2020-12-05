@@ -3,6 +3,7 @@ import { FSD2ndTaskRange } from 'CommonBlocks/range/range';
 import { FSD2ndTaskMaskedDate } from 'CommonBlocks/masked-date/masked-date';
 import { FSD2ndTaskDropdown } from 'CommonBlocks/dropdown/dropdown';
 import { FSD2ndTaskSpoiler } from 'CommonBlocks/spoiler/spoiler';
+import { FSD2ndClassLikeCounter } from 'CommonBlocks/like-counter/like-counter';
 
 new FSD2ndTaskDatepicker('.js-datepicker-double');
 
@@ -18,8 +19,10 @@ new FSD2ndTaskDropdown(document.querySelector('.js-dropdown-2'), {
   type: 'multi',
 });
 
-const spoilers = Array.from(document.querySelectorAll('.js-spoiler'));
+Array.from(document.querySelectorAll('.js-spoiler')).forEach(
+  (spoiler) => new FSD2ndTaskSpoiler(spoiler)
+);
 
-spoilers.forEach((spoiler) => {
-  new FSD2ndTaskSpoiler(spoiler);
-});
+Array.from(document.querySelectorAll('.js-like')).forEach(
+  (like) => new FSD2ndClassLikeCounter(like)
+);

@@ -1,5 +1,5 @@
 include ../image-title/image-title
-include ../input-box/__input/--like/like
+include ../like-counter/like-counter
 
 mixin userComment(comment)
   .user-comment&attributes(attributes)
@@ -10,6 +10,6 @@ mixin userComment(comment)
       text: comment.age
     })
     .user-comment__body
-      +likeBtn(comment.likes, comment.isLiked).user-comment__like-counter
+      +likeCounter({ value: comment.likes, checked: comment.isLiked}).user-comment__like-counter.js-like
       p.user-comment__text
         = comment.text

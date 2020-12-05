@@ -6,6 +6,7 @@ include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/header/header
 include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/input-box/input-box
+include ~CommonBlocks/like-counter/like-counter
 include ~CommonBlocks/pagination/pagination
 include ~CommonBlocks/range/range
 include ~CommonBlocks/spoiler/spoiler
@@ -73,8 +74,8 @@ include ~CommonBlocks/user-comment/user-comment
           //- like button
           +inputBox('like button', 'm').mb38
             .mb16
-            +likeBtn(2)
-            +likeBtn(12, true)
+            +likeCounter({ value: 2 })(style="margin-right: 11px").js-like
+            +likeCounter({ value: 12, checked: true }).js-like
 
           //- rate button
           +inputBox('rate button')

@@ -1,0 +1,46 @@
+@use 'Styles/forward' as *
+
+.like-counter
+  display: inline-flex
+  flex-direction: row
+  position: relative
+
+  &__input,
+  &__replacer
+    height: $controlSize
+    width: $controlSize * 2
+
+  &__input
+    cursor: pointer
+    position: relative
+    opacity: 0
+    z-index: 20
+
+    &:checked + .like-counter__replacer
+      border-color: $purple
+      color: $purple
+
+      &::before
+        @extend .text-gradient
+        content: '\e87d'
+
+  &__replacer
+    border: 1px solid $dark25
+    border-radius: $controlSize / 2
+    color: $dark25
+    display: flex
+    font-size: 1rem
+    position: absolute
+    z-index: 10
+
+    &::before
+      @extend .material-icons
+      content: '\e87e'
+      font-size: 1rem
+      line-height: 1.8rem
+      padding: 0 5px 0 4px
+
+  &__value
+    line-height: 1.6rem
+    min-width: 10px
+    text-align: center
