@@ -10,6 +10,7 @@ include ~CommonBlocks/like-counter/like-counter
 include ~CommonBlocks/pagination/pagination
 include ~CommonBlocks/radio/radio
 include ~CommonBlocks/range/range
+include ~CommonBlocks/star-rating/star-rating
 include ~CommonBlocks/spoiler/spoiler
 include ~CommonBlocks/subscribe-form/subscribe-form
 include ~CommonBlocks/toggle/toggle
@@ -90,8 +91,8 @@ include ~CommonBlocks/user-comment/user-comment
           //- rate button
           +inputBox('rate button')
             .mb14
-            +starRating(4)
-            +starRating(5, true)
+            +starRating({ value: 4 })
+            +starRating({ value: 5, rateable: true }).js-rating
 
 
         //- a 3 --------------------------------------//

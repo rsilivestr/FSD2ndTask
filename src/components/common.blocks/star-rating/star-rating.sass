@@ -1,13 +1,13 @@
 @use 'Styles/forward' as *
 
-.rate-box
+.star-rating
   display: inline-flex
   flex-flow: row-reverse
   justify-content: flex-end
 
   &:hover
-    .rate-box__star--rateable
-      &:after
+    .star-rating__star--rateable
+      &::after
         content: '\e83a'
         background: $mainGradient50
         background-clip: text
@@ -15,27 +15,24 @@
       &:hover::after
         content: '\e838'
 
-    .rate-box__star--active::after,
-    .rate-box__star--active ~ .rate-box__star::after
+    .star-rating__star--active::after,
+    .star-rating__star--active ~ .star-rating__star::after
       background: $mainGradient
       background-clip: text
-
-  + .rate-box
-    margin-left: 20px
 
   &__star
 
     &--rateable
       cursor: pointer
 
-      &:hover ~ .rate-box__star::after
+      &:hover ~ .star-rating__star::after
         content: '\e838'
 
     &::after
       @extend .material-icons
-      content: '\e83a'
       @extend .text-gradient
+      content: '\e83a'
 
     &--active::after,
-    &--active ~ .rate-box__star::after
+    &--active ~ .star-rating__star::after
       content: '\e838'

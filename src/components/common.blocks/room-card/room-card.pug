@@ -1,5 +1,5 @@
-include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/room-title/room-title
+include ~CommonBlocks/star-rating/star-rating
 
 mixin roomCard(options = {})
   -
@@ -27,7 +27,7 @@ mixin roomCard(options = {})
     .room-card__info
       +roomTitle({ number, lux, price, url: './room-details.html'}).room-card__title
       .room-card__rating
-        +starRating(rating)
+        +starRating({ value: rating })
         span.room-card__review-counter
           strong #{reviewCount}
           |  отзывов
