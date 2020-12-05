@@ -1,0 +1,32 @@
+@use 'Styles/forward' as *
+
+.bullet-list
+  color: $dark75
+  display: inline-flex
+  flex-direction: column
+  list-style-type: none
+  height: auto
+
+  &--size
+    &_s
+      gap: 0
+
+    &_m
+      gap: 10px
+
+  &__item
+    position: relative
+    font-size: 1.4rem
+    line-height: 2.4rem
+    margin-left: 0
+    padding-left: 2rem
+    white-space: pre-line
+
+    &::before
+      @extend .material-icons
+      color: $dark25
+      content: '\e061'
+      font-size: 1.5rem
+      left: -2px
+      line-height: 2.4rem
+      position: absolute

@@ -1,4 +1,8 @@
-@use 'forward' as *
+@use '_include-media' as *
+@use 'palette' as *
+
+/*****************
+ * Wrappers
 
 .container
   margin-left: auto
@@ -20,16 +24,34 @@
   position: relative
   width: 100%
 
+.radio-group
+  display: flex
+  gap: 20px
+
+/*****************
+ * Inner positioning
+
+.centered-flex
+  display: flex
+  align-items: center
+  justify-content: center
+
+/*****************
+ * Visibility
+
 .hidden
   display: none
 
 .show-1080-up
-  @include media('<1080px')
+  @include media('<desktop')
     display: none
 
 .hide-1080-up
-  @include media('>=1080px')
+  @include media('>=desktop')
     display: none
+
+/*****************
+ * Borders
 
 .bb-10
   border-bottom: 1px solid $dark10
@@ -43,6 +65,52 @@
 .bb-75
   border-bottom: 1px solid $dark75
 
-.radio-group
-  display: flex
-  gap: 20px
+/*****************
+ * Colors
+
+.text-gradient
+  background: $mainGradient
+  -webkit-background-clip: text
+  background-clip: text
+  color: transparent
+
+/*****************
+ * Margins
+
+.mt5
+  margin-top: 5px
+
+.mt20
+  margin-top: 20px
+
+.mr5
+  margin-right: 5px
+
+.mr19
+  margin-right: 19px
+
+.mr20
+  margin-right: 20px
+
+.mr21
+  margin-right: 21px
+
+/*****************
+ * Icons
+
+.material-icons
+  font-family: 'Material Icons'
+  font-weight: normal
+  font-style: normal
+  font-size: 24px
+  display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  font-feature-settings: 'liga'

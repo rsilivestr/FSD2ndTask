@@ -45,7 +45,7 @@
       column-gap: 70px
       place-items: start
 
-    @include media('>=widest')
+    @include media('>=desktop+')
       grid-template-areas: 'icon-desc diagram aside' 'reviews reviews aside' 'rules refund aside'
       grid-template-columns: 290px 350px 380px
       column-gap: 70px
@@ -78,7 +78,7 @@
     margin-right: 10px
     cursor: default
 
-  @include media('>=footcols')
+  @include media('>=560px')
     &__rate-canvas-wrap
       margin-right: 27px
 

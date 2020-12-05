@@ -1,91 +1,20 @@
-@use 'palette'
-@use '_include-media' as im
-
 $mainFont: 'Montserrat', 'Gotham', 'Proxima Nova', 'Liberation Sans', sans-serif
 
-.font-weight_light
-  font-weight: 300
-
-.font-weight_normal
-  font-weight: 400
-
-.font-weight_bold
-  font-weight: 700
-
 h1, h2, h3, h4
-  line-height: 1.25
-  font-family: $mainFont
+  font-weight: 700
 
 h1
-  font-size: 1.9rem
-  font-weight: 700
-
-  @include im.media('>=400px')
-    font-size: 2.4rem
-    line-height: 2.9rem
+  font-size: 2.4rem
+  line-height: 2.9rem
 
 h2
   font-size: 1.9rem
+  line-height: 2.3rem
 
 h3
   font-size: 1.2rem
   text-transform: uppercase
+  line-height: 1.5rem
 
 p
   font-size: 1.4rem
-  line-height: 2
-
-.material-icons
-  font-family: 'Material Icons'
-  font-weight: normal
-  font-style: normal
-  font-size: 24px
-  display: inline-block
-  line-height: 1
-  text-transform: none
-  letter-spacing: normal
-  word-wrap: normal
-  white-space: nowrap
-  direction: ltr
-
-  -webkit-font-smoothing: antialiased
-  text-rendering: optimizeLegibility
-  -moz-osx-font-smoothing: grayscale
-  font-feature-settings: 'liga'
-
-.centered-flex
-  display: flex
-  align-items: center
-  justify-content: center
-
-.bullet-list
-  list-style-type: none
-  color: palette.$dark75
-  height: auto
-
-.bullet-list__item
-  position: relative
-  font-size: 1.4rem
-  line-height: 2.4rem
-  padding-left: 0rem
-  margin-left: 2rem
-  margin-bottom: 1rem
-  white-space: pre-line
-
-  &::first-letter
-    text-transform: capitalize
-
-  &::before
-    @extend .material-icons
-    color: palette.$dark25
-    content: '\e061'
-    font-size: 1.5rem
-    position: absolute
-    left: -2rem
-    top: .45rem
-
-.text-gradient
-  background: palette.$mainGradient
-  -webkit-background-clip: text
-  background-clip: text
-  color: transparent

@@ -1,4 +1,5 @@
 include ~UtilBlocks/head
+include ~CommonBlocks/bullet-list/bullet-list
 include ~CommonBlocks/button/button
 include ~CommonBlocks/checkbox/checkbox
 include ~CommonBlocks/dropdown/dropdown
@@ -79,8 +80,8 @@ include ~CommonBlocks/user-comment/user-comment
           //- toggle
           +inputBox('toggle').mb44
             .mb16
-            +toggle({ label: 'Получать спецпредложения', checked: true })
-            .mb14
+            +toggle({ label: 'Получать спецпредложения', checked: true }).mb14
+            
             +toggle({ label: 'Получать спецпредложения' })
 
           //- like button
@@ -106,41 +107,40 @@ include ~CommonBlocks/user-comment/user-comment
           //- buttons
           +inputBox('buttons').mb40
             .mb15
-            +button()
+            +button().mr19.mb30
             +button({
               title: 'click me',
               style: 'gradient',
               size: 's',
               disabled: true
-            }).ml20
+            }).mb30
             
-            .mb30
             +button({
               title: 'click me',
               style: 'bordered',
               size: 's'
-            })
+            }).mr19.mb31
             +button({
               title: 'click me',
               style: 'bordered',
               size: 's',
               disabled: true
-            }).ml20
+            }).mb31
+
+            br
             
-            .mb31
             +button({
               title: 'click me',
               style: 'text',
               size: 'auto',
-            })
+            }).mr20.mb30
             +button({
               title: 'click me',
               style: 'text',
               size: 'auto',
               disabled: true,
-            }).ml20
+            }).mb30
 
-            .mb30
             +button({
               title: 'перейти к оплате',
               style: 'arrowed',
@@ -197,10 +197,8 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
 
-          .mb5
-
           //- rich checkbox buttons
-          +inputBox('rich checkbox buttons', 'm')
+          +inputBox('rich checkbox buttons', 'm').mt5
             .mb16
             +checkbox({
               label: 'Широкий коридор',
@@ -215,14 +213,15 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
 
-          .mb5
-
           //- bullet list
-          h3 bullet list
-          .mb13
-          ul.bullet-list
-            each li in ['нельзя с питомцами', 'без вечеринок и мероприятий', "Время прибытия — после 13:00,\n а выезд до 12:00"]
-              li.bullet-list__item= li
+          h3.mb13.mt5 bullet list
+          +bulletList({ 
+            list: [
+              'Нельзя с питомцами',
+              'Без вечеринок и мероприятий',
+              'Время прибытия — после 13:00,\n а выезд до 12:00',
+            ] 
+          })
 
         //- d 1 --------------------------------------//
 
@@ -240,15 +239,12 @@ include ~CommonBlocks/user-comment/user-comment
             src: 'location_city',
             heading: 'удобство',
             text: 'окно в каждой из спален',
-          }).bb-10
+          }).bb-10.mb50
 
-          .mb50
 
         //- e 1 --------------------------------------//
 
         .fe-grid__item.area-e
-
-          .mb20
 
           //- comment (wide)
           +userComment({
@@ -258,6 +254,6 @@ include ~CommonBlocks/user-comment/user-comment
             likes: 12,
             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
             username: 'Мурад Сарафанов',
-          })
+          }).mt20
 
     script(type="text/javascript" src="../scripts/form_elements.js")

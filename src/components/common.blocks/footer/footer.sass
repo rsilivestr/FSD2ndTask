@@ -14,7 +14,7 @@
     justify-content: center
     padding-top: 80px
 
-    @include media('>=1080px')
+    @include media('>=desktop')
       padding-top: 100px
       padding-bottom: 83px
       justify-content: space-between
@@ -26,11 +26,11 @@
     &:first-child
       display: block
 
-    @include media('>=1080px')
+    @include media('>=desktop')
       display: block
       text-align: left
 
-    @include media('>=1080px')
+    @include media('>=desktop')
       min-width: 160px
       max-width: 260px
 
@@ -80,7 +80,7 @@
       padding-top: 120px
       padding-bottom: 120px
 
-      @include media('>=1080px')
+      @include media('>=desktop')
         flex-direction: row
         justify-content: space-between
         padding-top: 0
@@ -90,7 +90,7 @@
     &-text
       text-align: center
 
-      @include media('>=1080px')
+      @include media('>=desktop')
         text-align: left
 
   // Decorative border between nav and copy sections
@@ -100,5 +100,5 @@
     position: absolute
     width: 100%
 
-    @include media('>=1080px')
+    @include media('>=desktop')
       content: ''

@@ -1,0 +1,6 @@
+mixin bulletList(options = {})
+  ul(class=`bullet-list bullet-list--size_${options.size || 'm'}`)&attributes(attributes)
+    if (options.list)
+      each item in options.list
+        li.bullet-list__item= item
+    block

@@ -30,13 +30,11 @@
 ///  $breakpoints: ('phone': 320px);
 ///
 $breakpoints: (
-  'phone': 320px,
-  'footcols': 560px,
   'creative': 600px,
   'tablet': 768px,
   'topnav': 920px,
-  'desktop': 1000px,
-  'widest': 1200px,
+  'desktop': 1080px,
+  'desktop+': 1200px,
 ) !default;
 
 ///
