@@ -1,14 +1,15 @@
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
+include ~CommonBlocks/input/input
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/form/__prompt/prompt
 
 mixin formLogin
   form.form.form--type_login&attributes(attributes)
     h1.form__title.mb21 Войти
-    +textField('Email', 'email').mb10
-    +textField('Пароль', 'password').mb20
+    +input({ placeholder: 'Email', type: 'email' }).mb10
+    +input({ placeholder: 'Пароль', type: 'password' }).mb20
     +button({ 
       title: 'войти', 
       style: 'arrowed', 

@@ -5,6 +5,7 @@ include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/header/header
 include ~CommonBlocks/image-title/image-title
+include ~CommonBlocks/input/input
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/like-counter/like-counter
 include ~CommonBlocks/pagination/pagination
@@ -26,16 +27,16 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           +inputBox('text field').mb20
-            +textField('Email')
+            +input({ placeholder: 'Email' })
 
           +inputBox('text field').mb19
-            +textField('This is pretty awesome', 'text', 'uikit_always-focused')
+            +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
 
           +inputBox('dropdown').mb23
             +dropdown.js-dropdown-1
  
           +inputBox('masked text field').mb41
-            +textField('ДД.ММ.ГГГГ').js-masked-date
+            +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
 
           //- double date dropdown
           +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double.mb40
@@ -90,8 +91,8 @@ include ~CommonBlocks/user-comment/user-comment
 
           //- rate button
           +inputBox('rate button')
-            .mb14
-            +starRating({ value: 4 })
+            .mb15
+            +starRating({ value: 4 })(style="margin-right: 20px")
             +starRating({ value: 5, rateable: true }).js-rating
 
 

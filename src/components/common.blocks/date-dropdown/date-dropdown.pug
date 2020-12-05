@@ -7,13 +7,13 @@ mixin dateDropdown(options = {})
 
   if type === 'single'
     .date-dropdown.date-dropdown--range&attributes(attributes)
-      input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.datepicker-range
+      input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.datepicker-range
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
       +inputBox(labelStart, 'xs').mr5
         .date-dropdown
-          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.date-dropdown__start
+          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
       +inputBox(labelEnd, 'xs')
         .date-dropdown
-          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input-box__input.date-dropdown__end
+          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end

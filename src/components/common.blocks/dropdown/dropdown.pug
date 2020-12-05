@@ -73,7 +73,7 @@ mixin dropdown(options = {}, forceOpen = false)
     const listItems = options.listItems || dropdownDefaults.listItems;
 
   .dropdown(class = forceOpen ? 'dropdown--force-open' : '')&attributes(attributes)
-    input(type='text' readonly placeholder = placeholder).dropdown__display.input-box__input
+    input(type='text' readonly placeholder = placeholder).dropdown__display.input
     .dropdown__contents(class = forceOpen ? 'dropdown__contents--force-visible' : '')
       each item in listItems
         .dropdown__option(

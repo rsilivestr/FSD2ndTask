@@ -1,5 +1,6 @@
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
+include ~CommonBlocks/input/input
 include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/form/__prompt/prompt
 include ~CommonBlocks/radio/radio
@@ -10,8 +11,8 @@ mixin formRegistration
 
     h1.form__title.mb21 Регистрация аккаунта
 
-    +textField('Имя').mb10
-    +textField('Фамилия').mb10
+    +input({ placeholder: 'Имя'}).mb10
+    +input({ placeholder: 'Фамилия'}).mb10
 
     +inputBox.radio-group.mb24
       +radio({
@@ -25,13 +26,18 @@ mixin formRegistration
         value: 'woman',
         label: 'Женщина',
       })
+      +radio({
+        name: 'gender',
+        value: 'other',
+        label: 'Иное',
+      })
 
     +inputBox('дата рождения').mb20
-      +textField('ММ.ДД.ГГГГ').js-dob-masked
+      +input({ placeholder: 'ММ.ДД.ГГГГ'}).js-dob-masked
 
     +inputBox('данные для входа в сервис').mb24
-      +textField('Email', 'email').mb10
-      +textField('Пароль', 'password').mb10
+      +input({ placeholder: 'Email', type: 'email' }).mb10
+      +input({ placeholder: 'Пароль', type: 'password' }).mb10
       +toggle({ label: 'Получать спецпредложения' })
 
     +button({
