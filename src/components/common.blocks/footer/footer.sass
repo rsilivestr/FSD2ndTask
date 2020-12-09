@@ -9,12 +9,13 @@
     border-top: 1px solid $dark10
 
   &__nav-section
-    display: flex
+    display: none
     flex-direction: row
     justify-content: center
     padding-top: 80px
 
     @include media('>=desktop')
+      display: flex
       padding-top: 100px
       padding-bottom: 83px
       justify-content: space-between
@@ -102,3 +103,7 @@
 
     @include media('>=desktop')
       content: ''
+
+  .footer__copy-logo
+    @include media('>=desktop')
+      display: none

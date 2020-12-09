@@ -84,7 +84,7 @@ mixin footer(content = {})
     var copyText = content.copyText || footerDefaults.copyText
 
   footer.footer&attributes(attributes)
-    .footer__nav-section.container.show-1080-up
+    .footer__nav-section.container
       .footer__col
         +logoToxin.footer__logo
         p.footer__text= text
@@ -100,6 +100,6 @@ mixin footer(content = {})
         p.footer__text= subscribeText
         +subscribeForm.footer__subscribe-form
     .footer__copy-section.container
-      +logoToxin.hide-1080-up
+      +logoToxin.footer__copy-logo
       p.footer__copy-text= copyText
       +socialLinks.footer__social
