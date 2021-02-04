@@ -1,17 +1,12 @@
-/* eslint-disable */
 const path = require('path'),
-      HtmlWebpackPlugin = require('html-webpack-plugin'),
-      MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-      CopyWebpackPlugin = require('copy-webpack-plugin'),
-      webpack = require('webpack');
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+  CopyWebpackPlugin = require('copy-webpack-plugin'),
+  webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: [ 
-      './src',
-      'Styles/fonts.css',
-      'Styles/index.sass',
-    ],
+    app: ['./src', 'Styles/fonts.css', 'Styles/index.sass'],
     cards: './src/pages/cards/cards',
     form_elements: './src/pages/form-elements/form-elements',
     landing: './src/pages/landing/landing',
@@ -85,14 +80,14 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/images', 
-          to: 'assets/images'
+          from: 'src/assets/images',
+          to: 'assets/images',
         },
         {
           from: 'src/assets/fonts',
-          to: 'assets/fonts'
-        }
-      ]
+          to: 'assets/fonts',
+        },
+      ],
     }),
   ],
   module: {
@@ -104,7 +99,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-          }
+          },
         },
       },
       {
@@ -118,17 +113,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: false
-            }
+              url: false,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
-              plugins: [
-                require('autoprefixer'),
-              ]
-            }
+              plugins: [require('autoprefixer')],
+            },
           },
           'sass-loader',
         ],
@@ -136,7 +129,7 @@ module.exports = {
       {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
-        use: [          
+        use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {},
@@ -144,15 +137,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: false
-            }
+              url: false,
+            },
           },
         ],
       },
       {
         test: /\.pug$/,
         include: path.resolve(__dirname, 'src'),
-        use: [ 'pug-loader', ],
+        use: ['pug-loader'],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -174,7 +167,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-          }
+          },
         ],
       },
     ],
@@ -186,6 +179,6 @@ module.exports = {
       Styles: path.resolve(__dirname, 'src/styles/'),
       CommonBlocks: path.resolve(__dirname, 'src/components/common.blocks/'),
       UtilBlocks: path.resolve(__dirname, 'src/components/utility.blocks/'),
-    }
-  }
+    },
+  },
 };

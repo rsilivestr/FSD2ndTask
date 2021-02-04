@@ -1,3 +1,5 @@
+// air-datepicker is used as JQuery method here
+// eslint rule no-unused-vars throws a false positive
 /* eslint-disable-next-line */
 import datepicker from 'air-datepicker';
 
@@ -121,7 +123,6 @@ export class FSD2ndTaskDatepicker {
       this.UI.inputEndDate = inputs[1];
     }
     // Create calendar
-    /* eslint-disable-next-line */
     $(this.UI.container).datepicker({
       prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
       nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
@@ -135,7 +136,6 @@ export class FSD2ndTaskDatepicker {
       classes: `datepicker--size_${this.size}`,
     });
     // Access datepicker instance data
-    /* eslint-disable-next-line */
     this.picker = $(selector).datepicker().data('datepicker');
     // Get calendar element
     this.UI.picker = this.picker.$datepicker[0];
