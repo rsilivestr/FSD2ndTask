@@ -1,7 +1,7 @@
 {
-  "name": "webpack-example",
+  "name": "fsd2ndtask",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hotel booking app mockup",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
@@ -9,7 +9,7 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src"
   },
-  "author": "",
+  "author": "Roman Silivestrov",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -25,7 +25,6 @@
     "husky": "^4.3.0",
     "image-webpack-loader": "^6.0.0",
     "lint-staged": "^10.5.0",
-    "material-icons": "^0.3.1",
     "mini-css-extract-plugin": "^0.8.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.32",
@@ -33,11 +32,9 @@
     "prettier": "^2.1.2",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
-    "pug-module": "^1.2.0",
     "resolve-url-loader": "^3.1.2",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
-    "serialize-javascript": "^4.0.0",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^2.3.7",
     "url-loader": "^2.3.0",
@@ -50,6 +47,7 @@
     "air-datepicker": "^2.2.3",
     "imask": "^5.2.1",
     "jquery": "^3.5.1",
+    "material-icons": "^0.3.1",
     "nouislider": "^14.6.0"
   },
   "lint-staged": {
