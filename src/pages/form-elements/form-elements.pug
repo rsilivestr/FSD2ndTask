@@ -27,24 +27,30 @@ include ~CommonBlocks/user-comment/user-comment
         //- a 1 --------------------------------------//
 
         .fe-grid__item
-          +inputBox('text field').mb20
-            +input({ placeholder: 'Email' })
+          .box.box--mb_2
+            +inputBox('text field')
+              +input({ placeholder: 'Email' })
 
-          +inputBox('text field').mb19
-            +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
+          .box.box--mb_2
+            +inputBox('text field')
+              +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
 
-          +inputBox('dropdown').mb23
-            +dropdown.js-dropdown-1
+          .box.box--mb_2
+            +inputBox('dropdown')
+              +dropdown.js-dropdown-1
  
-          +inputBox('masked text field').mb41
-            +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
+          .box.box--mb_4
+            +inputBox('masked text field')
+              +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
 
           //- double date dropdown
-          +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double.mb40
+          .box.box--mb_4
+            +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double
 
           //- filter date dropdown
-          +inputBox('filter date dropdown', 'm').js-datepicker-range.mb41
-            +dateDropdown
+          .box.box--mb_4.box--width_m
+            +inputBox('filter date dropdown', 'm').js-datepicker-range
+              +dateDropdown
 
           //- subscribtion text field
           +inputBox({ label: 'subscribtion text field', size: 'm' })
@@ -55,84 +61,114 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- checkbox buttons
-          +inputBox({ label: 'checkbox buttons', size: 's', labelClass: 'mb16' }).mb40
-            +checkbox({ label: 'Можно курить' }).mb10
-            +checkbox({ label: 'Можно с питомцами', checked: true }).mb10
-            +checkbox({ label: 'Можно пригласить гостей\n(до 10 человек)', checked: true })
+          .box.box--mb_4
+            .box.box--mb_1-5
+              h3 checkbox buttons
+            .box.box--mb_0-8
+              +checkbox({ label: 'Можно курить' })
+            .box.box--mb_0-8
+              +checkbox({ label: 'Можно с питомцами', checked: true })
+            .box
+              +checkbox({ label: 'Можно пригласить гостей\n(до 10 человек)', checked: true })
 
           //- radio buttons
-          +inputBox({ label: 'radio buttons', labelClass: 'mb16' }).mb41
-            .radio-group
-              +radio({
-                name: 'gender',
-                value: 'man',
-                label: 'Мужчина',
-                checked: true,
-              })
-              +radio({
-                name: 'gender',
-                value: 'woman',
-                label: 'Женщина',
-              })
+          .box.box--mb_4
+            .box.box--mb_1-5
+              h3 radio buttons
+            .box
+              .radio-group
+                +radio({
+                  name: 'gender',
+                  value: 'man',
+                  label: 'Мужчина',
+                  checked: true,
+                })
+                +radio({
+                  name: 'gender',
+                  value: 'woman',
+                  label: 'Женщина',
+                })
 
           //- toggle
-          +inputBox({ label: 'toggle', labelClass: 'mb16' }).mb44
-            +toggle({ label: 'Получать спецпредложения', checked: true }).mb14
-            +toggle({ label: 'Получать спецпредложения' })
+          .box.box--mb_4-5
+            .box.box--mb_1-5
+              h3 toggle
+            .box.box--mb_1-5
+              +toggle({ label: 'Получать спецпредложения', checked: true })
+            .box
+              +toggle({ label: 'Получать спецпредложения' })
 
           //- like button
-          +inputBox({ label: 'like button', size: 'm', labelClass: 'mb16' }).mb38
-            +likeCounter({ value: 2 }).js-like.mr11
-            +likeCounter({ value: 12, checked: true }).js-like
+          .box.box--mb_4
+            .box.box--mb_1-5
+              h3 like button
+            .box
+              .box.box--inline.box--mr_1
+                +likeCounter({ value: 2 }).js-like
+              .box.box--inline
+                +likeCounter({ value: 12, checked: true }).js-like
 
           //- rate button
-          +inputBox({ label: 'rate button', labelClass: 'mb15' })
-            +starRating({ value: 4 }).mr20
-            +starRating({ value: 5, rateable: true }).js-rating
+          .box
+            .box.box--mb_1-5
+              h3 rate button
+            .box.box--inline.box--mr_2
+              +starRating({ value: 4 })
+            .box.box--inline
+              +starRating({ value: 5, rateable: true }).js-rating
 
 
         //- a 3 --------------------------------------//
 
         .fe-grid__item
           //- range slider
-          +inputBox({ label: 'range slider', size: 'm' }).mb32
+          .box.box--mb_3.box--width_m
+            h3 range slider
             +rangeSlider.js-rangepicker
 
           //- buttons
-          +inputBox({ label: 'buttons', labelClass: 'mb15' }).mb40
-            +button().mr19.mb30
-            +button({
-              title: 'click me',
-              style: 'gradient',
-              size: 's',
-              disabled: true
-            }).mb30
-            
-            +button({
-              title: 'click me',
-              style: 'bordered',
-              size: 's'
-            }).mr19.mb31
-            +button({
-              title: 'click me',
-              style: 'bordered',
-              size: 's',
-              disabled: true
-            }).mb31
+          .box.box--width_l.box--mb_4
+            .box.box--mb_1-5
+              h3 buttons
+            .box.box--mb_3
+              .box.box--inline.box--mr_2
+                +button() 
+              .box.box--inline
+                +button({
+                  title: 'click me',
+                  style: 'gradient',
+                  size: 's',
+                  disabled: true
+                })
+            .box.box--mb_3
+              .box.box--inline.box--mr_2
+                +button({
+                  title: 'click me',
+                  style: 'bordered',
+                  size: 's'
+                })
+              .box.box--inline
+                +button({
+                  title: 'click me',
+                  style: 'bordered',
+                  size: 's',
+                  disabled: true
+                })
 
-            br
-            
-            +button({
-              title: 'click me',
-              style: 'text',
-              size: 'auto',
-            }).mr20.mb30
-            +button({
-              title: 'click me',
-              style: 'text',
-              size: 'auto',
-              disabled: true,
-            }).mb30
+            .box.box--mb_3
+              .box.box--inline.box--mr_2
+                +button({
+                  title: 'click me',
+                  style: 'text',
+                  size: 'auto',
+                })
+              .box.box--inline
+                +button({
+                  title: 'click me',
+                  style: 'text',
+                  size: 'auto',
+                  disabled: true,
+                })
 
             +button({
               title: 'перейти к оплате',
@@ -141,19 +177,26 @@ include ~CommonBlocks/user-comment/user-comment
             })
 
           //- pagination
-          +inputBox({ label: 'pagination', size: 's', labelClass: 'mb17' })
-            +pagination
+          .box.box--width_m
+            .box.box--mb_1-5
+              h3 pagination
+            .box
+              +pagination
 
 
         //- b 1 --------------------------------------//
 
         .fe-grid__item
           //- dropdown
-          +inputBox({ label: 'dropdown', size: 'm' }).mb20
+          .box.box--width_m.box--mb_2
+            .box.box--mb_0-5
+              h3 dropdown
             +dropdown({type: 'multi'}).js-dropdown-2
 
           //- dropdown expanded
-          +inputBox({ label: 'dropdown', size: 'm' })
+          .box.box--width_m.box--mb_2
+            .box.box--mb_0-5
+              h3 dropdown
             +dropdown({type: 'multi'}, true)
 
         //- b 2 --------------------------------------//
@@ -174,13 +217,13 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- expandable checkbox list
-          +inputBox({ size: 'm' }).mb40
+          .box.box--mb_4.box--width_m
             +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox({ label })
 
           //- expanded expandable checkbox list
-          +inputBox({ size: 'm' })
+          .box.box--mb_4.box--width_m
             +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
               each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
                 +checkbox({ label })
@@ -190,29 +233,36 @@ include ~CommonBlocks/user-comment/user-comment
         .fe-grid__item
 
           //- rich checkbox buttons
-          +inputBox({ label: 'rich checkbox buttons', size: 'm', labelClass: 'mb16' }).mt5
-            +checkbox({
-              label: 'Широкий коридор',
-              text: 'Ширина коридоров в номере\nне менее 91 см.',
-            }).mb10
-            +checkbox({
-              label: 'Помощник для инвалидов',
-              text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
-            })
+          .box.box--mt_0-5
+            .box.box--mb_1-5
+              h3 rich checkbox buttons
+            .box.box--mb_1
+              +checkbox({
+                label: 'Широкий коридор',
+                text: 'Ширина коридоров в номере\nне менее 91 см.',
+              })
+            .box
+              +checkbox({
+                label: 'Помощник для инвалидов',
+                text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
+              })
 
         //- c 3 --------------------------------------//
 
         .fe-grid__item
 
           //- bullet list
-          h3.mb13.mt5 bullet list
-          +bulletList({ 
-            list: [
-              'Нельзя с питомцами',
-              'Без вечеринок и мероприятий',
-              'Время прибытия — после 13:00,\n а выезд до 12:00',
-            ] 
-          })
+          .box.box--mt_0-5
+            .box.box--mb_1-2
+              h3 bullet list
+            .box
+              +bulletList({ 
+                list: [
+                  'Нельзя с питомцами',
+                  'Без вечеринок и мероприятий',
+                  'Время прибытия — после 13:00,\n а выезд до 12:00',
+                ] 
+              })
 
         //- d 1 --------------------------------------//
 
