@@ -1,8 +1,8 @@
-const UIheader = document.querySelector('.header'),
-  UInav = UIheader ? UIheader.querySelector('.header__nav') : null,
-  UIloginBtn = document.querySelector('.header__btn--type_login'),
-  UIregBtn = document.querySelector('.header__btn--type_register'),
-  UIaccountBtn = document.querySelector('.header__btn--type_account');
+const UIheader = document.querySelector('.header');
+const UInav = UIheader && UIheader.querySelector('.header__nav');
+const UIloginBtn = document.querySelector('.header__btn--type_login');
+const UIregBtn = document.querySelector('.header__btn--type_register');
+const UIaccountBtn = document.querySelector('.header__btn--type_account');
 
 // check if page has header
 if (UIheader) {
