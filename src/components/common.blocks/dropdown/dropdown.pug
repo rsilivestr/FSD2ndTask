@@ -77,9 +77,9 @@ mixin dropdown(options = {}, forceOpen = false)
         ? DROPDOWN_DEFAULT_CONFIG.listItems
         : DROPDOWN_MULTI_DEFAULT_CONFIG.listItems;
 
-  .dropdown(class = forceOpen ? 'dropdown--force-open' : '')&attributes(attributes)
+  .dropdown(class = forceOpen && 'dropdown--force-open')&attributes(attributes)
     input(type='text' readonly placeholder = placeholder).dropdown__display.input
-    .dropdown__contents(class = forceOpen ? 'dropdown__contents--force-visible' : '')
+    .dropdown__contents(class = forceOpen && 'dropdown__contents--force-visible')
       each item in listItems
         .dropdown__option(
           data-min= item.min,
@@ -90,7 +90,7 @@ mixin dropdown(options = {}, forceOpen = false)
         )
           span.dropdown__option-name= item.name
           button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
-          input.dropdown__option-value(value= item.value ? item.value : item.min)
+          input.dropdown__option-value(value = item.value ? item.value : item.min)
           button.dropdown__option-control.dropdown__option-control--add +
       if (type === 'single')
         button.button.button--style_text.button--size_auto.dropdown__btn.dropdown__btn--clear.hidden очистить

@@ -44,8 +44,8 @@ mixin header(content = {})
         each link in nav
           a(
             href = link.url
-            class = link.current ? 'header__navlink--current' : ''
-            class = link.expandable ? 'header__navlink--has-subnav' : ''
+            class = link.current && 'header__navlink--current'
+            class = link.expandable && 'header__navlink--has-subnav'
           ).header__navlink= link.title
       if !username
         .header__user-buttons

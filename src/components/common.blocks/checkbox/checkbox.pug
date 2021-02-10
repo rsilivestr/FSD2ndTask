@@ -8,6 +8,6 @@ mixin checkbox(options = {})
     input(type='checkbox', checked=checked).checkbox__input
     span.checkbox__replacer
     .checkbox__label
-      span(class=text ? 'checkbox__title--bold' : '').checkbox__title= label
+      span(class=text && 'checkbox__title--bold').checkbox__title= label
       if (text)
         span.checkbox__text= text

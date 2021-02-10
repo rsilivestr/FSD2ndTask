@@ -59,12 +59,9 @@ export class FSD2ndTaskDatepicker {
     const startDate = this.picker.selectedDates[0];
     const endDate = this.picker.selectedDates[1];
     // Set inputs' values
-    this.UI.inputStartDate.value = startDate
-      ? startDate.toLocaleDateString('ru-RU')
-      : '';
-    this.UI.inputEndDate.value = endDate
-      ? endDate.toLocaleDateString('ru-RU')
-      : '';
+    this.UI.inputStartDate.value =
+      startDate && startDate.toLocaleDateString('ru-RU');
+    this.UI.inputEndDate.value = endDate && endDate.toLocaleDateString('ru-RU');
 
     this._hidePicker();
   }
