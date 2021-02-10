@@ -1,4 +1,4 @@
-export class FSD2ndTaskSpoiler {
+class FSD2ndTaskSpoiler {
   constructor(element) {
     this._init(element);
   }
@@ -14,3 +14,5 @@ export class FSD2ndTaskSpoiler {
     this.title.addEventListener('click', () => this._toggleSpoiler());
   }
 }
+
+export default FSD2ndTaskSpoiler;

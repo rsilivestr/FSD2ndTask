@@ -1,4 +1,4 @@
-export class FSD2ndTaskRating {
+class FSD2ndTaskRating {
   constructor(el) {
     this._init(el);
   }
@@ -17,3 +17,5 @@ export class FSD2ndTaskRating {
     el.addEventListener('click', (e) => this._setRating(e.target));
   }
 }
+
+export default FSD2ndTaskRating;

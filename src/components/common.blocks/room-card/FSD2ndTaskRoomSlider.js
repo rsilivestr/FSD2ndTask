@@ -1,6 +1,6 @@
 import SLIDER_DEFAULT_SELECTORS from './defaults';
 
-export class FSD2ndTaskRoomSlider {
+class FSD2ndTaskRoomSlider {
   constructor(el, selectors = SLIDER_DEFAULT_SELECTORS) {
     this._init(el, selectors);
   }
@@ -98,3 +98,5 @@ export class FSD2ndTaskRoomSlider {
     );
   }
 }
+
+export default FSD2ndTaskRoomSlider;

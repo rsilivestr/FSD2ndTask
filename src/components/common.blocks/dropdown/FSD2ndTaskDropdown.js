@@ -3,7 +3,7 @@ import {
   DROPDOWN_DEFAULT_CLASSES,
 } from './defaults';
 
-export class FSD2ndTaskDropdown {
+class FSD2ndTaskDropdown {
   constructor(element = null, options = {}) {
     this._init(element, options);
   }
@@ -206,3 +206,5 @@ export class FSD2ndTaskDropdown {
     this._addListeners();
   }
 }
+
+export default FSD2ndTaskDropdown;

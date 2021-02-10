@@ -1,4 +1,4 @@
-export class FSD2ndClassLikeCounter {
+class FSD2ndClassLikeCounter {
   constructor(element) {
     this._init(element);
   }
@@ -22,3 +22,5 @@ export class FSD2ndClassLikeCounter {
     this.checkbox.addEventListener('change', () => this._updateValue());
   }
 }
+
+export default FSD2ndClassLikeCounter;

@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 
-export class FSD2ndTaskRange {
+class FSD2ndTaskRange {
   constructor(selector, options) {
     this._init(selector, options);
   }
@@ -51,3 +51,5 @@ export class FSD2ndTaskRange {
     this.UI.container.noUiSlider.on('update', () => this._updateLabel());
   }
 }
+
+export default FSD2ndTaskRange;
