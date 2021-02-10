@@ -1,76 +1,81 @@
--
-  var dropdownDefaults = {
-    type: 'single',
-    placeholder: 'Сколько гостей',
-    listItems: [
-      {
-        name: 'взрослые',
-        nameSingle: 'взрослый',
-        nameFew: 'взрослыx',
-        nameMany: 'взрослыx',
-        min: 1,
-        max: 10,
-        value: 0,
-      },
-      {
-        name: 'дети',
-        nameSingle: 'ребенок',
-        nameFew: 'ребенка',
-        nameMany: 'детей',
-        min: 0,
-        max: 10,
-        value: 0,
-      },
-      {
-        name: 'младенцы',
-        nameSingle: 'младенец',
-        nameFew: 'младенца',
-        nameMany: 'младенцев',
-        min: 0,
-        max: 10,
-        value: 0,
-      },
-    ],
-  };
-
-  var dropdownMultiDefaults = {
-    type: 'multi',
-    listItems: [
-      {
-        name: 'спальни',
-        nameSingle: 'спальня',
-        nameFew: 'спальни',
-        nameMany: 'спален',
-        min: 1,
-        max: 3,
-        value: 2,
-      },
-      {
-        name: 'кровати',
-        nameSingle: 'кровать',
-        nameFew: 'кровати',
-        nameMany: 'кроватей',
-        min: 1,
-        max: 6,
-        value: 2,
-      },
-      {
-        name: 'ванные комнаты',
-        nameSingle: 'ванная комната',
-        nameFew: 'ванных комнаты',
-        nameMany: 'ванных комнат',
-        min: 0,
-        max: 2,
-        value: 0,
-      },
-    ],
-  };
-
 mixin dropdown(options = {}, forceOpen = false)
   -
-    const type = options.type || dropdownDefaults.type;
-    const placeholder = options.placeholder || dropdownDefaults.placeholder;
-    const listItems = options.listItems || dropdownDefaults.listItems;
+    const DROPDOWN_DEFAULT_CONFIG = {
+      type: 'single',
+      placeholder: 'Сколько гостей',
+      listItems: [
+        {
+          name: 'взрослые',
+          nameSingle: 'взрослый',
+          nameFew: 'взрослыx',
+          nameMany: 'взрослыx',
+          min: 1,
+          max: 10,
+          value: 0,
+        },
+        {
+          name: 'дети',
+          nameSingle: 'ребенок',
+          nameFew: 'ребенка',
+          nameMany: 'детей',
+          min: 0,
+          max: 10,
+          value: 0,
+        },
+        {
+          name: 'младенцы',
+          nameSingle: 'младенец',
+          nameFew: 'младенца',
+          nameMany: 'младенцев',
+          min: 0,
+          max: 10,
+          value: 0,
+        },
+      ],
+    };
+
+    const DROPDOWN_MULTI_DEFAULT_CONFIG = {
+      type: 'multi',
+      listItems: [
+        {
+          name: 'спальни',
+          nameSingle: 'спальня',
+          nameFew: 'спальни',
+          nameMany: 'спален',
+          min: 1,
+          max: 3,
+          value: 2,
+        },
+        {
+          name: 'кровати',
+          nameSingle: 'кровать',
+          nameFew: 'кровати',
+          nameMany: 'кроватей',
+          min: 1,
+          max: 6,
+          value: 2,
+        },
+        {
+          name: 'ванные комнаты',
+          nameSingle: 'ванная комната',
+          nameFew: 'ванных комнаты',
+          nameMany: 'ванных комнат',
+          min: 0,
+          max: 2,
+          value: 0,
+        },
+      ],
+    };
+
+    const type = options.type || DROPDOWN_DEFAULT_CONFIG.type;
+    const placeholder = options.placeholder 
+      || type==='single'
+        ? DROPDOWN_DEFAULT_CONFIG.placeholder
+        : DROPDOWN_MULTI_DEFAULT_CONFIG.placeholder;
+    const listItems = options.listItems 
+      || type == 'single' 
+        ? DROPDOWN_DEFAULT_CONFIG.listItems
+        : DROPDOWN_MULTI_DEFAULT_CONFIG.listItems;
 
   .dropdown(class = forceOpen ? 'dropdown--force-open' : '')&attributes(attributes)
     input(type='text' readonly placeholder = placeholder).dropdown__display.input

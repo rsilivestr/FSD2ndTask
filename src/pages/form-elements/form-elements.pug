@@ -150,25 +150,25 @@ include ~CommonBlocks/user-comment/user-comment
         .fe-grid__item
           //- dropdown
           +inputBox({ label: 'dropdown', size: 'm' }).mb20
-            +dropdown(dropdownMultiDefaults).js-dropdown-2
+            +dropdown({type: 'multi'}).js-dropdown-2
 
           //- dropdown expanded
           +inputBox({ label: 'dropdown', size: 'm' })
-            +dropdown(dropdownMultiDefaults, true)
+            +dropdown({type: 'multi'}, true)
 
         //- b 2 --------------------------------------//
 
         .fe-grid__item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           +inputBox('dropdown')
-            +dropdown({}, true)
+            +dropdown({type: 'single'}, true)
 
         //- b 3 --------------------------------------//
         
         .fe-grid__item
           //- wide dropdown with button ПРИМЕНИТЬ
           +inputBox('dropdown')
-            +dropdown({}, true)
+            +dropdown({type: 'single'}, true)
 
         //- c 1 --------------------------------------//
 

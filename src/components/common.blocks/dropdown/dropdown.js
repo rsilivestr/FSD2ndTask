@@ -1,22 +1,7 @@
-const defaultSelectors = {
-  dropdown: '.dropdown',
-  input: '.dropdown__display',
-  list: '.dropdown__contents',
-  listItem: '.dropdown__option',
-  listItemValue: '.dropdown__option-value',
-  listBtn: '.dropdown__option-control',
-  addBtn: '.dropdown__option-control--add',
-  subtractBtn: '.dropdown__option-control--subtract',
-  disabledBtn: '.dropdown__option-control--disabled',
-  applyBtn: '.dropdown__btn--apply',
-  clearBtn: '.dropdown__btn--clear',
-};
-
-const defaultClasses = {
-  disabledBtn: 'dropdown__option-control--disabled',
-  hiddenBtn: 'hidden',
-  visibleList: 'dropdown__contents--visible',
-};
+import {
+  DROPDOWN_DEFAULT_SELECTORS,
+  DROPDOWN_DEFAULT_CLASSES,
+} from './defaults';
 
 export class FSD2ndTaskDropdown {
   constructor(element = null, options = {}) {
@@ -203,8 +188,8 @@ export class FSD2ndTaskDropdown {
     else this.dropdown = element;
 
     this.type = options.type || 'single';
-    this.selectors = options.selectors || defaultSelectors;
-    this.classes = options.classes || defaultClasses;
+    this.selectors = options.selectors || DROPDOWN_DEFAULT_SELECTORS;
+    this.classes = options.classes || DROPDOWN_DEFAULT_CLASSES;
 
     this.input = this.dropdown.querySelector(this.selectors.input);
     this.list = this.dropdown.querySelector(this.selectors.list);
