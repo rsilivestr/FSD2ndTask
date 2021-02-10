@@ -1,5 +1,6 @@
 @use 'Styles/forward' as *
 @use './__prompt/prompt'
+@use './__row/row'
 
 .form
   position: relative
@@ -7,17 +8,11 @@
   flex-direction: column
   align-items: center
   width: 100%
-  max-width: 380px
-  padding: 40px 30px 30px 30px
+  max-width: 38rem
+  padding: 4rem 1rem 3rem 1rem
   background: #ffffff
   border-radius: 4px
-  box-shadow: 0 0 20px $dark25
+  box-shadow: 0 0 2rem $dark25
 
-  &__title
-    width: 100%
-
-  &__row
-    display: flex
-    max-width: 320px
-    flex-direction: row
-    justify-content: space-between
+  @include media('>=mobile')
+    padding: 4rem 3rem 3rem 3rem
