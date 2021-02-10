@@ -1,5 +1,5 @@
 -
-  var paginationDefaults = {
+  const PAGINATION_DEFAULT_CONTENT = {
     controls: {
       left: false,
       right: true,
@@ -17,12 +17,12 @@
 
 mixin pagination(data = {})
   -
-    var controls = data.controls || paginationDefaults.controls;
-    var pagesLeft = data.pagesLeft || paginationDefaults.pagesLeft;
-    var gapText = data.gapText || paginationDefaults.gapText;
-    var pagesRight = data.pagesRight || paginationDefaults.pagesRight;
-    var resultsRange = data.resultsRange || paginationDefaults.resultsRange;
-    var resultsTotal = data.resultsTotal || paginationDefaults.resultsTotal;
+    const controls = data.controls || PAGINATION_DEFAULT_CONTENT.controls;
+    const pagesLeft = data.pagesLeft || PAGINATION_DEFAULT_CONTENT.pagesLeft;
+    const gapText = data.gapText || PAGINATION_DEFAULT_CONTENT.gapText;
+    const pagesRight = data.pagesRight || PAGINATION_DEFAULT_CONTENT.pagesRight;
+    const resultsRange = data.resultsRange || PAGINATION_DEFAULT_CONTENT.resultsRange;
+    const resultsTotal = data.resultsTotal || PAGINATION_DEFAULT_CONTENT.resultsTotal;
 
   .pagination
     button(class = controls.left ? '' : 'pagination__control--hidden').pagination__control

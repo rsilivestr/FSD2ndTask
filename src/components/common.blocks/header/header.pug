@@ -2,7 +2,7 @@ include ../button/button
 include ../logo/logo
 
 -
-  var headerDefaults = {
+  const HEADER_DEFAULT_CONTENT = {
     nav: [
       { title: 'О нас', url: '#some-url', current: true },
       { title: 'Услуги', url: '#some-url', expandable: true },
@@ -31,9 +31,9 @@ include ../logo/logo
 
 mixin header(content = {})
   -
-    var nav = content.nav || headerDefaults.nav;
-    var username = content.username || headerDefaults.username;
-    var buttons = content.buttons || headerDefaults.buttons;
+    const nav = content.nav || HEADER_DEFAULT_CONTENT.nav;
+    const username = content.username || HEADER_DEFAULT_CONTENT.username;
+    const buttons = content.buttons || HEADER_DEFAULT_CONTENT.buttons;
 
   header.header&attributes(attributes)
     .header__wrapper.container
