@@ -5,13 +5,15 @@ include ~CommonBlocks/footer/footer
 +head('Headers & Footers')
   body.page--layout_headers-footers
 
-    header.header--uikit.mb29
-      +logoUIKit
+    .box.box--mb_3
+      header.header--uikit
+        +logoUIKit
 
-    +header.mb40
+    .box.box--mb_4
+      +header
 
-    +header({ username: 'Юлий Цезарь' }).mb40
+    .box.box--mb_4
+      +header({ username: 'Юлий Цезарь' })
     
-    +footer().mb40
-    
-    //- +footerCreative.mb40
+    .box.box--mb_4
+      +footer()

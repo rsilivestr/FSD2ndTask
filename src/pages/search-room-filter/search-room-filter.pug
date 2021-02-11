@@ -17,41 +17,53 @@ include ~CommonBlocks/range/range
 
       aside.room-filters
         //- filter date dropdown
-        +inputBox('даты пребывания в отеле').mb21.js-filter-datepicker
+        .box.box--mb_2-1.js-filter-datepicker
+          h3.box__label даты пребывания в отеле
           +dateDropdown
         //- guests dropdown
-        +inputBox('гости').mb30
+        .box.box--mb_3
+          h3.box__label гости
           +dropdown.js-guest-dropdown
         //- range
-        +inputBox('Диапазон цены').mb30
+        .box.box--mb_3
+          h3.box__label Диапазон цены
           +rangeSlider('Стоимость за сутки пребывания в номере').js-rangeslider
         //- checkboxes
-        +inputBox({ label: 'правила дома', labelClass: 'mb15' }).mb22
+        .box.box--mb_2-2
+          h3.box__label.box__label--mb_1-5 правила
           each label in ['можно курить', 'можно с питомцами', 'можно пригласить гостей\n(до 10 человек)']
-            +checkbox({ label }).mb10
+            .box.box--mb_1
+              +checkbox({ label })
         //- rich checkboxes
-        +inputBox({ label: 'Доступность', labelClass: 'mb15' }).mb31
-          +checkbox({
-            label: 'Широкий коридор',
-            text: 'Ширина коридоров в номере\nне менее 91 см.',
-          }).mb10
-          +checkbox({
-            label: 'Помощник для инвалидов',
-            text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
-          })
+        .box.box--mb_3-1
+          h3.box__label.box__label--mb_1-5 Доступность
+          .box.box--mb_1
+            +checkbox({
+              label: 'Широкий коридор',
+              text: 'Ширина коридоров в номере\nне менее 91 см.',
+            })
+          .box
+            +checkbox({
+              label: 'Помощник для инвалидов',
+              text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
+            })
         //- comfort dropdown
-        +inputBox({ label: 'удобства номера', size: 'm' }).mb24
-          +dropdown({type: 'multi'}).js-comfort-dropdown
+        .box.box--mb_2-5
+          //- +inputBox({ label: 'удобства номера', size: 'm' })
+          .box.box--width_m
+            h3.box__label удобства номера
+            +dropdown({type: 'multi'}).js-comfort-dropdown
         //- expandable checkbox group
-        +spoiler({ title: 'дополнительные удобства'}).js-spoiler.mb30
-          each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
-            +checkbox({ label })
+        .box.box--mb_3
+          +spoiler({ title: 'дополнительные удобства'}).js-spoiler
+            each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
+              +checkbox({ label })
         //- button to apply filters
         +button({ 
           title: 'применить фильтры',
           style: 'gradient',
           size: 'm'
-        }).search-room-page__apply-btn
+        })
 
       main.main-content
         h1 Номера, которые мы для вас подобрали

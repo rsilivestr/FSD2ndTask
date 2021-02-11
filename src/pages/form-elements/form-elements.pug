@@ -267,20 +267,21 @@ include ~CommonBlocks/user-comment/user-comment
         //- d 1 --------------------------------------//
 
         .fe-grid__item
-          //- комфорт
-          +imageTitle({
-            type: 'emoji',
-            src: 'insert_emoticon',
-            heading: 'комфорт',
-            text: 'шумопоглощающие стены',
-          }).bb-10
-          //- удобство
-          +imageTitle({
-            type: 'emoji',
-            src: 'location_city',
-            heading: 'удобство',
-            text: 'окно в каждой из спален',
-          }).bb-10.mb50
+          .box.box--mb_5
+            //- комфорт
+            +imageTitle({
+              type: 'emoji',
+              src: 'insert_emoticon',
+              heading: 'комфорт',
+              text: 'шумопоглощающие стены',
+            }).bb-10
+            //- удобство
+            +imageTitle({
+              type: 'emoji',
+              src: 'location_city',
+              heading: 'удобство',
+              text: 'окно в каждой из спален',
+            }).bb-10
 
 
         //- e 1 --------------------------------------//
