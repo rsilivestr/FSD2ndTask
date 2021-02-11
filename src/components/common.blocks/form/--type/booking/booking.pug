@@ -12,17 +12,17 @@ mixin formBooking(room)
 
   form.form.form--type_booking&attributes(attributes)
 
-    +formRow({ mb: 2 })
+    .box.box--mb_2
       +roomTitle({ number: '888', lux: true, price: '9 990' })
 
-    +formRow({ mb: 2 })
+    .box.box--mb_2
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-booking-datepicker
 
-    +formRow({ mb: 1 })
+    .box.box--mb_1
       +inputBox('гости')
         +dropdown.js-booking-form-dropdown
 
-    +formRow({ mb: 2 })
+    .box.box--mb_2
       +billInfo
 
     +button({

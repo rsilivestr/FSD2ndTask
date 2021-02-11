@@ -9,29 +9,36 @@ include ~CommonBlocks/room-card/room-card
       +logoUIKit
     main.main-content
       .main-content__column
-        +formSearchRoom.mb40
-        +formRegistration
+        .box.box--mb_4
+          +formSearchRoom
+        .box
+          +formRegistration
       .main-content__column
-        +formBooking({ number: '888', lux: true }).mb40
-        +formLogin
+        .box.box--mb_4
+          +formBooking({ number: '888', lux: true })
+        .box
+          +formLogin
       .main-content__column
-        .js-datepicker-static.mb46
-          input(type="hidden")
-          input(type="hidden")
-        +roomCard({ 
-          photos: ['room1.jpg', 'room2.jpg', 'room3.jpg'],
-          rating: 5,
-          number: 888,
-          cost: '9 990',
-          reviewCount: 145,
-          lux: true,
-        }).room-card--width_m.mb39
-        +roomCard({
-          photos: ['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'],
-          rating: 4,
-          number: 840,
-          cost: '9 900₽',
-          reviewCount: 65,
-        }).room-card--width_m
+        .box.box--mb_4
+          .js-datepicker-static
+            input(type="hidden")
+            input(type="hidden")
+        .box.box--mb_4
+          +roomCard({ 
+            photos: ['room1.jpg', 'room2.jpg', 'room3.jpg'],
+            rating: 5,
+            number: 888,
+            cost: '9 990',
+            reviewCount: 145,
+            lux: true,
+          })
+        .box
+          +roomCard({
+            photos: ['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'],
+            rating: 4,
+            number: 840,
+            cost: '9 900₽',
+            reviewCount: 65,
+          }).room-card--width_m
 
     script(type="text/javascript" src="../scripts/cards.js")

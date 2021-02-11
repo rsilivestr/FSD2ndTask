@@ -6,19 +6,19 @@ include ~CommonBlocks/input-box/input-box
 
 mixin formLogin
   form.form.form--type_login&attributes(attributes)
-    +formRow({ mb: 2 })
+    .box.box--mb_2-1
       h1 Войти
-    +formRow({ mb: 1 })
+    .box.box--mb_1
       +input({ placeholder: 'Email', type: 'email' })
-    +formRow({ mb: 2 })
+    .box.box--mb_2
       +input({ placeholder: 'Пароль', type: 'password' })
-    +formRow({ mb: 3 })
+    .box.box--mb_3
       +button({ 
         title: 'войти', 
         style: 'arrowed', 
         size: 'l'
       })
-    +formRow
+    .box
       +formPrompt('Нет аккаунта на Toxin?')
         +aButton({ 
           title: 'создать', 

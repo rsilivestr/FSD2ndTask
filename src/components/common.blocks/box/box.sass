@@ -1,5 +1,7 @@
 .box
+  display: block
   position: relative
+  width: 100%
 
   &--inline
     display: inline-block
@@ -10,12 +12,16 @@
     justify-content: space-between
 
   &--width
+    &_auto
+      width: auto
+    &_xs
+      max-width: 10rem
     &_s
-      max-width: 150px
+      max-width: 15rem
     &_m
-      max-width: 266px
+      max-width: 26.6rem
     &_l
-      max-width: 320px
+      max-width: 32rem
 
   &--mt_0-5
     margin-top: .5rem
@@ -41,6 +47,10 @@
       margin-bottom: 1.5rem
     &_2
       margin-bottom: 2rem
+    &_2-1
+      margin-bottom: 2.1rem
+    &_2-2
+      margin-bottom: 2.2rem
     &_2-5
       margin-bottom: 2.5rem
     &_3

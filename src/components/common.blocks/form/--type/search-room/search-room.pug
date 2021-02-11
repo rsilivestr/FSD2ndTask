@@ -4,13 +4,14 @@ include ~CommonBlocks/input-box/input-box
 
 mixin formSearchRoom
   form.form.form--type_search-room&attributes(attributes)
-    +formRow({ mb: 2 })
+    .box.box--mb_2-2
       h1 Найдём номера под ваши пожелания
 
-    +formRow({ mb: 2 })
+    //- +formRow({ mb: 2 })
+    .box.box--mb_2-1.box--spread
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-search-room-datepicker
 
-    +formRow({ mb: 3 })
+    .box.box--mb_3
       +inputBox('гости')
         +dropdown.js-search-room-dropdown
     

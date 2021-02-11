@@ -1,8 +1,0 @@
-mixin formRow(options = {})
-  -
-    let className = 'form__row';
-    options.mb && (className += ` form__row--mb_${options.mb}`);
-    options.spread && (className += ' form__row--spread');
-
-  div(class = className)
-    block

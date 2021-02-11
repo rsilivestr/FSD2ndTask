@@ -103,9 +103,9 @@ include ~CommonBlocks/user-comment/user-comment
             .box.box--mb_1-5
               h3 like button
             .box
-              .box.box--inline.box--mr_1
+              .box.box--inline.box--mr_1.box--width_auto
                 +likeCounter({ value: 2 }).js-like
-              .box.box--inline
+              .box.box--inline.box--width_auto
                 +likeCounter({ value: 12, checked: true }).js-like
 
           //- rate button
@@ -131,9 +131,9 @@ include ~CommonBlocks/user-comment/user-comment
             .box.box--mb_1-5
               h3 buttons
             .box.box--mb_3
-              .box.box--inline.box--mr_2
+              .box.box--inline.box--mr_2.box--width_xs
                 +button() 
-              .box.box--inline
+              .box.box--inline.box--width_xs
                 +button({
                   title: 'click me',
                   style: 'gradient',
@@ -141,13 +141,13 @@ include ~CommonBlocks/user-comment/user-comment
                   disabled: true
                 })
             .box.box--mb_3
-              .box.box--inline.box--mr_2
+              .box.box--inline.box--mr_2.box--width_xs
                 +button({
                   title: 'click me',
                   style: 'bordered',
                   size: 's'
                 })
-              .box.box--inline
+              .box.box--inline.box--width_xs
                 +button({
                   title: 'click me',
                   style: 'bordered',
@@ -156,13 +156,13 @@ include ~CommonBlocks/user-comment/user-comment
                 })
 
             .box.box--mb_3
-              .box.box--inline.box--mr_2
+              .box.box--inline.box--mr_2.box--width_xs
                 +button({
                   title: 'click me',
                   style: 'text',
                   size: 'auto',
                 })
-              .box.box--inline
+              .box.box--inline.box--width_xs
                 +button({
                   title: 'click me',
                   style: 'text',
