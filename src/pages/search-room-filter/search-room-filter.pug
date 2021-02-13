@@ -48,11 +48,9 @@ include ~CommonBlocks/range/range
               text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
             })
         //- comfort dropdown
-        .box.box--mb_2-5
-          //- +inputBox({ label: 'удобства номера', size: 'm' })
-          .box.box--width_m
-            h3.box__label удобства номера
-            +dropdown({type: 'multi'}).js-comfort-dropdown
+        .box.box--mb_2-5.box--width_m
+          h3.box__label удобства номера
+          +dropdown({type: 'multi'}).js-comfort-dropdown
         //- expandable checkbox group
         .box.box--mb_3
           +spoiler({ title: 'дополнительные удобства'}).js-spoiler

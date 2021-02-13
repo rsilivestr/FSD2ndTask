@@ -2,7 +2,6 @@ include ~CommonBlocks/bill-info/bill-info
 include ~CommonBlocks/button/button
 include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/dropdown/dropdown
-include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/room-title/room-title
 
 mixin formBooking(room)
@@ -19,8 +18,8 @@ mixin formBooking(room)
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-booking-datepicker
 
     .box.box--mb_1
-      +inputBox('гости')
-        +dropdown.js-booking-form-dropdown
+      h3.box__label гости
+      +dropdown.js-booking-form-dropdown
 
     .box.box--mb_2
       +billInfo

@@ -11,9 +11,12 @@ mixin dateDropdown(options = {})
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
-      +inputBox({ label: labelStart, size: 'xs' }).mr5
-        .date-dropdown
-          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
-      +inputBox({ label: labelEnd, size: 'xs' })
-        .date-dropdown
-          input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end
+      .box.box--spread
+        .box.box--width_s
+          h3.box__label= labelStart
+          .date-dropdown
+            input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
+        .box.box--width_s
+          h3.box__label= labelEnd
+          .date-dropdown
+            input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end

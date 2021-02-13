@@ -1,7 +1,6 @@
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/input/input
-include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/radio/radio
 include ~CommonBlocks/toggle/toggle
 
@@ -34,17 +33,17 @@ mixin formRegistration
       })
 
     .box.box--mb_2
-      +inputBox('дата рождения')
-        +input({ placeholder: 'ММ.ДД.ГГГГ'}).js-dob-masked
+      h3.box__label дата рождения
+      +input({ placeholder: 'ММ.ДД.ГГГГ'}).js-dob-masked
 
     .box.box--mb_1-5
-      +inputBox('данные для входа в сервис')
-        .box.box--mb_1
-          +input({ placeholder: 'Email', type: 'email' })
-        .box.box--mb_1
-          +input({ placeholder: 'Пароль', type: 'password' })
-        .box.box--mb_1
-          +toggle({ label: 'Получать спецпредложения' })
+      h3.box__label данные для входа в сервис
+      .box.box--mb_1
+        +input({ placeholder: 'Email', type: 'email' })
+      .box.box--mb_1
+        +input({ placeholder: 'Пароль', type: 'password' })
+      .box.box--mb_1
+        +toggle({ label: 'Получать спецпредложения' })
     
     .box.box--mb_3
       +button({

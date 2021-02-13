@@ -2,6 +2,5 @@ include ~CommonBlocks/input/input
 
 mixin subscribeForm(placeholder='Email')
   form.subscribe-form&attributes(attributes)
-    .input-box
-      +input({ placeholder, type: 'email'}).subscribe-form__input
-      button(type='submit').subscribe-form__submit
+    +input({ placeholder, type: 'email'}).input--has-icon
+    button(type='submit').subscribe-form__submit

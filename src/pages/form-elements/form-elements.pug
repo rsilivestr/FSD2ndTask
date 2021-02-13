@@ -7,7 +7,6 @@ include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/header/header
 include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/input/input
-include ~CommonBlocks/input-box/input-box
 include ~CommonBlocks/like-counter/like-counter
 include ~CommonBlocks/pagination/pagination
 include ~CommonBlocks/radio/radio
@@ -27,33 +26,36 @@ include ~CommonBlocks/user-comment/user-comment
         //- a 1 --------------------------------------//
 
         .fe-grid__item
-          .box.box--mb_2
-            +inputBox('text field')
-              +input({ placeholder: 'Email' })
+          .box.box--width_l.box--mb_2
+            h3.box__label text field
+            +input({ placeholder: 'Email' })
 
-          .box.box--mb_2
-            +inputBox('text field')
-              +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
+          .box.box--width_l.box--mb_2
+            h3.box__label text field
+            +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
 
-          .box.box--mb_2
-            +inputBox('dropdown')
-              +dropdown.js-dropdown-1
+          .box.box--width_l.box--mb_2
+            h3.box__label dropdown
+            +dropdown.js-dropdown-1
  
-          .box.box--mb_4
-            +inputBox('masked text field')
-              +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
+          .box.box--width_l.box--mb_4
+            h3.box__label masked text field
+            +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
 
           //- double date dropdown
-          .box.box--mb_4
+          .box.box--width_l.box--mb_4
             +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double
 
           //- filter date dropdown
           .box.box--mb_4.box--width_m
-            +inputBox('filter date dropdown', 'm').js-datepicker-range
-              +dateDropdown
+            .js-datepicker-range
+              .box.box--width_m
+                h3.box__label filter date dropdown
+                +dateDropdown
 
           //- subscribtion text field
-          +inputBox({ label: 'subscribtion text field', size: 'm' })
+          .box.box--width_m
+            h3.box__label subscribtion text field
             +subscribeForm
 
 
@@ -203,14 +205,16 @@ include ~CommonBlocks/user-comment/user-comment
 
         .fe-grid__item
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
-          +inputBox('dropdown')
+          .box.box--width_l
+            h3.box__label dropdown
             +dropdown({type: 'single'}, true)
 
         //- b 3 --------------------------------------//
         
         .fe-grid__item
           //- wide dropdown with button ПРИМЕНИТЬ
-          +inputBox('dropdown')
+          .box.box--width_l
+            h3.box__label dropdown
             +dropdown({type: 'single'}, true)
 
         //- c 1 --------------------------------------//
@@ -289,13 +293,14 @@ include ~CommonBlocks/user-comment/user-comment
         .fe-grid__item.area-e
 
           //- comment (wide)
-          +userComment({
-            age: '5 дней назад',
-            avatar: '../assets/images/uid1111.jpg',
-            isLiked: true,
-            likes: 12,
-            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
-            username: 'Мурад Сарафанов',
-          }).mt20
+          .box.box--mt_2
+            +userComment({
+              age: '5 дней назад',
+              avatar: '../assets/images/uid1111.jpg',
+              isLiked: true,
+              likes: 12,
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
+              username: 'Мурад Сарафанов',
+            })
 
     script(type="text/javascript" src="../scripts/form_elements.js")

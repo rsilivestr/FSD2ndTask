@@ -1,7 +1,0 @@
-mixin inputBox(options = {})
-  .input-box(class=`input-box--size_${options.size || 'l'}`)&attributes(attributes)
-    if (options.label)
-      h3.input-box__title(class=options.labelClass || '')= options.label
-    else if (typeof options == 'string')
-      h3.input-box__title= options
-    block
