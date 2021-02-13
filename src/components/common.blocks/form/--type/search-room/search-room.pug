@@ -1,17 +1,16 @@
+include ~CommonBlocks/box/box
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 
 mixin formSearchRoom
   form.form.form--type_search-room&attributes(attributes)
-    .box.box--mb_2-2
+    +box({ mb: 22 })
       h1 Найдём номера под ваши пожелания
 
-    //- +formRow({ mb: 2 })
-    .box.box--mb_2-1.box--spread
+    +box({ mb: 21, stretch: true })
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-search-room-datepicker
 
-    .box.box--mb_3
-      h3.box__label гости
+    +box({ mb: 30, label: 'гости' })
       +dropdown.js-search-room-dropdown
     
     +aButton({ 

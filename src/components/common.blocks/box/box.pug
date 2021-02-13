@@ -1,0 +1,15 @@
+mixin box(config = {})
+  -
+    let className = 'box';
+    config.inline && (className += ' box--inline')
+    config.stretch && (className += ' box--stretch')
+    config.hasSeparators && (className += ' box--has-separators')
+    config.width && (className += ` box--width_${config.width}`)
+    config.mt && (className += ` box--mt_${config.mt}`)
+    config.mr && (className += ` box--mr_${config.mr}`)
+    config.mb && (className += ` box--mb_${config.mb}`)
+
+  div(class = className)
+    if config.label
+      h3.box__label(class = config.labelMB && `box__label--mb_${config.labelMB}`)= config.label
+    block

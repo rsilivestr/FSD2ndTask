@@ -1,3 +1,4 @@
+include ~CommonBlocks/box/box
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/date-dropdown/date-dropdown
@@ -5,19 +6,19 @@ include ~CommonBlocks/input/input
 
 mixin formLogin
   form.form.form--type_login&attributes(attributes)
-    .box.box--mb_2-1
+    +box({ mb: 21 })
       h1 Войти
-    .box.box--mb_1
+    +box({ mb: 10 })
       +input({ placeholder: 'Email', type: 'email' })
-    .box.box--mb_2
+    +box({ mb: 20 })
       +input({ placeholder: 'Пароль', type: 'password' })
-    .box.box--mb_3
+    +box({ mb: 30 })
       +button({ 
         title: 'войти', 
         style: 'arrowed', 
         size: 'l'
       })
-    .box
+    +box
       +formPrompt('Нет аккаунта на Toxin?')
         +aButton({ 
           title: 'создать', 

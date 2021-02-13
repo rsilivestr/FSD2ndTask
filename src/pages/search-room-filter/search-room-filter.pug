@@ -1,4 +1,5 @@
 include ~UtilBlocks/head
+include ~CommonBlocks/box/box
 include ~CommonBlocks/checkbox/checkbox
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
@@ -17,42 +18,37 @@ include ~CommonBlocks/range/range
 
       aside.search-room__filters
         //- filter date dropdown
-        .box.box--mb_2-1.js-filter-datepicker
-          h3.box__label даты пребывания в отеле
-          +dateDropdown
+        +box({ mb: 21, label: 'даты пребывания в отеле' })
+          .js-filter-datepicker
+            +dateDropdown
         //- guests dropdown
-        .box.box--mb_3
-          h3.box__label гости
+        +box({ mb: 30, label: 'гости' })
           +dropdown.js-guest-dropdown
         //- range
-        .box.box--mb_3
-          h3.box__label Диапазон цены
+        +box({ mb: 30, label: 'Диапазон цены' })
           +rangeSlider('Стоимость за сутки пребывания в номере').js-rangeslider
         //- checkboxes
-        .box.box--mb_2-2
-          h3.box__label.box__label--mb_1-5 правила
+        +box({ mb: 22, label: 'правила', labelMB: 15})
           each label in ['можно курить', 'можно с питомцами', 'можно пригласить гостей\n(до 10 человек)']
-            .box.box--mb_1
+            +box({ mb: 10 })
               +checkbox({ label })
         //- rich checkboxes
-        .box.box--mb_3-1
-          h3.box__label.box__label--mb_1-5 Доступность
-          .box.box--mb_1
+        +box({ mb: 31, label: 'Доступность', labelMB: 15 })
+          +box({ mb: 10 })
             +checkbox({
               label: 'Широкий коридор',
               text: 'Ширина коридоров в номере\nне менее 91 см.',
             })
-          .box
+          +box
             +checkbox({
               label: 'Помощник для инвалидов',
               text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
             })
         //- comfort dropdown
-        .box.box--mb_2-5.box--width_m
-          h3.box__label удобства номера
+        +box({ width: 'm', mb: 25, label: 'удобства номера' })
           +dropdown({type: 'multi'}).js-comfort-dropdown
         //- expandable checkbox group
-        .box.box--mb_3
+        +box({ mb: 30 })
           +spoiler({ title: 'дополнительные удобства'}).js-spoiler
             each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
               +checkbox({ label })

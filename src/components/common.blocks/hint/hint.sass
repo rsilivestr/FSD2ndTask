@@ -1,0 +1,28 @@
+@use 'Styles/forward' as *
+
+.hint
+  align-items: center
+  border: 1px solid $dark25
+  border-radius: 50%
+  color: $dark25
+  cursor: default
+  display: inline-flex
+  height: 2rem
+  justify-content: center
+  position: relative
+  width: 2rem
+
+  &:hover &__content
+    display: block
+
+  &__content
+    background: #ffffdd
+    border: 1px solid $dark25
+    border-radius: 4px
+    box-shadow: 0 .2rem 1rem $dark10
+    color: $dark50
+    display: none
+    padding: .5rem 1rem
+    position: absolute
+    top: 144%
+    z-index: 20

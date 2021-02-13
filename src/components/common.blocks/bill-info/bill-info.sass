@@ -7,29 +7,17 @@
   font-size: 1.4rem
   color: $dark75
 
+  &__row
+    display: flex
+    padding: 0.6rem 0
+
+  &__title
+    flex: auto
+
   &__table
     margin-bottom: 2.5rem
 
-  &__title,
   &__sum
-    padding: 6px 0
-
-  &__title
-
-    &--has-hint::before
-      content: 'i'
-      display: inline-flex
-      float: right
-      align-items: center
-      justify-content: center
-      width: 20px
-      height: 20px
-      color: $dark25
-      border: 1px solid $dark25
-      border-radius: 50%
-
-  &__sum
-    min-width: 75px
     text-align: right
     vertical-align: top
 
@@ -52,5 +40,5 @@
       content: ''
       flex: auto
       order: 2
-      margin: 5px 5px
+      margin: 0.5rem 0.5rem
       border-bottom: 1px dotted $dark25

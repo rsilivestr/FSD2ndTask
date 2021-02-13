@@ -1,3 +1,5 @@
+include ~CommonBlocks/box/box
+
 mixin dateDropdown(options = {})
   -
     const type = options.type || 'single';
@@ -11,12 +13,10 @@ mixin dateDropdown(options = {})
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
-      .box.box--spread
-        .box.box--width_s
-          h3.box__label= labelStart
+      +box({ stretch: true })
+        +box({ width: 's', label: labelStart })
           .date-dropdown
             input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
-        .box.box--width_s
-          h3.box__label= labelEnd
+        +box({ width: 's', label: labelEnd })
           .date-dropdown
             input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end

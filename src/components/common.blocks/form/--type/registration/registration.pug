@@ -1,3 +1,4 @@
+include ~CommonBlocks/box/box
 include ~CommonBlocks/button/button
 include ~CommonBlocks/dropdown/dropdown
 include ~CommonBlocks/input/input
@@ -6,15 +7,15 @@ include ~CommonBlocks/toggle/toggle
 
 mixin formRegistration
   form.form.form--type_registration&attributes(attributes)
-    .box.box--mb_2-1
+    +box({ mb: 21 })
       h1 Регистрация аккаунта
 
-    .box.box--mb_1
+    +box({ mb: 10 })
       +input({ placeholder: 'Имя'})
-    .box.box--mb_1
+    +box({ mb: 10 })
       +input({ placeholder: 'Фамилия'})
 
-    .box.box--mb_2-5.box--spread
+    +box({ mb: 25, stretch: true })
       +radio({
         name: 'gender',
         value: 'man',
@@ -32,27 +33,25 @@ mixin formRegistration
         label: 'Иное',
       })
 
-    .box.box--mb_2
-      h3.box__label дата рождения
+    +box({ mb: 20, label: 'дата рождения' })
       +input({ placeholder: 'ММ.ДД.ГГГГ'}).js-dob-masked
 
-    .box.box--mb_1-5
-      h3.box__label данные для входа в сервис
-      .box.box--mb_1
+    +box({ mb: 15, label: 'данные для входа в сервис' })
+      +box({ mb: 10 })
         +input({ placeholder: 'Email', type: 'email' })
-      .box.box--mb_1
+      +box({ mb: 10 })
         +input({ placeholder: 'Пароль', type: 'password' })
-      .box.box--mb_1
+      +box({ mb: 10 })
         +toggle({ label: 'Получать спецпредложения' })
     
-    .box.box--mb_3
+    +box({ mb: 30 })
       +button({
         title: 'перейти к оплате',
         style: 'arrowed',
         size: 'l'
       })
 
-    .box
+    +box
       +formPrompt('Уже есть аккаунт на Toxin?')
         +aButton({
           title: 'войти',

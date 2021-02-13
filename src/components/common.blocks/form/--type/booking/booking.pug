@@ -1,4 +1,5 @@
 include ~CommonBlocks/bill-info/bill-info
+include ~CommonBlocks/box/box
 include ~CommonBlocks/button/button
 include ~CommonBlocks/date-dropdown/date-dropdown
 include ~CommonBlocks/dropdown/dropdown
@@ -11,17 +12,16 @@ mixin formBooking(room)
 
   form.form.form--type_booking&attributes(attributes)
 
-    .box.box--mb_2
+    +box({ mb: 20 })
       +roomTitle({ number: '888', lux: true, price: '9 990' })
 
-    .box.box--mb_2
+    +box({ mb: 20 })
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-booking-datepicker
 
-    .box.box--mb_1
-      h3.box__label гости
+    +box({ mb: 10, label: 'гости' })
       +dropdown.js-booking-form-dropdown
 
-    .box.box--mb_2
+    +box({ mb: 20 })
       +billInfo
 
     +button({

@@ -1,19 +1,20 @@
 include ~UtilBlocks/head
+include ~CommonBlocks/box/box
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 
 +head('Headers & Footers')
   body.headers-footers-page
 
-    .box.box--mb_3
+    +box({ mb: 30 })
       header.header--uikit
         +logoUIKit
 
-    .box.box--mb_4
+    +box({ mb: 40 })
       +header
 
-    .box.box--mb_4
+    +box({ mb: 40 })
       +header({ username: 'Юлий Цезарь' })
     
-    .box.box--mb_4
+    +box({ mb: 40 })
       +footer()

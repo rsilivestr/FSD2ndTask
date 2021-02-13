@@ -1,4 +1,5 @@
 include ~UtilBlocks/head
+include ~CommonBlocks/box/box
 include ~CommonBlocks/header/header
 include ~CommonBlocks/footer/footer
 include ~CommonBlocks/form/form
@@ -17,7 +18,7 @@ include ~CommonBlocks/user-comment/user-comment
     main.room-details__main
       .room-details__features
         h2 Сведения о номере
-        .box.box--has-separators
+        +box({ hasSeparators: true })
           //- комфорт
           +imageTitle({
             type: 'emoji',
@@ -41,7 +42,7 @@ include ~CommonBlocks/user-comment/user-comment
           })
 
       .room-details__rate-graph
-        .box.box--mb_2
+        +box({ mb: 20 })
           h2.room-details__graph-title Впечатления от номера
         .room-details__rate-canvas-wrap
           canvas(height='120', width='120').room-details__rate-canvas
