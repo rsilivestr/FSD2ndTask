@@ -5,12 +5,13 @@ include ~CommonBlocks/form/form
 
 +head('Landing Page')
 
-  body.page.page--layout_landing
+  body
     +header
-    main.main-content
-      .main-content__inner.container
-        +formSearchRoom
-        p.caption Лучшие номера для вашей работы,<br>отдыха и просто вдохновения
+    main.landing-content
+      .landing-content__inner
+        .landing-content__form
+          +formSearchRoom
+        p.landing-content__caption Лучшие номера для вашей работы,<br>отдыха и просто вдохновения
     +footer
 
     script(type="text/javascript" src="../scripts/landing.js")

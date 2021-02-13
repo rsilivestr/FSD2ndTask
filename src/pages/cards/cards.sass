@@ -1,9 +1,10 @@
 @use 'Styles/forward'
 
-.page--layout_cards
+.cards-page
   background: forward.$dark05
 
-  .main-content
+  &__content
+    @extend .main-content
     column-gap: 40px
     display: grid
     grid-template-columns: 380px 380px 320px

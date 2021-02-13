@@ -1,9 +1,12 @@
-.page--layout_form-elements
-  .main-content
+@use 'Styles/forward' as *
+
+.form-elements-page
+  &__content
+    @extend .main-content
     display: grid
     grid: 732px 315px 353px auto / 447px 393px auto
     grid-template-areas: "a a a" "b b b" "c c c" "d e e"
     padding: 33px 0 0 140px
 
-.area-e
-  grid-area: e
+  &__comment
+    grid-area: e

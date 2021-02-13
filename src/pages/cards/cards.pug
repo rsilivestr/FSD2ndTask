@@ -4,21 +4,21 @@ include ~CommonBlocks/form/form
 include ~CommonBlocks/room-card/room-card
 
 +head('Cards')
-  body.page.page--layout_cards
+  body.cards-page
     header.header--uikit
       +logoUIKit
-    main.main-content
-      .main-content__column
+    main.cards-page__content
+      div
         .box.box--mb_4
           +formSearchRoom
         .box
           +formRegistration
-      .main-content__column
+      div
         .box.box--mb_4
           +formBooking({ number: '888', lux: true })
         .box
           +formLogin
-      .main-content__column
+      div
         .box.box--mb_4
           .js-datepicker-static
             input(type="hidden")

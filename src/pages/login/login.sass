@@ -1,8 +1,9 @@
 @use 'Styles/forward' as *
 
-.page--layout_login
-  .main-content
+.login-page
+  .login-page__content
+    @extend .main-content
     @extend .centered-flex
     background: center 25.5% / cover url(../assets/images/bg-reg.jpg)
-    min-height: 702px
-    padding: 30px 5px 32px
+    min-height: 70.2rem
+    padding: 3rem clamp(1rem, 2vw, 2rem) 3.2rem

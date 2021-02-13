@@ -29,14 +29,14 @@ include ../logo/logo
     ]
   }
 
-mixin header(content = {})
+mixin header(content = {}, hasShadow = false)
   -
     const nav = content.nav || HEADER_DEFAULT_CONTENT.nav;
     const username = content.username || HEADER_DEFAULT_CONTENT.username;
     const buttons = content.buttons || HEADER_DEFAULT_CONTENT.buttons;
 
-  header.header&attributes(attributes)
-    .header__wrapper.container
+  header.header(class = hasShadow && 'header--has-shadow')&attributes(attributes)
+    .header__wrapper
       +logoToxin.header__logo
       button.button.button--style_text.button--size_auto.header__btn--type_menu.header__btn--type_iconic
         i.material-icons menu

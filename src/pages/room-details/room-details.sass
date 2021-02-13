@@ -1,33 +1,34 @@
 @use 'Styles/forward' as *
 
-.room-details__gal-header
-  display: grid
-  grid-template: "main sec-top" 1fr "main sec-bot" 1fr / 100% 0
-  width: 100%
-  height: 60vw
-  max-height: 485px
-
-  @include media('>=topnav')
-    grid-template-columns: 68.125% auto
-    margin-top: 0
-
-.gal-header__image
-  background-size: cover
-  background-repeat: no-repeat
-  background-position: center center
-
-  &--main
-    background-image: url(../assets/images/header1.jpg)
-    grid-area: main
-
-  &--sec-top
-    background-image: url(../assets/images/header2.jpg)
-
-  &--sec-bot
-    background-image: url(../assets/images/header3.jpg)
-
 .room-details
+  &__header
+    display: grid
+    grid-template: "main sec-top" 1fr "main sec-bot" 1fr / 100% 0
+    width: 100%
+    height: 60vw
+    max-height: 485px
+
+    @include media('>=topnav')
+      grid-template-columns: 68.125% auto
+      margin-top: 0
+
+    &-image
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center center
+
+      &--main
+        background-image: url(../assets/images/header1.jpg)
+        grid-area: main
+
+      &--second
+        background-image: url(../assets/images/header2.jpg)
+
+      &--third
+        background-image: url(../assets/images/header3.jpg)
+
   &__main
+    @extend .container
     display: grid
     align-items: start
     row-gap: 14px

@@ -18,14 +18,14 @@ include ~CommonBlocks/toggle/toggle
 include ~CommonBlocks/user-comment/user-comment
 
 +head('Form Elements')
-  body.page.page--layout_form-elements
+  body.form-elements-page
     header.header--uikit
       +logoUIKit
-    main.main-content.fe-grid
+    main.form-elements-page__content.fe-grid
 
         //- a 1 --------------------------------------//
 
-        .fe-grid__item
+        div
           .box.box--width_l.box--mb_2
             h3.box__label text field
             +input({ placeholder: 'Email' })
@@ -61,7 +61,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- a 2 --------------------------------------//
 
-        .fe-grid__item
+        div
           //- checkbox buttons
           .box.box--mb_4
             .box.box--mb_1-5
@@ -122,7 +122,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- a 3 --------------------------------------//
 
-        .fe-grid__item
+        div
           //- range slider
           .box.box--mb_3.box--width_m
             h3 range slider
@@ -188,7 +188,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 1 --------------------------------------//
 
-        .fe-grid__item
+        div
           //- dropdown
           .box.box--width_m.box--mb_2
             .box.box--mb_0-5
@@ -203,7 +203,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 2 --------------------------------------//
 
-        .fe-grid__item
+        div
           //- wide dropdown with buttons ПРИМЕНИТЬ & ОЧИСТИТЬ
           .box.box--width_l
             h3.box__label dropdown
@@ -211,7 +211,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- b 3 --------------------------------------//
         
-        .fe-grid__item
+        div
           //- wide dropdown with button ПРИМЕНИТЬ
           .box.box--width_l
             h3.box__label dropdown
@@ -219,7 +219,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 1 --------------------------------------//
 
-        .fe-grid__item
+        div
           //- expandable checkbox list
           .box.box--mb_4.box--width_m
             +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
@@ -234,8 +234,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 2 --------------------------------------//
 
-        .fe-grid__item
-
+        div
           //- rich checkbox buttons
           .box.box--mt_0-5
             .box.box--mb_1-5
@@ -253,8 +252,7 @@ include ~CommonBlocks/user-comment/user-comment
 
         //- c 3 --------------------------------------//
 
-        .fe-grid__item
-
+        div
           //- bullet list
           .box.box--mt_0-5
             .box.box--mb_1-2
@@ -269,29 +267,27 @@ include ~CommonBlocks/user-comment/user-comment
               })
 
         //- d 1 --------------------------------------//
-
-        .fe-grid__item
-          .box.box--mb_5
+        div
+          .box.box--mb_5.box--has-separators
             //- комфорт
             +imageTitle({
               type: 'emoji',
               src: 'insert_emoticon',
               heading: 'комфорт',
               text: 'шумопоглощающие стены',
-            }).bb-10
+            })
             //- удобство
             +imageTitle({
               type: 'emoji',
               src: 'location_city',
               heading: 'удобство',
               text: 'окно в каждой из спален',
-            }).bb-10
+            })
 
 
         //- e 1 --------------------------------------//
 
-        .fe-grid__item.area-e
-
+        .form-elements-page__comment
           //- comment (wide)
           .box.box--mt_2
             +userComment({

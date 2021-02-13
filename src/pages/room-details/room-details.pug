@@ -6,38 +6,39 @@ include ~CommonBlocks/image-title/image-title
 include ~CommonBlocks/user-comment/user-comment
 
 +head('Room details')
-  body.page.page--layout_room-details.room-details
+  body.room-details
 
     +header
 
-    header.room-details__gal-header.gal-header
-      for section in ['main', 'sec-top', 'sec-bot']
-        .gal-header__image(class = `gal-header__image--${section}`)
+    header.room-details__header
+      for section in ['main', 'second', 'third']
+        .room-details__header-image(class = `room-details__header-image--${section}`)
 
-    main.room-details__main.container
+    main.room-details__main
       .room-details__features
         h2 Сведения о номере
-        //- комфорт
-        +imageTitle({
-          type: 'emoji',
-          src: 'insert_emoticon',
-          heading: 'комфорт',
-          text: 'шумопоглощающие стены',
-        }).bb-25
-        //- удобство
-        +imageTitle({
-          type: 'emoji',
-          src: 'location_city',
-          heading: 'удобство',
-          text: 'окно в каждой из спален',
-          }).bb-25
-        //- уют
-        +imageTitle({
-          type: 'emoji',
-          src: 'whatshot',
-          heading: 'уют',
-          text: 'номер оснащен камином',
-        })
+        .box.box--has-separators
+          //- комфорт
+          +imageTitle({
+            type: 'emoji',
+            src: 'insert_emoticon',
+            heading: 'комфорт',
+            text: 'шумопоглощающие стены',
+          })
+          //- удобство
+          +imageTitle({
+            type: 'emoji',
+            src: 'location_city',
+            heading: 'удобство',
+            text: 'окно в каждой из спален',
+            })
+          //- уют
+          +imageTitle({
+            type: 'emoji',
+            src: 'whatshot',
+            heading: 'уют',
+            text: 'номер оснащен камином',
+          })
 
       .room-details__rate-graph
         .box.box--mb_2

@@ -1,7 +1,8 @@
 @use 'Styles/forward' as *
 
-.page--layout_register
-  .main-content
+.register-page
+  &__content
+    @extend .main-content
     @extend .centered-flex
     background: center top 25% / cover url(../assets/images/bg-reg.jpg)
-    padding: 19px 5px 17px
+    padding: 1.9rem clamp(1rem, 2vw, 2rem) 1.7rem

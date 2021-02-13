@@ -1,20 +1,20 @@
 @use 'Styles/forward' as *
 
-.page--layout_landing
-  .main-content
-    background: 0 -70px url('../assets/images/bg1.jpg') no-repeat
-    background-size: cover
-    height: 830px
+.landing-content
+  background: url('../assets/images/bg1.jpg') no-repeat
+  background-size: cover
+  height: 83rem
 
-    &__inner
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-      height: 100%
-      padding-bottom: 20px
-      padding-top: 70px
+  &__inner
+    @extend .container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    padding-bottom: 2rem
+    padding-top: 7rem
 
-  .caption
+  &__caption
     color: $dark75
     line-height: 2.4rem
 
@@ -25,7 +25,7 @@
       align-self: flex-end
       text-align: right
 
-  .form
+  &__form
     align-self: center
 
     @include media('>=tablet')

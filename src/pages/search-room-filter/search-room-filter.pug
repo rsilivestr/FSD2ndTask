@@ -9,13 +9,13 @@ include ~CommonBlocks/spoiler/spoiler
 include ~CommonBlocks/range/range
 
 +head('Search room')
-  body.page.page--layout_search-filter.search-room-page.page--layout_search-room-filter
+  body.search-room
 
     +header().header--has-shadow
 
-    .container.content
+    .search-room__content
 
-      aside.room-filters
+      aside.search-room__filters
         //- filter date dropdown
         .box.box--mb_2-1.js-filter-datepicker
           h3.box__label даты пребывания в отеле
@@ -63,9 +63,9 @@ include ~CommonBlocks/range/range
           size: 'm'
         })
 
-      main.main-content
+      main.search-room__main
         h1 Номера, которые мы для вас подобрали
-        .search-results
+        .search-room__results
           +roomCard({
             photos: ['room1.jpg', 'room3.jpg', 'room6.jpg', 'room11.jpg'],
             rating: 5,
