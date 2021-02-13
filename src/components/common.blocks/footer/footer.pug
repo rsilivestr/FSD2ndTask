@@ -73,16 +73,16 @@ include ../social-links/social-links
     copyText: 'Copyright © 2018 Toxin отель. Все права защищены.',
   }
 
-mixin footer(content = {})
+mixin footer(config = {})
   -
-    const text = content.text || FOOTER_DEFAULT_CONTENT.text
-    const nav = content.nav || FOOTER_DEFAULT_CONTENT.nav
-    const subscribe = content.subscribe || FOOTER_DEFAULT_CONTENT.subscribe
+    const text = config.text || FOOTER_DEFAULT_CONTENT.text
+    const nav = config.nav || FOOTER_DEFAULT_CONTENT.nav
+    const subscribe = config.subscribe || FOOTER_DEFAULT_CONTENT.subscribe
     const subscribeTitle = subscribe.title || FOOTER_DEFAULT_CONTENT.subscribe.title
     const subscribeText = subscribe.text || FOOTER_DEFAULT_CONTENT.subscribe.text
-    const copyText = content.copyText || FOOTER_DEFAULT_CONTENT.copyText
+    const copyText = config.copyText || FOOTER_DEFAULT_CONTENT.copyText
 
-  footer.footer&attributes(attributes)
+  footer.footer(class = config.hasBorder && 'footer--has-border')&attributes(attributes)
     .footer__nav-section
       .footer__col
         +logoToxin.footer__logo

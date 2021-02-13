@@ -12,7 +12,7 @@ include ~CommonBlocks/range/range
 +head('Search room')
   body.search-room
 
-    +header().header--has-shadow
+    +header({ hasShadow: true })
 
     .search-room__content
 
@@ -160,6 +160,6 @@ include ~CommonBlocks/range/range
           })
         +pagination
 
-    +footer.footer--has-border
+    +footer({ hasBorder: true })
 
     script(type="text/javascript" src="../scripts/search_room_filter.js")
