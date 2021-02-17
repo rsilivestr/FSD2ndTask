@@ -1,36 +1,10 @@
 include ../button/button
 include ../logo/logo
 
--
-  const HEADER_DEFAULT_CONTENT = {
-    nav: [
-      { title: 'О нас', url: '#some-url', current: true },
-      { title: 'Услуги', url: '#some-url', expandable: true },
-      { title: 'Вакансии', url: '#some-url' },
-      { title: 'Новости', url: '#some-url' },
-      { title: 'Соглашения', url: '#some-url', expandable: true },
-    ],
-    username: '',
-    buttons: [
-      { 
-        type: 'login',
-        title: 'Войти',
-        style: 'bordered',
-        size: 'auto',
-        url: './login.html'
-      },
-      {
-        type: 'register',
-        title: 'Зарегистрироваться',
-        style: 'gradient',
-        size: 'auto',
-        url: './register.html'
-      }
-    ],
-  }
-
 mixin header(config = {})
   -
+    const HEADER_DEFAULT_CONTENT = require('Components/header/defaults.pug.json');
+
     const nav = config.nav || HEADER_DEFAULT_CONTENT.nav;
     const username = config.username || HEADER_DEFAULT_CONTENT.username;
     const buttons = config.buttons || HEADER_DEFAULT_CONTENT.buttons;

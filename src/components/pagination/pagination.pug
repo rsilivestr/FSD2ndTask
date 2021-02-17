@@ -1,22 +1,7 @@
--
-  const PAGINATION_DEFAULT_CONTENT = {
-    controls: {
-      left: false,
-      right: true,
-    },
-    pagesLeft: [
-      { number: 1, url: '#page-url', active: true },
-      { number: 2, url: '#page-url' },
-      { number: 3, url: '#page-url' },
-    ],
-    gapText: '...',
-    pagesRight: [{ number: 15, url: '#page-url' }],
-    resultsRange: [1, 12],
-    resultsTotal: '100+',
-  }
-
 mixin pagination(data = {})
   -
+    const PAGINATION_DEFAULT_CONTENT = require('Components/pagination/defaults.pug.json');
+
     const controls = data.controls || PAGINATION_DEFAULT_CONTENT.controls;
     const pagesLeft = data.pagesLeft || PAGINATION_DEFAULT_CONTENT.pagesLeft;
     const gapText = data.gapText || PAGINATION_DEFAULT_CONTENT.gapText;

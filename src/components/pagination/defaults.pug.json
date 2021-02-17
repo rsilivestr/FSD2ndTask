@@ -1,0 +1,15 @@
+{
+  "controls": {
+    "left": false,
+    "right": true
+  },
+  "pagesLeft": [
+    { "number": 1, "url": "#page-url", "active": true },
+    { "number": 2, "url": "#page-url" },
+    { "number": 3, "url": "#page-url" }
+  ],
+  "gapText": "...",
+  "pagesRight": [{ "number": 15, "url": "#page-url" }],
+  "resultsRange": [1, 12],
+  "resultsTotal": "100+"
+}

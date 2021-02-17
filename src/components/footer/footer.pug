@@ -2,79 +2,10 @@ include ../logo/logo
 include ../subscribe-form/subscribe-form
 include ../social-links/social-links
 
--
-  const FOOTER_DEFAULT_CONTENT = {
-    text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
-    nav: [
-      {
-        title: 'Навигация',
-        links: [
-          {
-            title: 'О нас',
-            url: '#some-url',
-          },
-          {
-            title: 'Новости',
-            url: '#some-url',
-          },
-          {
-            title: 'Служба поддержки',
-            url: '#some-url'
-          },
-          {
-            title: 'Услуги',
-            url: '#some-url',
-          },
-        ]
-      },
-      {
-        title: 'О нас',
-        links: [
-          {
-            title: 'О сервисе',
-            url: '#some-url',
-          },
-          {
-            title: 'Наша команда',
-            url: '#some-url',
-          },
-          {
-            title: 'Вакансии',
-            url: '#some-url',
-          },
-          {
-            title: 'Инвесторы',
-            url: '#some-url',
-          },
-        ]
-      },
-      {
-        title: 'Служба поддержки',
-        links: [
-          {
-            title: 'Соглашения',
-            url: '#some-url',
-          },
-          {
-            title: 'Сообщества',
-            url: '#some-url',
-          },
-          {
-            title: 'Связь с нами',
-            url: '#some-url',
-          },
-        ]
-      },
-    ],
-    subscribe: {
-      title: 'Подписка',
-      text: 'Получайте специальные предложения и новости сервиса',
-    },
-    copyText: 'Copyright © 2018 Toxin отель. Все права защищены.',
-  }
-
 mixin footer(config = {})
   -
+    const FOOTER_DEFAULT_CONTENT = require('Components/footer/defaults.pug.json');
+
     const text = config.text || FOOTER_DEFAULT_CONTENT.text
     const nav = config.nav || FOOTER_DEFAULT_CONTENT.nav
     const subscribe = config.subscribe || FOOTER_DEFAULT_CONTENT.subscribe

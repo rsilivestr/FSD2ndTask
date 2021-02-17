@@ -1,0 +1,26 @@
+{
+  "nav": [
+    { "title": "О нас", "url": "#some-url", "current": true },
+    { "title": "Услуги", "url": "#some-url", "expandable": true },
+    { "title": "Вакансии", "url": "#some-url" },
+    { "title": "Новости", "url": "#some-url" },
+    { "title": "Соглашения", "url": "#some-url", "expandable": true }
+  ],
+  "username": "",
+  "buttons": [
+    {
+      "type": "login",
+      "title": "Войти",
+      "style": "bordered",
+      "size": "auto",
+      "url": "./login.html"
+    },
+    {
+      "type": "register",
+      "title": "Зарегистрироваться",
+      "style": "gradient",
+      "size": "auto",
+      "url": "./register.html"
+    }
+  ]
+}
