@@ -1,21 +1,18 @@
 include ~Components/hint/hint
 
 mixin billInfo
+  - const { rows, total } = require("Components/bill-info/defaults.pug.json");
+
   .bill-info
     .bill-info__table
-      .bill-info__row
-        .bill-info__title 9&nbsp;990₽ x 4 суток
-        .bill-info__sum 39&nbsp;960₽
-      .bill-info__row
-        .bill-info__title
-          | Сбор за услуги: скидка 2&nbsp;179₽
-          +hint('Всплывающая подсказка #1')
-        .bill-info__sum 0₽
-      .bill-info__row
-        .bill-info__title
-          | Сбор за дополнительные услуги
-          +hint('Всплывающая подсказка #2')
-        .bill-info__sum 300₽
+      each row in rows
+        - const { title, sum, hint } = row;
+        .bill-info__row
+          .bill-info__title= title
+            if hint
+              | &ensp;
+              +hint(hint)
+          .bill-info__sum= sum
     .bill-info__total
       .bill-info__total-title Итого
-      .bill-info__total-sum 38&nbsp;081₽
+      .bill-info__total-sum= total
