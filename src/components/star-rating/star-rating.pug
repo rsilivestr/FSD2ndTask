@@ -1,12 +1,9 @@
-mixin starRating(options = {})
-  -
-    const ratingValue = options.value || 5;
-
-  .star-rating(class=options.rateable && "star-rating--rateable")&attributes(attributes)
+mixin starRating({ value = 5, rateable, ratingValue })
+  .star-rating(class=rateable && "star-rating--rateable")&attributes(attributes)
     each val in [5, 4, 3, 2, 1]
-      if (val === ratingValue)
+      if (val === value)
         .star-rating__star.star-rating__star--active(
-          class=options.rateable && "star-rating__star--rateable"
+          class=rateable && "star-rating__star--rateable"
         )
       else
-        .star-rating__star(class=options.rateable && "star-rating__star--rateable")
+        .star-rating__star(class=rateable && "star-rating__star--rateable")

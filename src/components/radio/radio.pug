@@ -1,10 +1,5 @@
-mixin radio(options = {})
+mixin radio({ name = '', value = '', checked = false, label = '' })
   label.radio&attributes(attributes)
-    input.radio__input(
-      type='radio',
-      name=options.name || "",
-      value=options.value || "",
-      checked=options.checked || false
-    )
+    input.radio__input(type='radio', name=name, value=value, checked=checked)
     span.radio__replacer
-    span.radio__label= options.label || ""
+    span.radio__label= label

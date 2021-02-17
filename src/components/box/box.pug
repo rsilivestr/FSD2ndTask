@@ -1,15 +1,28 @@
 mixin box(config = {})
   -
+    const {
+      hasSeparators,
+      inline,
+      label,
+      labelMB,
+      mt,
+      mr,
+      mb,
+      stretch,
+      width,
+    } = config;
+
+  -
     let className = 'box';
-    config.inline && (className += ' box--inline')
-    config.stretch && (className += ' box--stretch')
-    config.hasSeparators && (className += ' box--has-separators')
-    config.width && (className += ` box--width_${config.width}`)
-    config.mt && (className += ` box--mt_${config.mt}`)
-    config.mr && (className += ` box--mr_${config.mr}`)
-    config.mb && (className += ` box--mb_${config.mb}`)
+    hasSeparators && (className += ' box--has-separators')
+    inline && (className += ' box--inline')
+    mt && (className += ` box--mt_${mt}`)
+    mr && (className += ` box--mr_${mr}`)
+    mb && (className += ` box--mb_${mb}`)
+    stretch && (className += ' box--stretch')
+    width && (className += ` box--width_${width}`)
 
   div(class=className)
-    if config.label
-      h3.box__label(class=config.labelMB && `box__label--mb_${config.labelMB}`)= config.label
+    if label
+      h3.box__label(class=labelMB && `box__label--mb_${labelMB}`)= label
     block

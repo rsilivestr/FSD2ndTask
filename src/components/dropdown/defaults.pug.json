@@ -1,6 +1,5 @@
 [
   {
-    "type": "single",
     "placeholder": "Сколько гостей",
     "listItems": [
       {
@@ -33,7 +32,6 @@
     ]
   },
   {
-    "type": "multi",
     "listItems": [
       {
         "name": "спальни",

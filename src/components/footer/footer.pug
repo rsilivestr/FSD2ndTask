@@ -2,29 +2,28 @@ include ../logo/logo
 include ../subscribe-form/subscribe-form
 include ../social-links/social-links
 
-mixin footer(config = {})
+mixin footer(contents = {})
   -
-    const FOOTER_DEFAULT_CONTENT = require('Components/footer/defaults.pug.json');
+    const FOOTER_DEFAULT_CONTENTS = require('Components/footer/defaults.pug.json');
+    const mergedContents = Object.assign(FOOTER_DEFAULT_CONTENTS, contents)
 
-    const text = config.text || FOOTER_DEFAULT_CONTENT.text
-    const nav = config.nav || FOOTER_DEFAULT_CONTENT.nav
-    const subscribe = config.subscribe || FOOTER_DEFAULT_CONTENT.subscribe
-    const subscribeTitle = subscribe.title || FOOTER_DEFAULT_CONTENT.subscribe.title
-    const subscribeText = subscribe.text || FOOTER_DEFAULT_CONTENT.subscribe.text
-    const copyText = config.copyText || FOOTER_DEFAULT_CONTENT.copyText
+    const { text, nav, subscribe, copyText, hasBorder } = mergedContents;
+    const { title: subscribeTitle, text: subscribeText } = subscribe;
 
-  footer.footer(class=config.hasBorder && "footer--has-border")&attributes(attributes)
+  footer.footer(class=hasBorder && "footer--has-border")&attributes(attributes)
     .footer__nav-section
       .footer__col
         +logoToxin.footer__logo
         p.footer__text= text
       each subnav in nav
+        - const { title, links } = subnav;
         .footer__col
-          h2.footer__col-title= subnav.title
+          h2.footer__col-title= title
           ul.footer__nav-list
-            each link in subnav.links
+            each link in links
+              - const { url, title } = link;
               li.footer__nav-list-item
-                a.footer__navlink(href=link.url)= link.title
+                a.footer__navlink(href=url)= title
       .footer__col
         h2.footer__col-title= subscribeTitle
         p.footer__text= subscribeText

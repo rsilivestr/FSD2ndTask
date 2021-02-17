@@ -1,9 +1,7 @@
-mixin input(options = {})
-  - const inputType = options.type || "text";
-
+mixin input({ type = 'text', placeholder = '', value = '' })
   input(
-    class=`input input--type_${inputType}`,
-    placeholder=options.placeholder || "",
-    type=inputType,
-    value=options.value || ""
+    class=`input input--type_${type}`,
+    placeholder=placeholder,
+    type=type,
+    value=value
   )&attributes(attributes)

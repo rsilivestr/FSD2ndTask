@@ -1,10 +1,4 @@
-mixin roomTitle(options = {})
-  -
-    const number = options.number || '999';
-    const lux = options.lux || false;
-    const price = options.price || '9 990';
-    const url = options.url || '';
-
+mixin roomTitle({ number = '999', lux = false, price = '9 990', url })
   if (!url)
     h1.room-title&attributes(attributes)
       span.room-title__room

@@ -14,7 +14,7 @@ const DROPDOWN_DEFAULT_SELECTORS = {
 
 const DROPDOWN_DEFAULT_CLASSES = {
   disabledBtn: 'dropdown__option-control--disabled',
-  hiddenBtn: 'hidden',
+  hiddenBtn: 'dropdown__btn--hidden',
   visibleList: 'dropdown__contents--visible',
 };
 

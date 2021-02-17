@@ -1,12 +1,12 @@
-mixin imageTitle(config)
-  .image-title(class=`image-title--type_${config.type}`)&attributes(attributes)
-    if config.type === 'emoji'
-      .image-title__image.image-title__image--type_emoji.material-icons= config.src
+mixin imageTitle({ type, src, heading, text })
+  .image-title(class=`image-title--type_${type}`)&attributes(attributes)
+    if type === 'emoji'
+      .image-title__image.image-title__image--type_emoji.material-icons= src
     else
       img.image-title__image.image-title__image--type_avatar(
         alt='Фото пользователя',
-        src=config.src
+        src=src
       )
     .image-title__text
-      h4.image-title__heading= config.heading
-      p.image-title__description= config.text
+      h4.image-title__heading= heading
+      p.image-title__description= text

@@ -115,8 +115,12 @@
 
   // end __user-menu
 
+  // TODO header__action-links
   &__user-buttons
     display: flex
+
+    @include media('>=topnav')
+      gap: 20px
 
   &__btn
     max-height: 34px
@@ -126,12 +130,6 @@
       &_login
         @include media('>=topnav')
           padding: 0 10px
-
-      &_register
-        margin-left: 20px
-
-        @include media('>=topnav')
-          padding: 0 20px
 
       &_iconic
         padding: 10px

@@ -1,10 +1,10 @@
 include ../image-title/image-title
 include ../like-counter/like-counter
 
-mixin userComment(comment)
+mixin userComment({ age, avatar, username, likes, isLiked, text })
   .user-comment&attributes(attributes)
-    +imageTitle({ type: 'comment', src: comment.avatar, heading: comment.username, text: comment.age })
+    +imageTitle({ type: 'comment', src: avatar, heading: username, text: age })
     .user-comment__body
-      +likeCounter({ value: comment.likes, checked: comment.isLiked}).user-comment__like-counter.js-like
+      +likeCounter({ value: likes, checked: isLiked}).user-comment__like-counter.js-like
       p.user-comment__text
-        = comment.text
+        = text

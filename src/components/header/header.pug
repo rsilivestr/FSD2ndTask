@@ -1,32 +1,34 @@
 include ../button/button
 include ../logo/logo
 
-mixin header(config = {})
+mixin header(contents = {})
   -
-    const HEADER_DEFAULT_CONTENT = require('Components/header/defaults.pug.json');
+    const HEADER_DEFAULT_CONTENTS = require('Components/header/defaults.pug.json');
+    const mergedContents = Object.assign(HEADER_DEFAULT_CONTENTS, contents);
 
-    const nav = config.nav || HEADER_DEFAULT_CONTENT.nav;
-    const username = config.username || HEADER_DEFAULT_CONTENT.username;
-    const buttons = config.buttons || HEADER_DEFAULT_CONTENT.buttons;
+    const { nav, username, buttons, hasShadow } = mergedContents;
 
-  header.header(class=config.hasShadow && "header--has-shadow")&attributes(attributes)
+  header.header(class=hasShadow && "header--has-shadow")&attributes(attributes)
     .header__wrapper
       +logoToxin.header__logo
       button.button.button--style_text.button--size_auto.header__btn--type_menu.header__btn--type_iconic
         i.material-icons menu
       nav.header__nav
         each link in nav
+          - const { url, current, expandable, title } = link;
           a.header__navlink(
-            href=link.url,
-            class=link.current && "header__navlink--current",
-            class=link.expandable && "header__navlink--has-subnav"
-          )= link.title
+            href=url,
+            class=current && "header__navlink--current",
+            class=expandable && "header__navlink--has-subnav"
+          )= title
       if !username
         .header__user-buttons
           each button in buttons
-            +buttonLink({ title: button.title, style: button.style, size: button.size, url: button.url, })(
-              class=`header__btn header__btn--type_${button.type}`,
-              data-name=button.title
+            - const { title, type } = button;
+            //- TODO Remove BEM mix
+            +buttonLink(button)(
+              class=`header__btn header__btn--type_${type}`,
+              data-name=title
             )
       else
         .header__user-panel

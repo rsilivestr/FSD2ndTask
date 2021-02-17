@@ -1,22 +1,27 @@
-mixin pagination(data = {})
+mixin pagination(contents = {})
   -
-    const PAGINATION_DEFAULT_CONTENT = require('Components/pagination/defaults.pug.json');
+    const PAGINATION_DEFAULT_CONTENTS = require('Components/pagination/defaults.pug.json');
+    const mergedContents = Object.assign(PAGINATION_DEFAULT_CONTENTS, contents);
 
-    const controls = data.controls || PAGINATION_DEFAULT_CONTENT.controls;
-    const pagesLeft = data.pagesLeft || PAGINATION_DEFAULT_CONTENT.pagesLeft;
-    const gapText = data.gapText || PAGINATION_DEFAULT_CONTENT.gapText;
-    const pagesRight = data.pagesRight || PAGINATION_DEFAULT_CONTENT.pagesRight;
-    const resultsRange = data.resultsRange || PAGINATION_DEFAULT_CONTENT.resultsRange;
-    const resultsTotal = data.resultsTotal || PAGINATION_DEFAULT_CONTENT.resultsTotal;
+    const {
+      controls,
+      pagesLeft,
+      gapText,
+      pagesRight,
+      resultsRange,
+      resultsTotal,
+    } = mergedContents;
 
   .pagination
     button.pagination__control(class=!controls.left && "pagination__control--hidden")
       i.material-icons arrow_back
     each link in pagesLeft
-      a.pagination__link(href=link.url, class=link.active && "pagination__link--active")= link.number
+      - const { url, active, number } = link;
+      a.pagination__link(href=url, class=active && "pagination__link--active")= number
     span.pagination__gap= gapText
     each link in pagesRight
-      a.pagination__link(href=link.url, class=link.active && "pagination__link--active")= link.number
+      - const { url, active, number } = link;
+      a.pagination__link(href=url, class=active && "pagination__link--active")= number
     button.pagination__control(class=!controls.right && "pagination__control--hidden")
       i.material-icons arrow_forward
     p.pagination__tooltip= `${resultsRange[0]} – ${resultsRange[1]} из ${resultsTotal} вариантов аренды`

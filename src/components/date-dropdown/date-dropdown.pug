@@ -2,21 +2,35 @@ include ~Components/box/box
 
 mixin dateDropdown(options = {})
   -
-    const type = options.type || 'single';
-    const placeholder = options.placeholder || '';
-    const labelStart = options.labelStart || 'Прибытие';
-    const labelEnd = options.labelEnd || 'Выезд';
+    const {
+      type = 'single',
+      placeholder = 'Даты пребывания',
+      labelStart = 'Прибытие',
+      labelEnd = 'Выезд',
+    } = options;
 
   if type === 'single'
     .date-dropdown.date-dropdown--range&attributes(attributes)
-      input.date-dropdown__display.input.datepicker-range(type='text', readonly, placeholder=placeholder)
+      input.date-dropdown__display.input.datepicker-range(
+        type='text',
+        readonly,
+        placeholder=placeholder
+      )
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
       +box({ stretch: true })
         +box({ width: 's', label: labelStart })
           .date-dropdown
-            input.date-dropdown__display.input.date-dropdown__start(type='text', readonly, placeholder=placeholder)
+            input.date-dropdown__display.input.date-dropdown__start(
+              type='text',
+              readonly,
+              placeholder=placeholder
+            )
         +box({ width: 's', label: labelEnd })
           .date-dropdown
-            input.date-dropdown__display.input.date-dropdown__end(type='text', readonly, placeholder=placeholder)
+            input.date-dropdown__display.input.date-dropdown__end(
+              type='text',
+              readonly,
+              placeholder=placeholder
+            )

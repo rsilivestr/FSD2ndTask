@@ -1,14 +1,17 @@
 include ~Components/room-title/room-title
 include ~Components/star-rating/star-rating
 
-mixin roomCard(options = {})
+mixin roomCard(config = {})
   -
-    const cost = options.cost || '9 999';
-    const lux = options.lux || false;
-    const number = options.number || '001';
-    const photos = options.photos || ['room1.png'];
-    const rating = options.rating || 0;
-    const reviewCount = options.reviewCount || 0;
+    const {
+      cost = '9 999',
+      lux = false,
+      number = '001',
+      photos = ['room1.png'],
+      rating = 0,
+      reviewCount = 0,
+    } = config;
+
 
   .room-card&attributes(attributes)
     .room-card__photos
@@ -17,18 +20,19 @@ mixin roomCard(options = {})
         i.material-icons.room-card__icon-left arrow_back_ios
       button.room-card__control.room-card__control--direction_right
         i.material-icons.room-card__icon-right arrow_forward_ios
-      - const len = photos.length;
       each photo in photos
-        img.room-card__photo(src="../assets/images/" + photo, alt='Фото комнаты')
+        img.room-card__photo(
+          src=`../assets/images/${photo}`,
+          alt='Фото комнаты'
+        )
       nav.room-card__nav
-        - for (let i = 0; i < len; i += 1)
-          - const current = i === 0 || false;
-          button.room-card__navbtn(class=current === true && "room-card__navbtn--current")
+        each photo, index in photos
+          button.room-card__navbtn(class=index === 0 && "room-card__navbtn--current")
     .room-card__info
       +roomTitle({ number, lux, price, url: './room-details.html'}).room-card__title
       .room-card__rating
         +starRating({ value: rating })
         span.room-card__review-counter
-          strong #{reviewCount}
+          strong= reviewCount
           |
           | отзывов

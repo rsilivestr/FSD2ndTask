@@ -1,9 +1,4 @@
-mixin checkbox(options = {})
-  -
-    const label = options.label || 'Галочка';
-    const checked = options.checked || false;
-    const text = options.text || '';
-
+mixin checkbox({ checked = false, label = 'Checkbox', text })
   label.checkbox&attributes(attributes)
     input.checkbox__input(type='checkbox', checked=checked)
     span.checkbox__replacer

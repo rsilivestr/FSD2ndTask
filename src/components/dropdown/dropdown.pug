@@ -5,33 +5,39 @@ mixin dropdown(options = {}, forceOpen = false)
       DROPDOWN_MULTI_DEFAULT_CONFIG
     ] = require('Components/dropdown/defaults.pug.json');
 
-    const type = options.type || DROPDOWN_DEFAULT_CONFIG.type;
-    const placeholder = options.placeholder 
-      || type==='single'
-        ? DROPDOWN_DEFAULT_CONFIG.placeholder
-        : DROPDOWN_MULTI_DEFAULT_CONFIG.placeholder;
-    const listItems = options.listItems
-      || type == 'single'
-        ? DROPDOWN_DEFAULT_CONFIG.listItems
-        : DROPDOWN_MULTI_DEFAULT_CONFIG.listItems;
+    const { type = 'single' } = options;
+    const { placeholder } = options
+      || type === 'single'
+        ? DROPDOWN_DEFAULT_CONFIG
+        : DROPDOWN_MULTI_DEFAULT_CONFIG;
+    const { listItems } = options
+      || type === 'single'
+        ? DROPDOWN_DEFAULT_CONFIG
+        : DROPDOWN_MULTI_DEFAULT_CONFIG;
 
   .dropdown(class=forceOpen && "dropdown--force-open")&attributes(attributes)
-    input.dropdown__display.input(type='text', readonly, placeholder=placeholder)
+    input.dropdown__display.input(
+      type='text',
+      readonly,
+      placeholder=placeholder
+    )
     .dropdown__contents(class=forceOpen && "dropdown__contents--force-visible")
       each item in listItems
+        -
+          const { min, max, nameSingle, nameFew, nameMany, name, value } = item;
+
         .dropdown__option(
-          data-min=item.min,
-          data-max=item.max,
-          data-single=item.nameSingle,
-          data-few=item.nameFew,
-          data-many=item.nameMany
+          data-min=min,
+          data-max=max,
+          data-single=nameSingle,
+          data-few=nameFew,
+          data-many=nameMany
         )
-          span.dropdown__option-name= item.name
+          span.dropdown__option-name= name
           button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
-          input.dropdown__option-value(
-            value=item.value ? item.value : item.min
-          )
+          input.dropdown__option-value(value=value || min)
           button.dropdown__option-control.dropdown__option-control--add +
-      if (type === 'single')
-        button.button.button--style_text.button--size_auto.dropdown__btn.dropdown__btn--clear.hidden очистить
-        button.button.button--style_text.button--size_auto.dropdown__btn.dropdown__btn--apply применить
+
+      if type === 'single'
+        button.dropdown__btn.dropdown__btn--clear.dropdown__btn--hidden очистить
+        button.dropdown__btn.dropdown__btn--apply применить

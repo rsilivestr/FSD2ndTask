@@ -1,8 +1,4 @@
-mixin spoiler(options = {})
-  -
-    const title = options.title || 'Спойлер';
-    const isOpen = options.isOpen || false;
-
+mixin spoiler({ title = 'Спойлер', isOpen = false })
   .spoiler(class=isOpen && "spoiler--is-open")&attributes(attributes)
     h4.spoiler__title= title
     .spoiler__contents
