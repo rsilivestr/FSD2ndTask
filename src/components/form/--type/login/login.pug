@@ -13,16 +13,7 @@ mixin formLogin
     +box({ mb: 20 })
       +input({ placeholder: 'Пароль', type: 'password' })
     +box({ mb: 30 })
-      +button({ 
-        title: 'войти', 
-        style: 'arrowed', 
-        size: 'l'
-      })
+      +button({ title: 'войти', style: 'arrowed', size: 'l' })
     +box
       +formPrompt('Нет аккаунта на Toxin?')
-        +aButton({ 
-          title: 'создать', 
-          style: 'bordered', 
-          size: 's', 
-          url: './register.html' 
-        })
+        +aButton({ title: 'создать', style: 'bordered', size: 's', url: './register.html' })

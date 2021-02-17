@@ -23,256 +23,186 @@ include ~Components/user-comment/user-comment
     header.header--uikit
       +logoUIKit
     main.form-elements-page__content
+      //- a 1 --------------------------------------//
 
-        //- a 1 --------------------------------------//
+      div
+        +box({ width: 'l', mb: 20, label: 'text field' })
+          +input({ placeholder: 'Email' })
 
-        div
-          +box({ width: 'l', mb: 20, label: 'text field' })
-            +input({ placeholder: 'Email' })
+        +box({ width: 'l', mb: 20, label: 'text field' })
+          +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
 
-          +box({ width: 'l', mb: 20, label: 'text field' })
-            +input({ placeholder: 'This is pretty awesome', value: 'This is pretty awesome' })
+        +box({ width: 'l', mb: 20, label: 'dropdown' })
+          +dropdown.js-dropdown-1
 
-          +box({ width: 'l', mb: 20, label: 'dropdown' })
-            +dropdown.js-dropdown-1
- 
-          +box({ width: 'l', mb: 40, label: 'masked text field' })
-            +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
+        +box({ width: 'l', mb: 40, label: 'masked text field' })
+          +input({ placeholder: 'ДД.ММ.ГГГГ' }).js-masked-date
 
-          //- double date dropdown
-          +box({ width: 'l', mb: 40 })
-            +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double
+        //- double date dropdown
+        +box({ width: 'l', mb: 40 })
+          +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-datepicker-double
 
-          //- filter date dropdown
-          +box({ width: 'm', mb: 40 })
-            .js-datepicker-range
-              +box({ width: 'm', label: 'filter date dropdown'})
-                +dateDropdown
+        //- filter date dropdown
+        +box({ width: 'm', mb: 40 })
+          .js-datepicker-range
+            +box({ width: 'm', label: 'filter date dropdown'})
+              +dateDropdown
 
-          //- subscribtion text field
-          +box({ width: 'm', label: 'subscribtion text field' })
-            +subscribeForm
+        //- subscribtion text field
+        +box({ width: 'm', label: 'subscribtion text field' })
+          +subscribeForm
 
+      //- a 2 --------------------------------------//
 
-        //- a 2 --------------------------------------//
+      div
+        //- checkbox buttons
+        +box({ mb: 40 })
+          +box({ mb: 15 })
+            h3 checkbox buttons
+          +box({ mb: 8 })
+            +checkbox({ label: 'Можно курить' })
+          +box({ mb: 8 })
+            +checkbox({ label: 'Можно с питомцами', checked: true })
+          +box
+            +checkbox({ label: 'Можно пригласить гостей\n(до 10 человек)', checked: true })
 
-        div
-          //- checkbox buttons
-          +box({ mb: 40 })
-            +box({ mb: 15 })
-              h3 checkbox buttons
-            +box({ mb: 8 })
-              +checkbox({ label: 'Можно курить' })
-            +box({ mb: 8 })
-              +checkbox({ label: 'Можно с питомцами', checked: true })
-            +box
-              +checkbox({ label: 'Можно пригласить гостей\n(до 10 человек)', checked: true })
+        //- radio buttons
+        +box({ mb: 40 })
+          +box({ mb: 15 })
+            h3 radio buttons
+          +box
+            .radio-group
+              +radio({ name: 'gender', value: 'man', label: 'Мужчина', checked: true, })
+              +radio({ name: 'gender', value: 'woman', label: 'Женщина', })
 
-          //- radio buttons
-          +box({ mb: 40 })
-            +box({ mb: 15 })
-              h3 radio buttons
-            +box
-              .radio-group
-                +radio({
-                  name: 'gender',
-                  value: 'man',
-                  label: 'Мужчина',
-                  checked: true,
-                })
-                +radio({
-                  name: 'gender',
-                  value: 'woman',
-                  label: 'Женщина',
-                })
+        //- toggle
+        +box({ mb: 45 })
+          +box({ mb: 15 })
+            h3 toggle
+          +box({ mb: 15 })
+            +toggle({ label: 'Получать спецпредложения', checked: true })
+          +box
+            +toggle({ label: 'Получать спецпредложения' })
 
-          //- toggle
-          +box({ mb: 45 })
-            +box({ mb: 15 })
-              h3 toggle
-            +box({ mb: 15 })
-              +toggle({ label: 'Получать спецпредложения', checked: true })
-            +box
-              +toggle({ label: 'Получать спецпредложения' })
-
-          //- like button
-          +box({ mb: 40 })
-            +box({ mb: 15 })
-              h3 like button
-            +box
-              +box({ inline: true, width: 'auto', mr: 10 })
-                +likeCounter({ value: 2 }).js-like
-              +box({ inline: true, width: 'auto' })
-                +likeCounter({ value: 12, checked: true }).js-like
-
-          //- rate button
-          +box({ mb: 15, label: 'rate button' })
-            +box({ inline: true, width: 'auto', mr: 20 })
-              +starRating({ value: 4 })
+        //- like button
+        +box({ mb: 40 })
+          +box({ mb: 15 })
+            h3 like button
+          +box
+            +box({ inline: true, width: 'auto', mr: 10 })
+              +likeCounter({ value: 2 }).js-like
             +box({ inline: true, width: 'auto' })
-              +starRating({ value: 5, rateable: true }).js-rating
+              +likeCounter({ value: 12, checked: true }).js-like
 
+        //- rate button
+        +box({ mb: 15, label: 'rate button' })
+          +box({ inline: true, width: 'auto', mr: 20 })
+            +starRating({ value: 4 })
+          +box({ inline: true, width: 'auto' })
+            +starRating({ value: 5, rateable: true }).js-rating
 
-        //- a 3 --------------------------------------//
+      //- a 3 --------------------------------------//
 
-        div
-          //- range slider
-          +box({ width: 'm', mb: 30, label: 'range slider' })
-            +rangeSlider.js-rangepicker
+      div
+        //- range slider
+        +box({ width: 'm', mb: 30, label: 'range slider' })
+          +rangeSlider.js-rangepicker
 
-          //- buttons
-          +box({ width: 'l', mb: 40, label: 'buttons', labelMB: 15 })
-            +box({ mb: 30 })
-              +box({ inline: true, width: 'xs', mr: 20 })
-                +button() 
-              +box({ inline: true, width: 'xs' })
-                +button({
-                  title: 'click me',
-                  style: 'gradient',
-                  size: 's',
-                  disabled: true
-                })
-            +box({ mb: 30 })
-              +box({ inline: true, width: 'xs', mr: 20 })
-                +button({
-                  title: 'click me',
-                  style: 'bordered',
-                  size: 's'
-                })
-              +box({ inline: true, width: 'xs'})
-                +button({
-                  title: 'click me',
-                  style: 'bordered',
-                  size: 's',
-                  disabled: true
-                })
+        //- buttons
+        +box({ width: 'l', mb: 40, label: 'buttons', labelMB: 15 })
+          +box({ mb: 30 })
+            +box({ inline: true, width: 'xs', mr: 20 })
+              +button 
+            +box({ inline: true, width: 'xs' })
+              +button({ title: 'click me', style: 'gradient', size: 's', disabled: true })
+          +box({ mb: 30 })
+            +box({ inline: true, width: 'xs', mr: 20 })
+              +button({ title: 'click me', style: 'bordered', size: 's' })
+            +box({ inline: true, width: 'xs'})
+              +button({ title: 'click me', style: 'bordered', size: 's', disabled: true })
 
-            +box({ mb: 30 })
-              +box({ inline: true, width: 'xs', mr: 20 })
-                +button({
-                  title: 'click me',
-                  style: 'text',
-                  size: 'auto',
-                })
-              +box({ inline: true, width: 'xs' })
-                +button({
-                  title: 'click me',
-                  style: 'text',
-                  size: 'auto',
-                  disabled: true,
-                })
+          +box({ mb: 30 })
+            +box({ inline: true, width: 'xs', mr: 20 })
+              +button({ title: 'click me', style: 'text', size: 'auto', })
+            +box({ inline: true, width: 'xs' })
+              +button({ title: 'click me', style: 'text', size: 'auto', disabled: true, })
 
-            +button({
-              title: 'перейти к оплате',
-              style: 'arrowed',
-              size: 'l',
-            })
+          +button({ title: 'перейти к оплате', style: 'arrowed', size: 'l', })
 
-          //- pagination
-          +box({ width: 'm', label: 'pagination', labelMB: 15 })
-            +pagination
+        //- pagination
+        +box({ width: 'm', label: 'pagination', labelMB: 15 })
+          +pagination
 
+      //- b 1 --------------------------------------//
 
-        //- b 1 --------------------------------------//
+      div
+        //- dropdown
+        +box({ width: 'm', mb: 20, label: 'dropdown' })
+          +dropdown({type: 'multi'}).js-dropdown-2
 
-        div
-          //- dropdown
-          +box({ width: 'm', mb: 20, label: 'dropdown' })
-            +dropdown({type: 'multi'}).js-dropdown-2
+        //- dropdown expanded
+        +box({ width: 'm', mb: 20, label: 'dropdown' })
+          +dropdown({type: 'multi'}, true)
 
-          //- dropdown expanded
-          +box({ width: 'm', mb: 20, label: 'dropdown' })
-            +dropdown({type: 'multi'}, true)
+      //- b 2 --------------------------------------//
 
-        //- b 2 --------------------------------------//
+      div
+        //- wide dropdown
+        +box({ width: 'l', label: 'dropdown'})
+          +dropdown({type: 'single'}, true)
 
-        div
-          //- wide dropdown
-          +box({ width: 'l', label: 'dropdown'})
-            +dropdown({type: 'single'}, true)
+      //- b 3 --------------------------------------//
 
-        //- b 3 --------------------------------------//
-        
-        div
-          //- wide dropdown
-          +box({ width: 'l', label: 'dropdown'})
-            +dropdown({type: 'single'}, true)
+      div
+        //- wide dropdown
+        +box({ width: 'l', label: 'dropdown'})
+          +dropdown({type: 'single'}, true)
 
-        //- c 1 --------------------------------------//
+      //- c 1 --------------------------------------//
 
-        div
-          //- expandable checkbox list
-          +box({ width: 'm', mb: 40 })
-            +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
-              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-                +checkbox({ label })
+      div
+        //- expandable checkbox list
+        +box({ width: 'm', mb: 40 })
+          +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
+            each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+              +checkbox({ label })
 
-          //- expanded expandable checkbox list
-          +box({ width: 'm', mb: 40 })
-            +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
-              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-                +checkbox({ label })
+        //- expanded expandable checkbox list
+        +box({ width: 'm', mb: 40 })
+          +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
+            each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+              +checkbox({ label })
 
-        //- c 2 --------------------------------------//
+      //- c 2 --------------------------------------//
 
-        div
-          //- rich checkbox buttons
-          +box({ mb: 15, mt: 5, label: 'rich checkbox buttons', labelMB: 15 })
-            +box({ mb: 10 })
-              +checkbox({
-                label: 'Широкий коридор',
-                text: 'Ширина коридоров в номере\nне менее 91 см.',
-              })
-            +box
-              +checkbox({
-                label: 'Помощник для инвалидов',
-                text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
-              })
+      div
+        //- rich checkbox buttons
+        +box({ mb: 15, mt: 5, label: 'rich checkbox buttons', labelMB: 15 })
+          +box({ mb: 10 })
+            +checkbox({ label: 'Широкий коридор', text: 'Ширина коридоров в номере\nне менее 91 см.', })
+          +box
+            +checkbox({ label: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист\nи проводит до номера.', })
 
-        //- c 3 --------------------------------------//
+      //- c 3 --------------------------------------//
 
-        div
-          //- bullet list
-          +box({ mb: 15, mt: 5, label: 'bullet list', labelMB: 15 })
-            +bulletList({ 
-              list: [
-                'Нельзя с питомцами',
-                'Без вечеринок и мероприятий',
-                'Время прибытия — после 13:00,\n а выезд до 12:00',
-              ] 
-            })
+      div
+        //- bullet list
+        +box({ mb: 15, mt: 5, label: 'bullet list', labelMB: 15 })
+          +bulletList({ list: [ 'Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,\n а выезд до 12:00', ] })
 
-        //- d 1 --------------------------------------//
-        div
-          +box({ mb: 5, hasSeparators: true })
-            //- комфорт
-            +imageTitle({
-              type: 'emoji',
-              src: 'insert_emoticon',
-              heading: 'комфорт',
-              text: 'шумопоглощающие стены',
-            })
-            //- удобство
-            +imageTitle({
-              type: 'emoji',
-              src: 'location_city',
-              heading: 'удобство',
-              text: 'окно в каждой из спален',
-            })
+      //- d 1 --------------------------------------//
+      div
+        +box({ mb: 5, hasSeparators: true })
+          //- комфорт
+          +imageTitle({ type: 'emoji', src: 'insert_emoticon', heading: 'комфорт', text: 'шумопоглощающие стены', })
+          //- удобство
+          +imageTitle({ type: 'emoji', src: 'location_city', heading: 'удобство', text: 'окно в каждой из спален', })
 
+      //- e 1 --------------------------------------//
 
-        //- e 1 --------------------------------------//
+      .form-elements-page__comment
+        //- comment (wide)
+        +box({ mt: 20 })
+          +userComment({ age: '5 дней назад', avatar: '../assets/images/uid1111.jpg', isLiked: true, likes: 12, text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.', username: 'Мурад Сарафанов', })
 
-        .form-elements-page__comment
-          //- comment (wide)
-          +box({ mt: 20 })
-            +userComment({
-              age: '5 дней назад',
-              avatar: '../assets/images/uid1111.jpg',
-              isLiked: true,
-              likes: 12,
-              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
-              username: 'Мурад Сарафанов',
-            })
-
-    script(type="text/javascript" src="../scripts/form_elements.js")
+    script(type='text/javascript', src='../scripts/form_elements.js')

@@ -13,7 +13,7 @@ mixin footer(config = {})
     const subscribeText = subscribe.text || FOOTER_DEFAULT_CONTENT.subscribe.text
     const copyText = config.copyText || FOOTER_DEFAULT_CONTENT.copyText
 
-  footer.footer(class = config.hasBorder && 'footer--has-border')&attributes(attributes)
+  footer.footer(class=config.hasBorder && "footer--has-border")&attributes(attributes)
     .footer__nav-section
       .footer__col
         +logoToxin.footer__logo
@@ -24,7 +24,7 @@ mixin footer(config = {})
           ul.footer__nav-list
             each link in subnav.links
               li.footer__nav-list-item
-                a(href=link.url).footer__navlink= link.title
+                a.footer__navlink(href=link.url)= link.title
       .footer__col
         h2.footer__col-title= subscribeTitle
         p.footer__text= subscribeText

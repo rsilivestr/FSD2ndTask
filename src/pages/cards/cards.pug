@@ -22,24 +22,11 @@ include ~Components/room-card/room-card
       div
         +box({ mb: 40 })
           .js-datepicker-static
-            input(type="hidden")
-            input(type="hidden")
+            input(type='hidden')
+            input(type='hidden')
         +box({ mb: 40 })
-          +roomCard({ 
-            photos: ['room1.jpg', 'room2.jpg', 'room3.jpg'],
-            rating: 5,
-            number: 888,
-            cost: '9 990',
-            reviewCount: 145,
-            lux: true,
-          })
+          +roomCard({ photos: ['room1.jpg', 'room2.jpg', 'room3.jpg'], rating: 5, number: 888, cost: '9 990', reviewCount: 145, lux: true, })
         +box
-          +roomCard({
-            photos: ['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'],
-            rating: 4,
-            number: 840,
-            cost: '9 900₽',
-            reviewCount: 65,
-          })
+          +roomCard({ photos: ['room2.jpg', 'room3.jpg', 'room4.jpg', 'room5.jpg'], rating: 4, number: 840, cost: '9 900₽', reviewCount: 65, })
 
-    script(type="text/javascript" src="../scripts/cards.js")
+    script(type='text/javascript', src='../scripts/cards.js')

@@ -1,9 +1,9 @@
 mixin input(options = {})
-  - const inputType = options.type || 'text';
+  - const inputType = options.type || "text";
 
   input(
-    class=`input input--type_${inputType}`
-    placeholder=options.placeholder || ""
-    type=inputType
+    class=`input input--type_${inputType}`,
+    placeholder=options.placeholder || "",
+    type=inputType,
     value=options.value || ""
   )&attributes(attributes)

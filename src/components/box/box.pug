@@ -9,7 +9,7 @@ mixin box(config = {})
     config.mr && (className += ` box--mr_${config.mr}`)
     config.mb && (className += ` box--mb_${config.mb}`)
 
-  div(class = className)
+  div(class=className)
     if config.label
-      h3.box__label(class = config.labelMB && `box__label--mb_${config.labelMB}`)= config.label
+      h3.box__label(class=config.labelMB && `box__label--mb_${config.labelMB}`)= config.label
     block

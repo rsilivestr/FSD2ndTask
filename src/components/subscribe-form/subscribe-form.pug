@@ -3,4 +3,4 @@ include ~Components/input/input
 mixin subscribeForm(placeholder='Email')
   form.subscribe-form&attributes(attributes)
     +input({ placeholder, type: 'email'}).input--has-icon
-    button(type='submit').subscribe-form__submit
+    button.subscribe-form__submit(type='submit')

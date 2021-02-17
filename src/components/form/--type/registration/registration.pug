@@ -16,22 +16,9 @@ mixin formRegistration
       +input({ placeholder: 'Фамилия'})
 
     +box({ mb: 25, stretch: true })
-      +radio({
-        name: 'gender',
-        value: 'man',
-        label: 'Мужчина',
-        checked: true,
-      })
-      +radio({
-        name: 'gender',
-        value: 'woman',
-        label: 'Женщина',
-      })
-      +radio({
-        name: 'gender',
-        value: 'other',
-        label: 'Иное',
-      })
+      +radio({ name: 'gender', value: 'man', label: 'Мужчина', checked: true, })
+      +radio({ name: 'gender', value: 'woman', label: 'Женщина', })
+      +radio({ name: 'gender', value: 'other', label: 'Иное', })
 
     +box({ mb: 20, label: 'дата рождения' })
       +input({ placeholder: 'ММ.ДД.ГГГГ'}).js-dob-masked
@@ -43,19 +30,10 @@ mixin formRegistration
         +input({ placeholder: 'Пароль', type: 'password' })
       +box({ mb: 10 })
         +toggle({ label: 'Получать спецпредложения' })
-    
+
     +box({ mb: 30 })
-      +button({
-        title: 'перейти к оплате',
-        style: 'arrowed',
-        size: 'l'
-      })
+      +button({ title: 'перейти к оплате', style: 'arrowed', size: 'l' })
 
     +box
       +formPrompt('Уже есть аккаунт на Toxin?')
-        +aButton({
-          title: 'войти',
-          style: 'bordered',
-          size: 's',
-          url: './login.html'
-        })
+        +aButton({ title: 'войти', style: 'bordered', size: 's', url: './login.html' })

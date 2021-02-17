@@ -11,11 +11,9 @@ include ~Components/range/range
 
 +head('Search room')
   body.search-room
-
     +header({ hasShadow: true })
 
     .search-room__content
-
       aside.search-room__filters
         //- filter date dropdown
         +box({ mb: 21, label: 'даты пребывания в отеле' })
@@ -35,15 +33,9 @@ include ~Components/range/range
         //- rich checkboxes
         +box({ mb: 31, label: 'Доступность', labelMB: 15 })
           +box({ mb: 10 })
-            +checkbox({
-              label: 'Широкий коридор',
-              text: 'Ширина коридоров в номере\nне менее 91 см.',
-            })
+            +checkbox({ label: 'Широкий коридор', text: 'Ширина коридоров в номере\nне менее 91 см.', })
           +box
-            +checkbox({
-              label: 'Помощник для инвалидов',
-              text: 'На 1 этаже вас встретит специалист\nи проводит до номера.',
-            })
+            +checkbox({ label: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист\nи проводит до номера.', })
         //- comfort dropdown
         +box({ width: 'm', mb: 25, label: 'удобства номера' })
           +dropdown({type: 'multi'}).js-comfort-dropdown
@@ -53,113 +45,25 @@ include ~Components/range/range
             each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
               +checkbox({ label })
         //- button to apply filters
-        +button({ 
-          title: 'применить фильтры',
-          style: 'gradient',
-          size: 'm'
-        })
+        +button({ title: 'применить фильтры', style: 'gradient', size: 'm' })
 
       main.search-room__main
         h1 Номера, которые мы для вас подобрали
         .search-room__results
-          +roomCard({
-            photos: ['room1.jpg', 'room3.jpg', 'room6.jpg', 'room11.jpg'],
-            rating: 5,
-            number: 888,
-            cost: '9 990',
-            reviewCount: 145,
-            lux: true,
-          })
-          +roomCard({
-            photos: ['room2.jpg', 'room9.jpg'],
-            rating: 4,
-            number: 840,
-            cost: '9 900',
-            reviewCount: 65,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room3.jpg', 'room11.jpg'],
-            rating: 3,
-            number: 980,
-            cost: '8 500',
-            reviewCount: 35,
-            lux: true,
-          })
-          +roomCard({
-            photos: ['room4.jpg', 'room12.jpg', 'room3.jpg'],
-            rating: 5,
-            number: 856,
-            cost: '7 300',
-            reviewCount: 19,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room5.jpg', 'room1.jpg', 'room12.jpg'],
-            rating: 4,
-            number: 740,
-            cost: '6 000',
-            reviewCount: 44,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room6.jpg', 'room11.jpg'],
-            rating: 3,
-            number: 982,
-            cost: '5 800',
-            reviewCount: 56,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room7.jpg', 'room5.jpg'],
-            rating: 5,
-            number: 678,
-            cost: '5 500',
-            reviewCount: 45,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room8.jpg', 'room4.jpg', 'room7.jpg'],
-            rating: 4,
-            number: 450,
-            cost: '5 300',
-            reviewCount: 39,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room9.jpg', 'room1.jpg'],
-            rating: 3,
-            number: 350,
-            cost: '5 000',
-            reviewCount: 77,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room10.jpg', 'room8.jpg', 'room3.jpg'],
-            rating: 5,
-            number: 666,
-            cost: '5 000',
-            reviewCount: 25,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room11.jpg', 'room3.jpg', 'room7.jpg'],
-            rating: 3,
-            number: 444,
-            cost: '5 000',
-            reviewCount: 15,
-            lux: false,
-          })
-          +roomCard({
-            photos: ['room12.jpg', 'room5.jpg', 'room4.jpg'],
-            rating: 3,
-            number: 352,
-            cost: '5 000',
-            reviewCount: 55,
-            lux: false,
-          })
+          +roomCard({ photos: ['room1.jpg', 'room3.jpg', 'room6.jpg', 'room11.jpg'], rating: 5, number: 888, cost: '9 990', reviewCount: 145, lux: true, })
+          +roomCard({ photos: ['room2.jpg', 'room9.jpg'], rating: 4, number: 840, cost: '9 900', reviewCount: 65, lux: false, })
+          +roomCard({ photos: ['room3.jpg', 'room11.jpg'], rating: 3, number: 980, cost: '8 500', reviewCount: 35, lux: true, })
+          +roomCard({ photos: ['room4.jpg', 'room12.jpg', 'room3.jpg'], rating: 5, number: 856, cost: '7 300', reviewCount: 19, lux: false, })
+          +roomCard({ photos: ['room5.jpg', 'room1.jpg', 'room12.jpg'], rating: 4, number: 740, cost: '6 000', reviewCount: 44, lux: false, })
+          +roomCard({ photos: ['room6.jpg', 'room11.jpg'], rating: 3, number: 982, cost: '5 800', reviewCount: 56, lux: false, })
+          +roomCard({ photos: ['room7.jpg', 'room5.jpg'], rating: 5, number: 678, cost: '5 500', reviewCount: 45, lux: false, })
+          +roomCard({ photos: ['room8.jpg', 'room4.jpg', 'room7.jpg'], rating: 4, number: 450, cost: '5 300', reviewCount: 39, lux: false, })
+          +roomCard({ photos: ['room9.jpg', 'room1.jpg'], rating: 3, number: 350, cost: '5 000', reviewCount: 77, lux: false, })
+          +roomCard({ photos: ['room10.jpg', 'room8.jpg', 'room3.jpg'], rating: 5, number: 666, cost: '5 000', reviewCount: 25, lux: false, })
+          +roomCard({ photos: ['room11.jpg', 'room3.jpg', 'room7.jpg'], rating: 3, number: 444, cost: '5 000', reviewCount: 15, lux: false, })
+          +roomCard({ photos: ['room12.jpg', 'room5.jpg', 'room4.jpg'], rating: 3, number: 352, cost: '5 000', reviewCount: 55, lux: false, })
         +pagination
 
     +footer({ hasBorder: true })
 
-    script(type="text/javascript" src="../scripts/search_room_filter.js")
+    script(type='text/javascript', src='../scripts/search_room_filter.js')

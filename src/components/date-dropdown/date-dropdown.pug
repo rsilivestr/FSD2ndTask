@@ -9,14 +9,14 @@ mixin dateDropdown(options = {})
 
   if type === 'single'
     .date-dropdown.date-dropdown--range&attributes(attributes)
-      input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.datepicker-range
+      input.date-dropdown__display.input.datepicker-range(type='text', readonly, placeholder=placeholder)
 
   else if type === 'double'
     .datepicker-double&attributes(attributes)
       +box({ stretch: true })
         +box({ width: 's', label: labelStart })
           .date-dropdown
-            input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__start
+            input.date-dropdown__display.input.date-dropdown__start(type='text', readonly, placeholder=placeholder)
         +box({ width: 's', label: labelEnd })
           .date-dropdown
-            input(type='text' readonly placeholder = placeholder).date-dropdown__display.input.date-dropdown__end
+            input.date-dropdown__display.input.date-dropdown__end(type='text', readonly, placeholder=placeholder)

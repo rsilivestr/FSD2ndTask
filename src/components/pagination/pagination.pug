@@ -10,13 +10,13 @@ mixin pagination(data = {})
     const resultsTotal = data.resultsTotal || PAGINATION_DEFAULT_CONTENT.resultsTotal;
 
   .pagination
-    button(class = !controls.left && 'pagination__control--hidden').pagination__control
+    button.pagination__control(class=!controls.left && "pagination__control--hidden")
       i.material-icons arrow_back
     each link in pagesLeft
-      a(href = link.url class = link.active && 'pagination__link--active').pagination__link= link.number
+      a.pagination__link(href=link.url, class=link.active && "pagination__link--active")= link.number
     span.pagination__gap= gapText
     each link in pagesRight
-      a(href = link.url class = link.active && 'pagination__link--active').pagination__link= link.number
-    button(class = !controls.right && 'pagination__control--hidden').pagination__control
+      a.pagination__link(href=link.url, class=link.active && "pagination__link--active")= link.number
+    button.pagination__control(class=!controls.right && "pagination__control--hidden")
       i.material-icons arrow_forward
     p.pagination__tooltip= `${resultsRange[0]} – ${resultsRange[1]} из ${resultsTotal} вариантов аренды`

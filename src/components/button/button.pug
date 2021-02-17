@@ -1,12 +1,12 @@
 mixin button(options = { title: 'click me', style: 'gradient', size: 's', disabled: false })
   button(
-    class = `button button--style_${options.style} button--size_${options.size}`
-    disabled = options.disabled ? true : false
+    class=`button button--style_${options.style} button--size_${options.size}`,
+    disabled=options.disabled ? true : false
   )&attributes(attributes)= options.title
 
 mixin aButton(options = { title: 'click me', style: 'gradient', size: 's', disabled: false, url: '#some-url' })
   a(
-    class = `button button--style_${options.style} button--size_${options.size}` 
-    disabled = options.isDisabled ? true : false
-    href = options.url 
+    class=`button button--style_${options.style} button--size_${options.size}`,
+    disabled=options.isDisabled ? true : false,
+    href=options.url
   )&attributes(attributes)= options.title

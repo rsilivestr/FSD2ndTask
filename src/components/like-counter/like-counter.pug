@@ -4,6 +4,6 @@ mixin likeCounter(options = {})
     const checked = options.checked || false;
 
   .like-counter&attributes(attributes)
-    input(type="checkbox", checked=checked).like-counter__input
+    input.like-counter__input(type='checkbox', checked=checked)
     .like-counter__replacer
       span.like-counter__value= value

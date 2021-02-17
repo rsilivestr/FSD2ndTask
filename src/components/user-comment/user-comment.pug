@@ -3,12 +3,7 @@ include ../like-counter/like-counter
 
 mixin userComment(comment)
   .user-comment&attributes(attributes)
-    +imageTitle({
-      type: 'comment',
-      src: comment.avatar,
-      heading: comment.username,
-      text: comment.age
-    })
+    +imageTitle({ type: 'comment', src: comment.avatar, heading: comment.username, text: comment.age })
     .user-comment__body
       +likeCounter({ value: comment.likes, checked: comment.isLiked}).user-comment__like-counter.js-like
       p.user-comment__text

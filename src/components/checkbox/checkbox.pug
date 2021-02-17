@@ -5,9 +5,9 @@ mixin checkbox(options = {})
     const text = options.text || '';
 
   label.checkbox&attributes(attributes)
-    input(type='checkbox', checked=checked).checkbox__input
+    input.checkbox__input(type='checkbox', checked=checked)
     span.checkbox__replacer
     .checkbox__label
-      span(class=text && 'checkbox__title--bold').checkbox__title= label
+      span.checkbox__title(class=text && "checkbox__title--bold")= label
       if (text)
         span.checkbox__text= text

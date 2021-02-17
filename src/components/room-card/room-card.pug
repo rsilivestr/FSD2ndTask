@@ -19,15 +19,16 @@ mixin roomCard(options = {})
         i.material-icons.room-card__icon-right arrow_forward_ios
       - const len = photos.length;
       each photo in photos
-        img(src='../assets/images/' + photo, alt='Фото комнаты').room-card__photo
+        img.room-card__photo(src="../assets/images/" + photo, alt='Фото комнаты')
       nav.room-card__nav
         - for (let i = 0; i < len; i += 1)
           - const current = i === 0 || false;
-          button(class = (current === true) && 'room-card__navbtn--current').room-card__navbtn
+          button.room-card__navbtn(class=current === true && "room-card__navbtn--current")
     .room-card__info
       +roomTitle({ number, lux, price, url: './room-details.html'}).room-card__title
       .room-card__rating
         +starRating({ value: rating })
         span.room-card__review-counter
           strong #{reviewCount}
-          |  отзывов
+          |
+          | отзывов

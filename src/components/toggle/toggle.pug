@@ -4,6 +4,6 @@ mixin toggle(options = {})
     const checked = options.checked || false;
 
   label.toggle&attributes(attributes)
-    input(type="checkbox" checked=checked).toggle__input
+    input.toggle__input(type='checkbox', checked=checked)
     span.toggle__replacer
     span.toggle__label= label

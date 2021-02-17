@@ -16,11 +16,10 @@ mixin roomTitle(options = {})
         span.room-title__price-period в сутки
   else
     h2.room-title&attributes(attributes)
-      a(href = url).room-title__room
+      a.room-title__room(href=url)
         span.room-title__number №
         = number
         if (lux)
           span.room-title__lux люкс
       span.room-title__price #{price}₽
         span.room-title__price-period в сутки
-
