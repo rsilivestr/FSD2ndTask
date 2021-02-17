@@ -1,12 +1,37 @@
-mixin button(options = { title: 'click me', style: 'gradient', size: 's', disabled: false })
-  button(
-    class=`button button--style_${options.style} button--size_${options.size}`,
-    disabled=options.disabled ? true : false
-  )&attributes(attributes)= options.title
+mixin button(options = {})
+  -
+    const { 
+      title = 'click me',
+      style = 'gradient',
+      size = 's',
+      disabled = false
+    } = options;
 
-mixin aButton(options = { title: 'click me', style: 'gradient', size: 's', disabled: false, url: '#some-url' })
+  button(
+    class=`
+      button 
+      button--style_${style}
+      button--size_${size}
+    `,
+    disabled=disabled
+  )&attributes(attributes)= title
+
+mixin buttonLink(options = {})
+  -
+    const { 
+      title = 'click me',
+      style = 'gradient',
+      size = 's',
+      disabled = false,
+      url = '#dummy-url'
+    } = options;
+
   a(
-    class=`button button--style_${options.style} button--size_${options.size}`,
-    disabled=options.isDisabled ? true : false,
-    href=options.url
-  )&attributes(attributes)= options.title
+    class=`
+      button
+      button--style_${style}
+      button--size_${size}
+    `,
+    disabled=disabled,
+    href=url
+  )&attributes(attributes)= title
