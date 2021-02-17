@@ -174,11 +174,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Assets: path.resolve(__dirname, 'src/assets/'),
       Pages: path.resolve(__dirname, 'src/pages/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
-      CommonBlocks: path.resolve(__dirname, 'src/components/common.blocks/'),
-      UtilBlocks: path.resolve(__dirname, 'src/components/utility.blocks/'),
+      Components: path.resolve(__dirname, 'src/components/'),
     },
   },
 };

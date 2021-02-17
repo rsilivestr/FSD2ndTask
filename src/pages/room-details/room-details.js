@@ -1,4 +1,4 @@
-import 'CommonBlocks/form/--type/booking/booking';
+import 'Components/form/--type/booking/booking';
 
 const UIwrap = document.querySelector('.room-details__rate-canvas-wrap'),
   UIgraphCanvas = document.querySelector('.room-details__rate-canvas');

@@ -1,8 +1,8 @@
-import 'CommonBlocks/form/--type/booking/booking';
-import 'CommonBlocks/form/--type/registration/registration';
-import 'CommonBlocks/form/--type/search-room/search-room';
-import FSD2ndTaskDatepicker from 'CommonBlocks/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskRoomSlider from 'CommonBlocks/room-card/FSD2ndTaskRoomSlider';
+import 'Components/form/--type/booking/booking';
+import 'Components/form/--type/registration/registration';
+import 'Components/form/--type/search-room/search-room';
+import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
+import FSD2ndTaskRoomSlider from 'Components/room-card/FSD2ndTaskRoomSlider';
 
 new FSD2ndTaskDatepicker('.js-datepicker-static');
 

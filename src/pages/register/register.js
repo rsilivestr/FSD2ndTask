@@ -1,1 +1,1 @@
-import 'CommonBlocks/form/--type/registration/registration';
+import 'Components/form/--type/registration/registration';

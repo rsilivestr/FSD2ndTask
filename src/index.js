@@ -1,2 +1,2 @@
-import 'CommonBlocks/header/header';
-import 'CommonBlocks/form/form';
+import 'Components/header/header';
+import 'Components/form/form';

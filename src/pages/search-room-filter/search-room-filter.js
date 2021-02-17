@@ -1,8 +1,8 @@
-import FSD2ndTaskDatepicker from 'CommonBlocks/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskRange from 'CommonBlocks/range/FSD2ndTaskRange';
-import FSD2ndTaskDropdown from 'CommonBlocks/dropdown/FSD2ndTaskDropdown';
-import FSD2ndTaskRoomSlider from 'CommonBlocks/room-card/FSD2ndTaskRoomSlider';
-import FSD2ndTaskSpoiler from 'CommonBlocks/spoiler/FSD2ndTaskSpoiler';
+import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
+import FSD2ndTaskRange from 'Components/range/FSD2ndTaskRange';
+import FSD2ndTaskDropdown from 'Components/dropdown/FSD2ndTaskDropdown';
+import FSD2ndTaskRoomSlider from 'Components/room-card/FSD2ndTaskRoomSlider';
+import FSD2ndTaskSpoiler from 'Components/spoiler/FSD2ndTaskSpoiler';
 
 new FSD2ndTaskDatepicker('.js-filter-datepicker', { range: true, size: 'm' });
 
