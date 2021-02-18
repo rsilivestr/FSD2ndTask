@@ -1,0 +1,98 @@
+[
+  {
+    "photos": ["room1.jpg", "room3.jpg", "room6.jpg", "room11.jpg"],
+    "rating": 5,
+    "number": 888,
+    "cost": "9 990",
+    "reviewCount": 145,
+    "lux": true
+  },
+  {
+    "photos": ["room2.jpg", "room9.jpg"],
+    "rating": 4,
+    "number": 840,
+    "cost": "9 900",
+    "reviewCount": 65,
+    "lux": false
+  },
+  {
+    "photos": ["room3.jpg", "room11.jpg"],
+    "rating": 3,
+    "number": 980,
+    "cost": "8 500",
+    "reviewCount": 35,
+    "lux": true
+  },
+  {
+    "photos": ["room4.jpg", "room12.jpg", "room3.jpg"],
+    "rating": 5,
+    "number": 856,
+    "cost": "7 300",
+    "reviewCount": 19,
+    "lux": false
+  },
+  {
+    "photos": ["room5.jpg", "room1.jpg", "room12.jpg"],
+    "rating": 4,
+    "number": 740,
+    "cost": "6 000",
+    "reviewCount": 44,
+    "lux": false
+  },
+  {
+    "photos": ["room6.jpg", "room11.jpg"],
+    "rating": 3,
+    "number": 982,
+    "cost": "5 800",
+    "reviewCount": 56,
+    "lux": false
+  },
+  {
+    "photos": ["room7.jpg", "room5.jpg"],
+    "rating": 5,
+    "number": 678,
+    "cost": "5 500",
+    "reviewCount": 45,
+    "lux": false
+  },
+  {
+    "photos": ["room8.jpg", "room4.jpg", "room7.jpg"],
+    "rating": 4,
+    "number": 450,
+    "cost": "5 300",
+    "reviewCount": 39,
+    "lux": false
+  },
+  {
+    "photos": ["room9.jpg", "room1.jpg"],
+    "rating": 3,
+    "number": 350,
+    "cost": "5 000",
+    "reviewCount": 77,
+    "lux": false
+  },
+  {
+    "photos": ["room10.jpg", "room8.jpg", "room3.jpg"],
+    "rating": 5,
+    "number": 666,
+    "cost": "5 000",
+    "reviewCount": 25,
+    "lux": false
+  },
+  {
+    "photos": ["room11.jpg", "room3.jpg", "room7.jpg"],
+    "rating": 3,
+    "number": 444,
+    "cost": "5 000",
+    "reviewCount": 15,
+    "lux": false
+  },
+  {
+    "photos": ["room12.jpg", "room5.jpg", "room4.jpg"],
+    "rating": 3,
+    "number": 352,
+    "cost": "5 000",
+    "reviewCount": 55,
+    "lux": false
+  }
+]
