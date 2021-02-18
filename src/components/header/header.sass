@@ -1,5 +1,6 @@
 @use 'Styles/forward' as *
-@use '../logo/logo'
+@use 'Components/logo/logo'
+@use 'Components/button/button'
 
 .header
   position: relative
@@ -12,21 +13,25 @@
   z-index: 15
 
   &--uikit
-    padding: 30px
+    padding: 3rem
 
   &__wrapper
     @extend .container
     align-items: center
     display: flex
     flex-direction: row
-    min-height: 70px
+    gap: .5rem
+    min-height: 7rem
+
+    @include media('>=topnav')
+      gap: 2rem
 
   &--has-shadow
-    box-shadow: 0 10px 20px $dark05
+    box-shadow: 0 1rem 2rem $dark05
 
   &__logo
     position: relative
-    max-width: 40px
+    max-width: 4rem
     overflow: hidden
 
     @include media('>=desktop')
@@ -40,7 +45,6 @@
   &__nav
     display: none
     margin-left: auto
-    margin-right: 20px
     text-align: center
     z-index: 51
 
@@ -88,15 +92,6 @@
       padding: 0
   // end __navlink
 
-  &__user-panel
-    display: flex
-
-    @include media('>=tablet')
-      padding-left: 20px
-      border-left: 1px solid $dark25
-
-    @include media('>=topnav')
-
   &__user-menu
     display: inline-flex
     white-space: nowrap
@@ -123,17 +118,14 @@
       gap: 20px
 
   &__btn
+    @extend .button
+    @extend .button--size_auto
     max-height: 34px
 
     &--type
 
-      &_login
-        @include media('>=topnav')
-          padding: 0 10px
-
       &_iconic
         padding: 10px
-        margin-left: 5px
         max-height: 100%
         color: $dark50
         background: transparent
@@ -141,7 +133,12 @@
         &:hover i
           @extend .text-gradient
 
+      &_login
+        @include media('>=tablet')
+          padding: 0 10px
+
       &_menu
+        @extend .button--style_text
         margin-left: auto
         color: $dark50
         background: transparent
@@ -150,4 +147,8 @@
           @extend .text-gradient
 
         @include media('>=tablet')
-          visibility: collapse
+          // visibility: collapse
+          display: none
+
+      &_register
+        @extend .button--style_gradient
