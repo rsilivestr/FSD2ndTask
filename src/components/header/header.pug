@@ -23,12 +23,8 @@ mixin header(contents = {})
         i.material-icons menu
       if !username
         each button in buttons
-          - const { title, type } = button;
-          //- TODO Remove BEM mix
-          +buttonLink(button)(
-            class=`header__btn header__btn--type_${type}`,
-            data-name=title
-          )
+          - const { title, type, url } = button;
+          a(class=`header__btn header__btn--type_${type}`, data-name=title, url=url)
       else
         .header__user-panel
           a.header__user-menu.header__btn--type_account(

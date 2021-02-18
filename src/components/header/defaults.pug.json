@@ -11,15 +11,11 @@
     {
       "type": "login",
       "title": "Войти",
-      "style": "bordered",
-      "size": "auto",
       "url": "./login.html"
     },
     {
       "type": "register",
       "title": "Зарегистрироваться",
-      "style": "gradient",
-      "size": "auto",
       "url": "./register.html"
     }
   ]
