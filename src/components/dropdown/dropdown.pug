@@ -6,11 +6,11 @@ mixin dropdown(options = {}, forceOpen = false)
     ] = require('Components/dropdown/defaults.pug.json');
 
     const { type = 'single' } = options;
-    const { placeholder } = options
+    const { placeholder } = options.placeholder && options
       || type === 'single'
         ? DROPDOWN_DEFAULT_CONFIG
         : DROPDOWN_MULTI_DEFAULT_CONFIG;
-    const { listItems } = options
+    const { listItems } = options.listItems && options
       || type === 'single'
         ? DROPDOWN_DEFAULT_CONFIG
         : DROPDOWN_MULTI_DEFAULT_CONFIG;

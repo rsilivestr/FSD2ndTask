@@ -8,12 +8,27 @@ class FSD2ndTaskDropdown {
     this._init(element, options);
   }
 
+  _chooseWordCase(number, { single, few, many }) {
+    if (number % 100 === 11) return many;
+
+    if (number % 10 === 1) return single;
+
+    if (
+      number % 10 > 1 &&
+      number % 10 < 5 &&
+      (number % 100 < 10 || number % 100 > 20)
+    )
+      return few;
+
+    return many;
+  }
+
   _guestCase(sum) {
-    if (sum % 100 === 11) return ' гостей';
-    if (sum % 10 === 1) return ' гость';
-    if (sum % 10 > 1 && sum % 10 < 5 && (sum % 100 < 10 || sum % 100 > 20))
-      return ' гостя';
-    return ' гостей';
+    return this._chooseWordCase(sum, {
+      single: ' гость',
+      few: ' гостя',
+      many: ' гостей',
+    });
   }
 
   _getValues() {
@@ -33,18 +48,9 @@ class FSD2ndTaskDropdown {
     const itemValues = items.map((item) => {
       const value = item.querySelector(this.selectors.listItemValue).value;
 
-      if (value % 100 === 11) return `${value} ${item.dataset.many}`;
+      const wordCase = this._chooseWordCase(value, item.dataset);
 
-      if (value % 10 === 1) return `${value} ${item.dataset.single}`;
-
-      if (
-        value % 10 > 1 &&
-        value % 10 < 5 &&
-        (value % 100 < 10 || value % 100 > 20)
-      )
-        return `${value} ${item.dataset.few}`;
-
-      return `${value} ${item.dataset.many}`;
+      return `${value} ${wordCase}`;
     });
 
     return itemValues;
