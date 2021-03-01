@@ -9,11 +9,13 @@
   "username": "",
   "buttons": [
     {
+      "icon": "input",
       "type": "login",
       "title": "Войти",
       "url": "./login.html"
     },
     {
+      "icon": "person_add",
       "type": "register",
       "title": "Зарегистрироваться",
       "url": "./register.html"

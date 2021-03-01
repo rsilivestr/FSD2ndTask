@@ -27,14 +27,14 @@ function resizeHeader(firstLoad = false) {
     // change buttons classes and contents
 
     if (UIloginBtn) {
-      UIloginBtn.classList.remove('button--style_bordered');
+      // UIloginBtn.classList.remove('button--style_bordered');
       // UIloginBtn.classList.add('button--style_text');
       UIloginBtn.classList.add('header__btn--type_iconic');
       UIloginBtn.innerHTML = '<i class="material-icons">input</i>';
     }
 
     if (UIregBtn) {
-      UIregBtn.classList.remove('button--style_gradient');
+      // UIregBtn.classList.remove('button--style_gradient');
       // UIregBtn.classList.add('button--style_text');
       UIregBtn.classList.add('header__btn--type_iconic');
       UIregBtn.innerHTML = '<i class="material-icons">person_add</i>';
@@ -52,14 +52,14 @@ function resizeHeader(firstLoad = false) {
     isDesktop = !isDesktop;
 
     if (UIloginBtn) {
-      UIloginBtn.classList.add('button--style_bordered');
+      // UIloginBtn.classList.add('button--style_bordered');
       // UIloginBtn.classList.remove('button--style_text');
       UIloginBtn.classList.remove('header__btn--type_iconic');
       UIloginBtn.innerHTML = UIloginBtn.dataset.name;
     }
 
     if (UIregBtn) {
-      UIregBtn.classList.add('button--style_gradient');
+      // UIregBtn.classList.add('button--style_gradient');
       // UIregBtn.classList.remove('button--style_text');
       UIregBtn.classList.remove('header__btn--type_iconic');
       UIregBtn.innerHTML = UIregBtn.dataset.name;
