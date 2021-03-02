@@ -11,6 +11,8 @@ mixin header(contents = {})
   header.header(class=hasShadow && "header--has-shadow")&attributes(attributes)
     .header__wrapper
       +logoToxin.header__logo
+      button.header__btn.header__btn--type_menu.header__btn--type_iconic
+        i.material-icons menu
       nav.header__nav
         each link in nav
           - const { url, current, expandable, title } = link;
@@ -19,11 +21,9 @@ mixin header(contents = {})
             class=current && "header__navlink--current",
             class=expandable && "header__navlink--has-subnav"
           )= title
-      button.header__btn.header__btn--type_menu.header__btn--type_iconic
-        i.material-icons menu
       if !username
         each button in buttons
-          - const { title, type, url, icon } = button;
+          - const { icon, title, type, url } = button;
           a(
             class=`header__btn header__btn--type_${type}`,
             data-icon=icon,
