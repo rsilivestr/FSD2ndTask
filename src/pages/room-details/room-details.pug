@@ -1,4 +1,5 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/box/box
 include ~Components/header/header
 include ~Components/footer/footer
@@ -6,7 +7,7 @@ include ~Components/form/form
 include ~Components/image-title/image-title
 include ~Components/user-comment/user-comment
 
-+head('Room details')
+block body
   body.room-details
     +header
 

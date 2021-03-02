@@ -1,4 +1,5 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/box/box
 include ~Components/checkbox/checkbox
 include ~Components/header/header
@@ -9,7 +10,7 @@ include ~Components/pagination/pagination
 include ~Components/spoiler/spoiler
 include ~Components/range/range
 
-+head('Search room')
+block body
   body.search-room
     +header({ hasShadow: true })
 

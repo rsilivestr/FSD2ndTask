@@ -1,9 +1,10 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/box/box
 include ~Components/header/header
 include ~Components/footer/footer
 
-+head('Headers & Footers')
+block body
   body.headers-footers-page
     +box({ mb: 30 })
       header.header--uikit

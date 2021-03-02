@@ -1,9 +1,10 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/header/header
 include ~Components/footer/footer
 include ~Components/form/form
 
-+head('Landing Page')
+block body
   body
     +header
     main.landing-content

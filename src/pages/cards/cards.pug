@@ -1,10 +1,11 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/box/box
 include ~Components/header/header
 include ~Components/form/form
 include ~Components/room-card/room-card
 
-+head('Cards')
+block body
   body.cards-page
     header.header--uikit
       +logoUIKit

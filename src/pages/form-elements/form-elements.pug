@@ -1,4 +1,5 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/box/box
 include ~Components/bullet-list/bullet-list
 include ~Components/button/button
@@ -18,7 +19,7 @@ include ~Components/subscribe-form/subscribe-form
 include ~Components/toggle/toggle
 include ~Components/user-comment/user-comment
 
-+head('Form Elements')
+block body
   body.form-elements-page
     header.header--uikit
       +logoUIKit

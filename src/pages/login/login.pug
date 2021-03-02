@@ -1,9 +1,10 @@
-include ~Components/head/head
+extends ~Pages/layout
+
 include ~Components/header/header
 include ~Components/footer/footer
 include ~Components/form/form
 
-+head('Войти в Toxin')
+block body
   body.login-page
     +header
     main.login-page__content
