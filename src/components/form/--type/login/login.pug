@@ -6,7 +6,7 @@ include ~Components/input/input
 
 mixin formLogin
   form.form.form--type_login&attributes(attributes)
-    +box({ mb: 21 })
+    .form__title
       h1 Войти
     +box({ mb: 10 })
       +input({ placeholder: 'Email', type: 'email' })
