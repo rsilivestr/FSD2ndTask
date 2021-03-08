@@ -3,6 +3,7 @@ extends ~Pages/layout
 include ~Components/box/box
 include ~Components/header/header
 include ~Components/footer/footer
+include ~Components/uikit/logo/logo
 
 block title
   title Headers & footers
@@ -11,7 +12,7 @@ block body
   body.headers-footers-page
     +box({ mb: 30 })
       header.header--uikit
-        +logoUIKit
+        +logoUikit
 
     +box({ mb: 40 })
       +header

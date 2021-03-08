@@ -1,13 +1,8 @@
 extends ~Pages/layout
 
 include ~Components/header/header
-
-mixin colorBox(colorName, classSuffix, hexCode)
-  figure.color-list__item
-    .color-list__preview-box(class=` color-list__preview-box--bg_${classSuffix}`)
-    figcaption.color-list__caption
-      h2.color-list__color-title= colorName
-      span.color-list__color-hex= hexCode
+include ~Components/uikit/color-box/color-box
+include ~Components/uikit/logo/logo
 
 block title
   title Colors
@@ -15,7 +10,7 @@ block title
 block body
   body.colors-page
     header.header--uikit
-      +logoUIKit
+      +logoUikit
     main.colors-page__content
       .color-list
         each percent in ['100', '75', '50', '25', '5']

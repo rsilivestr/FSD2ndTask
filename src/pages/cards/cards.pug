@@ -4,6 +4,7 @@ include ~Components/box/box
 include ~Components/header/header
 include ~Components/form/form
 include ~Components/room-card/room-card
+include ~Components/uikit/logo/logo
 
 block title
   title Cards
@@ -11,7 +12,7 @@ block title
 block body
   body.cards-page
     header.header--uikit
-      +logoUIKit
+      +logoUikit
     main.cards-page__content
       div
         +box({ mb: 40 })
