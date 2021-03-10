@@ -1,19 +1,13 @@
+include room-title-mixins
+
 mixin roomTitle({ number = '999', lux = false, price = '9 990', url })
   if (!url)
     h1.room-title&attributes(attributes)
       span.room-title__room
-        span.room-title__number №
-        = number
-        if (lux)
-          span.room-title__lux люкс
-      span.room-title__price #{price}₽
-        span.room-title__price-period в сутки
+        +roomNumber(number,lux)
+      +price(price)
   else
     h2.room-title&attributes(attributes)
       a.room-title__room(href=url)
-        span.room-title__number №
-        = number
-        if (lux)
-          span.room-title__lux люкс
-      span.room-title__price #{price}₽
-        span.room-title__price-period в сутки
+        +roomNumber(number,lux)
+      +price(price)

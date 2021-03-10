@@ -1,4 +1,4 @@
-class FSD2ndTaskSpoiler {
+class Spoiler {
   constructor(element) {
     this._init(element);
   }
@@ -15,4 +15,4 @@ class FSD2ndTaskSpoiler {
   }
 }
 
-export default FSD2ndTaskSpoiler;
+export default Spoiler;

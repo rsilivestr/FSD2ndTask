@@ -8,11 +8,13 @@ module.exports = {
   entry: {
     app: ['./src', 'Styles/fonts.css', 'Styles/index.sass'],
     cards: './src/pages/cards/cards',
-    form_elements: './src/pages/form-elements/form-elements',
+    formElements: './src/pages/form-elements/form-elements',
+    headersFooters: './src/pages/headers-footers/headers-footers',
     landing: './src/pages/landing/landing',
+    login: './src/pages/login/login',
     register: './src/pages/register/register',
-    room_details: './src/pages/room-details/room-details',
-    search_room_filter: './src/pages/search-room-filter/search-room-filter',
+    roomDetails: './src/pages/room-details/room-details',
+    searchRoomFilter: './src/pages/search-room-filter/search-room-filter',
   },
   output: {
     filename: 'scripts/[name].js',

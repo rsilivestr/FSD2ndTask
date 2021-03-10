@@ -1,6 +1,6 @@
-import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskDropdown from 'Components/dropdown/FSD2ndTaskDropdown';
+import Datepicker from 'Components/date-dropdown/Datepicker';
+import Dropdown from 'Components/dropdown/Dropdown';
 
-new FSD2ndTaskDatepicker('.js-booking-datepicker');
+new Datepicker('.js-booking-datepicker');
 
-new FSD2ndTaskDropdown('.js-booking-form-dropdown');
+new Dropdown('.js-booking-form-dropdown');

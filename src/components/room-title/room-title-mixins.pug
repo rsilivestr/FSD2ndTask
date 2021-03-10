@@ -1,0 +1,8 @@
+mixin roomNumber(number, lux)
+  span.room-title__number № #{number}
+  if (lux)
+    span.room-title__lux люкс
+
+mixin price(price)
+  span.room-title__price #{price}₽
+    span.room-title__price-period в сутки

@@ -1,3 +1,3 @@
-import FSD2ndTaskMaskedDate from 'Components/masked-date/FSD2ndTaskMaskedDate';
+import Datemask from 'Components/masked-date/Datemask';
 
-new FSD2ndTaskMaskedDate('.js-dob-masked');
+new Datemask('.js-dob-masked');

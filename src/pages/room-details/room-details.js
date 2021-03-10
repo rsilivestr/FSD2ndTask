@@ -1,4 +1,7 @@
 import 'Components/form/--type/booking/booking';
+import Header from 'Components/header/Header';
+
+new Header();
 
 const UIwrap = document.querySelector('.room-details__rate-canvas-wrap'),
   UIgraphCanvas = document.querySelector('.room-details__rate-canvas');

@@ -1,4 +1,4 @@
-class FSD2ndTaskRating {
+class StarRating {
   constructor(el) {
     this._init(el);
   }
@@ -18,4 +18,4 @@ class FSD2ndTaskRating {
   }
 }
 
-export default FSD2ndTaskRating;
+export default StarRating;

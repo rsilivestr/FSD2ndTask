@@ -4,13 +4,9 @@ include ~Components/dropdown/dropdown
 
 mixin formSearchRoom
   form.form.form--type_search-room&attributes(attributes)
-    .form__title
-      h1 Найдём номера под ваши пожелания
-
+    h1.form__title Найдём номера под ваши пожелания
     +box({ mb: 21, stretch: true })
       +dateDropdown({ type: 'double', placeholder: 'ДД.ММ.ГГГГ' }).js-search-room-datepicker
-
     +box({ mb: 30, label: 'гости' })
       +dropdown.js-search-room-dropdown
-
     +buttonLink({ title: 'подобрать номер', style: 'arrowed', size: 'l', url: './search-room-filter.html' })

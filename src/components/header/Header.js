@@ -1,6 +1,6 @@
 import { CLASSES } from './constants';
 
-class FSD2ndTaskHeader {
+class Header {
   constructor(user = null) {
     this.user = user;
 
@@ -99,4 +99,4 @@ class FSD2ndTaskHeader {
   }
 }
 
-export default FSD2ndTaskHeader;
+export default Header;

@@ -1,6 +1,6 @@
-import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskDropdown from 'Components/dropdown/FSD2ndTaskDropdown';
+import Datepicker from 'Components/date-dropdown/Datepicker';
+import Dropdown from 'Components/dropdown/Dropdown';
 
-new FSD2ndTaskDatepicker('.js-search-room-datepicker');
+new Datepicker('.js-search-room-datepicker');
 
-new FSD2ndTaskDropdown('.js-search-room-dropdown');
+new Dropdown('.js-search-room-dropdown');

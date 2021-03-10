@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 
-class FSD2ndTaskRange {
+class Rangepicker {
   constructor(selector, options) {
     this._init(selector, options);
   }
@@ -52,4 +52,4 @@ class FSD2ndTaskRange {
   }
 }
 
-export default FSD2ndTaskRange;
+export default Rangepicker;

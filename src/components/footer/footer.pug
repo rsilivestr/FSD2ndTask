@@ -13,7 +13,7 @@ mixin footer(contents = {})
   footer.footer(class=hasBorder && "footer--has-border")&attributes(attributes)
     .footer__nav-section
       .footer__col
-        +logoToxin.footer__logo
+        +logo.footer__logo
         p.footer__text= text
       each subnav in nav
         - const { title, links } = subnav;
@@ -29,6 +29,6 @@ mixin footer(contents = {})
         p.footer__text= subscribeText
         +subscribeForm.footer__subscribe-form
     .footer__copy-section
-      +logoToxin.footer__copy-logo
+      +logo.footer__copy-logo
       p.footer__copy-text= copyText
       +socialLinks.footer__social

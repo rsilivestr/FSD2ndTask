@@ -3,7 +3,7 @@
 /* eslint-disable-next-line */
 import datepicker from 'air-datepicker';
 
-class FSD2ndTaskDatepicker {
+class Datepicker {
   constructor(selector, options = {}) {
     this._init(selector, options);
   }
@@ -143,4 +143,4 @@ class FSD2ndTaskDatepicker {
   }
 }
 
-export default FSD2ndTaskDatepicker;
+export default Datepicker;

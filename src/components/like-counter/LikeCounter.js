@@ -1,4 +1,4 @@
-class FSD2ndClassLikeCounter {
+class LikeCounter {
   constructor(element) {
     this._init(element);
   }
@@ -23,4 +23,4 @@ class FSD2ndClassLikeCounter {
   }
 }
 
-export default FSD2ndClassLikeCounter;
+export default LikeCounter;

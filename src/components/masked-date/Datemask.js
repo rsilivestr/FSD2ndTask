@@ -1,7 +1,7 @@
 import IMask from 'imask';
 import config from './config';
 
-class FSD2ndTaskMaskedDate {
+class Datemask {
   constructor(selector) {
     this._init(selector);
   }
@@ -13,4 +13,4 @@ class FSD2ndTaskMaskedDate {
   }
 }
 
-export default FSD2ndTaskMaskedDate;
+export default Datemask;

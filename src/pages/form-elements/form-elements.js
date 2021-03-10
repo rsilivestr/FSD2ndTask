@@ -1,31 +1,31 @@
-import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskRange from 'Components/range/FSD2ndTaskRange';
-import FSD2ndTaskMaskedDate from 'Components/masked-date/FSD2ndTaskMaskedDate';
-import FSD2ndTaskDropdown from 'Components/dropdown/FSD2ndTaskDropdown';
-import FSD2ndTaskSpoiler from 'Components/spoiler/FSD2ndTaskSpoiler';
-import FSD2ndClassLikeCounter from 'Components/like-counter/FSD2ndClassLikeCounter';
-import FSD2ndTaskRating from 'Components/star-rating/FSD2ndTaskRating';
+import Datepicker from 'Components/date-dropdown/Datepicker';
+import Dropdown from 'Components/dropdown/Dropdown';
+import Rangepicker from 'Components/range/Rangepicker';
+import Datemask from 'Components/masked-date/Datemask';
+import Spoiler from 'Components/spoiler/Spoiler';
+import LikeCounter from 'Components/like-counter/LikeCounter';
+import StarRating from 'Components/star-rating/StarRating';
 
-new FSD2ndTaskDatepicker('.js-datepicker-double');
+new Datepicker('.js-datepicker-double');
 
-new FSD2ndTaskDatepicker('.js-datepicker-range', { range: true, size: 'm' });
+new Datepicker('.js-datepicker-range', { range: true, size: 'm' });
 
-new FSD2ndTaskRange('.js-rangepicker');
+new Rangepicker('.js-rangepicker');
 
-new FSD2ndTaskMaskedDate('.js-masked-date');
+new Datemask('.js-masked-date');
 
-new FSD2ndTaskDropdown(document.querySelector('.js-dropdown-1'));
+new Dropdown(document.querySelector('.js-dropdown-1'));
 
-new FSD2ndTaskDropdown(document.querySelector('.js-dropdown-2'), {
+new Dropdown(document.querySelector('.js-dropdown-2'), {
   type: 'multi',
 });
 
 Array.from(document.querySelectorAll('.js-spoiler')).forEach(
-  (spoiler) => new FSD2ndTaskSpoiler(spoiler)
+  (spoiler) => new Spoiler(spoiler)
 );
 
 Array.from(document.querySelectorAll('.js-like')).forEach(
-  (like) => new FSD2ndClassLikeCounter(like)
+  (like) => new LikeCounter(like)
 );
 
-new FSD2ndTaskRating(document.querySelector('.js-rating'));
+new StarRating(document.querySelector('.js-rating'));

@@ -1,15 +1,15 @@
 import 'Components/form/--type/booking/booking';
 import 'Components/form/--type/registration/registration';
 import 'Components/form/--type/search-room/search-room';
-import FSD2ndTaskDatepicker from 'Components/date-dropdown/FSD2ndTaskDatepicker';
-import FSD2ndTaskRoomSlider from 'Components/room-card/FSD2ndTaskRoomSlider';
+import Datepicker from 'Components/date-dropdown/Datepicker';
+import RoomSlider from 'Components/room-card/RoomSlider';
 
-new FSD2ndTaskDatepicker('.js-datepicker-static');
+new Datepicker('.js-datepicker-static');
 
 const roomCardSliders = Array.from(
   document.querySelectorAll('.room-card__photos')
 );
-roomCardSliders.forEach((slider) => new FSD2ndTaskRoomSlider(slider));
+roomCardSliders.forEach((slider) => new RoomSlider(slider));
 
 // Get datepicker elements
 const container = document.querySelector('.js-datepicker-static');
