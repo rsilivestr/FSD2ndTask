@@ -4,11 +4,11 @@ class StarRating {
   }
 
   _setRating(target) {
-    if (target.classList.contains('star-rating__star')) {
-      this.activeStar.classList.remove('star-rating__star--active');
-      this.activeStar = target;
-      this.activeStar.classList.add('star-rating__star--active');
-    }
+    if (!target.classList.contains('star-rating__star')) return;
+
+    this.activeStar.classList.remove('star-rating__star--active');
+    this.activeStar = target;
+    this.activeStar.classList.add('star-rating__star--active');
   }
 
   _init(el) {

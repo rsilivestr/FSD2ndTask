@@ -8,17 +8,20 @@ class Dropdown {
     this._init(element, options);
   }
 
+  _isNumberCaseFew(number) {
+    return (
+      number % 10 > 1 &&
+      number % 10 < 5 &&
+      (number % 100 < 10 || number % 100 > 20)
+    );
+  }
+
   _chooseWordCase(number, { single, few, many }) {
     if (number % 100 === 11) return many;
 
     if (number % 10 === 1) return single;
 
-    if (
-      number % 10 > 1 &&
-      number % 10 < 5 &&
-      (number % 100 < 10 || number % 100 > 20)
-    )
-      return few;
+    if (this._isNumberCaseFew(number)) return few;
 
     return many;
   }
@@ -40,7 +43,7 @@ class Dropdown {
     return values;
   }
 
-  _getStrings() {
+  _getItemValueStrings() {
     const items = Array.from(
       this.dropdown.querySelectorAll(this.selectors.listItem)
     );
@@ -57,22 +60,18 @@ class Dropdown {
   }
 
   _applyMulti() {
-    const strings = this._getStrings();
+    const strings = this._getItemValueStrings();
 
-    this.input.value = '';
-
-    strings.forEach((string) => {
-      if (string[0] !== '0') {
-        if (this.input.value === '') this.input.value = string;
-        else this.input.value += `, ${string}`;
-      }
-    });
+    this.input.value = strings.filter((string) => string[0] !== '0').join(', ');
   }
 
-  _apply() {
+  _getSum() {
     const values = this._getValues();
-    // Get sum of list item values
-    const sum = values.reduce((a, b) => a + b, 0);
+    return values.reduce((a, b) => a + b, 0);
+  }
+
+  _setInputValue() {
+    const sum = this._getSum();
 
     if (sum > 0) {
       // Set input value
@@ -81,26 +80,27 @@ class Dropdown {
       // Clear input
       this.input.value = '';
     }
+  }
 
+  _apply() {
+    this._setInputValue();
     this._updateClearBtn();
-
     this._toggleDropdown();
   }
 
   _clear() {
     const items = this.dropdown.querySelectorAll(this.selectors.listItemValue);
-    // Clear list item values
-    items.forEach((item) => (item.value = '0'));
-    // Clear input
-    this.input.value = '';
 
-    this._updateClearBtn();
+    items.forEach((item) => (item.value = item.parentElement.dataset.min));
+
+    this._apply();
   }
 
   _updateListItem(item) {
     const value = item.querySelector(this.selectors.listItemValue).value;
     const addBtn = item.querySelector(this.selectors.addBtn);
     const subtractBtn = item.querySelector(this.selectors.subtractBtn);
+
     // Enable / disable buttons
     if (value === item.dataset.min) {
       subtractBtn.classList.add(this.classes.disabledBtn);
@@ -121,45 +121,56 @@ class Dropdown {
   }
 
   _updateClearBtn() {
-    if (this.input.value === '') {
+    const itemInputs = Array.from(
+      this.dropdown.querySelectorAll(this.selectors.listItemValue)
+    );
+    const notMin = itemInputs.filter(
+      (input) => input.value !== input.parentElement.dataset.min
+    );
+
+    if (notMin.length === 0) {
       this.clearBtn.classList.add(this.classes.hiddenBtn);
     } else {
       this.clearBtn.classList.remove(this.classes.hiddenBtn);
     }
   }
 
+  _isButtonDisabled(btn) {
+    return !btn || btn.classList.contains(this.classes.disabledBtn);
+  }
+
   _subtract(e) {
-    const currentListItem = e.target.closest(this.selectors.listItem);
-
     const btn = e.target.closest(this.selectors.subtractBtn);
-    if (btn) {
-      if (!btn.classList.contains(this.classes.disabledBtn)) {
-        const valueInput = e.target.nextElementSibling;
-        const value = parseInt(valueInput.value);
-        // Update value
-        valueInput.value = (value - 1).toString();
 
-        this._updateListItem(currentListItem);
-      }
-    }
+    if (this._isButtonDisabled(btn)) return;
+
+    const currentListItem = btn.closest(this.selectors.listItem);
+    const valueInput = currentListItem.querySelector(
+      this.selectors.listItemValue
+    );
+
+    const value = parseInt(valueInput.value);
+    valueInput.value = (value - 1).toString();
+
+    this._updateListItem(currentListItem);
 
     if (this.type === 'multi') this._applyMulti();
   }
 
   _add(e) {
-    const currentListItem = e.target.closest(this.selectors.listItem);
-
     const btn = e.target.closest(this.selectors.addBtn);
-    if (btn) {
-      if (!btn.classList.contains(this.classes.disabledBtn)) {
-        const valueInput = e.target.previousElementSibling;
-        const value = parseInt(valueInput.value);
 
-        valueInput.value = (value + 1).toString();
+    if (this._isButtonDisabled(btn)) return;
 
-        this._updateListItem(currentListItem);
-      }
-    }
+    const currentListItem = btn.closest(this.selectors.listItem);
+    const valueInput = currentListItem.querySelector(
+      this.selectors.listItemValue
+    );
+
+    const value = parseInt(valueInput.value);
+    valueInput.value = (value + 1).toString();
+
+    this._updateListItem(currentListItem);
 
     if (this.type === 'multi') this._applyMulti();
   }
