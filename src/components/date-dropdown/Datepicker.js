@@ -9,24 +9,22 @@ class Datepicker {
   }
 
   _createButtons() {
-    const buttons = document.createElement('div');
-    buttons.className = 'datepicker__buttons-panel';
-
     const clearBtn = document.createElement('button');
     clearBtn.className =
       'button button--style_text button--size_auto datepicker__clear-btn';
     clearBtn.innerText = 'очистить';
-    buttons.appendChild(clearBtn);
+    this.UI.clearBtn = clearBtn;
 
     const applyBtn = document.createElement('button');
     applyBtn.className =
       'button button--style_text button--size_auto datepicker__apply-btn';
     applyBtn.innerText = 'применить';
-    buttons.appendChild(applyBtn);
-
-    // Save button elements' references
-    this.UI.clearBtn = clearBtn;
     this.UI.applyBtn = applyBtn;
+
+    const buttons = document.createElement('div');
+    buttons.className = 'datepicker__buttons-panel';
+    buttons.appendChild(clearBtn);
+    buttons.appendChild(applyBtn);
 
     return buttons;
   }
@@ -40,28 +38,37 @@ class Datepicker {
   }
 
   _fillRangeInput() {
-    // Date format options
     const options = { day: 'numeric', month: 'short' };
-    const startDate = new Intl.DateTimeFormat('ru-RU', options)
-      .format(this.picker.selectedDates[0])
-      // Remove dot after month
-      .slice(0, -1);
-    const endDate = new Intl.DateTimeFormat('ru-RU', options)
-      .format(this.picker.selectedDates[1])
-      .slice(0, -1);
-    // Set input value
-    this.UI.input.value = `${startDate} — ${endDate}`;
-    // Hide calendar
+
+    const [startDate, endDate] = this.picker.selectedDates;
+
+    if (startDate === undefined || endDate === undefined) {
+      this._clearRangeInput();
+    } else {
+      const startDateString = new Date(startDate)
+        .toLocaleDateString('ru-RU', options)
+        // Remove dot after the month
+        .slice(0, -1);
+
+      const endDateString = new Date(endDate)
+        .toLocaleDateString('ru-RU', options)
+        .slice(0, -1);
+
+      this.UI.input.value = `${startDateString} — ${endDateString}`;
+    }
+
     this._hidePicker();
   }
 
   _fillInputs() {
-    const startDate = this.picker.selectedDates[0];
-    const endDate = this.picker.selectedDates[1];
-    // Set inputs' values
-    this.UI.inputStartDate.value =
-      startDate && startDate.toLocaleDateString('ru-RU');
-    this.UI.inputEndDate.value = endDate && endDate.toLocaleDateString('ru-RU');
+    const [startDate, endDate] = this.picker.selectedDates;
+
+    if (startDate === undefined || endDate === undefined) {
+      this._clearInputs();
+    } else {
+      this.UI.inputStartDate.value = startDate.toLocaleDateString('ru-RU');
+      this.UI.inputEndDate.value = endDate.toLocaleDateString('ru-RU');
+    }
 
     this._hidePicker();
   }
@@ -80,7 +87,6 @@ class Datepicker {
   }
 
   _addListeners() {
-    // Toggle datepicker
     if (this.range) {
       this.UI.input.addEventListener('click', () => this._togglePicker());
     } else {
@@ -91,13 +97,13 @@ class Datepicker {
         this._togglePicker()
       );
     }
-    // Clear inputs
+
     if (this.range) {
       this.UI.clearBtn.addEventListener('click', () => this._clearRangeInput());
     } else {
       this.UI.clearBtn.addEventListener('click', () => this._clearInputs());
     }
-    // Fill inputs
+
     if (this.range) {
       this.UI.applyBtn.addEventListener('click', () => this._fillRangeInput());
     } else {
@@ -109,17 +115,17 @@ class Datepicker {
     this.range = options.range || false;
     this.size = options.size || 'l';
     this.UI = {};
-    // Get container element
+
     this.UI.container = document.querySelector(selector);
+
     if (this.range) {
       this.UI.input = this.UI.container.querySelector('input');
     } else {
-      // Get start and end date inputs
       const inputs = this.UI.container.querySelectorAll('input');
       this.UI.inputStartDate = inputs[0];
       this.UI.inputEndDate = inputs[1];
     }
-    // Create calendar
+
     $(this.UI.container).datepicker({
       prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
       nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
@@ -132,13 +138,12 @@ class Datepicker {
       range: true,
       classes: `datepicker--size_${this.size}`,
     });
-    // Access datepicker instance data
+
     this.picker = $(selector).datepicker().data('datepicker');
-    // Get calendar element
+
     this.UI.picker = this.picker.$datepicker[0];
-    // Append buttons
     this.UI.picker.appendChild(this._createButtons());
-    // Add event listeners
+
     this._addListeners();
   }
 }
