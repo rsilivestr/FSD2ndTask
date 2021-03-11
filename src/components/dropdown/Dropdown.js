@@ -28,9 +28,9 @@ class Dropdown {
 
   _guestCase(sum) {
     return this._chooseWordCase(sum, {
-      single: ' гость',
-      few: ' гостя',
-      many: ' гостей',
+      single: 'гость',
+      few: 'гостя',
+      many: 'гостей',
     });
   }
 
@@ -73,11 +73,8 @@ class Dropdown {
   _setInputValue() {
     const sum = this._getSum();
 
-    if (sum > 0) {
-      this.input.value = sum.toString() + this._guestCase(sum);
-    } else {
-      this.input.value = '';
-    }
+    this.input.value =
+      sum > 0 ? `${sum.toString()} ${this._guestCase(sum)}` : '';
   }
 
   _apply() {
@@ -177,8 +174,8 @@ class Dropdown {
   }
 
   _close(e) {
-    const el = e.target.closest(this.selectors.dropdown);
-    if (el !== this.dropdown) {
+    const dropdown = e.target.closest(this.selectors.dropdown);
+    if (dropdown !== this.dropdown) {
       this.list.classList.remove(this.classes.visibleList);
     }
   }
@@ -197,9 +194,8 @@ class Dropdown {
   }
 
   _init(element, options) {
-    if (typeof element === 'string')
-      this.dropdown = document.querySelector(element);
-    else this.dropdown = element;
+    this.dropdown =
+      typeof element === 'string' ? document.querySelector(element) : element;
 
     this.type = options.type || 'single';
     this.selectors = options.selectors || DROPDOWN_DEFAULT_SELECTORS;
@@ -211,6 +207,8 @@ class Dropdown {
     if (this.type === 'single') {
       this.applyBtn = this.dropdown.querySelector(this.selectors.applyBtn);
       this.clearBtn = this.dropdown.querySelector(this.selectors.clearBtn);
+
+      this._updateClearBtn();
     } else {
       this._applyMulti();
     }
