@@ -1,4 +1,5 @@
 import IMask from 'imask';
+
 import config from './config';
 
 class Datemask {

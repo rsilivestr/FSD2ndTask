@@ -1,9 +1,9 @@
+import Datemask from 'Components/masked-date/Datemask';
 import Datepicker from 'Components/date-dropdown/Datepicker';
 import Dropdown from 'Components/dropdown/Dropdown';
-import Rangepicker from 'Components/range/Rangepicker';
-import Datemask from 'Components/masked-date/Datemask';
-import Spoiler from 'Components/spoiler/Spoiler';
 import LikeCounter from 'Components/like-counter/LikeCounter';
+import Rangepicker from 'Components/range/Rangepicker';
+import Spoiler from 'Components/spoiler/Spoiler';
 import StarRating from 'Components/star-rating/StarRating';
 
 new Datepicker('.js-datepicker-double');
