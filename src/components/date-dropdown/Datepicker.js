@@ -38,13 +38,13 @@ class Datepicker {
   }
 
   _fillRangeInput() {
-    const options = { day: 'numeric', month: 'short' };
-
     const [startDate, endDate] = this.picker.selectedDates;
 
     if (startDate === undefined || endDate === undefined) {
       this._clearRangeInput();
     } else {
+      const options = { day: 'numeric', month: 'short' };
+
       const startDateString = new Date(startDate)
         .toLocaleDateString('ru-RU', options)
         // Remove dot after the month

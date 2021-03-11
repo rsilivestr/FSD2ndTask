@@ -74,10 +74,8 @@ class Dropdown {
     const sum = this._getSum();
 
     if (sum > 0) {
-      // Set input value
       this.input.value = sum.toString() + this._guestCase(sum);
     } else {
-      // Clear input
       this.input.value = '';
     }
   }
@@ -101,7 +99,6 @@ class Dropdown {
     const addBtn = item.querySelector(this.selectors.addBtn);
     const subtractBtn = item.querySelector(this.selectors.subtractBtn);
 
-    // Enable / disable buttons
     if (value === item.dataset.min) {
       subtractBtn.classList.add(this.classes.disabledBtn);
       addBtn.classList.remove(this.classes.disabledBtn);
