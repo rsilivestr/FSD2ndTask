@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 import SLIDER_DEFAULT_SELECTORS from './defaults';
 
 class RoomSlider {
@@ -21,6 +23,7 @@ class RoomSlider {
     });
   }
 
+  @boundMethod
   _handleNavClick(e) {
     this.UI.navButtons.forEach((button, index) => {
       if (button === e.target) {
@@ -32,6 +35,7 @@ class RoomSlider {
     });
   }
 
+  @boundMethod
   _handleControlClick(e) {
     const target = e.target.closest(this.selectors.control);
 
@@ -79,10 +83,8 @@ class RoomSlider {
       (slide, index) => (slide.style.left = `${100 * index}%`)
     );
 
-    this.UI.nav.addEventListener('click', (e) => this._handleNavClick(e));
-    this.UI.slider.addEventListener('click', (e) =>
-      this._handleControlClick(e)
-    );
+    this.UI.nav.addEventListener('click', this._handleNavClick);
+    this.UI.slider.addEventListener('click', this._handleControlClick);
   }
 }
 

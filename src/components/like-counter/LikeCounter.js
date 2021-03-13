@@ -1,8 +1,11 @@
+import { boundMethod } from 'autobind-decorator';
+
 class LikeCounter {
   constructor(element) {
     this._init(element);
   }
 
+  @boundMethod
   _updateValue() {
     if (this.checkbox.checked) {
       this.counter.textContent = (this.value + 1).toString();
@@ -19,7 +22,7 @@ class LikeCounter {
     this.counter = element.querySelector('.js-like-counter__value');
     this.value = parseInt(this.counter.textContent, 10);
 
-    this.checkbox.addEventListener('change', () => this._updateValue());
+    this.checkbox.addEventListener('change', this._updateValue);
   }
 }
 

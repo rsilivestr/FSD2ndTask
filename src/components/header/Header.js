@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 import { CLASSES } from './constants';
 
 class Header {
@@ -69,6 +71,7 @@ class Header {
     }
   }
 
+  @boundMethod
   _resizeHeader() {
     if (window.innerWidth < 920 && this.isDesktop) {
       // Toggle mobile layout
@@ -86,16 +89,17 @@ class Header {
     }
   }
 
+  @boundMethod
   _toggleNav() {
     this.UI.nav.classList.toggle(CLASSES.navOpen);
   }
 
   _addListeners() {
     // Update layout on resize
-    window.addEventListener('resize', () => this._resizeHeader());
+    window.addEventListener('resize', this._resizeHeader);
 
     // Toggle menu on click
-    this.UI.menuBtn.addEventListener('click', () => this._toggleNav());
+    this.UI.menuBtn.addEventListener('click', this._toggleNav);
   }
 }
 

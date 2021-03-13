@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 import {
   DROPDOWN_DEFAULT_SELECTORS,
   DROPDOWN_DEFAULT_CLASSES,
@@ -77,12 +79,14 @@ class Dropdown {
       sum > 0 ? `${sum.toString()} ${this._guestCase(sum)}` : '';
   }
 
+  @boundMethod
   _apply() {
     this._setInputValue();
     this._updateClearBtn();
     this._toggleDropdown();
   }
 
+  @boundMethod
   _clear() {
     const items = this.dropdown.querySelectorAll(this.selectors.listItemValue);
 
@@ -142,6 +146,7 @@ class Dropdown {
     return !btn || btn.classList.contains(this.classes.disabledBtn);
   }
 
+  @boundMethod
   _subtract(e) {
     const btn = e.target.closest(this.selectors.subtractBtn);
 
@@ -160,6 +165,7 @@ class Dropdown {
     if (this.type === 'multi') this._applyMulti();
   }
 
+  @boundMethod
   _add(e) {
     const btn = e.target.closest(this.selectors.addBtn);
 
@@ -178,10 +184,12 @@ class Dropdown {
     if (this.type === 'multi') this._applyMulti();
   }
 
+  @boundMethod
   _toggleDropdown() {
     this.list.classList.toggle(this.classes.visibleList);
   }
 
+  @boundMethod
   _close(e) {
     const dropdown = e.target.closest(this.selectors.dropdown);
     if (dropdown !== this.dropdown) {
@@ -190,16 +198,16 @@ class Dropdown {
   }
 
   _addListeners() {
-    this.input.addEventListener('click', () => this._toggleDropdown());
-    this.list.addEventListener('click', (e) => this._subtract(e));
-    this.list.addEventListener('click', (e) => this._add(e));
+    this.input.addEventListener('click', this._toggleDropdown);
+    this.list.addEventListener('click', this._subtract);
+    this.list.addEventListener('click', this._add);
 
     if (this.type === 'single') {
-      this.applyBtn.addEventListener('click', () => this._apply());
-      this.clearBtn.addEventListener('click', () => this._clear());
+      this.applyBtn.addEventListener('click', this._apply);
+      this.clearBtn.addEventListener('click', this._clear);
     }
 
-    document.body.addEventListener('click', (e) => this._close(e));
+    document.body.addEventListener('click', this._close);
   }
 
   _init(element, options) {

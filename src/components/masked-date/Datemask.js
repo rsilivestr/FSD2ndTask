@@ -10,7 +10,7 @@ class Datemask {
   _init(selector) {
     const input = document.querySelector(selector);
 
-    IMask(input, config);
+    new IMask(input, config);
   }
 }
 

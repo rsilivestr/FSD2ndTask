@@ -2,6 +2,7 @@
 // eslint rule no-unused-vars throws a false positive
 /* eslint-disable-next-line */
 import datepicker from 'air-datepicker';
+import { boundMethod } from 'autobind-decorator';
 
 class Datepicker {
   constructor(selector, options = {}) {
@@ -29,6 +30,7 @@ class Datepicker {
     return buttons;
   }
 
+  @boundMethod
   _togglePicker() {
     this.UI.picker.parentElement.classList.toggle('datepicker-inline--visible');
   }
@@ -37,6 +39,7 @@ class Datepicker {
     this.UI.picker.parentElement.classList.remove('datepicker-inline--visible');
   }
 
+  @boundMethod
   _fillRangeInput() {
     const [startDate, endDate] = this.picker.selectedDates;
 
@@ -60,6 +63,7 @@ class Datepicker {
     this._hidePicker();
   }
 
+  @boundMethod
   _fillInputs() {
     const [startDate, endDate] = this.picker.selectedDates;
 
@@ -73,12 +77,14 @@ class Datepicker {
     this._hidePicker();
   }
 
+  @boundMethod
   _clearRangeInput() {
     this.UI.input.value = '';
 
     this.picker.clear();
   }
 
+  @boundMethod
   _clearInputs() {
     this.UI.inputStartDate.value = '';
     this.UI.inputEndDate.value = '';
@@ -88,26 +94,22 @@ class Datepicker {
 
   _addListeners() {
     if (this.range) {
-      this.UI.input.addEventListener('click', () => this._togglePicker());
+      this.UI.input.addEventListener('click', this._togglePicker);
     } else {
-      this.UI.inputStartDate.addEventListener('click', () =>
-        this._togglePicker()
-      );
-      this.UI.inputEndDate.addEventListener('click', () =>
-        this._togglePicker()
-      );
+      this.UI.inputStartDate.addEventListener('click', this._togglePicker);
+      this.UI.inputEndDate.addEventListener('click', this._togglePicker);
     }
 
     if (this.range) {
-      this.UI.clearBtn.addEventListener('click', () => this._clearRangeInput());
+      this.UI.clearBtn.addEventListener('click', this._clearRangeInput);
     } else {
-      this.UI.clearBtn.addEventListener('click', () => this._clearInputs());
+      this.UI.clearBtn.addEventListener('click', this._clearInputs);
     }
 
     if (this.range) {
-      this.UI.applyBtn.addEventListener('click', () => this._fillRangeInput());
+      this.UI.applyBtn.addEventListener('click', this._fillRangeInput);
     } else {
-      this.UI.applyBtn.addEventListener('click', () => this._fillInputs());
+      this.UI.applyBtn.addEventListener('click', this._fillInputs);
     }
   }
 

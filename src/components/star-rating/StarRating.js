@@ -1,9 +1,14 @@
+import { boundMethod } from 'autobind-decorator';
+
 class StarRating {
   constructor(el) {
     this._init(el);
   }
 
-  _setRating(target) {
+  @boundMethod
+  _setRating(e) {
+    const target = e.target;
+
     if (!target.classList.contains('star-rating__star')) return;
 
     this.activeStar.classList.remove('star-rating__star--active');
@@ -16,7 +21,7 @@ class StarRating {
   _init(el) {
     this.activeStar = el.querySelector('.js-star-rating__star--active');
 
-    el.addEventListener('click', (e) => this._setRating(e.target));
+    el.addEventListener('click', this._setRating);
   }
 }
 
