@@ -11,7 +11,9 @@ mixin header(contents = {})
   header.header(class=hasShadow && "header--has-shadow")&attributes(attributes)
     .header__wrapper
       +logo.header__logo
-      button.header__btn.header__btn--type_menu.header__btn--type_iconic
+      button.header__btn.header__btn--type_menu.header__btn--type_iconic(
+        type='button'
+      )
         i.material-icons menu
       nav.header__nav
         each link in nav

@@ -13,7 +13,10 @@ mixin pagination(contents = {})
     } = mergedContents;
 
   .pagination
-    button.pagination__control(class=!controls.left && "pagination__control--hidden")
+    button.pagination__control(
+      type='button',
+      class=!controls.left && "pagination__control--hidden"
+    )
       i.material-icons arrow_back
     each link in pagesLeft
       - const { url, active, number } = link;
@@ -22,6 +25,9 @@ mixin pagination(contents = {})
     each link in pagesRight
       - const { url, active, number } = link;
       a.pagination__link(href=url, class=active && "pagination__link--active")= number
-    button.pagination__control(class=!controls.right && "pagination__control--hidden")
+    button.pagination__control(
+      type='button',
+      class=!controls.right && "pagination__control--hidden"
+    )
       i.material-icons arrow_forward
     p.pagination__tooltip= `${resultsRange[0]} – ${resultsRange[1]} из ${resultsTotal} вариантов аренды`

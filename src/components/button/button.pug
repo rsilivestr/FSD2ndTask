@@ -2,12 +2,14 @@ mixin button(options = {})
   -
     const { 
       title = 'click me',
+      type = 'button',
       style = 'gradient',
       size = 's',
       disabled = false
     } = options;
 
   button(
+    type={ type },
     class=`
       button 
       button--style_${style}
@@ -20,6 +22,7 @@ mixin buttonLink(options = {})
   -
     const { 
       title = 'click me',
+      type = 'button',
       style = 'gradient',
       size = 's',
       disabled = false,
@@ -27,6 +30,7 @@ mixin buttonLink(options = {})
     } = options;
 
   a(
+    type={ type },
     class=`
       button
       button--style_${style}

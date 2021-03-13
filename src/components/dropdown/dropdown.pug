@@ -34,10 +34,10 @@ mixin dropdown(options = {}, forceOpen = false)
           data-many=nameMany
         )
           span.dropdown__option-name= name
-          button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled -
+          button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled(type='button') -
           input.dropdown__option-value(value=value || min)
-          button.dropdown__option-control.dropdown__option-control--add +
+          button.dropdown__option-control.dropdown__option-control--add(type='button') +
 
       if type === 'single'
-        button.dropdown__btn.dropdown__btn--clear.dropdown__btn--hidden очистить
-        button.dropdown__btn.dropdown__btn--apply применить
+        button.dropdown__btn.dropdown__btn--clear.dropdown__btn--hidden(type='button') очистить
+        button.dropdown__btn.dropdown__btn--apply(type='button') применить
