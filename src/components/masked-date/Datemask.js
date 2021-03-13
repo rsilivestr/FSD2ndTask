@@ -11,8 +11,6 @@ class Datemask {
     const input = document.querySelector(selector);
 
     IMask(input, config);
-
-    console.log(123);
   }
 }
 

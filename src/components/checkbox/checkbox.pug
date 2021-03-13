@@ -1,8 +1,8 @@
 mixin checkbox({ checked = false, label = 'Checkbox', text })
-  label.checkbox&attributes(attributes)
-    input.checkbox__input(type='checkbox', checked=checked)
-    span.checkbox__replacer
-    .checkbox__label
+  .checkbox&attributes(attributes)
+    label.checkbox__label
+      input.checkbox__input(type='checkbox', checked=checked)
+      span.checkbox__replacer
       span.checkbox__title(class=text && "checkbox__title--bold")= label
-      if (text)
-        span.checkbox__text= text
+    if (text)
+      span.checkbox__text= text
