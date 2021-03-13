@@ -2,7 +2,7 @@ mixin starRating({ value = 5, rateable, ratingValue })
   .star-rating(class=rateable && "star-rating--rateable")&attributes(attributes)
     each val in [5, 4, 3, 2, 1]
       if (val === value)
-        .star-rating__star.star-rating__star--active(
+        .star-rating__star.star-rating__star--active.js-star-rating__star--active(
           class=rateable && "star-rating__star--rateable"
         )
       else

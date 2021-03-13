@@ -1,5 +1,8 @@
 mixin likeCounter({ value = 0, checked = false })
   .like-counter&attributes(attributes)
-    input.like-counter__input(type='checkbox', checked=checked)
+    input.like-counter__input.js-like-counter__input(
+      type='checkbox',
+      checked=checked
+    )
     .like-counter__replacer
-      span.like-counter__value= value
+      span.like-counter__value.js-like-counter__value= value

@@ -9,7 +9,7 @@ class Spoiler {
 
   _init(element) {
     this.spoiler = element;
-    this.title = this.spoiler.querySelector('.spoiler__title');
+    this.title = this.spoiler.querySelector('.js-spoiler__title');
 
     this.title.addEventListener('click', () => this._toggleSpoiler());
   }

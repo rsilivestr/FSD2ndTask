@@ -1,5 +1,5 @@
 mixin spoiler({ title = 'Спойлер', isOpen = false })
   .spoiler(class=isOpen && "spoiler--is-open")&attributes(attributes)
-    h4.spoiler__title= title
+    h4.spoiler__title.js-spoiler__title= title
     .spoiler__contents
       block

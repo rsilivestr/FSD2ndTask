@@ -12,12 +12,12 @@ class Header {
     this.UI = {};
 
     // Set ui elements
-    this.UI.header = document.querySelector(`.${CLASSES.header}`);
-    this.UI.nav = this.UI.header.querySelector(`.${CLASSES.nav}`);
-    this.UI.loginBtn = document.querySelector(`.${CLASSES.btn.login}`);
-    this.UI.menuBtn = document.querySelector(`.${CLASSES.btn.menu}`);
-    this.UI.registerBtn = document.querySelector(`.${CLASSES.btn.register}`);
-    this.UI.accountBtn = document.querySelector(`.${CLASSES.btn.account}`);
+    this.UI.header = document.querySelector(`.js-${CLASSES.header}`);
+    this.UI.nav = this.UI.header.querySelector(`.js-${CLASSES.nav}`);
+    this.UI.loginBtn = document.querySelector(`.js-${CLASSES.btn.login}`);
+    this.UI.menuBtn = document.querySelector(`.js-${CLASSES.btn.menu}`);
+    this.UI.registerBtn = document.querySelector(`.js-${CLASSES.btn.register}`);
+    this.UI.accountBtn = document.querySelector(`.js-${CLASSES.btn.account}`);
 
     // Set current layout depending viewport width
     this.isDesktop = window.innerWidth > 920 ? true : false;

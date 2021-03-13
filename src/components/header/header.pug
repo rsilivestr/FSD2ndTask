@@ -8,14 +8,14 @@ mixin header(contents = {})
 
     const { nav, username, buttons, hasShadow } = mergedContents;
 
-  header.header(class=hasShadow && "header--has-shadow")&attributes(attributes)
+  header.header.js-header(class=hasShadow && "header--has-shadow")&attributes(attributes)
     .header__wrapper
       +logo.header__logo
-      button.header__btn.header__btn--type_menu.header__btn--type_iconic(
+      button.header__btn.header__btn--type_menu.js-header__btn--type_menu.header__btn--type_iconic(
         type='button'
       )
         i.material-icons menu
-      nav.header__nav
+      nav.header__nav.js-header__nav
         each link in nav
           - const { url, current, expandable, title } = link;
           a.header__navlink(
@@ -27,10 +27,10 @@ mixin header(contents = {})
         each button in buttons
           - const { icon, title, type, url } = button;
           a(
-            class=`header__btn header__btn--type_${type}`,
+            class=`header__btn header__btn--type_${type} js-header__btn--type_${type}`,
             data-icon=icon,
             data-name=title,
-            url=url
+            href=url
           )
       else
         .header__user-panel

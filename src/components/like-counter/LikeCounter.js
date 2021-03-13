@@ -15,8 +15,8 @@ class LikeCounter {
 
   _init(element) {
     this.el = element;
-    this.checkbox = element.querySelector('.like-counter__input');
-    this.counter = element.querySelector('.like-counter__value');
+    this.checkbox = element.querySelector('.js-like-counter__input');
+    this.counter = element.querySelector('.js-like-counter__value');
     this.value = parseInt(this.counter.textContent, 10);
 
     this.checkbox.addEventListener('change', () => this._updateValue());

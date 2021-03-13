@@ -98,13 +98,22 @@ class Dropdown {
 
     if (value === item.dataset.min) {
       subtractBtn.classList.add(this.classes.disabledBtn);
+      subtractBtn.classList.add(`js-${this.classes.disabledBtn}`);
+
       addBtn.classList.remove(this.classes.disabledBtn);
+      addBtn.classList.remove(`js-${this.classes.disabledBtn}`);
     } else if (value === item.dataset.max) {
       subtractBtn.classList.remove(this.classes.disabledBtn);
+      subtractBtn.classList.remove(`js-${this.classes.disabledBtn}`);
+
       addBtn.classList.add(this.classes.disabledBtn);
+      addBtn.classList.add(`js-${this.classes.disabledBtn}`);
     } else {
       subtractBtn.classList.remove(this.classes.disabledBtn);
+      subtractBtn.classList.remove(`js-${this.classes.disabledBtn}`);
+
       addBtn.classList.remove(this.classes.disabledBtn);
+      addBtn.classList.remove(`js-${this.classes.disabledBtn}`);
     }
   }
 

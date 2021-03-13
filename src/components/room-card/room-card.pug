@@ -14,24 +14,24 @@ mixin roomCard(config = {})
 
 
   .room-card&attributes(attributes)
-    .room-card__photos
+    .room-card__photos.js-room-card__photos
       .room-card__photos-ratio
-      button.room-card__control.room-card__control--direction_left(
+      button.room-card__control.room-card__control--direction_left.js-room-card__control.js-room-card__control--direction_left(
         type='button'
       )
         i.material-icons.room-card__icon-left arrow_back_ios
-      button.room-card__control.room-card__control--direction_right(
+      button.room-card__control.room-card__control--direction_right.js-room-card__control.js-room-card__control--direction_right(
         type='button'
       )
         i.material-icons.room-card__icon-right arrow_forward_ios
       each photo in photos
-        img.room-card__photo(
+        img.room-card__photo.js-room-card__photo(
           src=`../assets/images/${photo}`,
           alt='Фото комнаты'
         )
-      nav.room-card__nav
+      nav.room-card__nav.js-room-card__nav
         each photo, index in photos
-          button.room-card__navbtn(
+          button.room-card__navbtn.js-room-card__navbtn(
             type='button',
             class=index === 0 && "room-card__navbtn--current"
           )

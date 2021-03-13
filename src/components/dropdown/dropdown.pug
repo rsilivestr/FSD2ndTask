@@ -15,18 +15,20 @@ mixin dropdown(options = {}, forceOpen = false)
         ? DROPDOWN_DEFAULT_CONFIG
         : DROPDOWN_MULTI_DEFAULT_CONFIG;
 
-  .dropdown(class=forceOpen && "dropdown--force-open")&attributes(attributes)
-    input.dropdown__display.input(
+  .dropdown.js-dropdown(class=forceOpen && "dropdown--force-open")&attributes(attributes)
+    input.dropdown__display.js-dropdown__display.input(
       type='text',
       readonly,
       placeholder=placeholder
     )
-    .dropdown__contents(class=forceOpen && "dropdown__contents--force-visible")
+    .dropdown__contents.js-dropdown__contents(
+      class=forceOpen && "dropdown__contents--force-visible"
+    )
       each item in listItems
         -
           const { min, max, nameSingle, nameFew, nameMany, name, value } = item;
 
-        .dropdown__option(
+        .dropdown__option.js-dropdown__option(
           data-min=min,
           data-max=max,
           data-single=nameSingle,
@@ -34,10 +36,20 @@ mixin dropdown(options = {}, forceOpen = false)
           data-many=nameMany
         )
           span.dropdown__option-name= name
-          button.dropdown__option-control.dropdown__option-control--subtract.dropdown__option-control--disabled(type='button') -
-          input.dropdown__option-value(value=value || min)
-          button.dropdown__option-control.dropdown__option-control--add(type='button') +
+          button.dropdown__option-control.js-dropdown__option-control.dropdown__option-control--subtract.js-dropdown__option-control--subtract.dropdown__option-control--disabled.js-dropdown__option-control--disabled(
+            type='button'
+          ) -
+          input.dropdown__option-value.js-dropdown__option-value(
+            value=value || min
+          )
+          button.dropdown__option-control.js-dropdown__option-control.dropdown__option-control--add.js-dropdown__option-control--add(
+            type='button'
+          ) +
 
       if type === 'single'
-        button.dropdown__btn.dropdown__btn--clear.dropdown__btn--hidden(type='button') очистить
-        button.dropdown__btn.dropdown__btn--apply(type='button') применить
+        button.dropdown__btn.js-dropdown__btn.dropdown__btn--clear.js-dropdown__btn--clear.dropdown__btn--hidden(
+          type='button'
+        ) очистить
+        button.dropdown__btn.js-dropdown__btn.dropdown__btn--apply.js-dropdown__btn--apply(
+          type='button'
+        ) применить
