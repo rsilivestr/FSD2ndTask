@@ -1,10 +1,10 @@
 {
   "nav": [
-    { "title": "О нас", "url": "#some-url", "current": true },
-    { "title": "Услуги", "url": "#some-url", "expandable": true },
-    { "title": "Вакансии", "url": "#some-url" },
-    { "title": "Новости", "url": "#some-url" },
-    { "title": "Соглашения", "url": "#some-url", "expandable": true }
+    { "title": "О нас", "url": "/replace-me", "current": true },
+    { "title": "Услуги", "url": "/replace-me", "expandable": true },
+    { "title": "Вакансии", "url": "/replace-me" },
+    { "title": "Новости", "url": "/replace-me" },
+    { "title": "Соглашения", "url": "/replace-me", "expandable": true }
   ],
   "username": "",
   "buttons": [

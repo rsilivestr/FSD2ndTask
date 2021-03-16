@@ -6,20 +6,17 @@ mixin dropdown(options = {}, forceOpen = false)
     ] = require('Components/dropdown/defaults.pug.json');
 
     const { type = 'single' } = options;
-    const { placeholder } = options.placeholder && options
-      || type === 'single'
-        ? DROPDOWN_DEFAULT_CONFIG
-        : DROPDOWN_MULTI_DEFAULT_CONFIG;
-    const { listItems } = options.listItems && options
-      || type === 'single'
-        ? DROPDOWN_DEFAULT_CONFIG
-        : DROPDOWN_MULTI_DEFAULT_CONFIG;
+    const defaultOptions = type === 'single' ? DROPDOWN_DEFAULT_CONFIG : DROPDOWN_MULTI_DEFAULT_CONFIG;
+
+    const { placeholder } = options.placeholder ? options : defaultOptions;
+    const { listItems } = options.listItems ? options : defaultOptions;
 
   .dropdown.js-dropdown(class=forceOpen && "dropdown--force-open")&attributes(attributes)
     input.dropdown__display.js-dropdown__display.input(
       type='text',
       readonly,
-      placeholder=placeholder
+      placeholder=placeholder,
+      value=type === "single" ? "1 гость" : "2 спальни, 2 кровати"
     )
     .dropdown__contents.js-dropdown__contents(
       class=forceOpen && "dropdown__contents--force-visible"
@@ -40,6 +37,7 @@ mixin dropdown(options = {}, forceOpen = false)
             type='button'
           ) -
           input.dropdown__option-value.js-dropdown__option-value(
+            readonly,
             value=value || min
           )
           button.dropdown__option-control.js-dropdown__option-control.dropdown__option-control--add.js-dropdown__option-control--add(

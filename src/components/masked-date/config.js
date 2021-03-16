@@ -3,7 +3,7 @@ import IMask from 'imask';
 const CONFIG = {
   mask: Date,
   overwrite: true,
-  autofix: true,
+  autofix: false,
   blocks: {
     d: {
       mask: IMask.MaskedRange,

@@ -35,7 +35,7 @@ class Datepicker {
     this.UI.picker.parentElement.classList.toggle('datepicker-inline--visible');
   }
 
-  _hidePicker() {
+  _closePicker() {
     this.UI.picker.parentElement.classList.remove('datepicker-inline--visible');
   }
 
@@ -60,7 +60,7 @@ class Datepicker {
       this.UI.input.value = `${startDateString} — ${endDateString}`;
     }
 
-    this._hidePicker();
+    this._closePicker();
   }
 
   @boundMethod
@@ -74,7 +74,7 @@ class Datepicker {
       this.UI.inputEndDate.value = endDate.toLocaleDateString('ru-RU');
     }
 
-    this._hidePicker();
+    this._closePicker();
   }
 
   @boundMethod
@@ -92,28 +92,45 @@ class Datepicker {
     this.picker.clear();
   }
 
+  @boundMethod
+  _onOutsideClick(e) {
+    const target = e.target;
+
+    const isClickInside = !!target.closest(this.selector);
+    const isInputTargeted = !!target.closest('.date-dropdown__display');
+    const isDatepickerTargeted = !!target.closest('.datepicker');
+    const isDatepickerCellTargeted = target.classList.contains(
+      'datepicker--cell'
+    );
+    const isDateDropdownTargeted =
+      (isClickInside && isInputTargeted) ||
+      isDatepickerTargeted ||
+      isDatepickerCellTargeted;
+
+    if (!isDateDropdownTargeted) this._closePicker();
+  }
+
   _addListeners() {
     if (this.range) {
       this.UI.input.addEventListener('click', this._togglePicker);
+
+      this.UI.clearBtn.addEventListener('click', this._clearRangeInput);
+
+      this.UI.applyBtn.addEventListener('click', this._fillRangeInput);
     } else {
       this.UI.inputStartDate.addEventListener('click', this._togglePicker);
       this.UI.inputEndDate.addEventListener('click', this._togglePicker);
-    }
 
-    if (this.range) {
-      this.UI.clearBtn.addEventListener('click', this._clearRangeInput);
-    } else {
       this.UI.clearBtn.addEventListener('click', this._clearInputs);
-    }
 
-    if (this.range) {
-      this.UI.applyBtn.addEventListener('click', this._fillRangeInput);
-    } else {
       this.UI.applyBtn.addEventListener('click', this._fillInputs);
     }
+
+    document.body.addEventListener('click', this._onOutsideClick);
   }
 
   _init(selector, options) {
+    this.selector = selector;
     this.range = options.range || false;
     this.size = options.size || 'l';
     this.UI = {};
@@ -128,6 +145,8 @@ class Datepicker {
       this.UI.inputEndDate = inputs[1];
     }
 
+    const today = new Date();
+
     $(this.UI.container).datepicker({
       prevHtml: '<i class="material-icons datepicker__arrow">arrow_back</i>',
       nextHtml: '<i class="material-icons datepicker__arrow">arrow_forward</i>',
@@ -136,6 +155,7 @@ class Datepicker {
         months: 'yyyy',
         years: 'yyyy1 - yyyy2',
       },
+      minDate: today,
       multipleDates: 2,
       range: true,
       classes: `datepicker--size_${this.size}`,

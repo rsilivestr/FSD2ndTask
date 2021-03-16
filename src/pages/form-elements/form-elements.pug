@@ -95,9 +95,11 @@ block body
             h3 like button
           +box
             +box({ inline: true, width: 'auto', mr: 10 })
-              +likeCounter({ value: 2 }).js-like
+              +likeCounter({ value: 3.78e7 }).js-like
+            +box({ inline: true, width: 'auto', mr: 10 })
+              +likeCounter({ value: 829 }).js-like
             +box({ inline: true, width: 'auto' })
-              +likeCounter({ value: 12, checked: true }).js-like
+              +likeCounter({ value: 1258, checked: true }).js-like
 
         //- rate button
         +box({ mb: 15, label: 'rate button' })
@@ -117,7 +119,7 @@ block body
         +box({ width: 'l', mb: 40, label: 'buttons', labelMB: 15 })
           +box({ mb: 30 })
             +box({ inline: true, width: 'xs', mr: 20 })
-              +button 
+              +button
             +box({ inline: true, width: 'xs' })
               +button({ title: 'click me', style: 'gradient', size: 's', disabled: true })
           +box({ mb: 30 })
@@ -169,19 +171,23 @@ block body
         //- expandable checkbox list
         +box({ width: 'm', mb: 40 })
           +spoiler({ title: 'Expandable checkbox list' }).js-spoiler
-            each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-              +checkbox({ label })
+            ul.checkbox-list
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+                li
+                  +checkbox({ label })
 
         //- expanded expandable checkbox list
         +box({ width: 'm', mb: 40 })
           +spoiler({ title: 'Expandable checkbox list', isOpen: true }).js-spoiler
-            each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
-              +checkbox({ label })
+            ul.checkbox-list
+              each label in ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']
+                li
+                  +checkbox({ label })
 
       //- c 2 --------------------------------------//
 
       div
-        //- rich checkbox buttons
+        //- rich checkbox
         +box({ mb: 15, mt: 5, label: 'rich checkbox buttons', labelMB: 15 })
           +box({ mb: 10 })
             +checkbox({ label: 'Широкий коридор', text: 'Ширина коридоров в номере\nне менее 91 см.', })

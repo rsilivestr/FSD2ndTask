@@ -46,8 +46,10 @@ block body
         //- expandable checkbox group
         +box({ mb: 30 })
           +spoiler({ title: 'дополнительные удобства'}).js-spoiler
-            each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
-              +checkbox({ label })
+            ul.checkbox-list
+              each label in ['Завтрак','Письменный стол','Стул для кормления','Кроватка','Телевизор','Шампунь']
+                li
+                  +checkbox({ label })
         //- button to apply filters
         +button({ title: 'применить фильтры', style: 'gradient', size: 'm' })
 

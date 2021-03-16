@@ -1,5 +1,9 @@
 mixin socialLinks
   .social-links&attributes(attributes)
     each iconName in ['twitter', 'facebook-squared', 'instagram']
-      a.social-links__link(href='#some-url', rel='noreferrer', target='_blank')
+      a.social-links__link(
+        href='/replace-me',
+        rel='noreferrer',
+        target='_blank'
+      )
         i(class=`social-links__icon icon-${iconName}`)

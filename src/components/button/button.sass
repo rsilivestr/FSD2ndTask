@@ -31,16 +31,19 @@
         background: $mainGradient50
 
     &_gradient
-      padding: 0 18px
+      padding: 0 1.8rem
 
-    &_arrowed::after
-      @extend .centered-flex
-      @extend .material-icons
-      position: absolute
-      width: 44px
-      right: 0
-      content: '\e5c8'
-      color: #fff
+    &_arrowed
+      padding: 0 4.4rem
+
+      &::after
+        @extend .centered-flex
+        @extend .material-icons
+        position: absolute
+        width: 4.4rem
+        right: 0
+        content: '\e5c8'
+        color: #fff
 
     &_text
       @extend .text-gradient
@@ -83,3 +86,9 @@
       max-width: 266px
     &_l
       max-width: 320px
+
+  &__text
+    overflow: hidden
+    text-overflow: ellipsis
+    width: 100%
+    white-space: nowrap

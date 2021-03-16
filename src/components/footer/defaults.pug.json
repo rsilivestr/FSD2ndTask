@@ -6,19 +6,19 @@
       "links": [
         {
           "title": "О нас",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Новости",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Служба поддержки",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Услуги",
-          "url": "#some-url"
+          "url": "/replace-me"
         }
       ]
     },
@@ -27,19 +27,19 @@
       "links": [
         {
           "title": "О сервисе",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Наша команда",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Вакансии",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Инвесторы",
-          "url": "#some-url"
+          "url": "/replace-me"
         }
       ]
     },
@@ -48,15 +48,15 @@
       "links": [
         {
           "title": "Соглашения",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Сообщества",
-          "url": "#some-url"
+          "url": "/replace-me"
         },
         {
           "title": "Связь с нами",
-          "url": "#some-url"
+          "url": "/replace-me"
         }
       ]
     }
