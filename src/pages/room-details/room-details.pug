@@ -1,6 +1,7 @@
 extends ~Pages/layout
 
 include ~Components/box/box
+include ~Components/bullet-list/bullet-list
 include ~Components/header/header
 include ~Components/footer/footer
 include ~Components/form/form
@@ -57,9 +58,7 @@ block body
 
       section.room-details__rules
         h2 Правила
-        ul.bullet-list
-          each item in ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,\n а выезд до 12:00']
-            li.bullet-list__item= item
+        +bulletList({ list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00,\n а выезд до 12:00']})
 
       section.room-details__refund
         h2 Отмена
