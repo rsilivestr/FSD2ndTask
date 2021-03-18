@@ -30,6 +30,9 @@
       &:disabled
         background: $mainGradient50
 
+      &:hover:not(:disabled)
+        background: $mainGradientDark
+
     &_gradient
       padding: 0 1.8rem
 
@@ -53,14 +56,27 @@
         color: $dark50
         background: transparent
 
+      &:hover:not(:disabled)
+        @extend .text-gradient-dark
+
     &_bordered
-      color: $purple
       background: linear-gradient(#fff, #fff), $mainGradient
       background-repeat: no-repeat
       background-origin: padding-box, border-box
       border: 10px solid transparent
       border-radius: 22px
       line-height: 2.4rem
+
+      .button__text
+        @extend .text-gradient
+
+      &:hover:not(:disabled)
+        background: linear-gradient(#fff, #fff), $mainGradientDark
+        background-repeat: no-repeat
+        background-origin: padding-box, border-box
+
+        .button__text
+          @extend .text-gradient-dark
 
       &::before
         content: ""

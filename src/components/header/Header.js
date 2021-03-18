@@ -42,7 +42,7 @@ class Header {
 
   _setButtonText(btn) {
     btn.classList.remove(CLASSES.btn.withIcon);
-    btn.innerHTML = btn.dataset.name;
+    btn.innerHTML = `<span class="${CLASSES.btnText}">${btn.dataset.name}</span>`;
   }
 
   _toggleDesktopButtons() {

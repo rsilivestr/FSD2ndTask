@@ -2,6 +2,7 @@ const CLASSES = {
   header: 'header',
   nav: 'header__nav',
   navOpen: 'header__nav--expanded',
+  btnText: 'header__btn-text',
   btn: {
     account: 'header__btn--type_account',
     login: 'header__btn--type_login',

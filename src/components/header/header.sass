@@ -126,10 +126,13 @@
         &:hover i
           @extend .text-gradient
 
-      &_login
+      &_login:not(.header__btn--type_iconic)
         @extend .button--style_bordered
         @include media('>=tablet')
           padding: 0 10px
+
+        .header__btn-text
+          @extend .button__text
 
       &_menu
         @extend .button--style_text
@@ -143,6 +146,6 @@
         @include media('>=tablet')
           visibility: collapse
 
-      &_register
+      &_register:not(.header__btn--type_iconic)
         @extend .button--style_gradient
         padding: 0 2rem
