@@ -1,0 +1,6 @@
+mixin colorListItem(colorName, classSuffix, hexCode)
+  figure.color-list-item
+    .color-list-item__box(class=` color-list-item__box--bg_${classSuffix}`)
+    figcaption.color-list-item__title
+      h2.color-list-item__name= colorName
+      span.color-list-item__hex= hexCode

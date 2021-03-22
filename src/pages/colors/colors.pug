@@ -1,7 +1,7 @@
 extends ~Pages/layout
 
 include ~Components/header/header
-include ~Components/uikit/color-box/color-box
+include ~Components/uikit/color-list-item/color-list-item
 include ~Components/uikit/logo/logo
 
 block title
@@ -14,9 +14,9 @@ block body
     main.colors-page__content
       .color-list
         each percent in ['100', '75', '50', '25', '5']
-          +colorBox(`Dark Shade ${percent}%`, `dark${percent}`, '#1f2041')
-        +colorBox('Purple', 'purple', '#bc0cff')
-        +colorBox('Green', 'green', '#6fcf97')
+          +colorListItem(`Dark Shade ${percent}%`, `dark${percent}`, '#1f2041')
+        +colorListItem('Purple', 'purple', '#bc0cff')
+        +colorListItem('Green', 'green', '#6fcf97')
       .typo-list
         table
           tbody
